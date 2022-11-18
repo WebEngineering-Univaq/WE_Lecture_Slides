@@ -4,7 +4,7 @@
 
 ## Usage
 
-This repository contains all the *slides* presented during the [**Web Engineering course**](https://people.disim.univaq.it/~dellapenna/content.php?page=students) lectures.
+This repository contains all the *slides* presented during the [**Web Engineering course**](https://webengineering-univaq.github.io) lectures.
 
 Such slides cover most of the course contents, but not all. *Please refer to the textbooks and didactic material section on the course website* to get all the required material and, of course, **attend the lectures**, since there is a lot of useful, updated information that cannot be conveyed with static texts.
 
