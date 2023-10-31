@@ -239,7 +239,7 @@ Since **many characters from different languages can visually resemble each othe
 
 
 
-####  Resource identifiers, URI e URL
+####  Resource identifiers, URI and URL
 
 
 To uniquely identify resources, even outside the network, **"Uniform Resource Identifiers"** (URIs) are commonly used:  
@@ -1006,7 +1006,7 @@ The `<li>` element cannot be used outside lists.
 ####  Of definitions
 
 
-`<dl>`, `<dt>`, \<dd>` : definition lists   
+`<dl>`, `<dt>`, `<dd>` : definition lists   
 
 **Content**: `<dl>`: one or more `<dt>` and `<dd>`, `<dt>`: inline, `<dd>`:     *flow*    
 **Attributes**: standard HTML 
@@ -1312,7 +1312,7 @@ The boolean attribute ***ismap***, if present, turns the image into a **server-s
 
 When the image is clicked, activating the link, the coordinates of the click are added to the URI specified by the ***href*** attribute of the tag `<a>` as a *get parameter*. 
 
-For example, if the URI is http://test.org/test and the coordinates x=1, y=7, the browser will request the resource with the URI http://test.org/test?1, 7     
+For example, if the URI is http://test.org/test and the coordinates x=1, y=7, the browser will request the resource with the URI http://test.org/test?1,7     
 
 <!------------------- END SLIDE 054 -------------------------->
 
