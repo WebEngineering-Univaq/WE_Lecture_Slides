@@ -1,6 +1,7 @@
 # WE_Lecture_Slides / English
 
-These slides contain an English translation of the didactic material used in the Web Engineering course.
-The "master" slides are written in Italian, and this translation is the result of a long, complex and continuous adaptation work.
-Therefore, slides may still contain errors, typos and poorly readable statements, and some new topics (covered by the Italian version) may not be present.
-However, they contain all the base information you need to follow the course lectures and understand their contents.
+The "master" slides are in Italian, and this translation is the result of a lengthy, complex, and ongoing modification process.
+As a result, errors, typos, and poorly readable statements may still exist in the slides, and certain additional topics (covered by the Italian version) may be missing. These slides, however, contain all of the fundamental information required for attending the course lectures to fully understand their contents.
+
+The slide sets are converted into structured text documents that may be viewed online directly on GitHub or downloaded and used offline to make reading easier. These documents are formatted in GitHub-flavored markdown and can be easily turned into nice HTML pages or even PDF documents.
+
