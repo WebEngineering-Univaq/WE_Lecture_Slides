@@ -13,13 +13,11 @@ Università degli Studi di L'Aquila
 giuseppe.dellapenna@univaq.it   
 http://people.disim.univaq.it/dellapenna
 
-**Document version: 051025**
+**Document version: 231124**
 
 > *This document is based on the slides of the Web Engineering course, translated into English and reorganized for a better reading experience. It is not a complete textbook or technical manual, and should be used in conjunction with all other teaching materials in the course. Please report any errors or omissions to the author.*
 
 > This work is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0
-
-**Table of Contents**
 
 <!----------------- BEGIN TOC -------------------------->
 
@@ -136,7 +134,7 @@ XML is easy to learn and use:
 <!----------------- BEGIN SLIDE 005 -------------------------->
 > 005
 
-On the other hand, XML introduces some new complexity issue:
+On the other hand, XML introduces some new complexity issues:
 
 - XML documents, because of their textual structure and tags, tend to be much more large than the corresponding binary format. 
 
@@ -343,9 +341,9 @@ The declaration begins with the tag `<!DOCTYPE` and is closed by the symbol `>`.
 
 - **ExternalDTDReference** *(optional)* points to a file that contains the DTD itself, and may be: 
 
-- `SYSTEM` ***"uri"***,   an *uri* which identifies an external file. 
+    - `SYSTEM "uri"`,   an *uri* which identifies an external file. 
 
-- `PUBLIC` ***"pubid" "uri,"***     where *pubid* is a unique identifier for the DTD and *uri* points to a file that contains it. 
+    - `PUBLIC "pubid" "uri"`   where *pubid* is a unique identifier for the DTD and *uri* points to a file that contains it. 
 
 - **InternalDTDSubset** *(optional)* is a DTD, or a DTD fragment, which can be specified directly within the document. 
 
@@ -400,7 +398,7 @@ Every XML document must have **a unique "root" element**, where all the others a
 
 ```xml
 [1] <name>  
-   …
+   
 [2] </name>  
 
 [3] <name/>  
@@ -415,7 +413,7 @@ Every XML document must have **a unique "root" element**, where all the others a
  </c>
 </a>
 ```
-
+<!----------------- COLUMN 001  -------------------------->
 
 The opening tag of an element has the form shown in (1), where *name* is the name of the element. The corresponding closing tag is shown in (2) 
 
@@ -440,6 +438,7 @@ Finally, some elements may be empty: in this case you can omit the closing tag w
 </a>
 ```
 
+<!----------------- COLUMN 001  -------------------------->
 
 Nested elements create the **tree** **structure** of XML documents. 
 
@@ -516,6 +515,8 @@ The value may contain **entity references**, but no other structure (XML element
 </a>
 ```
 
+<!----------------- COLUMN 001  -------------------------->
+
 The basic syntax for an attribute inserted in the opening tag of an element is shown in (1) 
 
 To specify multiple attributes it is enough to separate them with one or more spaces as shown in (2) 
@@ -552,6 +553,8 @@ The **namespace declarations** are inserted in the opening tags, similar to an a
 [3] <name xmlns="uri" xmlns:prf="uri">    
 ```
 
+<!----------------- COLUMN 001  -------------------------->
+
 The explicit namespace declaration (1), inserted into an opening tag, indicates that all the elements whose name is prefixed by *"prf:"*   (namespace prefix) will be considered as belonging to the namespace identified by  *uri*.  
 
 The special standard namespace declaration (2) indicates the namespace of all the elements with no explicit namespace prefix. 
@@ -580,6 +583,8 @@ In each element it is possible to declare multiple explicit namespace prefixes, 
  </html:p> 
 </a>
 ```
+
+<!----------------- COLUMN 001  -------------------------->
 
 Understanding namespaces is important in order to manage complex XML documents and their semantics. 
 
@@ -650,6 +655,7 @@ They are useful if there are **characters that cannot directly** typed, or to **
 &#32;  =  [space]     
 &#x20; =  [space]     
 ```
+<!----------------- COLUMN 001  -------------------------->
 
 For **parsed** entities:
 
@@ -689,6 +695,8 @@ solo testo!<
 ]]>
 ```
 
+<!----------------- COLUMN 001  -------------------------->
+
 CDATA sections explicitly define **areas where there is only text**. 
 
 Within CDATA sections the parser does not look for elements, attributes, entities, and other XML structures  
@@ -711,6 +719,7 @@ Note that the XML declaration is nothing more than a processing instruction.
 
 Inside the tag you can write any type of textual data. The only rule is that the data cannot contain the sequence "?\>". The two examples below are respectively (1) the PI that associates an XSL style sheet to a document and (2) a PHP script. 
 
+<!----------------- COLUMN 001  -------------------------->
 
 ```java
 <?xml-stylesheet type="text/xsl" href="sms_pdf.xslt"?>      
@@ -731,7 +740,6 @@ Inside the tag you can write any type of textual data. The only rule is that the
 ```xml
 <!– This is a XML (and SGML) comment -->     
 ```
-
 
 Comments are useful to humans, and are ignored by XML manipulation programs. 
 

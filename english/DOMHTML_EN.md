@@ -9,17 +9,15 @@
 
 Giuseppe Della Penna
 
-Università degli Studi di L'Aquila   
-giuseppe.dellapenna@univaq.it   
+Università degli Studi di L'Aquila    
+giuseppe.dellapenna@univaq.it    
 http://people.disim.univaq.it/dellapenna
 
-**Document version: 051025**
+**Document version: 231124**
 
 > *This document is based on the slides of the Web Engineering course, translated into English and reorganized for a better reading experience. It is not a complete textbook or technical manual, and should be used in conjunction with all other teaching materials in the course. Please report any errors or omissions to the author.*
 
 > This work is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0
-
-**Table of Contents**
 
 <!----------------- BEGIN TOC -------------------------->
 
@@ -192,6 +190,8 @@ The following XML document
 </song>  
 ```
 
+<!----------------- COLUMN 001  -------------------------->
+
 corresponds to this document tree
 
 ![Document tree](domhtml1.png)
@@ -205,6 +205,8 @@ corresponds to this document tree
 
 
 The tree is composed of generic **nodes**, each of which has a more specific classification, depending on its function within the document.
+
+<!----------------- COLUMN 001  -------------------------->
 
 ![Tree elements](domhtml2.png)
 
@@ -254,7 +256,7 @@ DOM nodes are represented by objects of class **Node**.
 
 - Nodes of type Element and Document can have zero or more child nodes. 
 
-- Each node, except the Document, has a parent node. 
+- Each Node, except the Document, has a parent node. 
 
 The Node interface includes basic operations that apply to any node (regardless of its specific type). 
 
@@ -297,7 +299,7 @@ interface Node {
 
 <!----------------- COLUMN 001  -------------------------->
 
-The attribute *nodeType* allows to identify the specific type of node through a series of constants defined in the *Node* interface : 
+The attribute `nodeType` allows to identify the specific type of node through a series of constants defined in the *Node* interface : 
 
 - `ELEMENT_NODE`: the node is an **element** 
 
@@ -305,21 +307,21 @@ The attribute *nodeType* allows to identify the specific type of node through a 
 
 - `TEXT_NODE`: the node is **text** 
 
-- `CDATA_SECTION_NODE`: the node is a **CDATA** section 
+- `CDATA_SECTION_NODE`: the node is a **CDATA section** 
 
 - `ENTITY_REFERENCE_NODE`: the node is an **entity reference** 
 
 - `ENTITY_NODE`: the node is an **entity** 
 
-- `PROCESSING_INSTRUCTION_NODE`: the node is a **PI** 
+- `PROCESSING_INSTRUCTION_NODE`: the node is a **processing intruction** 
 
 - `COMMENT_NODE`: the node is a **comment** 
 
-- `DOCUMENT_NODE`: the node is a **document** (not the root!) 
+- `DOCUMENT_NODE`: the node is a **document** (not its root!) 
 
-- `DOCUMENT_TYPE_NODE`: the node is a **DOCTYPE** declaration
+- `DOCUMENT_TYPE_NODE`: the node is a **DOCTYPE declaration**
 
-- `DOCUMENT_FRAGMENT_NODE`: the node is a **document** **fragment** 
+- `DOCUMENT_FRAGMENT_NODE`: the node is a **document fragment** 
 
 - `NOTATION_NODE`: the node is a **NOTATION** 
 
@@ -339,7 +341,7 @@ The attribute *nodeType* allows to identify the specific type of node through a 
 |**CDATASection**|"#cdata-section"|Associated text |
 |**EntityReference**|Entity name  |null|
 |**Entity**|Entity name  |null|
-|**ProcessingInstruction**|Target attribute value   |Content xcept target   |
+|**ProcessingInstruction**|Target attribute value   |Content except target   |
 |**Comment**|"#comment"|Associated text |
 |**Document**|"#document"|null|
 |**DocumentType**|Name of the document type      |null|
@@ -369,7 +371,7 @@ The Node interface provides several attributes to traverse the DOM tree :
 
 - `attributes` returns the list of attributes of the current node (a NamedNodeMap).   
 
-   - The objects returned by `childNodes` and `attributes` usually have also an array-like interface. 
+The objects returned by `childNodes` and `attributes` usually have also an array-like interface. 
 
 <!------------------- END SLIDE 014 -------------------------->
 
@@ -383,13 +385,13 @@ The *Node* interface has also some methods which allow to manipulate its childre
 
 - `appendChild(n)`:  append a node *n* to the list of children of the current node 
 
-- `removeChild(n)`:  removes a node from the list of children of the current node. 
+- `removeChild(n)`:  removes a node *n* from the list of children of the current node. 
 
 - `replaceChild(n, o)`:  replaces a child node *o* with a new node *n*. 
 
 - `insertBefore(n, r)`:  inserts a node *n* in the list of children, placing it before a particular child *r*. 
 
-- There is also the `textContent`  attribute that, if assigned to a string, replaces the children of the current node with a single text node containing the string itself. This attribute is also available for reading. 
+There is also the `textContent`  attribute that, if assigned to a string, replaces the children of the current node with a single text node containing the string itself. This attribute is also available for reading. 
 
 The applicability of these methods depends on the actual type of the node. If the operation is not available (e.g., `appendChild` on a *Text* node), a *DOMException* is raised. 
 
@@ -401,7 +403,7 @@ The applicability of these methods depends on the actual type of the node. If th
 ### 2.6. The Document object
 
 
-The **Document** object is a special Node that represents the entire XML document. 
+The **Document** object is a special **Node** that represents the entire XML document. 
 
 Generally, when an XML document is loaded in memory, the corresponding Document object is created and returned. 
 
@@ -425,7 +427,8 @@ interface Document : Node {
  readonly attribute DOMImplementation implementation;        
  readonly attribute Element documentElement;        
 
- Element createElement(in DOMString tagName);  DocumentFragment createDocumentFragment();            
+ Element createElement(in DOMString tagName);
+ DocumentFragment createDocumentFragment();            
  Text createTextNode(in DOMString data);    
  Comment createComment(in DOMString data);      
  CDATASection createCDATASection(in DOMString data);      
@@ -494,7 +497,7 @@ The DOM interfaces are in the **org.w3c.dom** package
 
 (7) sets directly the text content of the node (removing all of its contents - only available in DOM Level 3). 
 
-(8) creates a PI with target "php" and content "echo('pippo');" and appends it to the document root.      
+(8) creates a processing intruction with target "php" and content "echo('pippo');" and appends it to the document root.      
 
 <!------------------- END SLIDE 018 -------------------------->
 
@@ -524,10 +527,10 @@ e.textContent = "Due - bis";
 
 radice.appendChild( 
  document.createProcessingInstruction(  
- "php", "echo('pippò);"));    
+ "php", "echo('pippo');"));    
 ```
 
-<!----------------- COLUMN 002  -------------------------->
+<!----------------- COLUMN 001  -------------------------->
 
 Creates the XML structure below:
 
@@ -542,7 +545,7 @@ Creates the XML structure below:
  <nodo6/>
  <nodo7/>
  <nodo8/>
- <nodo9/><?php echo('pippò);?>    
+ <nodo9/><?php echo('pippo');?>    
 </Radice>  
 ```
 
@@ -660,9 +663,11 @@ The DOM interfaces are in the **org.w3c.dom** package
 
 (3) get all the children of the root element that are named "nodo5".    
 
+(4) add an attribute with namespace to each node found in step 3.   
+
 (5) `querySelector` returns the first element with class "pippo" or "pluto" among the root descendants.       
 
-(6) with this  `querySelectorAll` we get the same result as in step 4.
+(6) with this  `querySelectorAll` we get the same result as in step 3.
 
 
 <!------------------- END SLIDE 022 -------------------------->
@@ -732,11 +737,13 @@ interface NamedNodeMap {
  Node item(in unsigned long index);      
  readonly attribute unsigned long length;        
 }
+```
 
+```javascript
 list = radice.childNodes;  
 if (list.item(8) != null)  radice.insertBefore(    
  document.createComment("otto"),list.item(8));      
-f = document.createElement ("Qwerty");  
+f = document.createElement("Qwerty");  
 f.setAttribute ("a", "v"); 
 nmp = f.attributes;   
 nmp.getNamedItem("a").value 
@@ -780,7 +787,7 @@ This HTML DOM provides all the classes and properties seen so far, but defines a
 
 - A number of Element-derived classes provide direct access to the most common properties of the corresponding HTML elements    
 
-- However, the DOM is constantly evolving: see the "living standard" at https://dom.spec.whatwg.org 
+However, the DOM is constantly evolving: see the "living standard" at https://dom.spec.whatwg.org 
 
 <!------------------- END SLIDE 026 -------------------------->
 
@@ -855,9 +862,9 @@ The `open` method opens the document as a stream for writing. Its current conten
 
 The `write` and `writeln` methods allow to write in the document after a call to `open`. In many cases, the first call to one of these functions determines an implicit `open`. 
 
-There are also (in latest browsers)  **methods for selecting items based on advanced criteria** such as 
+There are also (in latest browsers) **methods for selecting items based on advanced criteria** such as 
 
-- The value of the *name* attribute (`getElementsByName`)
+- The value of the `name` attribute (`getElementsByName`)
 
 - One or more classes assigned to them (`getElementsByClassName`)
 
@@ -877,7 +884,8 @@ interface HTMLElement : Element {
  attribute DOMString dir;    
  attribute DOMString className;      
 
- //The following attributes are NOT PART  OF THE L2 DOM INTERFACE, BUT THEY ARE DE FACTO STANDARDS   
+ //The following attributes are NOT PART  OF THE L2 DOM INTERFACE,
+ //BUT THEY ARE DE FACTO STANDARDS   
  readonly attribute HTMLElement offsetParent;        
  readonly attribute long offsetTop;      
  readonly attribute long offsetLeft;      
@@ -886,7 +894,7 @@ interface HTMLElement : Element {
 
  //Elements available in most modern browsers 
  readonly attribute DOMTokenList classList;        
-  void remove();    
+ void remove();    
  attribute DOMString innerHTML;      
  NodeList getElementsByName(in DOMString elementName);        
  NodeList getElementsByClassName(in DOMString names);        
@@ -897,15 +905,14 @@ interface HTMLElement : Element {
 
 In general, the interfaces connected to particular HTML elements have **attributes corresponding to the characteristic attributes of the element itself**. 
 
-- The HTMLElement interface exposes the attributes common to all the HTML elements, i.e., id and class (here called className)     
+The HTMLElement interface exposes the attributes common to all the HTML elements, i.e., id and class (here called className)     
 
 The current HTML DOM **does not have functions or attributes that return the size or the position of the elements**. 
 
 - For elements positioned with CSS, it is often possible to read such values through the properties left, top, width, and height. 
 
-- In general, the DOM implemented in various programming languages  provides a series of semi-standard attributes `offsetX`,  where X can be Top, Left, Width, Height. 
-
-- The size and position of an element are always relative to its container, indicated by `offsetParent`.  
+- In general, the DOM implemented in various programming languages  provides a series of semi-standard attributes `offsetX`,  where X can be Top, Left, Width, Height.     
+The size and position of an element are always relative to its container, indicated by `offsetParent`.  
 
 **In DOM implemented by modern browsers**, other helpers are available, such as 
 
@@ -1039,7 +1046,7 @@ The `options` collection contains all the nested HTMLOptionElement objects corre
 
 The `selectedIndex` attribute gives the index of the currently selected `options` item (-1 in case of no selection), while `value` contains a copy of the `value` for the selected option. 
 
-The `add` method adds a HTMLOptionElement to the list at the specified location, and   `remove` allows to remove it. 
+The `add` method adds a HTMLOptionElement to the list at the specified location, and `remove` allows to remove it. 
 
 The `blur` and `focus` methods are used to control the field focus. 
 
@@ -1180,11 +1187,11 @@ interface CSSStyleRule : CSSRule {
 
 The *CSSRule* interface represents a generic CSS rule , as indicated by the `type` attribute. 
 
-- The most interesting rules are those of type STYLE\_RULE, represented by the derived class CSSStyleRule.   
+The most interesting rules are those of type STYLE\_RULE, represented by the derived class CSSStyleRule.   
 
 Each *CSSStyleRule* represents a single CSS style rule. 
 
-- A *CSSStyleRule* consists of a string, that contains the rule selector, and a list of style attributes, set in a *CSSStyleDeclaration*.  
+A *CSSStyleRule* consists of a string, that contains the rule selector, and a list of style attributes, set in a *CSSStyleDeclaration*.  
 
 <!------------------- END SLIDE 037 -------------------------->
 
@@ -1314,15 +1321,14 @@ The DOM event model is built from a common subset of the custom event management
 
 ### 5.2. Event Bubbling
 
-Each event has a **target** element, which is the one on which it was generated.
+Each event has a **target** element, which is the one on which it was generated. The target is determined by inspecting the DOM tree, which can sometimes differ from what the user "sees"! 
 
-- For example, a click on a text generates a click event on the paragraph that contains that text.
 
-- The target is determined by inspecting the DOM tree, which can sometimes differ from what the user "sees"! 
+For example, a click on a text generates a click event on the paragraph that contains that text.
 
-After activating the corresponding event handler on its target, the event is passed to all the target ancestor elements, in the order given by the DOM hierarchy, until it gets to the Document object. This behavior is called      **event bubbling**.
+After activating the corresponding event handler on its target, the event is passed to all the target ancestor elements, in the order given by the DOM hierarchy, until it gets to the Document object. This behavior is called  **event bubbling**.
 
-- As we will see, you can stop bubbling after capturing an event.  
+As we will see, you can stop bubbling after capturing an event.  
 
 <!------------------- END SLIDE 043 -------------------------->
 
@@ -1332,8 +1338,6 @@ After activating the corresponding event handler on its target, the event is pas
 
 A click on the text of the paragraph starts a bubbling process which "shows" the event to all the registered handlers for that type of event on the ancestors of the activated \<p\> element. 
 
-
-<!----------------- COLUMN 001  -------------------------->
 
 ```html
 <html>
@@ -1371,7 +1375,6 @@ Browsers always perform first a *capturing* *phase* and then a *bubbling phase* 
 
 A click on the text of the paragraph activates a capturing process that *first* "shows" the event to all the handlers for that type of event registered *in capture mode* that are among the ancestors of the activated \<p\> element. 
 
-<!----------------- COLUMN 001  -------------------------->
 
 ```html
 <html>
@@ -1397,7 +1400,6 @@ A click on the text of the paragraph activates a capturing process that *first* 
 
 Each event is propagated first in capturing phase and then in bubbling phase. 
 
-<!----------------- COLUMN 001  -------------------------->
 
 ```html
 <html>
@@ -1489,7 +1491,7 @@ The `target` attribute identifies the element on which the event occurred.
 
 The `currentTarget` attribute indicates the element that is currently managing the event (which the listener belongs to)
 
-- During the bubbling phase, the   `target` remains unchanged, while the `currentTarget` is set to the actual element to which the event is passed.
+- During the bubbling phase, the `target` remains unchanged, while the `currentTarget` is set to the actual element to which the event is passed.
 
 The `stopPropagation` method stops the event bubbling (which occurs when `bubbles` is true)
 
@@ -1622,7 +1624,7 @@ Some HTML objects can be notified of their specific events:
 
 - **scroll** (the content of an element has been scrolled). 
 
-- **DOMContentLoaded** (the document has been fully loaded and parsed. This does not include completing the loading of style sheets, images, and subframes. This event as been recently introduced, corresponding to the         *ready* of libraries such as JQuery). 
+- **DOMContentLoaded** (the document has been fully loaded and parsed. This does not include completing the loading of style sheets, images, and subframes. This event as been recently introduced, corresponding to the  *ready* of libraries such as JQuery). 
 
 <!------------------- END SLIDE 053 -------------------------->
 
@@ -1646,11 +1648,11 @@ All the features introduced with ECMAScript 5, 6 and beyond, as well as all the 
 
 When creating a script, it is always necessary to ask yourself **which browsers are the target** (and therefore also the audience of users) and check if the (advanced) features you intend to use are compatible with them.
 
-- To check the compatibility of a certain function/API, you can search on **MDN** (*https://developer.mozilla.org/en-US/docs/Web*) or sites like *https://caniuse.com/*.
+To check the compatibility of a certain function/API, you can search on **MDN** (*https://developer.mozilla.org/en-US/docs/Web*) or sites like *https://caniuse.com/*.
 
 For features with little support in older browsers, it is useful, in order to expand the audience of supported browsers, to **include in your scripts the corresponding polyfills** , i.e. libraries that integrate unsupported features into browsers through appropriate workarounds. 
 
-- Try using the libraries generated by *https://polyfill.io*, which allows you to automatically download polyfills only for the features you are interested in and only if necessary for the browser that requires them.   
+Try using the libraries generated by *https://polyfill.io*, which allows you to automatically download polyfills only for the features you are interested in and only if necessary for the browser that requires them.   
 
 <!------------------- END SLIDE 055 -------------------------->
 

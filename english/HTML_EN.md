@@ -10,13 +10,11 @@ Università degli Studi di L'Aquila
 giuseppe.dellapenna@univaq.it   
 http://people.disim.univaq.it/dellapenna
 
-**Document version: 051025**
+**Document version: 231124**
 
 > *This document is based on the slides of the Web Engineering course, translated into English and reorganized for a better reading experience. It is not a complete textbook or technical manual, and should be used in conjunction with all other teaching materials in the course. Please report any errors or omissions to the author.*
 
 > This work is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0
-
-**Table of Contents**
 
 <!----------------- BEGIN TOC -------------------------->
 
@@ -266,7 +264,7 @@ A **"Uniform Resource Locator"** (URL) is a specific type of URI that not only i
 
 In a URL, the *scheme* identifies the **protocol** for accessing the resource (http, ftp,...) 
 
-The *authority* consists of the FQDN of the **host** hosting the resource (or its IP address) possibly followed by the port number that identifies the logical service to connect to on the host (if omitted, it has a protocol-dependent default) 
+The *authority* consists of the FQDN of the **host** hosting the resource (or its IP address) possibly followed by the *port* number that identifies the logical service to connect to on the host (if omitted, it has a protocol-dependent default) 
 
 The **path** is a sequence of strings separated by slashes (/) which, as in a filesystem, identifies a resource through the logical path necessary to reach it (in the case of the filesystem, how to reach a file by crossing the folder hierarchy). 
 
@@ -288,7 +286,7 @@ For communication to be effective, the two parties must agree not only on the pr
 
 On the Internet there are a large number of **standard formats** for the representation of numerous classes of resources, such as HTML for hypertexts, JPEG, PNG, GIF, BMP, etc. for images, various derivatives of MPEG for audio and video, etc. 
 
-These types are indicated via so-called **media types** (also known as **MIME** types), which have the generic form " *type/subtype*", for example text/html, image/jpeg, audio/mpeg. 
+These types are indicated via so-called **media types** (also known as **MIME** types), which have the generic form "*type/subtype*", for example text/html, image/jpeg, audio/mpeg. 
 
 <!------------------- END SLIDE 009 -------------------------->
 
@@ -356,12 +354,12 @@ XHTML Strict
 </html>
 ```
 
-
+<!----------------- COLUMN 001  -------------------------->
 
 ```html
 <!--
 XHTML Transitional   
-(Content-type:    application/xhtml+xml  )
+(Content-type: application/xhtml+xml  )
 -->
 
 <?xml version="1.0" encoding="iso-8859-1"?>    
@@ -388,7 +386,7 @@ XHTML Transitional
 ```html
 <!--
 HTML5 with HTML syntax   
-(Content-type:    text/html)
+(Content-type: text/html)
 -->
 
 <!doctype html>  
@@ -405,12 +403,12 @@ HTML5 with HTML syntax
 -->
 ```
 
-
+<!----------------- COLUMN 001  -------------------------->
 
 ```html
 <!--
 HTML5 with XML syntax   
-(Content-type:    application/xhtml+xml  )
+(Content-type: application/xhtml+xml  )
 -->
 
 <?xml version="1.0" encoding="UTF-8"?>   
@@ -461,13 +459,9 @@ Contains the HTML document itself.
 ### 2.3. Element Classification
 
 
-*Inline* Content 
+*Inline* content is represented by text and by the following elements: `<tt>`, `<i>`, `<b>`, `<big>`, `<small>`, `<em>`, `<strong>`, `<dfn>`, `<code>`, `<samp>`, `<kbd>`, `<var>`, `<cite>`, `<abbr>`, `<acronym>`, `<a>`, `<img>`, `<object>`, `<br>`, `<script>`, `<map>`, `<q>`, `<sub>`, `<sup>`, `<span>`, `<bdo>`, `<input>`, `<select>`, `<textarea>`, `<label>`, `<button>`                                           
 
-   - Inline content is represented by text and by the following elements: `<tt>`, `<i>`, `<b>`, `<big>`, `<small>`, `<em>`, `<strong>`, `<dfn>`, `<code>`, `<samp>`, `<kbd>`, `<var>`, `<cite>`, `<abbr>`, `<acronym>`, `<a>`, `<img>`, `<object>`, `<br>`, `<script>`, `<map>`, `<q>`, `<sub>`, `<sup>`, `<span>`, `<bdo>`, `<input>`, `<select>`, `<textarea>`, `<label>`, `<button>`                                           
-
-*Block* content 
-
-   - Elements that generate block content are: `<p>`, `<h1>`…`<h6>`, `<ol>`, `<ul>`, `<pre>`, `<dl>`, `<div>`, `<noscript>`, `<blockquote>`, `<form>`, `<hr>`, `<table>`, `<fieldset>`, `<address>`                       
+Elements that generate *block* content are: `<p>`, `<h1>`…`<h6>`, `<ol>`, `<ul>`, `<pre>`, `<dl>`, `<div>`, `<noscript>`, `<blockquote>`, `<form>`, `<hr>`, `<table>`, `<fieldset>`, `<address>`                       
 
 The *flow* content type is given by the union of *inline* and *block*
 
@@ -487,17 +481,19 @@ The element classification used in HTML5 reflects the elements' role, rather tha
 
    - *Metadata* content : `<link>`, `<script>`, etc.
 
-   - *Phrasing*: `<span>`, `<img>`, ecc. Similar to the "inline" class of HTML4. 
+   - *Phrasing*: `<span>`, `<img>`, ecc.   
+      Similar to the "inline" class of HTML4. 
 
    - *Heading* content: `<h1>`, `<h2>`, etc.
 
    - *Sectioning* content: `<aside>`, `<section>`, etc.
 
-   - *Flow* content: `<span>`, `<div>`, ecc. Simular to the homonymous class of HTML4, includes the "Phrasing" content. 
+   - *Flow* content: `<span>`, `<div>`, ecc.   
+     Similar to the homonymous class of HTML4, includes the "Phrasing" content. 
 
    - *Embedded* content: `<img>`, `<iframe>`, `<svg>`, etc.
 
-   - *Interactive* content: `<a>`, `<button>`, \<label>`, etc. 
+   - *Interactive* content: `<a>`, `<button>`, `<label>`, etc. 
 
 <!------------------- END SLIDE 016 -------------------------->
 
@@ -508,25 +504,25 @@ The element classification used in HTML5 reflects the elements' role, rather tha
 ### 2.4. Standard HTML attributes
 
 
-- **id**: unique ID   
+- `id`: unique ID   
 Used to reference elements in scripts
 
-- **class**: A list of classes   
+- `class`: A list of classes   
 Used to assign one or more style classes to the element. The list elements are separated by spaces
 
-- **style**: style information   
+- `style`: style information   
 Used to provide element-specific CSS style to the element
 
-- **title**: element information   
+- `title`: element information   
 Many browsers use this attribute to generate the element tooltip
 
-- **lang**: language code   
+- `lang`: language code   
 Language codes from the I18N standard, eg. "It" or "en-us"       
 
-- **dir**: writing direction   
+- `dir`: writing direction   
 rtl (right-to-left) or ltr (left-to-right)     
 
-- **onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup**: event handlers    
+- `onclick`, `ondblclick`, `onmousedown`, `onmouseup`, `onmouseover`, `onmousemove`, `onmouseout`, `onkeypress`, `onkeydown`, `onkeyup`: event handlers    
 Used to attach scripts to the corresponding events
 
 <!------------------- END SLIDE 017 -------------------------->
@@ -539,22 +535,22 @@ Used to attach scripts to the corresponding events
 ####  New in HTML5
 
 
-- **contenteditable**: marks element content as user – modifiable. 
+- `contenteditable`: marks element content as user – modifiable. 
 
-- **spellcheck**: indicates that the element content should be spell checked.     
+- `spellcheck`: indicates that the element content should be spell checked.     
 
-- **translate**: indicates that the element content should be translated (by automatic translators). 
+- `translate`: indicates that the element content should be translated (by automatic translators). 
 
-- **hidden**: marks the element as not relevant. 
+- `hidden`: marks the element as not relevant. 
 
-- **data-\***: user-defined extension attributes.    
+- `data-*`: user-defined extension attributes.    
 New attributes whose name is prefixed by "data-" can be added to any element. These attributes are used to associate data with the element, to be used by scripts in the same page.                   
 
-- **role, aria-\*** : used to give accessibility information to rich user interfaces (ARIA= Accessible Rich Internet Applications).        
+- `role`, `aria-\* ` : used to give accessibility information to rich user interfaces (ARIA= Accessible Rich Internet Applications).        
 
-   - **role** indicates the element role, which may not be related to its tag name (e.g., "*checkbox*", " *grid*", "*link*", "*menu*", "*navigation*", "*form*" o " *img*": see www.w3.org/TR/wai-aria/roles). 
+   - `role` indicates the element role, which may not be related to its tag name (e.g., "*checkbox*", " *grid*", "*link*", "*menu*", "*navigation*", "*form*" o " *img*": see www.w3.org/TR/wai-aria/roles). 
 
-   - **aria-\* ** attributes are used to support the element role with further semantic information. For example, aria-checked can be used on elements with "checkbox" role to indicate their state (see www.w3.org/TR/wai-aria/states\_and\_properties).                          
+   - `aria-*` attributes are used to support the element role with further semantic information. For example, aria-checked can be used on elements with "checkbox" role to indicate their state (see www.w3.org/TR/wai-aria/states\_and\_properties).                          
 
 <!------------------- END SLIDE 018 -------------------------->
 
@@ -600,11 +596,11 @@ Empty `<p>` elements are not valid
 `<br>` : line break  
 
 **Content**: empty        
-**Attributes**: standard HTML, clear 
+**Attributes**: standard HTML, ~~clear~~ 
 
 The element `<br>` ends the current line. The text is wrapped, without starting a new paragraph. 
 
-The ***clear*** attribute is used to indicate the distribution of floating objects before the line break. If present, the floats are arranged before break. *It is not allowed in HTML5*.
+The `clear` attribute is used to indicate the distribution of floating objects before the line break. If present, the floats are arranged before break. *It is not allowed in HTML5*.
 
 Browsers can add implicit `<br>` instead of spaces to adapt the text to the window size (word wrap). Use nonbreakable spaces (&nbsp;) to avoid this effect. 
 
@@ -704,7 +700,7 @@ They are useful for the realization of complex HTML layouts, especially in conju
 
 In general, they can also be used to create ad-hoc HTML elements, with specific formatting and behavior, to complement the HTML standard elements. 
 
-The ***class*** and ***id*** attributes are important for their behavior. 
+The `class` and `id` attributes are important for their behavior. 
 
 <!------------------- END SLIDE 026 -------------------------->
 
@@ -735,7 +731,7 @@ These elements have vary descriptive names: `<em>`, `<strong>`, `<dfn>`, `<code>
 **Content**: *inline*       
 **Attributes**:  standard HTML
 
-The `<acronym>` element is *deprecated in* HTML5.
+The `<acronym>` element is *deprecated* in HTML5.
 
 <!------------------- END SLIDE 028 -------------------------->
 
@@ -788,13 +784,13 @@ the *title* attribute can be used to write the complete form
 
 The `<blockquote>` element is used for quoting blocks of text, while `<q>` is used to include brief citations in the text flow     
 
-Both have a ***cite*** attribute that can be used to provide the URI of the original text 
+Both have a `cite` attribute that can be used to provide the URI of the original text 
 
- browser should include appropriate quotes before and after the citation
+Browsers should include appropriate quotes before and after the citation
 
 Citations inserted in a `<blockquote>` are usually indented    
 
-The use of blockquote to indent text is strongly discouraged!   
+The use of `<blockquote>` to indent text is strongly discouraged!   
 
 <!------------------- END SLIDE 030 -------------------------->
 
@@ -834,9 +830,9 @@ Text can still contain inline HTML tags except `<img>`, `<object>`, `<big>`, `<s
 
 These elements are used to indicate text revisions. 
 
-The ***cite*** attribute may be used to indicate a URI where details can be found on the corresponding revision. A brief indication of the reason for the revision may also be written in the title attribute. 
+The `cite` attribute may be used to indicate a URI where details can be found on the corresponding revision. A brief indication of the reason for the revision may also be written in the title attribute. 
 
-The ***datetime*** attribute can be used to write the date/time of the review 
+The `datetime` attribute can be used to write the date/time of the review 
 
 These are the only two HTML elements that can be used both inline and as blocks.
 
@@ -994,7 +990,7 @@ Every`<li>` element represents a list item, and it can contain any markup, also 
 
 A list should contain at least one `<li>` element. However, in HTML5, to avoid this common error, this constraint has been removed.                  
 
-The `<li>` element cannot be used outside lists. 
+The `<li>` element cannot be used outside lists.
 
 <!------------------- END SLIDE 040 -------------------------->
 
@@ -1008,7 +1004,7 @@ The `<li>` element cannot be used outside lists.
 
 `<dl>`, `<dt>`, `<dd>` : definition lists   
 
-**Content**: `<dl>`: one or more `<dt>` and `<dd>`, `<dt>`: inline, `<dd>`:     *flow*    
+**Content**: `<dl>`: one or more `<dt>` and `<dd>`, `<dt>`: inline, `<dd>`:  *flow*    
 **Attributes**: standard HTML 
 
 Commonly used to define terms, have a great versatility 
@@ -1129,17 +1125,17 @@ In HTML5 the *summary* attribute is *deprecated* and the *border* attribute may 
 
 `<table>` : table definition   
 
-The  ***cellspacing*** attribute determines the space (in pixels) between cells and between the cells and the outer border of the table.
+The  `cellspacing` attribute determines the space (in pixels) between cells and between the cells and the outer border of the table.
 
-The  ***cellpadding*** attribute determines the space (in pixels) between the border of each cell and its contents.
+The  `cellpadding` attribute determines the space (in pixels) between the border of each cell and its contents.
 
-The ~~***width***~~ attribute specifies the width of the table in pixels or percentage. It is always useful to specify it, to speed up rendering (the default is "the minimum necessary"). 
+The ~~`width`~~ attribute specifies the width of the table in pixels or percentage. It is always useful to specify it, to speed up rendering (the default is "the minimum necessary"). 
 
-The ~~***border***~~ attribute sets the thickness of the outer edge of the table. A value of zero eliminates the edge (useful to use advanced border formatting provided by CSS) 
+The ~~`border`~~ attribute sets the thickness of the outer edge of the table. A value of zero eliminates the edge (useful to use advanced border formatting provided by CSS) 
 
-The ~~***frame***~~ attribute (*void, above, below, hsides, vsides, lhs, rhs, box, border* ) determines which of the outer edges of the table will be drawn (with the thickness given by the border attribute). The default is *box*. 
+The ~~`frame`~~ attribute (*void, above, below, hsides, vsides, lhs, rhs, box, border* ) determines which of the outer edges of the table will be drawn (with the thickness given by the border attribute). The default is *box*. 
 
-The ~~***rules***~~ attribute (*none, groups, rows, cols, all*) determines which inner edges of the table (between cells) are drawn (with the thickness given by the border attribute). The default is *all*. 
+The ~~`rules`~~ attribute (*none, groups, rows, cols, all*) determines which inner edges of the table (between cells) are drawn (with the thickness given by the border attribute). The default is *all*. 
 
 All these attributes are *deprecated* in HTML5 and CSS must be used instead.
 
@@ -1162,7 +1158,7 @@ Tables are composed by a series of rows (`<tr>`), each of which contains one or 
 
 The maximum number of cells present on a single line determines the number of columns of the table. The rendering will show empty cells to the right of each line whose cells are fewer than the table columns. 
 
-The ~~***align***~~ attribute (*left, right, center, justify, char*) defines the horizontal alignment for all cells in the row, and ~~***valign***~~ (*top, bottom, middle, baseline*) defines the vertical alignment. 
+The ~~`align`~~ attribute (*left*, *right*, *center*, *justify*, *char*) defines the horizontal alignment for all cells in the row, and ~~`valign`~~ (*top*, *bottom*, *middle*, *baseline*) defines the vertical alignment. 
 
 The *align* and *valign* attributes are *deprecated* in HTML5 and CSS must be used instead.
 
@@ -1185,13 +1181,13 @@ Each row contains a set of table cells. Cells can contain arbitrary HTML content
 
 **Header cells** are identical to standard cells, but the browser should highlight them in some way. 
 
-Typically a cell represents the intersection of a row with a column, however, the ***rowspan*** and ***colspan*** attributes allow to specify the cell extension, respectively, in rows and columns. 
+Typically a cell represents the intersection of a row with a column, however, the `rowspan` and `colspan` attributes allow to specify the cell extension, respectively, in rows and columns. 
 
-Attributes ***abbr***, ***axis***, ***headers*** and ***scope*** are used to provide advanced data accessibility to the table. 
+Attributes `abbr`, `axis`, `headers` and `scope` are used to provide advanced data accessibility to the table. 
 
-The ***width*** and ***height*** attributes are used to provide information on cell size, but their use is **not recommended**, and should be replaced by the homonymous attributes of the `<col>` elements. 
+The `width` and `height` attributes are used to provide information on cell size, but their use is **not recommended**, and should be replaced by the homonymous attributes of the `<col>` elements. 
 
-The *height, width, align, valign, abbr, axis* and *scope* attributes are *deprecated* in HTML5 and CSS must be used instead. 
+The  *height*, *width*, *align*, *valign*, *abbr*, *axis* and *scope*  attributes are *deprecated* in HTML5 and CSS must be used instead. 
 
 <!------------------- END SLIDE 048 -------------------------->
 
@@ -1203,12 +1199,12 @@ The *height, width, align, valign, abbr, axis* and *scope* attributes are *depre
 ####  Row groups
 
 
- `<thead>`, `<tbody>`, `<tfoot>` : row groups   
+`<thead>`, `<tbody>`, `<tfoot>` : row groups   
 
- **Content**: one or more `<tr>`          
+**Content**: one or more `<tr>`          
 **Attributes**: standard HTML, align, valign   
 
-The rows of a table can be divided into three groups: **header** (`<thead>` ), **body** (`<tbody>` ) and **footer** (`<tfoot>` ). 
+The rows of a table can be divided into three groups: **header** (`<thead>`), **body** (`<tbody>`) and **footer** (`<tfoot>` ). 
 
 Typically, the rows in `<thead>` and `<tfoot>` are placed respectively at the beginning and at the end of the table. If the table is broken into several pages, each segment will contain the same header and footer. 
 
@@ -1233,7 +1229,7 @@ In HTML5, `<tfoot>` is also allowed to appear at the end of the table definition
 
 Through one or more elements `<col>` **placed at the beginning of the table** (first row) it is possible to predefine the number and the characteristics of the columns that will compose the table. This facilitates the rendering of the table and decreases the code necessary to create it. 
 
-Each `<col>` represents a number of columns equal to its ***span*** attribute. Each column will have the size specified by ***width*** and the corresponding cells will have the alignment given by ***align*** and ***valign***. 
+Each `<col>` represents a number of columns equal to its `span` attribute. Each column will have the size specified by `width` and the corresponding cells will have the alignment given by `align` and `valign`. 
 
 In HTML5 these elements **can only appear inside a `<colgroup>`**. Moreover, The *align*, *valign* and *width* attributes are *deprecated* in HTML5 and CSS must be used instead.
 
@@ -1256,7 +1252,7 @@ In HTML5 these elements **can only appear inside a `<colgroup>`**. Moreover, The
 
 One or more `<colgroup>` elements can be **placed at the beginning of the table** (first row) **as an alternative** to the `<col>` elements. 
 
-An empty `<colgroup>` represents a number of columns equal to its ***span*** attribute. Each column will have the size specified by ***width*** and the corresponding cells will have the alignment given by ***align*** and ***valign***. 
+An empty `<colgroup>` represents a number of columns equal to its `span` attribute. Each column will have the size specified by `width` and the corresponding cells will have the alignment given by `align` and `valign`. 
 
 To separately define the characteristics of each column in a group, it is possible to nest `<col>` elements within a `<colgroup>`. The characteristics of nested `<col>` elements (including their total number) have precedence over those specified globally by the `<colgorup>`. 
 
@@ -1285,19 +1281,20 @@ To separately define the characteristics of each column in a group, it is possib
 **Content**: empty        
 **Attributes**: standard HTML, src, alt, ~~longdesc~~, width, height, ismap, usemap           
 
-Inserts in the document the external image referenced by the URI in the ***src*** attribute
+Inserts in the document the external image referenced by the URI in the `src` attribute
 
-An alternative text for the image (***alt***) is an essential feature for an HTML document with high accessibility. 
+An alternative text for the image (`alt`) is an essential feature for an HTML document with high accessibility. 
 
-The ***longdesc*** attribute can be used to point to the URI of a document that describes in detail the image. It is *deprecated* in HTML5.
+The `longdesc` attribute can be used to point to the URI of a document that describes in detail the image. It is *deprecated* in HTML5.
 
-The ***width*** and ***height*** attributes should always be used to give the browser a hint about the size to be reserved for the image on the page. If these measures differ from the actual size of the image, it will be resized accordingly (and proportionally, if you specify only one attribute). In HTML5 these attributes can no longer contain percentages and cannot be used to obtain not-proportional image scaling.
+The `width` and `height` attributes should always be used to give the browser a hint about the size to be reserved for the image on the page. If these measures differ from the actual size of the image, it will be resized accordingly (and proportionally, if you specify only one attribute). In HTML5 these attributes can no longer contain percentages and cannot be used to obtain not-proportional image scaling.
 
 <!------------------- END SLIDE 053 -------------------------->
 
 <!----------------- BEGIN SLIDE 054 -------------------------->
 > 054
 
+### 6.2. Image Maps
 
 
 ####  Server-side image maps
@@ -1308,9 +1305,9 @@ The ***width*** and ***height*** attributes should always be used to give the br
 **Content**: empty        
 **Attributes**: standard HTML, src, alt, longdesc, width, height, ismap, usemap           
 
-The boolean attribute ***ismap***, if present, turns the image into a **server-side image map** when it is part of a link created by an `<a>`. 
+The boolean attribute `ismap`, if present, turns the image into a **server-side image map** when it is part of a link created by an `<a>`. 
 
-When the image is clicked, activating the link, the coordinates of the click are added to the URI specified by the ***href*** attribute of the tag `<a>` as a *get parameter*. 
+When the image is clicked, activating the link, the coordinates of the click are added to the URI specified by the `href` attribute of the tag `<a>` as a *get parameter*. 
 
 For example, if the URI is http://test.org/test and the coordinates x=1, y=7, the browser will request the resource with the URI http://test.org/test?1,7     
 
@@ -1329,9 +1326,9 @@ For example, if the URI is http://test.org/test and the coordinates x=1, y=7, th
 **Content**: empty        
 **Attributes**: standard HTML, src, alt, longdesc, width, height, ismap, usemap           
 
-The ***usemap*** attribute, if present, transforms an image in a **client-side image map**. 
+The `usemap` attribute, if present, transforms an image in a **client-side image map**. 
 
-The ***usemap*** attribute must contain the name of an image map defined in the same document using the element `<map>` 
+The `usemap` attribute must contain the name of an image map defined in the same document using the element `<map>` 
 
 The image areas defined by the map will become clickable. 
 
@@ -1343,28 +1340,21 @@ The client-side image maps are always preferable for accessibility reasons.
 > 056
 
 
-### 6.2. Image Maps
-
-
 `<map>` : client side image map   
 
 **Content**: *block*, `<area>`      
 **Attributes**: standard HTML, name 
 
-The `<map>` element declares a client-side image map with the name specified by the ***name*** attribute. 
+The `<map>` element declares a client-side image map with the name specified by the `name` attribute. 
 
 The areas of the map can be specified by a set of elements `<area>` or `<a>`, both nested in the element `<map>` 
 
-The use of elements `<a>` is useful for creating highly accessible maps, with a rich text alternative. In this case, the tag `<a>` can be enriched with attributes such as ***shape*** and ***coords***, which belong to the `<area>` tag. This behavior is *deprecated* in HTML5.
+The use of elements `<a>` is useful for creating highly accessible maps, with a rich text alternative. In this case, the tag `<a>` can be enriched with attributes such as `shape` and `coords`, which belong to the `<area>` tag. This behavior is *deprecated* in HTML5.
 
 <!------------------- END SLIDE 056 -------------------------->
 
 <!----------------- BEGIN SLIDE 057 -------------------------->
 > 057
-
-
-
-####  Areas definition
 
 
 `<area>`: client side image map area    
@@ -1374,9 +1364,9 @@ The use of elements `<a>` is useful for creating highly accessible maps, with a 
 
 The `<area>` elements nested in a `<map>` define clickable areas of an image and their destinations       
 
-Each area has a shape determined by the attribute ***shape***, i.e., *rect*, *circle* or *poly*. 
+Each area has a shape determined by the attribute `shape`, i.e., *rect*, *circle* or *poly*. 
 
-The ***coords*** attribute contains the coordinates, separated by commas, that define the specified shape: 
+The `coords` attribute contains the coordinates, separated by commas, that define the specified shape: 
 
   - For rectangles, the x and y coordinates of the top left and bottom right corner, 
 
@@ -1384,9 +1374,9 @@ The ***coords*** attribute contains the coordinates, separated by commas, that d
 
   - For polygons, the x and y coordinates of all the vertices. 
 
-The link destination is specified by the ***href*** attribute. 
+The link destination is specified by the `href` attribute. 
 
-A textual description of the area, specified with the ***alt*** attribute is mandatory for maps with high accessibility. 
+A textual description of the area, specified with the `alt` attribute is mandatory for maps with high accessibility. 
 
 <!------------------- END SLIDE 057 -------------------------->
 
@@ -1400,15 +1390,15 @@ A textual description of the area, specified with the ***alt*** attribute is man
 `<object>` : embed a generic external object       
 
 **Content**: *flow*, `<param>`        
-**Attributes**: standard HTML, classid, codebase, codetype, data, type, standby        
+**Attributes**: standard HTML, ~~classid~~, ~~codebase~~, ~~codetype~~, data, type, ~~standby~~, width, height       
 
-The attributes ***classid*** and ***data*** may be used to indicate (in a mutually exclusive way): 
+The attributes `classid` and `data` may be used to indicate (in a mutually exclusive way): 
 
-- The **implementation** of the object: ***classid*** is a URI that points to the object to be included (e.g., applets or other small programs) 
+- The **implementation** of the object: `classid` is a URI that points to the object to be included (e.g., applets or other small programs) 
 
-- The **data** that constitute the object: ***data*** is a URI pointing to the source data (e.g., images, video, audio)  
+- The **data** that constitute the object: `data` is a URI pointing to the source data (e.g., images, video, audio)  
 
-To pass **parameters** to the object, you can nest `<param>` elements. The attributes ***name*** and ***value*** of these elements determine the pairs (name, value) passed to the object being initialized. 
+To pass **parameters** to the object, you can nest `<param>` elements. The attributes `name` and `value` of these elements determine the pairs (name, value) passed to the object being initialized. 
 
 Any other content of the `<object>` element is handled by the object being loaded. 
 
@@ -1427,13 +1417,13 @@ Any other content of the `<object>` element is handled by the object being loade
 **Content**: *flow*, `<param>`        
 **Attributes**: standard HTML, ~~classid~~, ~~codebase~~, ~~codetype~~, data, type, ~~standby~~, width, height           
 
-The ***codebase*** attribute can be used to resolve relative URIs found in ***classid*** and ***data*** 
+The `codebase` attribute can be used to resolve relative URIs found in `classid` and `data` 
 
-***codetype*** and ***type*** attributes specify the MIME type, respectively, of the resources pointed to by ***classid*** and ***data*** 
+`codetype` and `type` attributes specify the MIME type, respectively, of the resources pointed to by `classid` and `data` 
 
-The ***standby*** attribute can be used to specify a text to be displayed during the object loading. 
+The `standby` attribute can be used to specify a text to be displayed during the object loading. 
 
-The ***width*** and ***height*** attributes have the same purpose as in the `<img>` element  
+The `width` and `height` attributes have the same purpose as in the `<img>` element  
 
 The *classid*, *codetype*, *codebase* and *standby* attributes are *deprecated* in HTML5.
 
@@ -1488,7 +1478,7 @@ The element `<link>` can be appear several times but only in the document `<head
 
 A `<link>` does not generate a user-visible link, but declares a relation between the current document and other resources. The browser can use this information in various ways. 
 
-The ***rel*** (or ***rev***, if the link is logically backwards) is crucial for `<link>` element, as it defines the type of relationship with the resource identified by the URI contained in the ***href*** attribute. 
+The `rel` (or `rev`, if the link is logically backwards) is crucial for `<link>` element, as it defines the type of relationship with the resource identified by the URI contained in the `href` attribute. 
 
 The *rev* and *charset* attributes are *deprecated* in HTML5.
 
@@ -1500,15 +1490,8 @@ The *rev* and *charset* attributes are *deprecated* in HTML5.
 > 063
 
 
-
 ####  Document relationship types
 
-
-- **Alternate**: alternative document   
-Using the attributes *hreflang*, *media* and *type*, it is possible to define alternatives to the current document based on the language and/or reading device. A common example is the *application/rss+xml* type, which connects a web page to its *RSS feed*.
-
-- **Stylesheet**:  style sheet   
-Used to connect a style sheet to the document. Attributes *type* and *media* must identify respectively the MIME type of the style sheet (usually *text/css)* and the device for which it is designed. If you want to provide alternative style sheets, use the *title* attribute to give a name to the style and use the composite type "alternate stylesheet". 
 
 - **Start, Next, Prev**:   Initial, next, previous document  
 Define the initial, next and previous document in the linear sequence the current document belongs to
@@ -1530,11 +1513,29 @@ Indicates the document to use as a glossary for the current document
 
 - **Bookmark**: Bookmark document    
 Indicates the "key" document in the collection that owns the current one, to be used to set a bookmark. 
-
-- **Shortcut icon** : site icon ( *de facto* standard)   
-The image connected to a web page through this relation is used by browsers as an icon in the title bar and in the favorites list. The image type and size are subject to severe restrictions.                            
+                 
 
 <!------------------- END SLIDE 063 -------------------------->
+
+<!----------------- BEGIN SLIDE 063b -------------------------->
+> 063b
+
+- **Alternate**: alternative document   
+Using the attributes *hreflang*, *media* and *type*, it is possible to define alternatives to the current document based on the language and/or reading device. A common example is the *application/rss+xml* type, which connects a web page to its *RSS feed*.
+
+- **Stylesheet**:  style sheet   
+Used to connect a style sheet to the document. Attributes *type* and *media* must identify respectively the MIME type of the style sheet (usually *text/css)* and the device for which it is designed. If you want to provide alternative style sheets, use the *title* attribute to give a name to the style and use the composite type "alternate stylesheet". 
+
+- **Shortcut icon** : site icon ( *de facto* standard)   
+The image connected to a web page through this relation is used by browsers as an icon in the title bar and in the favorites list. The image type and size are subject to severe restrictions. 
+
+- **Preload**: high-priority preload of external resources      
+Used to preload resources, suggesting to the browser which resources on the current page are *high priority* and therefore need to be *downloaded into the local cache as soon as possible*. It is mainly used with style sheets, scripts, fonts and images. In this case, the as attribute is used to specify the resource type, e.g., with `as="style"`, `as="image"`, or `as="script"`. Attention: preloading does not apply the resource, but only loads it: for example, if we preload a stylesheet, we will still have to apply it by using a normal `<link>` with `rel="stylesheet"`, or if we preload a script we will then have to activate it by referencing it with a `<script>` element.
+
+- **Prefetch**: prefetch resources useful to related pages     
+Prefetching is used to prefetch into the browser resources cache that are not immediately needed by the current page, but *useful for the pages linked* to it. These resources will then be downloaded, but with a *lower priority* than to the rest of the page.
+
+<!------------------- END SLIDE 063b -------------------------->
 
 <!----------------- BEGIN SLIDE 064 -------------------------->
 > 064
@@ -1548,9 +1549,9 @@ The image connected to a web page through this relation is used by browsers as a
 **Content**: empty        
 **Attributes**: standard HTML, href, target  
 
-This element, used in the document `<head>`, defines the base URI (***href*** attribute) used to resolve all the relative URIs in the document 
+This element, used in the document `<head>`, defines the base URI (`href` attribute) used to resolve all the relative URIs in the document 
 
-The ***target*** attribute may be used to define the default target in a document with frames 
+The `target` attribute may be used to define the default target in a document with frames 
 
 If `<base>` is not specified, the base URI of the current document is used to resolve all the relative URIs 
 
@@ -1570,9 +1571,9 @@ If `<base>` is not specified, the base URI of the current document is used to re
 
 One or more elements `<style>` can be placed in the document `<head>`, allowing to embed one or more (fragments of) style sheets. 
 
-The ***type*** attribute specifies the MIME type of the style. In HTML5 this attribute can be omitted as it defaults to *text/css*.
+The `type` attribute specifies the MIME type of the style. In HTML5 this attribute can be omitted as it defaults to *text/css*.
 
-The ***media*** attribute to specifies the devices for which the style has been designed. 
+The `media` attribute to specifies the devices for which the style has been designed. 
 
 Style sheets can also be imported from a file using the `<link>` element. In addition, you can specify a specific style for each HTML element via the *style* attribute. 
 
@@ -1608,11 +1609,11 @@ The HTML attribute *class* allows to group multiple HTML elements into classes, 
 
 The `<a>` element is used both to define the origin of a link or to mark link targets within a page. 
 
- - If `<a>` is a link source, the ***href*** attribute identifies the URI its the destination 
+ - If `<a>` is a link source, the `href` attribute identifies the URI its the destination 
 
- - If `<a>` is a link target, its ***name*** attribute is a unique name that can be addressed by the *fragment identifier* of a URI. This allows to define links to a particular point of the target document. 
+ - If `<a>` is a link target, its `name` attribute is a unique name that can be addressed by the *fragment identifier* of a URI. This allows to define links to a particular point of the target document. 
 
-The ***name*** attribute shares the same name space of the ***id*** attribute. In fact, you can use the id of any element as a *fragment identifier*. In HTML5, this is the preferred way.
+The `name` attribute shares the same name space of the `id` attribute. In fact, you can use the id of any element as a *fragment identifier*. In HTML5, this is the preferred way.
 
 The content of `<a>` may be any inline HTML, but you cannot have nested links. The default appearance of a link (underlined characters) can be varied by using style sheets. 
 
@@ -1630,13 +1631,13 @@ The content of `<a>` may be any inline HTML, but you cannot have nested links. T
 **Content**: *inline* (wothout nested links!)            
 **Attributes**: standard HTML, href, name, hreflang, type, rel, ~~rev~~, ~~charset~~, accesskey               
 
-The ***hreflang***, **charset** and *type* attributes can be used to give the browser information about the link destination, such as the language of the document, its character set and the type (MIME) of its content. 
+The `hreflang`, `charset` and `type` attributes can be used to give the browser information about the link destination, such as the language of the document, its character set and the type (MIME) of its content. 
 
-The ***accesskey*** attribute allows to specify a character that can be used as a shortcut to activate the link. It is useful for creating fast access menus and alternate link activation methods to be used when a mouse is not available. 
+The `accesskey` attribute allows to specify a character that can be used as a shortcut to activate the link. It is useful for creating fast access menus and alternate link activation methods to be used when a mouse is not available. 
 
- ***rel*** and ***rev*** attributes allow to declare the relationship between the current document and the one connected by the link (see item `<link>`) considered, respectively, a forward or a backward link. 
+ `rel` and `rev` attributes allow to declare the relationship between the current document and the one connected by the link (see item `<link>`) considered, respectively, a forward or a backward link. 
 
-The ***title*** attribute can be used to better describe the link destination. 
+The `title` attribute can be used to better describe the link destination. 
 
 The *rev* and *charset* attributes are *deprecated* in HTML5.
 
@@ -1651,7 +1652,7 @@ The *rev* and *charset* attributes are *deprecated* in HTML5.
 
 Forms are (parts of) HTML documents containing, in addition to the normal markup, also special elements called **controls**, with which the user can interact. 
 
-Forms are placed in a special HTML element `<form>`. Usually, modules provide a system to send the value of their controls to the server *(submit)* for further processing. 
+Forms are placed in a special HTML element `<form>`. Usually, modules provide a system to send the value of their controls to the server (*submit*) for further processing. 
 
 However, there are also forms working completely on the *client side*, assisted by scripts and embedded objects. 
 
@@ -1667,13 +1668,13 @@ However, there are also forms working completely on the *client side*, assisted 
 
 The control elements are `<input>`, `<textarea>`, `<select>`, `<optgroup>`, `<label>`, `<fieldset>` and `<button>`. 
 
-Each control must necessarily be identified by a name, specified via the ***name*** attribute. 
+Each control must necessarily be identified by a name, specified via the `name` attribute. 
 
-The controls may have an initial ***value***, which is set when the form is created or when you *reset* it. 
+The controls may have an initial `value`, which is set when the form is created or when you *reset* it. 
 
 When the form is submitted, the server receives the pairs (name, value) of each control. 
 
-In HTML5, controls are also allowed to appear outside the `<form>` element, as long as they have a ***form*** attribute set to the *id* of a `<form>` placed anywhere in the document.
+In HTML5, controls are also allowed to appear outside the `<form>` element, as long as they have a `form` attribute set to the *id* of a `<form>` placed anywhere in the document.
 
 <!------------------- END SLIDE 070 -------------------------->
 
@@ -1690,18 +1691,19 @@ In HTML5, controls are also allowed to appear outside the `<form>` element, as l
 **Content**: *block* (except other `<form>`), `<script>`        
 **Attributes**: standard HTML, method, action, enctype, name, accept-charset         
 
-A form requires at least specification, through the ***action*** attribute, of the resource URI that will process the data (e.g., a server side script) 
+A form requires at least specification, through the `action` attribute, of the resource URI that will process the data (e.g., a server side script) 
 
-The ***method*** attribute (*get or post*) specifies the method used to send the data to the specified resource. 
+The `method` attribute (*get* or *post*) specifies the method used to send the data to the specified resource. 
 
-If the *post* method is used, it may be necessary to specify an alternate data encoding method using the attribute ***enctype***: 
+If the *post* method is used, it may be necessary to specify an alternate data encoding method using the attribute `enctype`: 
 
- - The encoding *application/x-www-form-urlencoded* is the default 
+  - The encoding *application/x-www-form-urlencoded* is the default 
+ 
   - The encoding *multipart/form-data* is necessary if you send files as part of the form. 
 
-The ***name*** attribute provides a name to the module, to be used for scripting. 
+The `name` attribute provides a name to the module, to be used for scripting. 
 
-The ***accept-charset*** attribute is often used to indicate the *encoding* of the characters sent with the form, *allowing a proper decoding on the server*. 
+The `accept-charset` attribute is often used to indicate the *encoding* of the characters sent with the form, *allowing a proper decoding on the server*. 
 
 <!------------------- END SLIDE 071 -------------------------->
 
@@ -1710,7 +1712,7 @@ The ***accept-charset*** attribute is often used to indicate the *encoding* of t
 
 
 
-####  `<input>` controls
+####  <input> controls
 
 
 `<input>`: form control   
@@ -1718,7 +1720,7 @@ The ***accept-charset*** attribute is often used to indicate the *encoding* of t
 **Content**: empty        
 **Attributes**: standard HTML, type, name, value, size, maxlength, checked, disabled, readonly, src, usemap, ismap, alt                      
 
-The `<input>` element is used to generate most of the form controls. The key of its versatility is the ***type*** attribute, which can take the following values: 
+The `<input>` element is used to generate most of the form controls. The key of its versatility is the `type` attribute, which can take the following values: 
 
   - **text**: creates a line of text input 
 
@@ -1737,6 +1739,7 @@ The `<input>` element is used to generate most of the form controls. The key of 
   - **hidden**: creates a hidden form field
 
   - **image**: create a control to submit the form using an image   
+  
   - **button**: creates a button 
 
 <!------------------- END SLIDE 072 -------------------------->
@@ -1746,10 +1749,10 @@ The `<input>` element is used to generate most of the form controls. The key of 
 
 
 
-####  HTML5 `<input>` controls
+####  HTML5 <input> controls
 
 
-HTML5 introduces many other kinds of `<input>` controls, also defined by the ***type*** attribute:  
+HTML5 introduces many other kinds of `<input>` controls, also defined by the `type` attribute:  
 
    - **tel**: a telephone number input control
 
@@ -1776,7 +1779,7 @@ The *user agent* should render more appropriate form controls using this refined
 
 
 
-####  `<input>` controls semantics
+####  <input> controls semantics
 
 
 `<input>`: form control   
@@ -1784,21 +1787,21 @@ The *user agent* should render more appropriate form controls using this refined
 **Content**: empty        
 **Attributes**: standard HTML, type, name, value, size, maxlength, checked, disabled, readonly, src, usemap, ismap, alt                      
 
-The ***value*** attribute provides: 
+The `value` attribute provides: 
 
   - the **initialization** string for controls of type *text*, *password*, *hidden*, *file* 
 
   - The **label** for the controls of type *submit*, *reset* and *button* 
 
-The ***size*** attribute gives the width of the control in pixels or characters for *text* and *password* types 
+The `size` attribute gives the width of the control in pixels or characters for *text* and *password* types 
 
-The ***maxlength*** attribute provides the maximum number of characters that can be typed in the fields of type *text* and *password* 
+The `maxlength` attribute provides the maximum number of characters that can be typed in the fields of type *text* and *password* 
 
-The boolean attribute ***checked*** determines whether a control of type *checkbox* or *radio* is initially selected 
+The boolean attribute `checked` determines whether a control of type *checkbox* or *radio* is initially selected 
 
-The ***src*** attribute is used for *image* type controls, as well as ***ismap***, ***usemap*** (removed from HTML5) and ***alt***. The graphical buttons of type *image* send the coordinates of the click as the value (*name.x, name.y* ) of an additional form control. 
+The `src` attribute is used for *image* type controls, as well as `ismap`, `usemap` (removed from HTML5) and `alt`. The graphical buttons of type *image* send the coordinates of the click as the value (*name.x, name.y* ) of an additional form control. 
 
-The boolean attributes ***disabled*** and ***readonly*** can be used to disable and/or make read-only the control. 
+The boolean attributes `disabled` and `readonly` can be used to disable and/or make read-only the control. 
 
 <!------------------- END SLIDE 074 -------------------------->
 
@@ -1807,26 +1810,26 @@ The boolean attributes ***disabled*** and ***readonly*** can be used to disable 
 
 
 
-####  HTML5 `<input>` controls semantics
+####  HTML5 <input> controls semantics
 
 
 HTML5 also introduces new `<input>` attributes:
 
-   - The ***required*** attribute marks the field as required. Browsers should not submit the form if these fields are not compiled. This attribute can be also placed on `<select>` and `<textarea>`.
+   - The `required` attribute marks the field as required. Browsers should not submit the form if these fields are not compiled. This attribute can be also placed on `<select>` and `<textarea>`.
 
-   - The ***min***, ***max*** attributes are used to define the allowed value range (for numbers, dates, etc.),
+   - The `min`, `max` attributes are used to define the allowed value range (for numbers, dates, etc.),
 
-   - The ***autocomplete*** attribute, whose value can be *on* (default) or *off*, controls the browser auto completion feature on input fields.
+   - The `autocomplete` attribute, whose value can be *on* (default) or *off*, controls the browser auto completion feature on input fields.
 
-   - The ***multiple*** attribute instructs the browser to allow more than one value in the field. How this behavior is rendered depends on the specific control *type*.
+   - The `multiple` attribute instructs the browser to allow more than one value in the field. How this behavior is rendered depends on the specific control *type*.
 
-   - The ***pattern*** attribute specifies a regular expression that must match the control value.
+   - The `pattern` attribute specifies a regular expression that must match the control value.
 
-   - The ***step*** attribute defines the allowed control values granularity.
+   - The `step` attribute defines the allowed control values granularity.
 
-   - The ***formaction***, ***formethod***, ***formenctype*** attributes allow to override the corresponding `<form>` attributes when the input is used as a submit button. 
+   - The `formaction`, `formethod`, `formenctype` attributes allow to override the corresponding `<form>` attributes when the input is used as a submit button. 
 
-   - The ***placeholder*** attribute gives an hint to be shown on the control when it is empty, and can be also placed on `<textarea>`.               
+   - The `placeholder` attribute gives an hint to be shown on the control when it is empty, and can be also placed on `<textarea>`.               
 
 <!------------------- END SLIDE 075 -------------------------->
 
@@ -1835,7 +1838,7 @@ HTML5 also introduces new `<input>` attributes:
 
 
 
-####  `<textarea>` controls
+####  <textarea> controls
 
 
 `<textarea>` : form text areas   
@@ -1845,7 +1848,7 @@ HTML5 also introduces new `<input>` attributes:
 
 The element `<textarea>` creates a wide text input area where the user can type multiple lines of text  
 
-The visible width is determined by the attributes ***rows*** and ***cols*** (columns). The maximum number of characters can not be typed in a `<textarea>`, however, is not limited a priori. 
+The visible width is determined by the attributes `rows` and `cols` (columns). The maximum number of characters can not be typed in a `<textarea>`, however, is not limited a priori. 
 
 The text nested in the element is used as its initial value.
 
@@ -1858,7 +1861,7 @@ HTML tags contained in the text are not interpreted.
 
 
 
-####  `<select>` controls
+####  <select> controls
 
 
 `<select>` : multiple choice lists   
@@ -1868,9 +1871,9 @@ HTML tags contained in the text are not interpreted.
 
 The element `<select>` creates a list containing a set of options, each represented by an element `<option>`. 
 
-The ***multiple*** boolean attribute indicates if the user can select one or more elements of the list   
+The `multiple` boolean attribute indicates if the user can select one or more elements of the list   
 
-The ***size*** attribute indicates how many options have to be displayed simultaneously in the control 
+The `size` attribute indicates how many options have to be displayed simultaneously in the control 
 
 The initial value and the value assigned to the control are specified by the nested `<option>` and `<optgroup>`. 
 
@@ -1881,7 +1884,7 @@ The initial value and the value assigned to the control are specified by the nes
 
 
 
-####  Options for `<select>` controls
+####  Options for <select> controls
 
 
 `<option>`, `<optgroup>` : options for `<select>` controls       
@@ -1891,11 +1894,11 @@ The initial value and the value assigned to the control are specified by the nes
 
 The `<option>` elements define selectable options in the `<select>` controls. The `<optgroup>` elements can be used to group together `<option>` in order to create logical structures such as menus. 
 
-The ***label*** attribute determines the text displayed for `<option>` and `<optgroup>`. In the case of `<option>`, you can also omit the label and specify the text to display inside the element. 
+The `label` attribute determines the text displayed for `<option>` and `<optgroup>`. In the case of `<option>`, you can also omit the label and specify the text to display inside the element. 
 
-The ***value*** attribute determines the value of the option, which will be assigned to the name of the corresponding `<select>` field during the form submission. If not specified, the contents of the option will be used as its value. 
+The `value` attribute determines the value of the option, which will be assigned to the name of the corresponding `<select>` field during the form submission. If not specified, the contents of the option will be used as its value. 
 
-The boolean attribute ***selected*** determines whether the option will be initially selected. 
+The boolean attribute `selected` determines whether the option will be initially selected. 
 
 <!------------------- END SLIDE 078 -------------------------->
 
@@ -1904,7 +1907,7 @@ The boolean attribute ***selected*** determines whether the option will be initi
 
 
 
-####  `<button>` controls
+####  <button> controls
 
 
 `<button>` : form buttons   
@@ -1912,9 +1915,9 @@ The boolean attribute ***selected*** determines whether the option will be initi
 **Content**: *flow*, except `<a>` and all the form elements       
 **Attributes**: standard HTML, name, value, type, disabled        
 
-The `<button>` elements create buttons exactly as `<input>` elements with the corresponding ***type*** (which can be *submit*, *reset* or *button*) 
+The `<button>` elements create buttons exactly as `<input>` elements with the corresponding `type` (which can be *submit*, *reset* or *button*) 
 
-The difference is that the content of the button is not defined by the *value* attribute, which here represents only the value given to the corresponding name when the button is pressed. 
+The difference is that the content of the button is not defined by the `value` attribute, which here represents only the value given to the corresponding name when the button is pressed. 
 
 The content of the element, which can be HTML of any type and length, will be used to create the "face" of the button. 
 
@@ -1930,12 +1933,12 @@ The content of the element, which can be HTML of any type and length, will be us
 
 `<label>` : text associated with a control 
 
-**Content**: inline        
+**Content**: *inline*        
 **Attributes**: standard HTML, for  
 
 The `<label>` element allows to associate an *inline* text to a form control. 
 
-The associated control is identified by the value of the for attribute, which must correspond to the ***id*** (not ***name***!) of one of the controls in the current form. 
+The associated control is identified by the value of the for attribute, which must correspond to the `id` (not `name`!) of one of the controls in the current form. 
 
 The browser may, for example, change the rendering of the text when the corresponding control is disabled. 
 

@@ -11,13 +11,11 @@ Università degli Studi di L'Aquila
 giuseppe.dellapenna@univaq.it   
 http://people.disim.univaq.it/dellapenna
 
-**Document version: 051025**
+**Document version: 231124**
 
 > *This document is based on the slides of the Web Engineering course, translated into English and reorganized for a better reading experience. It is not a complete textbook or technical manual, and should be used in conjunction with all other teaching materials in the course. Please report any errors or omissions to the author.*
 
 > This work is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0
-
-**Table of Contents**
 
 <!----------------- BEGIN TOC -------------------------->
 
@@ -100,6 +98,8 @@ http://people.disim.univaq.it/dellapenna
     - [7.5. Cross-Browser Compatibility](#75-cross-browser-compatibility)
 
  - [8. References](#8-references)
+
+ - [9. Examples](#9-examples)
 
 
 
@@ -240,7 +240,7 @@ An example of an abstract rule is
 SEL {P1: V1 [!important] P2: V2 P3: V3}
 ````
 
-The optional **!important** modifier, written after the value (but before the separator) of any property, is used to increase the *priority of the rule* during the *cascading* process, as we will see later. 
+The optional **`!important`** modifier, written after the value (but before the separator) of any property, is used to increase the *priority of the rule* during the *cascading* process, as we will see later. 
 
 <!------------------- END SLIDE 009 -------------------------->
 
@@ -274,7 +274,7 @@ A base selector can be followed by one or more attribute selectors. The selector
 
 - `[A ~= V]` (the element must have an attribute A whose value is a space separated list containing V) 
 
-- `[A |= V]` (the element must have an attribute A whose value is a list separated by ‘-' containing V) 
+- `[A |= V]` (the element must have an attribute A whose value is a list separated by '-' containing V) 
 
 <!------------------- END SLIDE 011 -------------------------->
 
@@ -431,13 +431,13 @@ When multiple rules match the same element, the final value of each property is 
 
     1.5. Default value from the browser style sheet 
 
-1. **Specificity** *(for properties with the same priority of origin)* 
+2. **Specificity** *(for properties with the same priority of origin)* 
 
     - A selector that is more specific to a particular element takes precedence over a more generic one. 
 
     - In HTML, the rules included in the *style* attributes have the greatest specificity. 
 
-2. **Order** *(for properties with same priority of origin and specificity)* 
+3. **Order** *(for properties with same priority of origin and specificity)* 
 
     - A rule takes precedence over those that *precede* it.
 
@@ -489,7 +489,7 @@ The *absolute* units are `in` (inches), `cm` (centimeters), `mm` (millimeters), 
 
 They are useful only when the output device is unique and precisely defined. 
 
-The *relative* *units* are `em` (current font-size), `ex` (current x-height). In most modern browsers, we also find  `rem` (font-size of the root element), `vw` (1% of the width of the browser window), `vh` (1% of the height of the browser window), `vmin` (1% of the smallest dimension of the browser window),   `vmax` (1% of the largest dimension of the browser window),   `ch` (width of the character zero in the current font).
+The *relative* units are `em` (current font-size), `ex` (current x-height). In most modern browsers, we also find  `rem` (font-size of the root element), `vw` (1% of the width of the browser window), `vh` (1% of the height of the browser window), `vmin` (1% of the smallest dimension of the browser window),   `vmax` (1% of the largest dimension of the browser window),   `ch` (width of the character zero in the current font).
 
 Relative units are very useful if you want to automatically adjust sizes based on the output device and its settings (e.g., printer or browser with various font sizes) 
 
@@ -585,7 +585,7 @@ For all of the border properties there exist shorthands that allow one to set th
 ####  Round corners with CSS3
 
 
-Before CSS3, smooth the corners of a box required complex tricks or even images. Now you can use the border-radius property       **(you still need to give the element a border with the properties described in the previous slides!)**     
+Before CSS3, smooth the corners of a box required complex tricks or even images. Now you can use the `border-radius property` (**you still need to give the element a border with the properties just described**)
  
 - `border-radius` (`border-top-left-radius`, `border-top-right-radius`, `border-bottom-right-radius`, `border-bottom-left-radius`)                    
 **Values**: *radius* | *percentage* | `initial` | `inherit`  
@@ -602,7 +602,7 @@ Initial is the default value, which in this case is zero.
 
 It is also possible to create borders using images instead of normal lines.
 
-- `border-image` (border-image-source, border-image-slice, border-image-width, border-image-outset and border-image-repeat) 
+- `border-image` (`border-image-source`, `border-image-slice`, `border-image-width`, `border-image-outset`, `border-image-repeat`) 
 
 - `border-image-source`     
 **Values**:  `none`\* |  *image url* |  `initial` | `inherit`  
@@ -635,11 +635,11 @@ All the *block* elements can have a background consisting of a solid color or an
 
 In the case of image backgrounds, the file to be used must be indicated through the construct url('...') and it is possible to specify:   
 
-In which position to display the image w.r.t. to the element background.   
+- In which position to display the image w.r.t. to the element background.   
 
-If the image should be repeated to fill the entire space available to the element. 
+- If the image should be repeated to fill the entire space available to the element. 
 
-If the image has to "scroll" with the content of the window or remain fixed. 
+- If the image has to "scroll" with the content of the window or remain fixed. 
 
 Thanks to their versatility, backgrounds are often used for improper purposes, such as creating graphics (buttons, structural elements of the page, etc.) that can not be achieved simply by importing images through the HTML \<img\> tag.   
 
@@ -756,9 +756,9 @@ To shade text, use the text-shadow property instead.
 ### 3.5. Lists
 
 
-Using CSS, you can create bulleted and numbered lists of simple types, with standard images or numbers (Arabic, Roman, etc..) as bullets, using the list-style-type attribute. 
+Using CSS, you can create bulleted and numbered lists of simple types, with standard images or numbers (Arabic, Roman, etc..) as bullets, using the `list-style-type` attribute. 
 
-The most advanced list feature, made ​​available through the list-style-image attribute, allow the use of images as bullets. In this case, the list-style-type attribute is ignored. 
+The most advanced list feature, made ​​available through the `list-style-image` attribute, allow the use of images as bullets. In this case, the `list-style-type` attribute is ignored. 
 
 When you create custom lists with image bullets, you should always adjust the indents, margins and padding of the elements in order to achieve the desired visual effect. 
 
@@ -775,7 +775,7 @@ The list-type attributes can be applied to all items whose *display* property is
 
 
 - `list-style-type` (standard bullets)     
-**Values**:  `disc` | `circle` | `square` | `decimal` | `decimal-leading-zero` | `lower-roman` | `upper-roman` | `lower-greek` | `lower-latin` | `upper-latin` | `armenian` | `georgian` | `lower-alpha` | `upper-alpha` | none             
+**Values**:  `disc` | `circle` | `square` | `decimal` | `decimal-leading-zero` | `lower-roman` | `upper-roman` | `lower-greek` | `lower-latin` | `upper-latin` | `armenian` | `georgian` | `lower-alpha` | `upper-alpha` | `none`
 
 - `list-style-image` (image bullets)     
 **Values**:  *uri*  | `none` 
@@ -794,7 +794,7 @@ The list-type attributes can be applied to all items whose *display* property is
 
 
 - `quotes`    
-**Values**: `none` | (string string)+    
+**Values**: `none` | (*string* *string*)+    
 Indicates the quotes (open and closed) to use for this element, if necessary. It is possible to specify multiple pairs, one for each level of nesting of the quotation marks.
 
 - `counter-reset`    
@@ -807,7 +807,7 @@ Increments by one (or the given number) the values of the given counter for the 
 
 - `content`    
 **Values**: `none` | (*string* | `counter(C,S)` | `open-quote` | `close-quote`)+        
-Applies only to pseudo elements *:before* and *:after* and specifies the text that should be inserted before or after an element, respectively. The values of open-quote and close-quote are those set by the *quotes* attribute. C can be any counter visible from the element. S (optional) is one of the values  defined for the list-style-type.
+Applies only to pseudo elements `:before` and `:after` and specifies the text that should be inserted before or after an element, respectively. The values of  `open-quote` and `close-quote` are those set by the `quotes` attribute. *C* can be any counter visible from the element. *S* (optional) is one of the values  defined for the `list-style-type`.
 
 <!------------------- END SLIDE 036 -------------------------->
 
@@ -817,7 +817,7 @@ Applies only to pseudo elements *:before* and *:after* and specifies the text th
 ### 3.7. Cursors
 
 
-Using the cursor property allows one to define the shape that the mouse should have when it hovers over a certain element of the page.   
+Using the `cursor` property allows one to define the shape that the mouse should have when it hovers over a certain element of the page.   
 
 When creating rich interfaces, with interactive elements (clickable, movable, editable) it is important to associate them with the right cursor, to "suggest" to the user how to interact with the element itself.   
 
@@ -850,7 +850,7 @@ In any case, you must also provide one of the standard cursors, as a single valu
 It is possible to specify how the box associated with an element should be generated. 
 
 `display`    
-**Values**:  `inline` | `block` | `grid` | `flex` | `inline-block` | … | `none`         
+**Values**:  `inline` | `block` | `grid` | `flex` | `inline-block` | … | `none`
 
 - **Block** generates a block box (which occupies a horizontal and vertical space disjoint from the other boxes, like elements div or p)
 
@@ -858,8 +858,7 @@ It is possible to specify how the box associated with an element should be gener
 
 - **Flex and Grid** activate the new positioning modes (*flexbox* and *grid*) that we will see later 
 
-- **Inline-block** generates an inline box that can also have a width and an height set by CSS properties (*width, height*), just like block boxes  
-
+- **Inline-block** generates an inline box that can also have a width and an height set by CSS properties (`width`, `height`), just like block boxes  
 There are also many other values that allow the block to "behave" like a certain html element, for example a  *list-item*, a *table*, etc.
 
 - **None** disables the generation of the box, removing the associated element from the document. 
@@ -898,15 +897,15 @@ In these cases, you can specify how to handle the part that overflows the contai
 `overflow`    
 **Values**:   `visible`\* | `hidden` | `scroll` | `auto` 
 
-- **Visible** (default) allows the extra content to be rendered outside the container. 
+- `visible` (default) allows the extra content to be rendered outside the container. 
 
-- **Hidden** hides the piece of content overflowing the container. 
+- `hidden` hides the piece of content overflowing the container. 
 
-- **Scroll** brings up the scroll bars inside the container, so that the content can be scrolled. The bars appear in any case, even if the content does not overflow. 
+- `scroll` brings up the scroll bars inside the container, so that the content can be scrolled. The bars appear in any case, even if the content does not overflow. 
 
-- **Auto** makes scroll bars appear inside the container, so that its content can be scrolled, only if it overflows the container. 
+- `auto` makes scroll bars appear inside the container, so that its content can be scrolled, only if it overflows the container. 
 
-Starting from CSS3, there are also the  **overflow-x** and **overflow-y** properties, with the same values but handling only horizontal or vertical overflow.  
+Starting from CSS3, there are also the  `overflow-x` and `overflow-y` properties, with the same values but handling only horizontal or vertical overflow.  
 
 <!------------------- END SLIDE 041 -------------------------->
 
@@ -917,7 +916,7 @@ Starting from CSS3, there are also the  **overflow-x** and **overflow-y** proper
 
 
 - `margin` (`margin-right`, `margin-left`, `margin-top`, `margin-bottom`)         
-**Values**:  *measure*    
+**Values**:  *measure*  | `auto`         
 The margin is the space between the border of an element box and that of surrounding objects. 
 
 - `padding` (`padding-top`, `padding-right`, `padding-bottom`, `padding-left`)        
@@ -926,7 +925,7 @@ The padding is the empty space between the border of an element box and the cont
 
 In many cases, margin and padding have the same visual effect, but you must always use the attribute that is logically suitable for your purpose. 
 
-By setting the horizontal margins (margin-right, margin-left) of an element to the *auto* value, the browser will *center* it in its container. 
+By setting the horizontal margins (`margin-right`, `margin-left`) of an element to the `auto` value, the browser will *center* it in its container. 
 
 <!------------------- END SLIDE 042 -------------------------->
 
@@ -952,7 +951,7 @@ In the second case, you can specify minimum or maximum sizes, expressed as measu
 
 - `width`, `height`    
 **Values**:  *measure* | `auto`\* | `inherit`     
-Set the element width and height, respectively. The *auto* value corresponds to the natural size, calculated through the other element properties. 
+Set the element width and height, respectively. The `auto` value corresponds to the natural size, calculated through the other element properties. 
 
 - `max-height`, `max-width`, `min-height`, `min-width`       
 **Values**:  *measure* | `inherit`      
@@ -962,9 +961,9 @@ Set minimum or maximum size of the element.
 **Values**: `content-box` | `border-box`     
 Determine how the width and height of the element are actually calculated, whether or not taking into account padding and edge thickness.  
 
-   - In **content-box** mode (default), the values assigned to width and height are applied only to the internal space available for content, so the padding and the border increase these dimensions, often making the box larger than the dimensions set.  
+   - In `content-box` mode (default), the values assigned to `width` and `height` are applied only to the internal space available for content, so the padding and the border increase these dimensions, often making the box larger than the dimensions set.  
 
-   - In **border-box** mode the values assigned to width and height will always determine the actual final dimensions of the box: in other words, these dimensions will be distributed between border, padding and interior space.   *Usually this mode is the most useful when the elements need to be precisely positioned*. 
+   - In `border-box` mode the values assigned to `width` and `height` will always determine the actual final dimensions of the box: in other words, these dimensions will be distributed between border, padding and interior space.   *Usually this mode is the most useful when the elements need to be precisely positioned*. 
 
 <!------------------- END SLIDE 044 -------------------------->
 
@@ -974,15 +973,15 @@ Determine how the width and height of the element are actually calculated, wheth
 ### 4.6. Positioning
 
 
-Items can be placed in four different ways, specified with the CSS attribute *position*: 
+Items can be placed in four different ways, specified with the CSS attribute `position`:
 
-- **Static**: the object is placed in its natural position, given by the text flow (default). 
+- `static`: the object is placed in its natural position, given by the text flow (default). 
 
-- **Relative**: the object is located at the coordinates set by the *left*, *right*, *top* and *bottom* attributes *relative to its natural position*. 
+- `relative`: the object is located at the coordinates set by the `left`, `right`, `top` and `bottom` attributes *relative to its natural position*. 
 
-- **Absolute**: the object is located at the coordinates set by the *left*, *right*, *top* and *bottom* attributes, *relative to the upper left corner of its nearest container with non static positioning*. 
+- `absolute`: the object is located at the coordinates set by the `left`, `right`, `top` and `bottom` attributes, *relative to the upper left corner of its nearest container with non static positioning*. 
 
-- **Fixed**: The object is located at the coordinates set by the *left*, *right*, *top* and *bottom* attributes , *relative to the upper left corner of the viewport*. 
+- `fixed`: The object is located at the coordinates set by the `left`, `right`, `top` and `bottom` attributes , *relative to the upper left corner of the viewport*. 
 
 Elements with absolute or fixed positioning are **removed from the text flow**. Their position does not depend on the elements that surround them, though, if absolute, they continue to flow along with the rest of the page. 
 
@@ -1000,7 +999,7 @@ Determines the type of positioning for the element
 
 - `top`, `left`, `right`, `bottom`       
 **Values**:  *measure*    
-Determines the element position, according to the rules defined by the value of the position property 
+Determines the element position, according to the rules defined by the value of the `position` property 
 
 - `z-index`    
 **Values**:  *number* | `auto` | `inherit`     
@@ -1032,11 +1031,11 @@ This type of effect is often used to create menus, column layouts, etc.
 
 - `float`    
 **Values**:  `left` | `right` | `none`      
-Set the object as floating on the left or right side of the container. The value *none* disables floating.
+Set the object as floating on the left or right side of the container. The value `none` disables floating.
 
 - `clear`    
 **Values**:  `left` | `right` | `both`     
-The clear property set on an element requires all the floats of the type specified (*left*, *right* or *both*) to be placed on the page before the element itself.
+The `clear` property set on an element requires all the floats of the type specified (`left`, `right` or `both`) to be placed on the page before the element itself.
 
 <!------------------- END SLIDE 048 -------------------------->
 
@@ -1059,9 +1058,9 @@ Flexboxes are containers with   **unidirectional disposition**, i.e. the element
 
 When defining a flexbox layout we must take into account two elements:  
 
-The layout container, or  *flex container* 
+- The layout container, or  *flex container* 
 
-The elements arranged in the layout, or  *flex items*
+- The elements arranged in the layout, or  *flex items*
 
 <!------------------- END SLIDE 050 -------------------------->
 
@@ -1071,17 +1070,17 @@ The elements arranged in the layout, or  *flex items*
 ### 5.1. Contaniers
 
 
-**To make an element a flex container**, the well known  **display** property is used, which in this case must be set to the  *flex* value (or *inline-flex*, if the container must be inline).   
+**To make an element a flex container**, the well known  `display` property is used, which in this case must be set to the  `flex` value (or `inline-flex`, if the container must be inline).   
 
 All items nested directly in a flex container are considered  *flex items* 
 
 To configure how the flex items will be arranged in the container we can use various properties:    
 
 - `flex-direction`    
-Defines the main axis of the arrangement. Possible directions are  *row*, *row-reverse*, *column*, and *column-reverse*. 
+Defines the main axis of the arrangement. Possible directions are  `row`, `row-reverse`, `column`, and `column-reverse`. 
 
 - `flex-wrap`    
-Allows flex items to wrap if they don't all fit on the main axis. The values are  *nowrap* (default), *wrap* (wrap from top to bottom in row mode) and   *wrap-reverse* (wrap from bottom to top in row mode). 
+Allows flex items to wrap if they don't all fit on the main axis. The values are  `nowrap` (default), `wrap` (wrap from top to bottom in row mode) and   `wrap-reverse` (wrap from bottom to top in row mode). 
 
 <!------------------- END SLIDE 051 -------------------------->
 
@@ -1115,12 +1114,12 @@ defines how items are arranged **on the secondary axis** ***of each row***. The 
 
 - `center`: items are centered on the secondary axis of each row. 
 
-- `stretch`: items are stretched on the secondary axis so that all the items `in each row` have the same height 
+- `stretch`: items are stretched on the secondary axis so that all the items *in each row* have the same height 
 
 - `baseline`: items are arranged so that their baseline is aligned on each row.
 
 `align-content`         
-defines the alignment ***of all rows*** **on the secondary axis**. The possible values are the same as justify-content. For example, this property allows you to distribute the space between rows when flex-direction is row and elements wrap using flex-wrap.
+defines the alignment ***of all rows*** **on the secondary axis**. The possible values are the same as `justify-content`. For example, this property allows you to distribute the space between rows when `flex-direction` is `row` and elements wrap using `flex-wrap`.
 
 <!------------------- END SLIDE 052 -------------------------->
 
@@ -1148,7 +1147,7 @@ indicates the base size of the item, before any empty space is redistributed. It
 it is a shorthand to set `flex-grow`, `flex-shrink` and `flex-basis`.  
 
 - `align-self`   
-allows one to change the align-items alignment mode of the container for this specific item.   
+allows one to change the `align-items` alignment mode of the container for this specific item.   
 
 <!------------------- END SLIDE 053 -------------------------->
 
@@ -1187,11 +1186,24 @@ The structure of the grid inside the container can be defined in various ways.
 
 You can define  **rows and columns** by specifying their size using the `grid-template-columns` and `grid-template-rows` properties. 
 
-Each property accepts a   *sequence of measures*  (which can also be percentages or the `auto` keyword), for instance  `grid-template-columns: auto 50px 20px 40px* ; *grid-template-rows: 25% 100px auto` define a grid with four columns (of which the first will take all the "remaining" space) and three rows.     
+Each property accepts a   *sequence of measures*  (which can also be percentages or the `auto` keyword), for instance  
+  
+```css
+grid-template-columns: auto 50px 20px 40px; 
+grid-template-rows: 25% 100px auto
+```
+define a grid with four columns (of which the first will take all the "remaining" space) and three rows.     
 
 If you insert more rows into a grid container than you declare, new rows are automatically created. In this case, their size can be specified using the  `grid-auto-rows` property. 
 
-You can  **assign names to the ends of each cell (border)** by placing them in square brackets. *Attention! We are not giving names to the cells, but to their edges!* For example `grid-template-columns: [c1 cstart] auto [c2 c1end] 50px [c3] 20px [c4] 40px [cend]; grid-template-rows: [r1 rstart] 25% [r2] 100px [r3] auto [rend]` define the same grid as in the previous example, where the left end of the first column is called "c1" or "cstart", its right end (which is also the left end of the second column) is called "c2" or "c1end", and so on*.                     
+You can  **assign names to the ends of each cell (border)** by placing them in square brackets. *Attention! We are not giving names to the cells, but to their edges!* For example 
+
+```css
+grid-template-columns: [c1 cstart] auto [c2 c1end] 50px [c3] 20px [c4] 40px [cend]; 
+grid-template-rows: [r1 rstart] 25% [r2] 100px [r3] auto [rend]
+```
+
+define the same grid as in the previous example, where the left end of the first column is called "c1" or "cstart", its right end (which is also the left end of the second column) is called "c2" or "c1end", and so on.                     
 
 The same goes for the upper and lower ends, defined in the row specification. You do not need to specify names for all borders.  
 
@@ -1207,7 +1219,13 @@ You can define the spaces between rows and columns using the  `grid-column-gap` 
 ### 6.2. Areas
 
 
-It is also possible to **give names to the actual grid cells** (always after defining them with the two properties grid-template-rows and grid-template-columns), which is often conceptually clearer, using the `grid-template-areas` property. For example  `grid-template-areas: "header header header header" "main main . sidebar" "footer footer footer footer "`                 
+It is also possible to **give names to the actual grid cells** (always after defining them with the two properties `grid-template-rows` and `grid-template-columns`), which is often conceptually clearer, using the `grid-template-areas` property. For example  
+
+```css    
+grid-template-areas: "header header header header" "main main 
+. sidebar" "footer footer footer footer"
+```
+                 
 
 The property value consists of a sequence of strings (in quotation marks), each representing a line.  
 
@@ -1225,7 +1243,12 @@ The number of rows and columns specified must match what is defined with `grid-t
 ### 6.3. Templates
 
 
-Finally, it is possible (but complex) to summarize the three properties just seen in a single definition using the `grid-template` property, for example `grid-template: [r1 restart] "header header header header" 25% [r2] "main main . sidebar" 100px [r3] "footer footer footer footer" auto [rend] / [c1 cstart] auto [c2 c1end] 50px [c3] 20px [c4] 40px [end]`
+Finally, it is possible (but complex) to summarize the three properties just seen in a single definition using the `grid-template` property, for example 
+
+```css
+grid-template: [r1 restart] "header header header header" 25% [r2] "main main . sidebar" 
+100px [r3] "footer footer footer footer" auto [rend] / [c1 cstart] auto [c2 c1end] 50px [c3] 20px [c4] 40px [end]
+```
 
 The part of the specification preceding the slash (/) defines the rows (possibly giving names to the top and bottom edges) with the specification of their areas and their size.    
 
@@ -1255,7 +1278,7 @@ defines the vertical alignment of cell contents. The possible values are the sam
 
 We omit other more advanced properties, as they are poorly supported.  
 
-Each cell can have its own values for alignment properties, which override global properties: for example   `justify-self` and  `align-self`.
+Each cell can have its own values for alignment properties, which override global properties: for example  `justify-self` and  `align-self`.
 
 <!------------------- END SLIDE 059 -------------------------->
 
@@ -1267,9 +1290,9 @@ Each cell can have its own values for alignment properties, which override globa
 
 You can specify in which cell (or cells) each item should be placed, instead of letting it be arranged according to the natural order.   
 
-The first arrangement mode refers to the edges of rows and columns (defined by grid-template-rows and grid-template-columns) through the four properties  `grid-column-start`, `grid-column-end`, `grid-row-start`, `grid-row-end`   , for example
+The first arrangement mode refers to the edges of rows and columns (defined by grid-template-rows and grid-template-columns) through the four properties  `grid-column-start`, `grid-column-end`, `grid-row-start`, `grid-row-end`, for example
 
-```css
+```html
 <div style="grid-column-start: cstart; grid-column-end: cend">
  C1
 </div>
@@ -1302,9 +1325,9 @@ These properties also have a more complex syntax, which is not explored here.
 > 061
 
 
-The second way of arranging items in a grid refers to areas defined with grid-template-areas through the **grid-area** property, for example 
+The second way of arranging items in a grid refers to areas defined with `grid-template-areas` through the `grid-area` property, for example 
 
-```css
+```html
 <div style="grid-area: header"> C-h </div> 
 <div style="grid-area: main"> C-m </div>
 <div style="grid-area: sidebar"> C-s </div>
@@ -1345,9 +1368,9 @@ Media queries are one of the most important features introduced by CSS3 and supp
 
 Media queries can be used:
 
-Within the `media` attribute of the \<link\> tag, to import a stylesheet only if the query is satisfied, or
+- Within the `media` attribute of the \<link\> tag, to import a stylesheet only if the query is satisfied, or
 
-Directly in the stylesheet, enclosing a set of rules between braces preceded by the   `@media` *at-rule*
+- Directly in the stylesheet, enclosing a set of rules between braces preceded by the   `@media` *at-rule*
 
 A media query consists of a *media type* (*screen*, *print*, etc.) combined through an AND with e sequence of *media features*, whose support may vary in browsers.
 
@@ -1399,7 +1422,7 @@ By applying specific changes to the stylesheets through media queries, it is pos
 ####  Breakpoints
 
 
-The so-called responsive breakpoints are the limit values of certain properties (typically the width of the *viewport*) below and above which media queries activate to modify the visual structure of the site. For example:   
+The so-called *responsive breakpoints* are the limit values of certain properties (typically the width of the *viewport*) below and above which media queries activate to modify the visual structure of the site. For example:   
 
 - Default ("normal" browsers)
 
@@ -1419,9 +1442,7 @@ Remove "creative" paddings and spacings, slightly decrease the font size, etc..
 @media only screen and (max-width: 767px)
 ```
 
-Use a fixed design, for example 320 pixels wide, or use a min-width on the main elements so that they don't become too narrow.
-
-Linearize columns, hide secondary elements (parts of the header and footer, etc.), show more compact menus…
+Use a fixed design, for example 320 pixels wide, or use a min-width on the main elements so that they don't become too narrow. Linearize columns, hide secondary elements (parts of the header and footer, etc.), show more compact menus…
 
 <!------------------- END SLIDE 065 -------------------------->
 
@@ -1443,7 +1464,7 @@ Sources:
 
 - Finally, the inspiration for the liquid version of the grid is taken from http://www.designinfluences.com/fluid960gs/.  
 
-See also the introductory article on fluid grids by Ethan Marcotte: http://alistapart.com/article/fluidgrids     
+See also the introductory article on *fluid grids* by Ethan Marcotte: http://alistapart.com/article/fluidgrids     
 
 <!------------------- END SLIDE 066 -------------------------->
 
@@ -1453,9 +1474,9 @@ See also the introductory article on fluid grids by Ethan Marcotte: http://alist
 ####  The rows
 
 
-This design allows to place up      **to 16 columns on each row**     .
+This design allows to place up **to 16 columns on each row**.
 
-Row cells have a 1%      **spacing** on both sides.    
+Row cells have a 1%  **spacing** on both sides.    
 
 The *container* and *row* classes represent the grid and the row containers, respectively:          
 
@@ -1463,13 +1484,13 @@ The *container* and *row* classes represent the grid and the row containers, res
 .container { position: relative; width: 98%; padding: 0;}     
 ```
 
-   - The grid container has a small extra margin. It is not strictly needed, and it is safe to write rows outside a container.                              
+The grid container has a small extra margin. It is not strictly needed, and it is safe to write rows outside a container.                              
 
 ```css 
 .row { margin-bottom: 10px; }    
 ```
 
-   - Rows have a little spacing below, that can be removed.               
+Rows have a little spacing below, that can be removed.               
 
 <!------------------- END SLIDE 067 -------------------------->
 
@@ -1625,9 +1646,9 @@ The *row* class activates flexbox positioning within it:
 }  
 ```
 
-   - The row is declared as a flex container (`display: flex`) whose direct children will be aligned horizontally (`flex-direction`), but will wrap if necessary (`flex-wrap`).  
+The row is declared as a flex container (`display: flex`) whose direct children will be aligned horizontally (`flex-direction`), but will wrap if necessary (`flex-wrap`).  
 
-   - In addition, the row has also the properties of a flex child (see below), so that it can be nested in cells.     
+In addition, the row has also the properties of a flex child (see below), so that it can be nested in cells.     
 
 <!------------------- END SLIDE 073 -------------------------->
 
@@ -1651,15 +1672,15 @@ The *column* class defines common column properties:
 }     
 ```
 
-   - The `flex` property (shortcut for `flex-grow, flex-shrink`, and `flex-basis`) governs the behavior of flex elements in the container. 
+The `flex` property (shortcut for `flex-grow, flex-shrink`, and `flex-basis`) governs the behavior of flex elements in the container. 
 
-   - `flex-grow` (here 1) indicates the proportion with which the element will grow relative to the others, while  `flex-shrink` indicates the proportion with which it will shrink (here 0 indicates that the element will not shrink beyond its base size). 
+`flex-grow` (here 1) indicates the proportion with which the element will grow relative to the others, while  `flex-shrink` indicates the proportion with which it will shrink (here 0 indicates that the element will not shrink beyond its base size). 
 
-   - `flex-basis` ( `auto`) sets the base size on the basis of which the remaining space will be distributed.     
+`flex-basis` ( `auto`) sets the base size on the basis of which the remaining space will be distributed.     
 
-   - The `display` and `flex-direction` properties are used to configure cells also as containers for other flex groups (rows, hence flex-direction set to column)     
+The `display` and `flex-direction` properties are used to configure cells also as containers for other flex groups (rows, hence flex-direction set to `column`)     
 
-Classes *one*, *two*, etc. allow one to define the width of each cell as the number of occupied columns (1-16) and overwrite   *flex-basis*:
+Classes *one*, *two*, etc. allow one to define the width of each cell as the number of occupied columns (1-16) and overwrite `flex-basis`:
 
 ```css
 .container.one.column { flex-basis: 4.25%; max-width: 4.25%;}   
@@ -1756,4 +1777,96 @@ https://www.w3.org/Style/CSS
 
 <!------------------- END SLIDE 077 -------------------------->
 
+<!----------------- BEGIN SLIDE 078 -------------------------->
+> 078
 
+## 9. Examples
+
+The main samples explained or developed during the classes are outlined below. These examples are all available in the GitHub, at the address 
+<https://github.com/orgs/WebEngineering-Univaq>, and are a *key component* of the classes itself, since they illustrate the practical use of the concepts presented during lectures and reported in this documentation (where, when possible, references to these examples can also be found).
+
+The list below may not always be up to date: in the repository you may often find useful new examples that have just been developed.
+
+**Basic Examples**
+
+- css_inclusion_print.html       
+  *Shows how to insert a print-specific stylesheet into an HTML document*
+
+- css_selectors.html       
+  *Shows various examples of use and combination of CSS selectors*
+
+- css_cascade.html       
+  *Examples and exercises on cascading in CSS*
+
+- css_properties_common.html       
+  *Shows the use of various basic CSS properties such as `font`, `color`, `background`, `border`*
+
+- css_3_webfonts.html       
+  *Show the use of the CSS at-rule `@font-face`*
+
+- css_3_round_borders.html       
+  *Show the use of the `border-radius` CSS property*
+  
+- css_3_imageborders.html       
+  *Show the use of the `border-image` CSS property*
+  
+- css_3_shadows.html       
+  *Shows the use of the `box-shadow` and `text-shadow` CSS properties*
+  
+- css_menu_multilev_static.html       
+  *Shows how to turn a simple list into a menu using the `list-style` property along with other basic CSS properties*
+
+- css_properties_misc.html       
+  *Shows the use of various advanced CSS properties such as `content`, `quotes`, `counter-increment`, `cursor`*
+
+<!------------------- END SLIDE 078 -------------------------->
+
+<!----------------- BEGIN SLIDE 079 -------------------------->
+> 079
+
+**Box model and positioning**
+
+- css_properties_display.html       
+  *Shows the use of the CSS property `display`*
+
+- css_properties_overflow.html       
+  *Shows the use of the CSS property `overflow`*
+
+- css_properties_positioning_relative.html       
+  *Show how to use relative positioning (`position: relative`)**
+
+- css_properties_positioning_absolute.html       
+  *Show how to use absolute positioning (`position: absolute`)**
+
+- css_properties_positioning_fixed.html       
+  *Show how to use fixed positioning (`position: fixed`)**
+
+- css_properties_positioning_float.html       
+  *Show the use of the CSS properties `float` and `clear`*
+  
+- css_menu_multilev_flyout.html       
+  *Shows how to turn a simple list into a flyout menu using the `list-style`, `display` and `position` properties along with other basic CSS properties*
+
+**Flexbox and Grid**
+
+- css_3_flexbox.html       
+  *Shows various flexbox properties*
+
+- css_3_grid.html       
+  *Shows various grid properties*
+
+**Advanced Topics**
+
+- css_3_transitions.html       
+  *Show the use of the CSS property `transition`*
+
+- css_3_animation.html       
+  *Show the use of the CSS property `animation` (and the at-rule `@keyframes`)*
+
+- css_sprites.html        
+  *Shows how to use the CSS sprites technique to download multiple images efficiently
+  
+- css_3_variables.html       
+  *Shows the use of CSS variables and constructs `var()` and `calc()`*
+
+<!------------------- END SLIDE 079 -------------------------->
