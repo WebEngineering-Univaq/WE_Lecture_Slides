@@ -1,8 +1,23 @@
-<!----------------- BEGIN SLIDE 001 -------------------------->
+---
+title: Hypertext Markup Language 
+course: Web Engineering
+organization: University of L'Aquila
+
+author: Giuseppe Della Penna
+---
+
+
+<!----------------- BEGIN SLIDE 001 it -------------------------->
+
+#  Hypertext Markup Language 
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 001
 
 
-#  Hypertext Markup Language 
+
 
 Giuseppe Della Penna
 
@@ -10,7 +25,6 @@ Università degli Studi di L'Aquila
 giuseppe.dellapenna@univaq.it    
 http://people.disim.univaq.it/dellapenna
 
-**Versione documento: 051025**
 
 > *Questo documento si basa sulle slide del corso di Web Engineering, riorganizzate per una migliore esperienza di lettura. Non è un libro di testo completo o un manuale tecnico, e deve essere utilizzato insieme a tutti gli altri materiali didattici del corso. Si prega di segnalare eventuali errori o omissioni all'autore.*
 
@@ -87,28 +101,35 @@ http://people.disim.univaq.it/dellapenna
 
 
 
-<!------------------- END TOC -------------------------->
+<!------------------- END TOC --------------------------> 
 
+<!------------------- END SLIDE 001 it -------------------------->
 
-<!------------------- END SLIDE 001 -------------------------->
-
-<!----------------- BEGIN SLIDE 002 -------------------------->
-> 002
-
+<!----------------- BEGIN SLIDE 002 it -------------------------->
 
 ## 1. Introduzione a HTML
 
 
+<!----------------- COLUMN 1 -------------------------->
 
+> 002 
 
-<!------------------- END SLIDE 002 -------------------------->
+<!------------------- END SLIDE 002 it -------------------------->
 
-<!----------------- BEGIN SLIDE 003 -------------------------->
-> 003
+<!----------------- BEGIN SLIDE 003 it -------------------------->
 
 ### 1.1. Hypertext Markup Language
 
 ####  La parte strutturale del web
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 003
+
+
+
+
 
 
 L'HyperText Markup Language (HTML) è l'elemento costitutivo più basilare del Web, e viene usato     **per definire la struttura dei suoi contenuti**. L'HTML permette di definire **ipertesti**, cioè testi che sono connessi tra loro tramite collegamenti, o link.
@@ -119,14 +140,20 @@ Il testo delimitato da un tag viene chiamato    **elemento**. Il tag di ogni ele
 
 HTML (come la maggior parte dei linguaggi di markup) è facilmente manipolabile dalle macchine ma anche leggibile dagli esseri umani. 
 
-HTML è inoltre totalmente **indipendente da architetture hardware, sistemi operativi e protocolli**, ed è addirittura **utilizzato al di fuori del Web** come formato alternativo per testo strutturato simile a quello generato dai word processor, ad esempio nelle email e persino per la definizione delle interfacce utente del software.
+HTML è inoltre totalmente **indipendente da architetture hardware, sistemi operativi e protocolli**, ed è addirittura **utilizzato al di fuori del Web** come formato alternativo per testo strutturato simile a quello generato dai word processor, ad esempio nelle email e persino per la definizione delle interfacce utente del software. 
 
-<!------------------- END SLIDE 003 -------------------------->
+<!------------------- END SLIDE 003 it -------------------------->
 
-<!----------------- BEGIN SLIDE 004 -------------------------->
-> 004
+<!----------------- BEGIN SLIDE 004 it -------------------------->
 
 ####  Evoluzione
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 004
+
+
 
 
 Esistono numerose versioni di HTML, che si è evoluto seguendo le esigenze del web ma anche di tutte le altre applicazioni che ne fanno uso:
@@ -149,14 +176,20 @@ Esistono numerose versioni di HTML, che si è evoluto seguendo le esigenze del w
 
 - 2017 HTML5.2 (W3C)
 
-- …
+- … 
 
-<!------------------- END SLIDE 004 -------------------------->
+<!------------------- END SLIDE 004 it -------------------------->
 
-<!----------------- BEGIN SLIDE 005 -------------------------->
-> 005
+<!----------------- BEGIN SLIDE 005 it -------------------------->
 
 ####  La rivoluzione di HTML 5
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 005
+
+
 
 
 HTML5 **è un linguaggio di markup indipendente**, non derivato da SGML come HTML4.
@@ -167,16 +200,24 @@ Come dice il W3C (http://www.w3.org/TR/html5-diff):   *"The HTML[5] specificatio
 
 HTML5 è diventato una **W3C Recommendation**   (quindi una specifica finale) il **28 ottobre 2014**, *ma è uno standard ancora in evoluzione*. È quindi sempre necessario accertarsi che una caratteristica HTML5 sia adeguatamente supportata dai browser attuali prima di includerla nei propri progetti.
 
-> In questo documento, nella descrizione del linguaggio, saranno evidenziati i cambiamenti più importanti introdotti da HTML5.
+> In questo documento, nella descrizione del linguaggio, saranno evidenziati i cambiamenti più importanti introdotti da HTML5. 
 
-<!------------------- END SLIDE 005 -------------------------->
+<!------------------- END SLIDE 005 it -------------------------->
 
-<!----------------- BEGIN SLIDE 006 -------------------------->
-> 006
+<!----------------- BEGIN SLIDE 006 it -------------------------->
 
 ### 1.2. Nozioni di base
 
 ####  Codifica del testo
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 006
+
+
+
+
 
 
 **Le pagine HTML, come tutto il Web, sono costituite soprattutto da testo**, per cui è importante capire come questo può essere rappresentato su una macchina.
@@ -189,14 +230,20 @@ La **codifica dei caratteri** (*character encoding*) definisce infine il modo in
 
 Molti standard storici di codifica dei caratteri (ad esempio gli ISO 8859, ancora largamente diffusi) utilizzano un singolo byte per ogni code point che rappresenta semplicemente la posizione del carattere nel set. Ad esempio, la "A" nel set codificato ISO 8859-1 è il 65° carattere, ed è quindi codificata per la rappresentazione in un byte con il valore di 65.                    
 
-Quando si comunicano informazioni testuali è quindi necessario specificare il set in uso e il corrispondente encoding, in modo che tali caratteri possano essere rappresentati in modo affidabile.     
+Quando si comunicano informazioni testuali è quindi necessario specificare il set in uso e il corrispondente encoding, in modo che tali caratteri possano essere rappresentati in modo affidabile. 
 
-<!------------------- END SLIDE 006 -------------------------->
+<!------------------- END SLIDE 006 it -------------------------->
 
-<!----------------- BEGIN SLIDE 007 -------------------------->
-> 007
+<!----------------- BEGIN SLIDE 007 it -------------------------->
 
 ####  Unicode
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 007
+
+
 
 
 Lo **Unicode Consortium**   ha definito un ampio set di caratteri che include tutti quelli necessari a qualsiasi sistema di scrittura nel mondo.          
@@ -221,14 +268,20 @@ Incredibilmente, persino l'uso malizioso dei *character encoding*    Unicode pu�
 
 - **UTF-7, originariamente definito per codificare il solo BMP, permetteva codifiche alternative di caratteri ASCII come "\<" e "\>". Le vecchie versioni**    **di Internet Explorer** potevano essere indotte a interpretare una pagina come UTF-7, e in questo caso le sequenze +ADw- e +AD4-, che le maggior parte dei validatori tratta come come testo semplice, venivano trasformate in "\<" e "\>" permettendo attacchi **XSS**.
 
-- Poiché **molti caratteri di lingue diverse possono somigliarsi visivamente**, è possibile indurre un utente a navigare su un sito il cui indirizzo è visivamente simile a quello di un sito sicuro, anche se in realtà i caratteri in esso contenuti sono diversi, e quindi porteranno a un sito malevolo (attacchi di **omografia**), ad esempio usando il carattere cirillico "а" (Unicode 0430) invece di quello ASCII (Unicode 0041)         
+- Poiché **molti caratteri di lingue diverse possono somigliarsi visivamente**, è possibile indurre un utente a navigare su un sito il cui indirizzo è visivamente simile a quello di un sito sicuro, anche se in realtà i caratteri in esso contenuti sono diversi, e quindi porteranno a un sito malevolo (attacchi di **omografia**), ad esempio usando il carattere cirillico "а" (Unicode 0430) invece di quello ASCII (Unicode 0041) 
 
-<!------------------- END SLIDE 007 -------------------------->
+<!------------------- END SLIDE 007 it -------------------------->
 
-<!----------------- BEGIN SLIDE 008 -------------------------->
-> 008
+<!----------------- BEGIN SLIDE 008 it -------------------------->
 
 ####  Identificatori di risorse, URI e URL
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 008
+
+
 
 
 Per identificare univocamente le risorse, anche al di fuori della rete, vengono comunemente utilizzati gli "**Uniform Resource Identifier**" (URI): 
@@ -257,14 +310,20 @@ Un "**Uniform Resource Locator** " (URL) è un tipo specifico di URI che non sol
 
 - L'*authority* è costituita dal FQDN dell **'host** che ospita la risorsa (o dal suo indirizzo IP) eventualmente seguito dal numero di *porta* che identifica il servizio logico a cui connettersi sull'host (se omessa, ha un default dipendente dal protocollo)    
 
-- Il **path** è una sequenza di stringhe separate da slash (/) che, come in un filesystem, identifica una risorsa attraverso il percorso logico necessario a raggiungerla (nel caso del filesystem, come raggiungere un file attraversando la gerarchia cartelle).       
+- Il **path** è una sequenza di stringhe separate da slash (/) che, come in un filesystem, identifica una risorsa attraverso il percorso logico necessario a raggiungerla (nel caso del filesystem, come raggiungere un file attraversando la gerarchia cartelle). 
 
-<!------------------- END SLIDE 008 -------------------------->
+<!------------------- END SLIDE 008 it -------------------------->
 
-<!----------------- BEGIN SLIDE 009 -------------------------->
-> 009
+<!----------------- BEGIN SLIDE 009 it -------------------------->
 
 ####  Rappresentazione delle risorse
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 009
+
+
 
 
 Le risorse scambiate su una rete devono essere adeguatamente **rappresentate** per poter essere comprensibili dai dispositivi che stanno dialogando.
@@ -275,16 +334,24 @@ Perché una comunicazione possa essere efficace, le due parti devono concordare,
 
 Su Internet sono presenti una gran quantità di **formati standard** per la rappresentazione di numerosi classi di risorse, come ad esempio l'HTML per gli ipertesti, JPEG, PNG, GIF, BMP, ecc. per le immagini, vari derivati dell'MPEG per audio e video, ecc.
 
-Questi tipi sono indicati tramite i cosiddetti **media types**   (noti anche come tipi   **MIME**), che hanno la forma generica "*tipo/sottotipo*", ad esempio text/html, image/jpeg, audio/mpeg.  
+Questi tipi sono indicati tramite i cosiddetti **media types**   (noti anche come tipi   **MIME**), che hanno la forma generica "*tipo/sottotipo*", ad esempio text/html, image/jpeg, audio/mpeg. 
 
-<!------------------- END SLIDE 009 -------------------------->
+<!------------------- END SLIDE 009 it -------------------------->
 
-<!----------------- BEGIN SLIDE 010 -------------------------->
-> 010
+<!----------------- BEGIN SLIDE 010 it -------------------------->
 
 ### 1.3. Compatibilità Cross-Browser
 
 ####  Modalità Standards e Quirks
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 010
+
+
+
+
 
 
 I Browser supportano due modalità di rendering:   *Standards*  e *Quirks*. 
@@ -303,24 +370,33 @@ In particolare, per quel che riguarda la modalità standard HTML5:
 
 - I documenti che usano HTML5 con **sintassi XML** devono essere serviti con *media types*  come **application/xml**, **application/xhtml+xml**, **text/xml**, devono contenere la dichiarazione XML e dichiarare il namespace   **http://www.w3.org/1999/xhtml** nell'elemento `<html>`. Non sono invece necessarie dichiarazioni DOCTYPE se il documento è servito con il *media type*   corretto. 
 
-<!------------------- END SLIDE 010 -------------------------->
+<!------------------- END SLIDE 010 it -------------------------->
 
-<!----------------- BEGIN SLIDE 011 -------------------------->
-> 011
+<!----------------- BEGIN SLIDE 011 it -------------------------->
 
 ## 2. Struttura di base dei documenti HTML
 
 
+<!----------------- COLUMN 1 -------------------------->
 
+> 011 
 
-<!------------------- END SLIDE 011 -------------------------->
+<!------------------- END SLIDE 011 it -------------------------->
 
-<!----------------- BEGIN SLIDE 012 -------------------------->
-> 012
+<!----------------- BEGIN SLIDE 012 it -------------------------->
 
 ### 2.1. Apertura di un Documento
 
 ####  XHTML (HTML4)
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 012
+
+
+
+
 
 
 ```html
@@ -340,7 +416,12 @@ XHTML Strict
 </html>
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 ```html
 <!--
@@ -357,14 +438,20 @@ XHTML Transitional
  </head>
  <body> … </body>
 </html>
-```
+``` 
 
-<!------------------- END SLIDE 012 -------------------------->
+<!------------------- END SLIDE 012 it -------------------------->
 
-<!----------------- BEGIN SLIDE 013 -------------------------->
-> 013
+<!----------------- BEGIN SLIDE 013 it -------------------------->
 
 ####  HTML5
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 013
+
+
 
 
 ```html
@@ -387,7 +474,12 @@ HTML5 con sintassi HTML
 -->
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 ```html
 <!--
@@ -402,14 +494,20 @@ HTML5 con sintassi XML
  </head>
  <body> … </body>
 </html>
-```
+``` 
 
-<!------------------- END SLIDE 013 -------------------------->
+<!------------------- END SLIDE 013 it -------------------------->
 
-<!----------------- BEGIN SLIDE 014 -------------------------->
-> 014
+<!----------------- BEGIN SLIDE 014 it -------------------------->
 
 ### 2.2. Struttura di base di un documento HTML
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 014
+
+
 
 
 `<html>`: elemento principale (radice)
@@ -431,14 +529,20 @@ Contiene informazioni sul documento che solitamente non producono alcun output m
 **Contenuto**:  *blocco*, `<script>`, `<ins>`, `<del>`     
 **Attributi**:  standard HTML
 
-Racchiude il vero contenuto del documento HTML.
+Racchiude il vero contenuto del documento HTML. 
 
-<!------------------- END SLIDE 014 -------------------------->
+<!------------------- END SLIDE 014 it -------------------------->
 
-<!----------------- BEGIN SLIDE 015 -------------------------->
-> 015
+<!----------------- BEGIN SLIDE 015 it -------------------------->
 
 ### 2.3. Classificazione degli elementi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 015
+
+
 
 
 Il contenuto *inline* è rappresentato dal testo e dai seguenti elementi:   `<tt>`, `<i>`, `<b>`, `<big>`, `<small>`, `<em>`, `<strong>`, `<dfn>`, `<code>`, `<samp>`, `<kbd>`, `<var>`, `<cite>`, `<abbr>`, `<acronym>`, `<a>`, `<img>`, `<object>`, `<br>`, `<script>`, `<map>`, `<q>`, `<sub>`, `<sup>`, `<span>`, `<bdo>`, `<input>`, `<select>`, `<textarea>`, `<label>`, `<button>`  
@@ -447,14 +551,20 @@ Gli elementi che costituiscono il contenuto *blocco* sono: `<p>`, `<h1>`…`<h6>
 
 Il contenuto di tipo *flusso* è dato dall'unione di *inline* e *blocco*
 
-Questa classificazione è stata completamente cambiata HTML5, ma le categorie di elementi appena esposte sono compatibili con quelle nuove.  
+Questa classificazione è stata completamente cambiata HTML5, ma le categorie di elementi appena esposte sono compatibili con quelle nuove. 
 
-<!------------------- END SLIDE 015 -------------------------->
+<!------------------- END SLIDE 015 it -------------------------->
 
-<!----------------- BEGIN SLIDE 016 -------------------------->
-> 016
+<!----------------- BEGIN SLIDE 016 it -------------------------->
 
 ####  Nuova classificazione in HTML5
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 016
+
+
 
 
 La classificazione usata da HTML5 rispecchia il ruolo dell'elemento, piuttosto che il suo aspetto (blocco, inline).    
@@ -473,14 +583,20 @@ La classificazione usata da HTML5 rispecchia il ruolo dell'elemento, piuttosto c
 
 - Contenuto *Embedded* (incorporato): `<img>`, `<iframe>`, `<svg>`, ecc. 
 
-- Contenuto *Interactive* (interattivo): `<a>`, `<button>`, `<label>`,   ecc.  
+- Contenuto *Interactive* (interattivo): `<a>`, `<button>`, `<label>`,   ecc. 
 
-<!------------------- END SLIDE 016 -------------------------->
+<!------------------- END SLIDE 016 it -------------------------->
 
-<!----------------- BEGIN SLIDE 017 -------------------------->
-> 017
+<!----------------- BEGIN SLIDE 017 it -------------------------->
 
 ### 2.4. Attributi standard HTML
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 017
+
+
 
 
 - `id`: ID unico    
@@ -502,14 +618,20 @@ Codici linguistici come da standard I18N, ad es. "it" o "en-us"
 rtl (destra-a-sinistra) o ltr (sinistra-a-destra)    
 
 - `onclick`, `ondblclick`, `onmousedown`, `onmouseup`, `onmouseover`, `onmousemove`, `onmouseout`, `onkeypress`, `onkeydown`, `onkeyup`: gestori eventi    
-Utilizzati per associare degli script agli eventi corrispondenti
+Utilizzati per associare degli script agli eventi corrispondenti 
 
-<!------------------- END SLIDE 017 -------------------------->
+<!------------------- END SLIDE 017 it -------------------------->
 
-<!----------------- BEGIN SLIDE 018 -------------------------->
-> 018
+<!----------------- BEGIN SLIDE 018 it -------------------------->
 
 ####  Nuovi attributi HTML5
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 018
+
+
 
 
 - `contenteditable`: indica che il contenuto dell'elemento è modificabile.
@@ -527,24 +649,31 @@ Utilizzati per associare degli script agli eventi corrispondenti
 
    - `role` serve a indicare il ruolo dell'elemento nella pagina, che può prescindere dal nome del suo tag (ad es. "*checkbox*", " *grid*", "*link*", "*menu*", "*navigation*", "*form*" o " *img*": vedi www.w3.org/TR/wai-aria/roles).                  
 
-   - I vari attributi `aria-*` sono usati per supportare questi ruoli con ulteriori informazioni semantiche. Ad esempio, aria-checked può essere usato con elementi il cui role è "checkbox" per identificare il loro stato (vedi www.w3.org/TR/wai-aria/states\_and\_properties).          
+   - I vari attributi `aria-*` sono usati per supportare questi ruoli con ulteriori informazioni semantiche. Ad esempio, aria-checked può essere usato con elementi il cui role è "checkbox" per identificare il loro stato (vedi www.w3.org/TR/wai-aria/states\_and\_properties). 
 
-<!------------------- END SLIDE 018 -------------------------->
+<!------------------- END SLIDE 018 it -------------------------->
 
-<!----------------- BEGIN SLIDE 019 -------------------------->
-> 019
+<!----------------- BEGIN SLIDE 019 it -------------------------->
 
 ## 3. Elementi di flusso del testo
 
 
+<!----------------- COLUMN 1 -------------------------->
 
+> 019 
 
-<!------------------- END SLIDE 019 -------------------------->
+<!------------------- END SLIDE 019 it -------------------------->
 
-<!----------------- BEGIN SLIDE 020 -------------------------->
-> 020
+<!----------------- BEGIN SLIDE 020 it -------------------------->
 
 ### 3.1. Paragrafi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 020
+
+
 
 
 `<p>`: paragrafo
@@ -556,14 +685,20 @@ Il flusso di testo nei documenti HTML è suddiviso in paragrafi. L'elemento `<p>
 
 Ogni `<p>` è renderizzato come un blocco di testo separato, solitamente con un piccolo spazio prima e dopo  
 
-Gli elementi `<p>` vuoti non sono validi
+Gli elementi `<p>` vuoti non sono validi 
 
-<!------------------- END SLIDE 020 -------------------------->
+<!------------------- END SLIDE 020 it -------------------------->
 
-<!----------------- BEGIN SLIDE 021 -------------------------->
-> 021
+<!----------------- BEGIN SLIDE 021 it -------------------------->
 
 ### 3.2. Interruzioni di linea
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 021
+
+
 
 
 `<br>`  : interruzione di linea
@@ -575,25 +710,35 @@ L'elemento `<br>` termina la riga corrente. Il testo viene mandato a capo, senza
 
 L'attributo `clear` è usato per indicare la distribuzione degli oggetti floating rispetto all'interruzione di riga. Se presente, i float indicati vengono disposti prima dell'interruzione.     *È stato eliminato in HTML5*.
 
-I browser possono inserire dei `<br>` impliciti al posto degli spazi per adattare il testo alla dimensione della finestra (word wrap). Utilizzare i nonbreakable spaces (&nbsp;) per evitare questo effetto.          
+I browser possono inserire dei `<br>` impliciti al posto degli spazi per adattare il testo alla dimensione della finestra (word wrap). Utilizzare i nonbreakable spaces (&nbsp;) per evitare questo effetto. 
 
-<!------------------- END SLIDE 021 -------------------------->
+<!------------------- END SLIDE 021 it -------------------------->
 
-<!----------------- BEGIN SLIDE 022 -------------------------->
-> 022
+<!----------------- BEGIN SLIDE 022 it -------------------------->
 
 ### 3.3. Sezioni
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 022
+
+
 
 
 I documenti HTML dovrebbero essere divisi in sezioni logiche. 
 
 Questo facilita il rendering (soprattutto per i browser non visuali), l'analisi dei motori di ricerca e la conversione in altri formati (es. PDF).
 
-Anche quando si utilizzano pesantemente gli stili, bisognerebbe basare la struttura del documento sui tag di sezione, opportunamente modificati nell'aspetto, in maniera da rimanere compatibili all'indietro e dare una minima semantica al documento.
+Anche quando si utilizzano pesantemente gli stili, bisognerebbe basare la struttura del documento sui tag di sezione, opportunamente modificati nell'aspetto, in maniera da rimanere compatibili all'indietro e dare una minima semantica al documento. 
 
-<!------------------- END SLIDE 022 -------------------------->
+<!------------------- END SLIDE 022 it -------------------------->
 
-<!----------------- BEGIN SLIDE 023 -------------------------->
+<!----------------- BEGIN SLIDE 023 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 023
 
 
@@ -606,14 +751,20 @@ Gli elementi `<hX>` creano un'intestazione di livello via via più basso.
 
 Di solito sono renderizzati con caratteri in grassetto e di dimensione decrescente (`<h1>` ha di solito una dimensione doppia rispetto al testo normale)  
 
-È opportuno evitare di formattare il testo all'interno di un elemento `<hX>`: utilizzare invece gli stili per modificarne globalmente l'aspetto.  
+È opportuno evitare di formattare il testo all'interno di un elemento `<hX>`: utilizzare invece gli stili per modificarne globalmente l'aspetto. 
 
-<!------------------- END SLIDE 023 -------------------------->
+<!------------------- END SLIDE 023 it -------------------------->
 
-<!----------------- BEGIN SLIDE 024 -------------------------->
-> 024
+<!----------------- BEGIN SLIDE 024 it -------------------------->
 
 ### 3.4. Elementi strutturali HTML5
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 024
+
+
 
 
 HTML5 introduce alcuni importanti nuovi elementi utili per definire la struttura del documento: 
@@ -634,25 +785,35 @@ HTML5 introduce alcuni importanti nuovi elementi utili per definire la struttura
 
 - `<figure>`  e `<figcaption>`   rappresentano una parte auto-contenuta del documento, come una figura, e la rispettiva didascalia.
 
-- `<template>`   *racchiude* frammenti di HTML utilizzati come modello *dagli script* (solitamente, quindi, non è visualizzato nella pagina).
+- `<template>`   *racchiude* frammenti di HTML utilizzati come modello *dagli script* (solitamente, quindi, non è visualizzato nella pagina). 
 
-<!------------------- END SLIDE 024 -------------------------->
+<!------------------- END SLIDE 024 it -------------------------->
 
-<!----------------- BEGIN SLIDE 025 -------------------------->
-> 025
+<!----------------- BEGIN SLIDE 025 it -------------------------->
 
 ### 3.5. Contenitori
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 025
+
+
 
 
 Esistono due elementi invisibili in HTML, che però hanno un ruolo fondamentale per l'utilizzo di caratteristiche avanzate come gli stili.
 
 Questi due elementi sono `<div>`   e `<span>`. La loro semantica di base è praticamente nulla: semplicemente, `<div>` rappresenta un blocco di testo (ma   **non** è un paragrafo), mentre `<span>` è una parte del flusso testuale.  
 
-In pratica, il contenuto di un `<div>` è preceduto e seguito da un ritorno a capo, mentre uno `<span>` può trovarsi ovunque nel flusso del testo.    
+In pratica, il contenuto di un `<div>` è preceduto e seguito da un ritorno a capo, mentre uno `<span>` può trovarsi ovunque nel flusso del testo. 
 
-<!------------------- END SLIDE 025 -------------------------->
+<!------------------- END SLIDE 025 it -------------------------->
 
-<!----------------- BEGIN SLIDE 026 -------------------------->
+<!----------------- BEGIN SLIDE 026 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 026
 
 
@@ -667,24 +828,31 @@ Sono utili alla realizzazione dei layout HTML più complessi, soprattutto in con
 
 In generale, possono anche essere utilizzati per creare elementi HTML ad-hoc, con formattazione e comportamento specifici, da affiancare all'HTML standard.
 
-Gli attributi `class` e `id` sono fondamentali per il loro funzionamento.  
+Gli attributi `class` e `id` sono fondamentali per il loro funzionamento. 
 
-<!------------------- END SLIDE 026 -------------------------->
+<!------------------- END SLIDE 026 it -------------------------->
 
-<!----------------- BEGIN SLIDE 027 -------------------------->
-> 027
+<!----------------- BEGIN SLIDE 027 it -------------------------->
 
 ## 4. Elementi di formattazione del testo
 
 
+<!----------------- COLUMN 1 -------------------------->
 
+> 027 
 
-<!------------------- END SLIDE 027 -------------------------->
+<!------------------- END SLIDE 027 it -------------------------->
 
-<!----------------- BEGIN SLIDE 028 -------------------------->
-> 028
+<!----------------- BEGIN SLIDE 028 it -------------------------->
 
 ### 4.1. Formattazione semantica
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 028
+
+
 
 
 I *phrase elements*   sono utilizzati per attribuire un significato (semantica) particolare ad alcune parti del testo.
@@ -696,14 +864,20 @@ Questi elementi hanno nomi descrittivi: `<em>`, `<strong>`, `<dfn>`, `<code>`, `
 **Contenuto**: *inline*    
 **Attributi**: standard HTML
 
-L'elemento `<acronym>`   è *deprecated* in HTML5.
+L'elemento `<acronym>`   è *deprecated* in HTML5. 
 
-<!------------------- END SLIDE 028 -------------------------->
+<!------------------- END SLIDE 028 it -------------------------->
 
-<!----------------- BEGIN SLIDE 029 -------------------------->
-> 029
+<!----------------- BEGIN SLIDE 029 it -------------------------->
 
 ####  elementi di base
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 029
+
+
 
 
 - `<em>`:    Enfasi   
@@ -728,14 +902,20 @@ da non confondere col le liste di definizione
 - `<abbr>`:    Abbreviazione    
 l'attributo *title* può essere usato per contenere la forma completa
 
-- `<acronym>`:    Acronimo
+- `<acronym>`:    Acronimo 
 
-<!------------------- END SLIDE 029 -------------------------->
+<!------------------- END SLIDE 029 it -------------------------->
 
-<!----------------- BEGIN SLIDE 030 -------------------------->
-> 030
+<!----------------- BEGIN SLIDE 030 it -------------------------->
 
 ####  citazioni
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 030
+
+
 
 
 `<blockquote>`, `<q>`: citazioni
@@ -751,14 +931,20 @@ I browser dovrebbero inserire opportune virgolette prima e dopo la citazione
 
 La citazione inserita in un `<blockquote>` è indentata rispetto al resto del testo  
 
-L'uso di `<blockquote>` per indentare il testo è vivamente sconsigliato!   
+L'uso di `<blockquote>` per indentare il testo è vivamente sconsigliato! 
 
-<!------------------- END SLIDE 030 -------------------------->
+<!------------------- END SLIDE 030 it -------------------------->
 
-<!----------------- BEGIN SLIDE 031 -------------------------->
-> 031
+<!----------------- BEGIN SLIDE 031 it -------------------------->
 
 ####  Testo preformattato
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 031
+
+
 
 
 `<pre>`  : testo *preformattato*
@@ -770,14 +956,20 @@ Il rendering di HTML ignora gli spazi bianchi e i ritorni a capo nel testo. Il f
 
 Con l'elemento `<pre>` si richiede al browser di rispettare la forma data al testo nel sorgente della pagina: il testo è renderizzato con un font a spaziatura fissa, gli spazi bianchi sono mantenuti e l'a capo automatico è disabilitato.    
 
-Nel testo preformattato si possono comunque usare i tag HTML inline tranne `<img>`, `<object>`, `<big>`, `<small>`, `<sub>` e `<sup>`           
+Nel testo preformattato si possono comunque usare i tag HTML inline tranne `<img>`, `<object>`, `<big>`, `<small>`, `<sub>` e `<sup>` 
 
-<!------------------- END SLIDE 031 -------------------------->
+<!------------------- END SLIDE 031 it -------------------------->
 
-<!----------------- BEGIN SLIDE 032 -------------------------->
-> 032
+<!----------------- BEGIN SLIDE 032 it -------------------------->
 
 ####  Revisioni
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 032
+
+
 
 
 `<ins>`, `<del>`: testo inserito e cancellato
@@ -791,14 +983,20 @@ L'attributo `cite` può essere usato per indicare una URI in cui si trovano dett
 
 L'attributo `datetime` può essere usato per contenere la data/ora della revisione  
 
-Sono gli unici due elementi HTML che possono essere usati sia come inline che come blocco.  
+Sono gli unici due elementi HTML che possono essere usati sia come inline che come blocco. 
 
-<!------------------- END SLIDE 032 -------------------------->
+<!------------------- END SLIDE 032 it -------------------------->
 
-<!----------------- BEGIN SLIDE 033 -------------------------->
-> 033
+<!----------------- BEGIN SLIDE 033 it -------------------------->
 
 ####  Indirizzi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 033
+
+
 
 
 `<address>`  : informazioni per contattare l'autore
@@ -810,14 +1008,20 @@ Questo elemento può esser usato per marcare il testo in esso contenuto come "co
 
 Di solito lo si usa a livello di corpo del documento (`<body>`) o all'interno di un modulo (`<form>`).  
 
-I browser potrebbero renderizzare le informazioni di contatto in maniera speciale, cambiandone posizione e formattazione (ad es. sempre all'inizio del blocco, o come popup attivato da un piccolo bottone specifico, ecc.).  
+I browser potrebbero renderizzare le informazioni di contatto in maniera speciale, cambiandone posizione e formattazione (ad es. sempre all'inizio del blocco, o come popup attivato da un piccolo bottone specifico, ecc.). 
 
-<!------------------- END SLIDE 033 -------------------------->
+<!------------------- END SLIDE 033 it -------------------------->
 
-<!----------------- BEGIN SLIDE 034 -------------------------->
-> 034
+<!----------------- BEGIN SLIDE 034 it -------------------------->
 
 ### 4.2. Formattazione di base
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 034
+
+
 
 
 Gli elementi che seguono agiscono sulla formattazione di base dei caratteri. Il loro uso è ancora tollerato, ma si incoraggia sempre a sostituirli con elementi di formattazione semantica (ad es. `<em>`) o con stili (utilizzando ad es. degli `<span>` opportuni)    
@@ -829,14 +1033,20 @@ Gli elementi sono: ~~`<tt>`~~, `<i>`, `<b>`, ~~`<big>`~~, `<small>`
 **Contenuto**:  *inline*    
 **Attributi**:  standard HTML
 
-Gli elementi `<big>` e `<tt>`   sono *deprecated in*  HTML5.
+Gli elementi `<big>` e `<tt>`   sono *deprecated in*  HTML5. 
 
-<!------------------- END SLIDE 034 -------------------------->
+<!------------------- END SLIDE 034 it -------------------------->
 
-<!----------------- BEGIN SLIDE 035 -------------------------->
-> 035
+<!----------------- BEGIN SLIDE 035 it -------------------------->
 
 ####  Brassetto, corsivo...
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 035
+
+
 
 - `<tt>`:   Testo a spaziatura fissa    
 "Teletype", solitamente corrisponde al carattere courier. Eliminato in HTML5.    
@@ -853,36 +1063,49 @@ Eliminato in HTML5.
 - `<small>`:   Testo più piccolo    
 In HTML5 gli elementi `<small>` sono utilizzati genericamente per rappresentare *commenti a margine*, tipicamente testo scritto in caratteri più piccoli. 
 
-<!------------------- END SLIDE 035 -------------------------->
+<!------------------- END SLIDE 035 it -------------------------->
 
-<!----------------- BEGIN SLIDE 036 -------------------------->
-> 036
+<!----------------- BEGIN SLIDE 036 it -------------------------->
 
 ####  Apice e pedice
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 036
+
+
 
 `<sub>`, `<sup>`  : apice e pedice
 
 **Contenuto**: *inline*      
 **Attributi**: standard HTML
 
-Questi elementi trasformano il testo contenuto in apice o pedice. In altre parole, diminuiscono leggermente la dimensione del carattere e spostano la sua linea di base più in alto o più in basso rispetto al testo normale
+Questi elementi trasformano il testo contenuto in apice o pedice. In altre parole, diminuiscono leggermente la dimensione del carattere e spostano la sua linea di base più in alto o più in basso rispetto al testo normale 
 
-<!------------------- END SLIDE 036 -------------------------->
+<!------------------- END SLIDE 036 it -------------------------->
 
-<!----------------- BEGIN SLIDE 037 -------------------------->
-> 037
+<!----------------- BEGIN SLIDE 037 it -------------------------->
 
 ## 5. Liste e tabelle
 
 
+<!----------------- COLUMN 1 -------------------------->
 
+> 037 
 
-<!------------------- END SLIDE 037 -------------------------->
+<!------------------- END SLIDE 037 it -------------------------->
 
-<!----------------- BEGIN SLIDE 038 -------------------------->
-> 038
+<!----------------- BEGIN SLIDE 038 it -------------------------->
 
 ### 5.1. Liste
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 038
+
+
 
 
 HTML permette di definire tre tipi di liste: ordinate (numerate), non ordinate (puntate) e liste di definizioni (termini o altro)
@@ -891,14 +1114,20 @@ Il rendering standard delle liste è molto semplice. Tuttavia, è possibile usar
 
 Le liste, anche di tipi diversi, possono venire nidificate a piacimento
 
-Gli elementi usati per costruire liste sono `<ul>`, `<ol>`, `<li>`, `<dl>`, `<dt>`, `<dd>`  
+Gli elementi usati per costruire liste sono `<ul>`, `<ol>`, `<li>`, `<dl>`, `<dt>`, `<dd>` 
 
-<!------------------- END SLIDE 038 -------------------------->
+<!------------------- END SLIDE 038 it -------------------------->
 
-<!----------------- BEGIN SLIDE 039 -------------------------->
-> 039
+<!----------------- BEGIN SLIDE 039 it -------------------------->
 
 ####  Non ordinate (puntate)
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 039
+
+
 
 
 `<ul>`, `<li>`: liste non ordinate
@@ -912,14 +1141,20 @@ Ogni elemento `<li>` rappresenta un elemento della lista e può contenere qualsi
 
 Una lista dovrebbe contenere almeno un elemento `<li>`. Tuttavia in HTML5, per ovviare a un errore molto comune, questo vincolo è stato rimosso.  
 
-L'elemento `<li>` non può essere usato al di fuori delle liste.
+L'elemento `<li>` non può essere usato al di fuori delle liste. 
 
-<!------------------- END SLIDE 039 -------------------------->
+<!------------------- END SLIDE 039 it -------------------------->
 
-<!----------------- BEGIN SLIDE 040 -------------------------->
-> 040
+<!----------------- BEGIN SLIDE 040 it -------------------------->
 
 ####  Ordinate (numerate)
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 040
+
+
 
 
 `<ol>`, `<li>`: liste ordinate
@@ -933,14 +1168,20 @@ Ogni elemento `<li>` rappresenta un elemento della lista e può contenere qualsi
 
 Una lista dovrebbe contenere almeno un elemento `<li>`. Tuttavia in HTML5, per ovviare a un errore molto comune, questo vincolo è stato rimosso. 
 
-L'elemento `<li>` non può essere usato al di fuori delle liste
+L'elemento `<li>` non può essere usato al di fuori delle liste 
 
-<!------------------- END SLIDE 040 -------------------------->
+<!------------------- END SLIDE 040 it -------------------------->
 
-<!----------------- BEGIN SLIDE 041 -------------------------->
-> 041
+<!----------------- BEGIN SLIDE 041 it -------------------------->
 
 ####  Di definizioni
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 041
+
+
 
 
 `<dl>`, `<dt>`, `<dd>`  : liste di definizioni
@@ -956,16 +1197,24 @@ Si può associare un `<dd>` a più `<dt>` consecutivi
 
 La definizione `<dd>` può contenere qualsiasi elemento di flusso, comprese altre liste  
 
-Di solito i `<dt>` sono enfatizzati, mentre i `<dd>` sono indentati    
+Di solito i `<dt>` sono enfatizzati, mentre i `<dd>` sono indentati 
 
-<!------------------- END SLIDE 041 -------------------------->
+<!------------------- END SLIDE 041 it -------------------------->
 
-<!----------------- BEGIN SLIDE 042 -------------------------->
-> 042
+<!----------------- BEGIN SLIDE 042 it -------------------------->
 
 ### 5.2. Menu in HTML5
 
 ####  Storia di un elemento in continua evoluzione
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 042
+
+
+
+
 
 
 Inizialmente, i draft di HTML5 contenenvano specifici elementi come  `<menu>` e `<menuitem>`   che, uniti ad attributi come *contextmenu* (per ogni elemento HTML) o *menu* (nei `<button>`), permettevano di definire menu (e toolbar) usando un markup semantico specifico.     
@@ -974,14 +1223,20 @@ Le voci dei menu potevano essere composte usando anche i comuni elementi `<li>` 
 
 Tuttavia, questo elemento è stato alla fine considerato poco utile e fonte di ambiguità, ed **è stato rimosso nella specifica finale di HTML5**.
 
-Al momento attuale, sebbene alcuni browser contengano ancora una prototipale implementazione di questi elementi, il modo più corretto per strutturare un menu è usare le "comuni" liste non ordinate.
+Al momento attuale, sebbene alcuni browser contengano ancora una prototipale implementazione di questi elementi, il modo più corretto per strutturare un menu è usare le "comuni" liste non ordinate. 
 
-<!------------------- END SLIDE 042 -------------------------->
+<!------------------- END SLIDE 042 it -------------------------->
 
-<!----------------- BEGIN SLIDE 043 -------------------------->
-> 043
+<!----------------- BEGIN SLIDE 043 it -------------------------->
 
 ### 5.3. Tabelle
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 043
+
+
 
 
 Le tabelle HTML offrono un sistema estremamente potente e versatile per disporre informazioni in righe e colonne
@@ -990,14 +1245,20 @@ Le tabelle non sono progettate per creare layout di pagina, ma solo per struttur
 
 Le tabelle fanno parte degli elementi di tipo blocco, quindi possono apparire direttamente nel `<body>` di un documento o in un contenitore `<div>`, e non devono mai essere nidificate in elementi come  `<p>`.
 
-L'elemento base della definizione delle tabelle è `<table>`  
+L'elemento base della definizione delle tabelle è `<table>` 
 
-<!------------------- END SLIDE 043 -------------------------->
+<!------------------- END SLIDE 043 it -------------------------->
 
-<!----------------- BEGIN SLIDE 044 -------------------------->
-> 044
+<!----------------- BEGIN SLIDE 044 it -------------------------->
 
 ####  Specifica dell'ampiezza
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 044
+
+
 
 
 Le larghezze delle colonne e della tabella stessa (attributo *witdh*) si possono specificare:
@@ -1016,14 +1277,20 @@ Se non si specifica una larghezza:
 
 - Per una tabella, lo spazio è quello necessario a dare larghezza minima a tutte le colonne
 
-- Per una colonna, la larghezza è ottenuta distribuendo proporzionalmente lo spazio disponibile e fornendo sempre almeno la larghezza minima necessaria al contenuto
+- Per una colonna, la larghezza è ottenuta distribuendo proporzionalmente lo spazio disponibile e fornendo sempre almeno la larghezza minima necessaria al contenuto 
 
-<!------------------- END SLIDE 044 -------------------------->
+<!------------------- END SLIDE 044 it -------------------------->
 
-<!----------------- BEGIN SLIDE 045 -------------------------->
-> 045
+<!----------------- BEGIN SLIDE 045 it -------------------------->
 
 ####  Elementi di base
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 045
+
+
 
 
 `<table>`  : definizione di una tabella
@@ -1045,14 +1312,20 @@ Una tabella è definita dagli elementi che sono nidificati in `<table>`, che dev
 
 L'elemento `<caption>`, se presente, ha contenuto *inline* e rappresenta la didascalia della tabella, che potrà essere renderizzata un maniera opportuna dal browser  
 
-In HTML5  l'attributo  *summary* è *deprecated* e l'attributo *border* può valere solo "1" o essere omesso.        
+In HTML5  l'attributo  *summary* è *deprecated* e l'attributo *border* può valere solo "1" o essere omesso. 
 
-<!------------------- END SLIDE 045 -------------------------->
+<!------------------- END SLIDE 045 it -------------------------->
 
-<!----------------- BEGIN SLIDE 046 -------------------------->
-> 046
+<!----------------- BEGIN SLIDE 046 it -------------------------->
 
 ####  Attributi di base
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 046
+
+
 
 
 `<table>`  : definizione di una tabella
@@ -1071,12 +1344,18 @@ L'attributo ~~`rules`~~ (*none, groups, rows, cols, all*) determina quali dei bo
 
 Tutti questi attributi sono *deprecated in*  HTML5 e i CSS devono essere usati al loro posto. 
 
-<!------------------- END SLIDE 046 -------------------------->
+<!------------------- END SLIDE 046 it -------------------------->
 
-<!----------------- BEGIN SLIDE 047 -------------------------->
-> 047
+<!----------------- BEGIN SLIDE 047 it -------------------------->
 
 ####  Righe
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 047
+
+
 
 
 `<tr>`  : righe di una tabella
@@ -1092,12 +1371,18 @@ L'attributo ~~`align`~~ (*left*, *right*, *center*, *justify*, *char*) definisce
 
 Gli attributi *align* e *valign* sono *deprecated in*  HTML5 e i CSS devono essere usati al loro posto. 
 
-<!------------------- END SLIDE 047 -------------------------->
+<!------------------- END SLIDE 047 it -------------------------->
 
-<!----------------- BEGIN SLIDE 048 -------------------------->
-> 048
+<!----------------- BEGIN SLIDE 048 it -------------------------->
 
 ####  Celle
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 048
+
+
 
 
 `<td>`, `<th>`  : celle e celle di intestazione di una tabella
@@ -1117,12 +1402,18 @@ Gli attributi `width` e `height` servono a fornire informazioni sulle dimensioni
 
 Gli attributi   *height*, *width*, *align*, *valign*, *abbr*, *axis* e *scope* sono   *deprecated* in HTML5. 
 
-<!------------------- END SLIDE 048 -------------------------->
+<!------------------- END SLIDE 048 it -------------------------->
 
-<!----------------- BEGIN SLIDE 049 -------------------------->
-> 049
+<!----------------- BEGIN SLIDE 049 it -------------------------->
 
 ####  Gruppi di righe
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 049
+
+
 
 
 `<thead>`, `<tbody>`, `<tfoot>`  : raggruppamento di righe
@@ -1136,14 +1427,20 @@ Tipicamente, le righe in `<thead>` e `<tfoot>` vengono poste rispettivamente all
 
 Se si omettono i raggruppamenti, tutte le righe sono poste in un `<tbody>` esplicito. Non è possibile avere tabelle con soli `<thead>` e/o `<tfoot>`. Se specificati, questi due gruppi dovrebbero trovarsi entrambi all'inizio della definizione della tabella, prima del `<tbody>`.    
 
-In HTML5 `<tfoot>` può apparire anche alla fine della definizione della tabella.  
+In HTML5 `<tfoot>` può apparire anche alla fine della definizione della tabella. 
 
-<!------------------- END SLIDE 049 -------------------------->
+<!------------------- END SLIDE 049 it -------------------------->
 
-<!----------------- BEGIN SLIDE 050 -------------------------->
-> 050
+<!----------------- BEGIN SLIDE 050 it -------------------------->
 
 ####  Colonne
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 050
+
+
 
 
 `<col>`: definizione di una colonna
@@ -1157,12 +1454,18 @@ Ogni `<col>` rappresenta un numero di colonne pari al suo attributo `span`. Cias
 
 In HTML5, questi elementi   **possono comparire solo all'interno di un `<colgroup>`**.   Inoltre, gli attributi  *align*,  *valign* e *width* sono *deprecated* in  HTML5 e i CSS devono essere usati al loro posto. 
 
-<!------------------- END SLIDE 050 -------------------------->
+<!------------------- END SLIDE 050 it -------------------------->
 
-<!----------------- BEGIN SLIDE 051 -------------------------->
-> 051
+<!----------------- BEGIN SLIDE 051 it -------------------------->
 
 ####  gruppi di colonne
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 051
+
+
 
 
 `<colgroup>`  : definizione di gruppi di colonne
@@ -1176,24 +1479,31 @@ Uno o più elementi `<colgroup>` possono essere   **posti all'inizio della tabel
 
 Un `<colgroup>` vuoto rappresenta un numero di colonne pari al suo attributo   `span`. Ciascuna colonna avrà la dimensione specificata dall'attributo `width` e le celle corrispondenti avranno l'allineamento definito da `align` e `valign`.
 
-Per definire separatamente le caratteristiche di ciascuna colonna in un gruppo, si possono nidificare elementi `<col>` all'interno di un `<colgroup>`. Le caratteristiche delle `<col>` nidificate (compreso il loro numero totale) hanno la precedenza su quelle specificate globalmente sul `<colgorup>`.    
+Per definire separatamente le caratteristiche di ciascuna colonna in un gruppo, si possono nidificare elementi `<col>` all'interno di un `<colgroup>`. Le caratteristiche delle `<col>` nidificate (compreso il loro numero totale) hanno la precedenza su quelle specificate globalmente sul `<colgorup>`. 
 
-<!------------------- END SLIDE 051 -------------------------->
+<!------------------- END SLIDE 051 it -------------------------->
 
-<!----------------- BEGIN SLIDE 052 -------------------------->
-> 052
+<!----------------- BEGIN SLIDE 052 it -------------------------->
 
 ## 6. Immagini e oggetti incorporati
 
 
+<!----------------- COLUMN 1 -------------------------->
 
+> 052 
 
-<!------------------- END SLIDE 052 -------------------------->
+<!------------------- END SLIDE 052 it -------------------------->
 
-<!----------------- BEGIN SLIDE 053 -------------------------->
-> 053
+<!----------------- BEGIN SLIDE 053 it -------------------------->
 
 ### 6.1. Immagini
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 053
+
+
 
 
 `<img>`  : inclusione di immagine
@@ -1207,16 +1517,24 @@ Il testo alternativo per l'immagine (`alt`) è una caratteristica essenziale per
 
 L'attributo `longdesc` può essere usato per puntare alla URI di un documento che descrive nel dettaglio l'immagine. È  *deprecated* in HTML5. 
 
-Gli attributi `width` e `height` dovrebbero essere sempre usati per fornire al browser un suggerimento sulle dimensioni da riservare per l'immagine sulla pagina. Se non corrispondono alle dimensioni reali dell'immagine, questa verrà ridimensionata di conseguenza (in maniera proporzionale se si specifica solo uno degli attributi). In HTML5  questi attributi non possono più contenere percentuali e non possono essere usati per ottenere ridimensionamenti non proporzionali.
+Gli attributi `width` e `height` dovrebbero essere sempre usati per fornire al browser un suggerimento sulle dimensioni da riservare per l'immagine sulla pagina. Se non corrispondono alle dimensioni reali dell'immagine, questa verrà ridimensionata di conseguenza (in maniera proporzionale se si specifica solo uno degli attributi). In HTML5  questi attributi non possono più contenere percentuali e non possono essere usati per ottenere ridimensionamenti non proporzionali. 
 
-<!------------------- END SLIDE 053 -------------------------->
+<!------------------- END SLIDE 053 it -------------------------->
 
-<!----------------- BEGIN SLIDE 054 -------------------------->
-> 054
+<!----------------- BEGIN SLIDE 054 it -------------------------->
 
 ### 6.2. Mappe immagine
 
 ####  Mappe immagine server-side
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 054
+
+
+
+
 
 `<img>`  : inclusione di immagine
 
@@ -1227,14 +1545,20 @@ L'attributo booleano `ismap`, se presente, trasforma l'immagine in una **server-
 
 Quando l'immagine viene cliccata, attivando il link, le coordinate del click vengono aggiunte alla URI indicata dall'attributo `href` del tag `<a>` sotto forma di  *parametro get*.
 
-Ad esempio, se l'URI è http://test.org/test e le coordinate x=1,y=7 il browser richiederà la risorsa con la URI http://test.org/test?1,7
+Ad esempio, se l'URI è http://test.org/test e le coordinate x=1,y=7 il browser richiederà la risorsa con la URI http://test.org/test?1,7 
 
-<!------------------- END SLIDE 054 -------------------------->
+<!------------------- END SLIDE 054 it -------------------------->
 
-<!----------------- BEGIN SLIDE 055 -------------------------->
-> 055
+<!----------------- BEGIN SLIDE 055 it -------------------------->
 
 ####  Mappe immagine client-side
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 055
+
+
 
 
 `<img>`  : inclusione di immagine
@@ -1248,11 +1572,15 @@ L'attributo `usemap` deve contenere il nome di una image map definita nello stes
 
 Le aree dell'immagine definite dalla mappa diverranno cliccabili.
 
-Le image map client-side sono sempre preferibili per motivi di accessibilità.  
+Le image map client-side sono sempre preferibili per motivi di accessibilità. 
 
-<!------------------- END SLIDE 055 -------------------------->
+<!------------------- END SLIDE 055 it -------------------------->
 
-<!----------------- BEGIN SLIDE 056 -------------------------->
+<!----------------- BEGIN SLIDE 056 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 056
 
 
@@ -1267,9 +1595,13 @@ Le aree della mappa possono essere specificate tramite una serie di elementi `<a
 
 L'uso di elementi `<a>` è utile per creare mappe ad alta accessibilità, con un ricco contenuto testuale alternativo. In questo caso, il tag `<a>` può essere arricchito con attributi quali   `shape` e `coords`, propri del tag `<area>`. Questo tipo di costrutto però è   *deprecated* in  HTML5. 
 
-<!------------------- END SLIDE 056 -------------------------->
+<!------------------- END SLIDE 056 it -------------------------->
 
-<!----------------- BEGIN SLIDE 057 -------------------------->
+<!----------------- BEGIN SLIDE 057 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 057
 
 `<area>`: client side image map area  
@@ -1291,14 +1623,20 @@ L'attributo `coords` contiene le coordinate, separate da virgole, dei punti che 
 
 La destinazione del link è specificata dall'attributo `href`.
 
-Una descrizione testuale dell'area, specificata con l'attributo `alt`, è obbligatoria per una mappa ad alta accessibilità.
+Una descrizione testuale dell'area, specificata con l'attributo `alt`, è obbligatoria per una mappa ad alta accessibilità. 
 
-<!------------------- END SLIDE 057 -------------------------->
+<!------------------- END SLIDE 057 it -------------------------->
 
-<!----------------- BEGIN SLIDE 058 -------------------------->
-> 058
+<!----------------- BEGIN SLIDE 058 it -------------------------->
 
 ### 6.3. Oggetti
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 058
+
+
 
 
 `<object>`  : inclusione di oggetto generico
@@ -1314,14 +1652,20 @@ Gli attributi `classid` e `data` possono essere usati per specificare (in manier
 
 Per passare **parametri** all'oggetto caricato, si possono nidificare elementi `<param>`.   Gli attributi `name` e `value` di questi ultimi determinano le coppie (nome, valore) passate all'oggetto in fase di inizializzazione.  
 
-Tutto l'eventuale altro contenuto dell'elemento `<object>` è gestito dall'oggetto caricato.  
+Tutto l'eventuale altro contenuto dell'elemento `<object>` è gestito dall'oggetto caricato. 
 
-<!------------------- END SLIDE 058 -------------------------->
+<!------------------- END SLIDE 058 it -------------------------->
 
-<!----------------- BEGIN SLIDE 059 -------------------------->
-> 059
+<!----------------- BEGIN SLIDE 059 it -------------------------->
 
 ####  Origine e tipo di oggetto
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 059
+
+
 
 
 `<object>`  : inclusione di oggetto generico
@@ -1339,12 +1683,18 @@ Gli attributi `width` e `height` hanno lo stesso scopo descritto per l'elemento 
 
 Gli attributi    *classid*, *codetype*, *codebase* e *standby* sono   *deprecated* in HTML5. 
 
-<!------------------- END SLIDE 059 -------------------------->
+<!------------------- END SLIDE 059 it -------------------------->
 
-<!----------------- BEGIN SLIDE 060 -------------------------->
-> 060
+<!----------------- BEGIN SLIDE 060 it -------------------------->
 
 ####  Elementi specifici HTML5
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 060
+
+
 
 
 I tag   `<object>`   erano spesso impiegati in HTML4 per riprodurre audio e video o importare *applet*.
@@ -1355,26 +1705,35 @@ HTML5 fornisce elementi specifici per molti degli usi comuni dell'elemento  `<ob
 
 - `<embed>`    è usata per importare plugin.  
 
-- `<canvas>`   è usata per delimitare un'area in cui è possibile generare grafica dinamicamente attraverso le API fornite dall'elemento stesso.
+- `<canvas>`   è usata per delimitare un'area in cui è possibile generare grafica dinamicamente attraverso le API fornite dall'elemento stesso. 
 
-<!------------------- END SLIDE 060 -------------------------->
+<!------------------- END SLIDE 060 it -------------------------->
 
-<!----------------- BEGIN SLIDE 061 -------------------------->
-> 061
+<!----------------- BEGIN SLIDE 061 it -------------------------->
 
 ## 7. Meta elementi
 
 
+<!----------------- COLUMN 1 -------------------------->
 
+> 061 
 
-<!------------------- END SLIDE 061 -------------------------->
+<!------------------- END SLIDE 061 it -------------------------->
 
-<!----------------- BEGIN SLIDE 062 -------------------------->
-> 062
+<!----------------- BEGIN SLIDE 062 it -------------------------->
 
 ### 7.1. Collegamenti
 
 ####  relazioni tra documenti
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 062
+
+
+
+
 
 
 `<link>`: relazioni tra documenti
@@ -1390,14 +1749,20 @@ L'attributo `rel` (o `rev`, se il collegamento è logicamente all'indietro) è f
 
 Gli attributi   *rev* e *charset* sono  *deprecated* in HTML5. 
 
-I `<link>` sono usati, ad esempio, per collegare un documento ai suoi fogli di stile, per specificare documenti alternativi in altre lingue, per definire una sequenza logica di lettura in un insieme di documenti, ecc.
+I `<link>` sono usati, ad esempio, per collegare un documento ai suoi fogli di stile, per specificare documenti alternativi in altre lingue, per definire una sequenza logica di lettura in un insieme di documenti, ecc. 
 
-<!------------------- END SLIDE 062 -------------------------->
+<!------------------- END SLIDE 062 it -------------------------->
 
-<!----------------- BEGIN SLIDE 063 -------------------------->
-> 063
+<!----------------- BEGIN SLIDE 063 it -------------------------->
 
 ####  tipi di relazioni tra documenti
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 063
+
+
 
 
 - **Start, Next, Prev**   : documento iniziale, successivo, precedente    
@@ -1419,12 +1784,15 @@ Indica il documento da usare come glossario per il documento corrente
 - **Help**: aiuto sul documento
 
 - **Bookmark**: documento per segnalibro    
-Indica il documento "chiave" nell'insieme cui appartiene il documento corrente, da usare per impostare un segnalibro.
+Indica il documento "chiave" nell'insieme cui appartiene il documento corrente, da usare per impostare un segnalibro. 
+
+<!------------------- END SLIDE 063 it -------------------------->
+
+<!----------------- BEGIN SLIDE 063b it -------------------------->
 
 
-<!------------------- END SLIDE 063 -------------------------->
+<!----------------- COLUMN 1 -------------------------->
 
-<!----------------- BEGIN SLIDE 063b -------------------------->
 > 063b
 
 - **Alternate**: documento alternativo    
@@ -1442,14 +1810,20 @@ Indica il documento "chiave" nell'insieme cui appartiene il documento corrente, 
   Attenzione: il preloading non applica la risorsa, ma la carica soltanto: ad esempio, se precarichiamo un foglio di stile, dovremo comunque poi applicarlo facendovi riferimento con un normale elemento `<link>` di tipo *stylesheet*, oppure se precarichiamo uno script dovremo poi attivarlo facendovi riferimento con un elemento `<script>`.
   
 - **Prefetch**: precaricamento di risorse utili a pagine correlate    
-  Il *prefetching* viene utilizzato per precaricare nella cache del browser risorse non immediatamente necessarie alla pagina corrente, ma utili per le pagine ad essa collegate. Queste risorse verranno quindi scaricate, ma con bassa priorità rispetto al resto della pagina.
+  Il *prefetching* viene utilizzato per precaricare nella cache del browser risorse non immediatamente necessarie alla pagina corrente, ma utili per le pagine ad essa collegate. Queste risorse verranno quindi scaricate, ma con bassa priorità rispetto al resto della pagina. 
 
-<!------------------- END SLIDE 063b -------------------------->
+<!------------------- END SLIDE 063b it -------------------------->
 
-<!----------------- BEGIN SLIDE 064 -------------------------->
-> 064
+<!----------------- BEGIN SLIDE 064 it -------------------------->
 
 ####  Risoluzione delle URI relative
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 064
+
+
 
 
 `<base>`: base per le URI relative
@@ -1461,14 +1835,20 @@ Questo elemento, utilizzabile una sola volta nella `<head>` del documento, defin
 
 L'attributo `target` può essere usato per definire il target di default in un documento con frames.  
 
-Se `<base>` non è specificato, la base della URI del documento corrente viene usata per risolvere tutte le URI relative.
+Se `<base>` non è specificato, la base della URI del documento corrente viene usata per risolvere tutte le URI relative. 
 
-<!------------------- END SLIDE 064 -------------------------->
+<!------------------- END SLIDE 064 it -------------------------->
 
-<!----------------- BEGIN SLIDE 065 -------------------------->
-> 065
+<!----------------- BEGIN SLIDE 065 it -------------------------->
 
 ### 7.2. Fogli di Stile
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 065
+
+
 
 
 `<style>`: fogli di stile incorporato
@@ -1484,26 +1864,35 @@ L'attributo `media` permette di specificare i dispositivi per cui lo stile è st
 
 I fogli di stile possono essere anche importati dall'esterno con il tag `<link>`. Inoltre, è possibile specificare uno stile specifico per ogni elemento HTML tramite l'attributo standard  *style*.
 
-L'attributo standard *class* permette infine di raggruppare diversi elementi HTML in classi, utili per poter attribuire loro uno stile uniforme.
+L'attributo standard *class* permette infine di raggruppare diversi elementi HTML in classi, utili per poter attribuire loro uno stile uniforme. 
 
-<!------------------- END SLIDE 065 -------------------------->
+<!------------------- END SLIDE 065 it -------------------------->
 
-<!----------------- BEGIN SLIDE 066 -------------------------->
-> 066
+<!----------------- BEGIN SLIDE 066 it -------------------------->
 
 ## 8. Elementi interattivi
 
 
+<!----------------- COLUMN 1 -------------------------->
 
+> 066 
 
-<!------------------- END SLIDE 066 -------------------------->
+<!------------------- END SLIDE 066 it -------------------------->
 
-<!----------------- BEGIN SLIDE 067 -------------------------->
-> 067
+<!----------------- BEGIN SLIDE 067 it -------------------------->
 
 ### 8.1. Collegamenti
 
 ####  Collegamenti attivi a risorse esterne
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 067
+
+
+
+
 
 
 `<a>`: link attivi verso altre risorse
@@ -1519,14 +1908,20 @@ L'elemento `<a>` viene usato sia per definire l'origine di un link che per defin
 
 L'attributo `name` condivide lo stesso spazio di identificatori dell'attributo `id`. In effetti, è possibile usare l'**id** di qualsiasi elemento come *fragment identifier*. In HTML5, questa è la modalità preferita.         
 
-Il contenuto di `<a>` può essere qualsiasi HTML inline, ma non si possono avere link nidificati. L'aspetto predefinito di un link (caratteri sottolineati) può essere variato a piacere usando i fogli di stile.  
+Il contenuto di `<a>` può essere qualsiasi HTML inline, ma non si possono avere link nidificati. L'aspetto predefinito di un link (caratteri sottolineati) può essere variato a piacere usando i fogli di stile. 
 
-<!------------------- END SLIDE 067 -------------------------->
+<!------------------- END SLIDE 067 it -------------------------->
 
-<!----------------- BEGIN SLIDE 068 -------------------------->
-> 068
+<!----------------- BEGIN SLIDE 068 it -------------------------->
 
 ####  Titolo e relazione della risorsa
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 068
+
+
 
 
 `<a>`: link attivi verso altre risorse
@@ -1542,28 +1937,40 @@ Gli attributi `rel` e `rev` permettono di dichiarare la relazione tra il documen
 
 L'attributo `title` può esserer usato per descrivere meglio la destinazione del link.  
 
-Gli attributi  *rev* e *charset* sono   *deprecated* in HTML5.
+Gli attributi  *rev* e *charset* sono   *deprecated* in HTML5. 
 
-<!------------------- END SLIDE 068 -------------------------->
+<!------------------- END SLIDE 068 it -------------------------->
 
-<!----------------- BEGIN SLIDE 069 -------------------------->
-> 069
+<!----------------- BEGIN SLIDE 069 it -------------------------->
 
 ### 8.2. Moduli
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 069
+
+
 
 
 I moduli (o form) sono (parti di) documenti HTML contenenti, oltre al normale markup, anche particolari elementi detti   **controlli**, con i quali l'utente può interagire.
 
 I moduli sono inseriti nello speciale elemento HTML `<form>`. Solitamente, i moduli prevedono un sistema per inviare il valore dei loro controlli al server (*submit*) per ulteriori elaborazioni.
 
-Tuttavia, non sono rari dei form che lavorano completamente   *client side*, assistiti da script e oggetti incorporati.
+Tuttavia, non sono rari dei form che lavorano completamente   *client side*, assistiti da script e oggetti incorporati. 
 
-<!------------------- END SLIDE 069 -------------------------->
+<!------------------- END SLIDE 069 it -------------------------->
 
-<!----------------- BEGIN SLIDE 070 -------------------------->
-> 070
+<!----------------- BEGIN SLIDE 070 it -------------------------->
 
 ####  Controlli
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 070
+
+
 
 
 Gli elementi di controllo sono `<input>`, `<textarea>`, `<select>`, `<optgroup>`, `<label>`, `<fieldset>`   e `<button>`.
@@ -1574,14 +1981,20 @@ I controlli possono avere un valore (`value`) iniziale, che viene impostato alla
 
 Quando il modulo viene inviato, il server riceve le coppie (nome, valore) di ciascun controllo.
 
-In HTML5 i controlli possono anche apparire al di fuori dell'elemento   `<form>`, a patto che abbiano un attributo  `form` impostato all'*id* di una `<form>`   posta all'interno del documento.
+In HTML5 i controlli possono anche apparire al di fuori dell'elemento   `<form>`, a patto che abbiano un attributo  `form` impostato all'*id* di una `<form>`   posta all'interno del documento. 
 
-<!------------------- END SLIDE 070 -------------------------->
+<!------------------- END SLIDE 070 it -------------------------->
 
-<!----------------- BEGIN SLIDE 071 -------------------------->
-> 071
+<!----------------- BEGIN SLIDE 071 it -------------------------->
 
 ####  Elementi di base
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 071
+
+
 
 
 `<form>`  : definizione di un modulo
@@ -1601,14 +2014,20 @@ Se si usa il metodo *post*, può essere necessario specificare anche il metodo d
 
 - L'attributo `name` fornisce un nome al modulo, da utilizzare per lo scripting.  
 
-- L'attributo `accept-charset`  è spesso utilizzato per indicare l'*encoding* dei caratteri strasmessi con la form,   *consentendone una corretta decodifica da parte del server*.
+- L'attributo `accept-charset`  è spesso utilizzato per indicare l'*encoding* dei caratteri strasmessi con la form,   *consentendone una corretta decodifica da parte del server*. 
 
-<!------------------- END SLIDE 071 -------------------------->
+<!------------------- END SLIDE 071 it -------------------------->
 
-<!----------------- BEGIN SLIDE 072 -------------------------->
-> 072
+<!----------------- BEGIN SLIDE 072 it -------------------------->
 
 ####  Controlli \<input\>
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 072
+
+
 
 
 `<input>`: controllo modulo
@@ -1636,14 +2055,20 @@ L'elemento `<input>` viene usato per generare gran parte dei controlli all'inter
 
    - **image**: crea un controllo per l'invio del modulo usando un'immagine
 
-   - **button**: crea un bottone
+   - **button**: crea un bottone 
 
-<!------------------- END SLIDE 072 -------------------------->
+<!------------------- END SLIDE 072 it -------------------------->
 
-<!----------------- BEGIN SLIDE 073 -------------------------->
-> 073
+<!----------------- BEGIN SLIDE 073 it -------------------------->
 
 ####  Controlli \<input\> in HTML5
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 073
+
+
 
 
 HTML5 introduce molti altri tipi di controlli  `<input>`,  sempre distinti dal valore del loro attributo  `type`: 
@@ -1664,14 +2089,20 @@ HTML5 introduce molti altri tipi di controlli  `<input>`,  sempre distinti dal v
 
 - **color**: controllo di selezione per colori
 
-Lo *user agent*    dovrebbe mostrare i controlli più appropriati utilizzando questi raffinamenti nella specifica del tipo di input, in modo da fornire all'utente un'interfaccia più ricca.
+Lo *user agent*    dovrebbe mostrare i controlli più appropriati utilizzando questi raffinamenti nella specifica del tipo di input, in modo da fornire all'utente un'interfaccia più ricca. 
 
-<!------------------- END SLIDE 073 -------------------------->
+<!------------------- END SLIDE 073 it -------------------------->
 
-<!----------------- BEGIN SLIDE 074 -------------------------->
-> 074
+<!----------------- BEGIN SLIDE 074 it -------------------------->
 
 ####  Semantica dei controlli \<input\>
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 074
+
+
 
 
 `<input>`: controllo modulo
@@ -1693,14 +2124,20 @@ L'attributo booleano `checked` determina se i controlli di tipo *checkbox* e *ra
 
 L'attributo `src` viene usato per i controlli di tipo *image*, come pure `ismap`, `usemap` (eliminato in HTML5) e `alt`. I bottoni grafici di tipo *image* passano in ogni caso le coordinate del click come campi di controllo addizionali (*nome.x, nome.y*  ) del modulo.
 
-Gli attributi booleani `disabled` e `readonly` possono essere utilizzati per disabilitare e/o rendere di sola lettura i controlli.
+Gli attributi booleani `disabled` e `readonly` possono essere utilizzati per disabilitare e/o rendere di sola lettura i controlli. 
 
-<!------------------- END SLIDE 074 -------------------------->
+<!------------------- END SLIDE 074 it -------------------------->
 
-<!----------------- BEGIN SLIDE 075 -------------------------->
-> 075
+<!----------------- BEGIN SLIDE 075 it -------------------------->
 
 ####  Semantica dei controlli \<input\> in HTML5
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 075
+
+
 
 
 HTML5 introduce anche nuovi attributi per gli `<input>`:
@@ -1719,14 +2156,20 @@ HTML5 introduce anche nuovi attributi per gli `<input>`:
 
 - Gli attributi `formaction`, `formethod`, `formenctype` permettono di sovrascrivere i corrispondenti attributi dell'elemento `<form>`   nel caso in cui l'input sia usato come bottone di submit.  
 
-- L'attributo `placeholder` permette di fornire un testo di aiuto da mostrare nel campo quando questo è non compilato, e si applica anche alle `<textarea>`.
+- L'attributo `placeholder` permette di fornire un testo di aiuto da mostrare nel campo quando questo è non compilato, e si applica anche alle `<textarea>`. 
 
-<!------------------- END SLIDE 075 -------------------------->
+<!------------------- END SLIDE 075 it -------------------------->
 
-<!----------------- BEGIN SLIDE 076 -------------------------->
-> 076
+<!----------------- BEGIN SLIDE 076 it -------------------------->
 
 ####  Controlli \<textarea\>
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 076
+
+
 
 
 `<textarea>`  : area di testo per i moduli
@@ -1740,14 +2183,20 @@ L'ampiezza dell'area *visibile* è determinata dagli attributi `rows` (righe) e 
 
 Il testo contenuto nell'elemento viene usato come valore iniziale
 
-I tag HTML contenuti nel testo di non vengono interpretati.  
+I tag HTML contenuti nel testo di non vengono interpretati. 
 
-<!------------------- END SLIDE 076 -------------------------->
+<!------------------- END SLIDE 076 it -------------------------->
 
-<!----------------- BEGIN SLIDE 077 -------------------------->
-> 077
+<!----------------- BEGIN SLIDE 077 it -------------------------->
 
 ####  Controlli \<select\>
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 077
+
+
 
 
 `<select>`  : liste a scelta multipla
@@ -1761,14 +2210,20 @@ L'attributo booleano `multiple` determina de l'utente può selezionare un o più
 
 L'attributo `size` indica quante delle opzioni debbano essere visibili contemporaneamente sul controllo
 
-Il valore iniziale e il valore assegnato a questo controllo è specificato tramite le `<option>` e le `<optgroup>` nidificate.  
+Il valore iniziale e il valore assegnato a questo controllo è specificato tramite le `<option>` e le `<optgroup>` nidificate. 
 
-<!------------------- END SLIDE 077 -------------------------->
+<!------------------- END SLIDE 077 it -------------------------->
 
-<!----------------- BEGIN SLIDE 078 -------------------------->
-> 078
+<!----------------- BEGIN SLIDE 078 it -------------------------->
 
 ####  Opzioni dei controlli \<select\>
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 078
+
+
 
 
 `<option>`, `<optgroup>`  : opzioni per i controlli `<select>`  
@@ -1782,14 +2237,20 @@ L'attributo `label` determina il testo visualizzato per le `<option>` e le `<opt
 
 L'attributo `value` determina il valore dell'opzione, che sarà assegnato al nome del corrispondente campo `<select>` in fase di invio del modulo. Se non è specificato, verrà usato al suo posto il contenuto dell'elemento
 
-L'attributo booleano `selected` determina se l'opzione sarà inizialmente selezionata.
+L'attributo booleano `selected` determina se l'opzione sarà inizialmente selezionata. 
 
-<!------------------- END SLIDE 078 -------------------------->
+<!------------------- END SLIDE 078 it -------------------------->
 
-<!----------------- BEGIN SLIDE 079 -------------------------->
-> 079
+<!----------------- BEGIN SLIDE 079 it -------------------------->
 
 ####  Controlli \<button\>
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 079
+
+
 
 
 `<button>`  : bottoni per i moduli
@@ -1801,14 +2262,20 @@ Gli elementi `<button>` creano bottoni esattamente come gli elementi `<input>` c
 
 La differenza è che il contenuto del bottone non è definito dall'attributo `value`, che qui rappresenta solo il valore dato al corrispondente nome quando il bottone viene premuto.
 
-Il contenuto dell'elemento, che può essere HTML di qualsiasi tipo e lunghezza, verrà utilizzato per creare la "faccia" del bottone.
+Il contenuto dell'elemento, che può essere HTML di qualsiasi tipo e lunghezza, verrà utilizzato per creare la "faccia" del bottone. 
 
-<!------------------- END SLIDE 079 -------------------------->
+<!------------------- END SLIDE 079 it -------------------------->
 
-<!----------------- BEGIN SLIDE 080 -------------------------->
-> 080
+<!----------------- BEGIN SLIDE 080 it -------------------------->
 
 ####  Associazione di testo ai controlli
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 080
+
+
 
 
 `<label>`  : testo associato a un controllo
@@ -1822,14 +2289,20 @@ Il controllo associato è identificato dal valore dell'attributo for, che deve c
 
 Il browser potrà, ad esempio, cambiare la renderizzazione del testo se il corrispondente controllo viene disabilitato.  
 
-Si possono associare più `<label>` allo stesso controllo  
+Si possono associare più `<label>` allo stesso controllo 
 
-<!------------------- END SLIDE 080 -------------------------->
+<!------------------- END SLIDE 080 it -------------------------->
 
-<!----------------- BEGIN SLIDE 081 -------------------------->
-> 081
+<!----------------- BEGIN SLIDE 081 it -------------------------->
 
 ####  Raggruppamento dei controlli
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 081
+
+
 
 
 `<fieldset>`, `<legend>`  : raggruppamento di controlli
@@ -1841,14 +2314,20 @@ Gli elementi `<fieldset>` permettono di raggruppare logicamente parti di un modu
 
 L'elemento `<legend>`, se specificato, fornisce una descrizione testuale del `<fieldset>`.    
 
-Questi elementi sono utili per garantire un'alta accessibilità ai moduli e facilitarne la compilazione.
+Questi elementi sono utili per garantire un'alta accessibilità ai moduli e facilitarne la compilazione. 
 
-<!------------------- END SLIDE 081 -------------------------->
+<!------------------- END SLIDE 081 it -------------------------->
 
-<!----------------- BEGIN SLIDE 082 -------------------------->
-> 082
+<!----------------- BEGIN SLIDE 082 it -------------------------->
 
 ## 9. Riferimenti
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 082
+
+
 
 
 **Web Hypertext Application Technology Working Group (WHATWG)**    
@@ -1866,5 +2345,4 @@ http://www.w3.org/TR/xhtml1/
 **Differenze tra HTML5 e HTML4**    
  http://www.w3.org/TR/html5-diff/ 
 
-<!------------------- END SLIDE 082 -------------------------->
-
+<!------------------- END SLIDE 082 it -------------------------->

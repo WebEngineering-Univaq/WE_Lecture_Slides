@@ -1,8 +1,23 @@
-<!----------------- BEGIN SLIDE 001 -------------------------->
+---
+title: Javascript
+course: Web Engineering
+organization: University of L'Aquila
+
+author: Giuseppe Della Penna
+---
+
+
+<!----------------- BEGIN SLIDE 001 it -------------------------->
+
+#  Javascript
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 001
 
 
-# Javascript
+
 
 
 Giuseppe Della Penna
@@ -11,7 +26,6 @@ Università degli Studi di L'Aquila
 giuseppe.dellapenna@univaq.it    
 http://people.disim.univaq.it/dellapenna
 
-**Versione documento: 051025**
 
 > *Questo documento si basa sulle slide del corso di Web Engineering, riorganizzate per una migliore esperienza di lettura. Non è un libro di testo completo o un manuale tecnico, e deve essere utilizzato insieme a tutti gli altri materiali didattici del corso. Si prega di segnalare eventuali errori o omissioni all'autore.*
 
@@ -19,16 +33,130 @@ http://people.disim.univaq.it/dellapenna
 
 <!----------------- BEGIN TOC -------------------------->
 
+ - [1. Introduzione a Javascript](#1-introduzione-a-javascript)
+
+    - [1.1. Ambiente di Esecuzione](#11-ambiente-di-esecuzione)
+
+    - [1.2. Modello di Esecuzione](#12-modello-di-esecuzione)
+
+    - [1.3. Evoluzione di Javascript](#13-evoluzione-di-javascript)
+
+ - [2. Tipi, Variabili e Operatori](#2-tipi-variabili-e-operatori)
+
+    - [2.1. Tipi di Dato](#21-tipi-di-dato)
+
+    - [2.2. Variabili](#22-variabili)
+
+    - [2.3. Costanti](#23-costanti)
+
+    - [2.4. Operatori](#24-operatori)
+
+ - [3. Costrutti di Flusso](#3-costrutti-di-flusso)
+
+    - [3.1. Esecuzione condizionale - if](#31-esecuzione-condizionale---if)
+
+    - [3.2. Esecuzione condizionale - switch](#32-esecuzione-condizionale---switch)
+
+    - [3.3. Loops](#33-loops)
+
+ - [4. Funzioni](#4-funzioni)
+
+    - [4.1. Riferimento](#41-riferimento)
+
+    - [4.2. Chiamata](#42-chiamata)
+
+    - [4.3. Passaggio di Parametri](#43-passaggio-di-parametri)
+
+    - [4.4. Ritorno](#44-ritorno)
+
+    - [4.5. Closures](#45-closures)
+
+ - [5. Oggetti](#5-oggetti)
+
+    - [5.1. Proprietà](#51-proprietà)
+
+    - [5.2. Metodi](#52-metodi)
+
+    - [5.3. Funzioni Costruttore](#53-funzioni-costruttore)
+
+    - [5.4. Prototipi](#54-prototipi)
+
+    - [5.5. Getter e Setter](#55-getter-e-setter)
+
+    - [5.6. Membri pubblici, privati e "privilegiati"](#56-membri-pubblici-privati-e-privilegiati)
+
+    - [5.7. Classi](#57-classi)
+
+ - [6. Spread e Destructuring Assignment](#6-spread-e-destructuring-assignment)
+
+    - [6.1. Espansione di espressioni (spread)](#61-espansione-di-espressioni-spread)
+
+    - [6.2. Destructuring Assignment](#62-destructuring-assignment)
+
+ - [7. Iteratori e Funzioni Generatrici](#7-iteratori-e-funzioni-generatrici)
+
+    - [7.1. Iteratori](#71-iteratori)
+
+    - [7.2. Generatori](#72-generatori)
+
+ - [8. Eccezioni](#8-eccezioni)
+
+ - [9. Oggetti Predefiniti](#9-oggetti-predefiniti)
+
+    - [9.1. String](#91-string)
+
+    - [9.2. RegExp](#92-regexp)
+
+    - [9.3. Array](#93-array)
+
+    - [9.4. Date](#94-date)
+
+    - [9.5. Set](#95-set)
+
+    - [9.6. Map](#96-map)
+
+    - [9.7. Promise](#97-promise)
+
+    - [9.8. Async Functions](#98-async-functions)
+
+ - [10. Javascript nei Browser](#10-javascript-nei-browser)
+
+    - [10.1. Script nella pagine HTML](#101-script-nella-pagine-html)
+
+    - [10.2. Oggetto window](#102-oggetto-window)
+
+    - [10.3. Oggetto XMLHttpRequest](#103-oggetto-xmlhttprequest)
+
+    - [10.4. Fetch API](#104-fetch-api)
+
+ - [11. Moduli](#11-moduli)
+
+    - [11.1. Moduli: esportazione](#111-moduli-esportazione)
+
+    - [11.2. Moduli: importazione](#112-moduli-importazione)
+
+    - [11.3. Moduli nelle pagine HTML ](#113-moduli-nelle-pagine-html-)
+
+ - [12. Riferimenti](#12-riferimenti)
+
+ - [13. Esempi](#13-esempi)
 
 
-<!------------------- END TOC -------------------------->
 
-<!------------------- END SLIDE 001 -------------------------->
+<!------------------- END TOC --------------------------> 
 
-<!----------------- BEGIN SLIDE 002 -------------------------->
+<!------------------- END SLIDE 001 it -------------------------->
+
+<!----------------- BEGIN SLIDE 002 it -------------------------->
+
+## 1. Introduzione a Javascript
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 002
 
-## Introduzione a Javascript
+
 
 
 Javascript è un    **linguaggio di programmazione** usato comunemente per fornire dinamica alle pagine web.
@@ -41,12 +169,18 @@ Javascript è definito sulla base della specifica del linguaggio  **ECMAScript**
 
 Javascript dispone di tutte le funzionalità e i costrutti comuni ai più diffusi  **linguaggi di programmazione imperativi** (variabili, cicli, istruzioni condizionali, istruzioni di assegnamento, operazioni matematiche di base, funzioni e procedure, ecc.). 
 
-<!------------------- END SLIDE 002 -------------------------->
+<!------------------- END SLIDE 002 it -------------------------->
 
-<!----------------- BEGIN SLIDE 003 -------------------------->
+<!----------------- BEGIN SLIDE 003 it -------------------------->
+
+####  Dove si usa?
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 003
 
-#### Dove si usa?
+
 
 
 Javascript è un linguaggio molto popolare tra i programmatori, per la sua versatilità e semplicità, e per questo si è esteso ben oltre la programmazione web lato client. In effetti, oggi Javascript viene usato per programmare una moltitudine di applicazioni ampiamente diffuse.
@@ -61,14 +195,20 @@ Javascript è un linguaggio molto popolare tra i programmatori, per la sua versa
 
 - **Sviluppo di applicazioni desktop**: seguendo l'esempio delle applicazioni mobili, si stanno affermando numerosi framework, come **Electron**, che permettono di sviluppare applicazioni per computer desktop usando Javascript (e spesso HTML e CSS per definirne l'interfaccia) invece dei più comuni linguaggi come Java o C++.
 
-- Javascript può essere usato per aggiungere dinamica anche ai documenti **PDF**!
+- Javascript può essere usato per aggiungere dinamica anche ai documenti **PDF**! 
 
-<!------------------- END SLIDE 003 -------------------------->
+<!------------------- END SLIDE 003 it -------------------------->
 
-<!----------------- BEGIN SLIDE 004 -------------------------->
+<!----------------- BEGIN SLIDE 004 it -------------------------->
+
+### 1.1. Ambiente di Esecuzione
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 004
 
-### Ambiente di Esecuzione
+
 
 
 Javascript è progettato per essere eseguito all'interno di un   **oggetto host** , o *ambiente*, che può estenderlo fornendo funzionalità aggiuntive specifiche per quell'ambiente. 
@@ -79,14 +219,20 @@ Tuttavia, il browser costruisce una "**sandbox**" intorno alla pagina web, in mo
 
 I browser forniscono a Javascript anche l'accesso a una serie di funzionalità estese, le cosiddette   **Web API**. Con queste ultime il "potere" di Javascript si estende notevolmente.    
 
-Alcuni esempi di Web API, il cui nome è piuttosto auto esplicativo: Battery API, Bluetooth API, Canvas API, Clipboard API, Console API, Credential Management API, Fetch API, File System Access API, Fullscreen API, Geolocation API, History API, Payment Request API, Picture-in-Picture API, Screen Capture API, Sensor API, Storage Access API, Web Audio API, Web Authentication API, Web Crypto API, Web Speech API, Web Storage API, WebGL, WebRTC.                            
+Alcuni esempi di Web API, il cui nome è piuttosto auto esplicativo: Battery API, Bluetooth API, Canvas API, Clipboard API, Console API, Credential Management API, Fetch API, File System Access API, Fullscreen API, Geolocation API, History API, Payment Request API, Picture-in-Picture API, Screen Capture API, Sensor API, Storage Access API, Web Audio API, Web Authentication API, Web Crypto API, Web Speech API, Web Storage API, WebGL, WebRTC. 
 
-<!------------------- END SLIDE 004 -------------------------->
+<!------------------- END SLIDE 004 it -------------------------->
 
-<!----------------- BEGIN SLIDE 005 -------------------------->
+<!----------------- BEGIN SLIDE 005 it -------------------------->
+
+### 1.2. Modello di Esecuzione
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 005
 
-### Modello di Esecuzione
+
 
 
 Javascript è un linguaggio  **single-threaded** , cioè non contempla alcun tipo di parallelismo nell'esecuzione.
@@ -98,19 +244,31 @@ Il codice Javascript, nella sua esecuzione, interagisce tipicamente con le **API
 
 **Quando lo stack è vuoto**, l'**event loop**   estrae dalla message   **queue** la successiva funzione callback da richiamare e la inserisce nello stack.    
 
-<!----------------- COLUMN 001  -------------------------->
-
-![Modello di esecuzione](javascript1.png)
+ 
 
 
-<!------------------- END SLIDE 005 -------------------------->
+<!----------------- COLUMN 2 -------------------------->
 
-<!----------------- BEGIN SLIDE 006 -------------------------->
+
+
+![Modello di esecuzione](javascript1.png) 
+
+<!------------------- END SLIDE 005 it -------------------------->
+
+<!----------------- BEGIN SLIDE 006 it -------------------------->
+
+### 1.3. Evoluzione di Javascript
+
+####  ECMAScript 5 (2009): novità
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 006
 
-### Evoluzione di Javascript
 
-#### ECMAScript 5 (2009): novità
+
+
 
 
 - Modalità strict 
@@ -124,14 +282,20 @@ Il codice Javascript, nella sua esecuzione, interagisce tipicamente con le **API
 - Nuovi metodi Array: `isArray()`, `forEach()`, `map()`, `filter()`, `reduce()`, `reduceRight()`, `every()`, `some()`, `indexOf()`, `lastIndexOf()`,…                    
 - Metodi `JSON.parse()` e `JSON.stringify()`    
 
-- Nuovo metodo Date: `now()`  
+- Nuovo metodo Date: `now()` 
 
-<!------------------- END SLIDE 006 -------------------------->
+<!------------------- END SLIDE 006 it -------------------------->
 
-<!----------------- BEGIN SLIDE 007 -------------------------->
+<!----------------- BEGIN SLIDE 007 it -------------------------->
+
+####  ECMAScript 6 (2015): novità
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 007
 
-#### ECMAScript 6 (2015): novità
+
 
 
 - Variabili e funzioni con scope di blocco 
@@ -158,14 +322,20 @@ Il codice Javascript, nella sua esecuzione, interagisce tipicamente con le **API
 
 - Strutture Set e Map 
 
-- Promises
+- Promises 
 
-<!------------------- END SLIDE 007 -------------------------->
+<!------------------- END SLIDE 007 it -------------------------->
 
-<!----------------- BEGIN SLIDE 008 -------------------------->
+<!----------------- BEGIN SLIDE 008 it -------------------------->
+
+####  Evoluzione recente
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 008
 
-#### Evoluzione recente
+
 
 
 Riassumiamo qui alcune delle più importanti modifiche allo standard cumulatesi negli anni più recenti.
@@ -198,14 +368,20 @@ Riassumiamo qui alcune delle più importanti modifiche allo standard cumulatesi 
 
    - https://v8.dev/features 
 
-   - https://github.com/tc39/ecma262  
+   - https://github.com/tc39/ecma262 
 
-<!------------------- END SLIDE 008 -------------------------->
+<!------------------- END SLIDE 008 it -------------------------->
 
-<!----------------- BEGIN SLIDE 009 -------------------------->
+<!----------------- BEGIN SLIDE 009 it -------------------------->
+
+####  Compatibilità
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 009
 
-#### Compatibilità
+
 
 
 Tutte le funzionalità introdotte con ECMAScript 5, 6 e oltre, nonché tutte le novità relative al DOM di HTML che vengono via via adottate dai browser più moderni   **non sono ovviamente compatibili con quelli più datati**.
@@ -215,24 +391,31 @@ Per verificare la compatibilità di una certa funzione/API, è possibile cercare
 
 In caso di funzionalità con scarso supporto nei browser datati è utile, per ampliare la platea dei browser supportati, **inserire tra i propri script i relativi polyfill** , cioè librerie che integrano nei browser le funzionalità non supportate tramite opportuni workaround.   
 Provate ad utilizzare le librerie generate da  *https://polyfill.io* , che permette tra l'altro di scaricare i polyfill per le sole funzionalità di vostro interesse e solo se necessari al browser che le richiede, tutto in maniera automatica.  
-In alternativa, potete usare un transpiler come Babel (  *https://babeljs.io*) per trasformare i vostri script rendendoli retrocompatibili con specifici browser datati. Babel manipola la sintassi e integra i polyfill necessari.    
+In alternativa, potete usare un transpiler come Babel (  *https://babeljs.io*) per trasformare i vostri script rendendoli retrocompatibili con specifici browser datati. Babel manipola la sintassi e integra i polyfill necessari. 
 
-<!------------------- END SLIDE 009 -------------------------->
+<!------------------- END SLIDE 009 it -------------------------->
 
-<!----------------- BEGIN SLIDE 010 -------------------------->
-> 010
+<!----------------- BEGIN SLIDE 010 it -------------------------->
 
-## Tipi, Variabili e Operatori
-
+## 2. Tipi, Variabili e Operatori
 
 
+<!----------------- COLUMN 1 -------------------------->
 
-<!------------------- END SLIDE 010 -------------------------->
+> 010 
 
-<!----------------- BEGIN SLIDE 011 -------------------------->
+<!------------------- END SLIDE 010 it -------------------------->
+
+<!----------------- BEGIN SLIDE 011 it -------------------------->
+
+### 2.1. Tipi di Dato
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 011
 
-### Tipi di Dato
+
 
 
 Javascript gestisce quattro diversi tipi di dato: 
@@ -263,14 +446,20 @@ Javascript gestisce quattro diversi tipi di dato:
 
 **Null**
 
-- Il tipo nullo ha un unico valore, null.  
+- Il tipo nullo ha un unico valore, null. 
 
-<!------------------- END SLIDE 011 -------------------------->
+<!------------------- END SLIDE 011 it -------------------------->
 
-<!----------------- BEGIN SLIDE 012 -------------------------->
+<!----------------- BEGIN SLIDE 012 it -------------------------->
+
+### 2.2. Variabili
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 012
 
-### Variabili
+
 
 
 Le variabili javascript sono identificate da sequenze alfanumeriche il cui primo carattere deve essere alfabetico.
@@ -285,14 +474,20 @@ Le variabili possono essere dichiarate scrivendo `var nome`
 
 Se si assegna un valore a una variabile non dichiarata, javascript la crea automaticamente. Questa pratica è **sconsigliata** perché le variabili create automaticamente **sono sempre globali**.
 
-Se si cerca di leggere il valore di una variabile mai dichiarata né assegnata, questo risulterà `undefined`.
+Se si cerca di leggere il valore di una variabile mai dichiarata né assegnata, questo risulterà `undefined`. 
 
-<!------------------- END SLIDE 012 -------------------------->
+<!------------------- END SLIDE 012 it -------------------------->
 
-<!----------------- BEGIN SLIDE 013 -------------------------->
+<!----------------- BEGIN SLIDE 013 it -------------------------->
+
+####  Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 013
 
-#### Esempi
+
 
 
 ```javascript
@@ -309,14 +504,20 @@ t = "paperino" //t è una variabile globale di tipo String con valore "paperino"
 u = v //u ha valore undefined (in quanto v non è a sua volta definita)  
 
 var b = (3>2) //b è una variabile Boolean con valore true    
-```
+``` 
 
-<!------------------- END SLIDE 013 -------------------------->
+<!------------------- END SLIDE 013 it -------------------------->
 
-<!----------------- BEGIN SLIDE 014 -------------------------->
+<!----------------- BEGIN SLIDE 014 it -------------------------->
+
+####  Modalità strict
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 014
 
-#### Modalità strict
+
 
 La modaltà strict si attiva usando la sintassi `"use strict";`   
 
@@ -334,14 +535,20 @@ Inoltre:
 
 - La stringa "eval", non può essere utilizzata come variabile  
 
-- `eval()` non può creare variabili nel suo scope di chiamata    
+- `eval()` non può creare variabili nel suo scope di chiamata 
 
-<!------------------- END SLIDE 014 -------------------------->
+<!------------------- END SLIDE 014 it -------------------------->
 
-<!----------------- BEGIN SLIDE 015 -------------------------->
+<!----------------- BEGIN SLIDE 015 it -------------------------->
+
+####  scope di blocco
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 015
 
-#### scope di blocco
+
 
 
 Prima di ES6, le variabili dichiarate con la parola chiave  `var` non erano globali, ma erano in ogni caso *function-scoped*, cioè accessibili in tutta la funzione di appartenenza.  
@@ -369,14 +576,20 @@ var callbacks = [];
 for (var i = 0; i <= 2; i++) {         
  (function(i) {callbacks[i]=function() {return i * 2;};})(i);
 }         
-```    
+``` 
 
-<!------------------- END SLIDE 015 -------------------------->
+<!------------------- END SLIDE 015 it -------------------------->
 
-<!----------------- BEGIN SLIDE 016 -------------------------->
+<!----------------- BEGIN SLIDE 016 it -------------------------->
+
+### 2.3. Costanti
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 016
 
-### Costanti
+
 
 
 Le costanti possono essere dichiarate tramite la parola chiave `const`.
@@ -385,14 +598,20 @@ Le costanti possono essere dichiarate tramite la parola chiave `const`.
 const PI = 3.141593;  
 ```
 
-Nota: un *oggetto costante* non può essere riassegnato, ma il suo contenuto può variare.
+Nota: un *oggetto costante* non può essere riassegnato, ma il suo contenuto può variare. 
 
-<!------------------- END SLIDE 016 -------------------------->
+<!------------------- END SLIDE 016 it -------------------------->
 
-<!----------------- BEGIN SLIDE 017 -------------------------->
+<!----------------- BEGIN SLIDE 017 it -------------------------->
+
+### 2.4. Operatori
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 017
 
-### Operatori
+
 
 
 `+` **(somma)**    
@@ -406,11 +625,15 @@ Gli assegnamenti con somma/differenza hanno la stessa semantica dei loro corrisp
 `++` **(incremento)**, `--` **(decremento)**
 
 `>>` **(shift right)**, `<<` **(shift left)**, `&` **(and)**, `|` **(or)**, `^` **(xor)**, `~` **(not)**   `             
-Effettuano bit-a-bit tra operandi numerici.
+Effettuano bit-a-bit tra operandi numerici. 
 
-<!------------------- END SLIDE 017 -------------------------->
+<!------------------- END SLIDE 017 it -------------------------->
 
-<!----------------- BEGIN SLIDE 018 -------------------------->
+<!----------------- BEGIN SLIDE 018 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 018
 
 
@@ -430,14 +653,20 @@ Restituisce una stringa contenente il nome del tipo del suo argomento
 Esegue il codice passato come argomento, ma non restituisce l'eventuale valore di ritorno
 
 `eval(...)` **(valutazione script)**      
-Esegue lo script passato nell'argomento stringa e restituisce il suo valore
+Esegue lo script passato nell'argomento stringa e restituisce il suo valore 
 
-<!------------------- END SLIDE 018 -------------------------->
+<!------------------- END SLIDE 018 it -------------------------->
 
-<!----------------- BEGIN SLIDE 019 -------------------------->
+<!----------------- BEGIN SLIDE 019 it -------------------------->
+
+####  Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 019
 
-#### Esempi
+
 
 
 ```javascript
@@ -460,24 +689,31 @@ eval("f(x)");
 
 eval("3+1"); //restituisce 4 
 eval("var s = 1"); //dichiara globalmente la variabile s e le assegna il valore 1.   
-```
+``` 
 
-<!------------------- END SLIDE 019 -------------------------->
+<!------------------- END SLIDE 019 it -------------------------->
 
-<!----------------- BEGIN SLIDE 020 -------------------------->
-> 020
+<!----------------- BEGIN SLIDE 020 it -------------------------->
 
-## Costrutti di Flusso
-
+## 3. Costrutti di Flusso
 
 
+<!----------------- COLUMN 1 -------------------------->
 
-<!------------------- END SLIDE 020 -------------------------->
+> 020 
 
-<!----------------- BEGIN SLIDE 021 -------------------------->
+<!------------------- END SLIDE 020 it -------------------------->
+
+<!----------------- BEGIN SLIDE 021 it -------------------------->
+
+### 3.1. Esecuzione condizionale - if
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 021
 
-### Esecuzione condizionale - if
+
 
 
 Javascript dispone del costrutto `if` con la stessa sintassi di Java:
@@ -500,14 +736,20 @@ Un'espressione guardia non booleana viene convertita in valore booleano come seg
 
 - In tutti gli altri casi (numerico zero, stringa vuota, valore undefined o null) l'espressione è false.    
 
-Per eseguire delle istruzioni solo se una determinata variabile o proprietà è definita e non vuota, è sufficiente scrivere `if (variabile) {...}`
+Per eseguire delle istruzioni solo se una determinata variabile o proprietà è definita e non vuota, è sufficiente scrivere `if (variabile) {...}` 
 
-<!------------------- END SLIDE 021 -------------------------->
+<!------------------- END SLIDE 021 it -------------------------->
 
-<!----------------- BEGIN SLIDE 022 -------------------------->
+<!----------------- BEGIN SLIDE 022 it -------------------------->
+
+### 3.2. Esecuzione condizionale - switch
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 022
 
-### Esecuzione condizionale - switch
+
 
 
 Javascript dispone del costrutto  `switch` con la stessa sintassi di Java:
@@ -522,14 +764,20 @@ switch (espressione) {
 
 L'espressione viene valutata e confrontata con i valori dei diversi `case`. Vengono quindi eseguite le istruzioni *a partire dal primo* `case`* con lo stesso valore dell'espressione. Se nessun case è selezionato, vengono eseguite le istruzioni del `default`, se presenti.
 
-Se si desidera limitare l'esecuzione a un gruppo di istruzioni, è necessario introdurre la parola chiave `break`.
+Se si desidera limitare l'esecuzione a un gruppo di istruzioni, è necessario introdurre la parola chiave `break`. 
 
-<!------------------- END SLIDE 022 -------------------------->
+<!------------------- END SLIDE 022 it -------------------------->
 
-<!----------------- BEGIN SLIDE 023 -------------------------->
+<!----------------- BEGIN SLIDE 023 it -------------------------->
+
+####  Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 023
 
-#### Esempi
+
 
 
 ```javascript
@@ -546,14 +794,20 @@ switch (s) {
  case "error": … //questo case continua sul default  
  default: …
 }
-```
+``` 
 
-<!------------------- END SLIDE 023 -------------------------->
+<!------------------- END SLIDE 023 it -------------------------->
 
-<!----------------- BEGIN SLIDE 024 -------------------------->
+<!----------------- BEGIN SLIDE 024 it -------------------------->
+
+### 3.3. Loops
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 024
 
-### Loops
+
 
 
 Javascript dispone dei costrutti  `for`, `while` e `do ... while`, con la stessa sintassi di Java:
@@ -572,14 +826,20 @@ Nel ciclo `while` il *corpo* viene eseguito se e finché la *condizione* è vera
 
 Nel ciclo `do...while`  il *corpo* viene eseguito almeno una volta, in quanto la *condizione* è testata al termine della sua esecuzione.
 
-Nel corpo dei loop è possibile usare le parole chiave `break` e `continue` rispettivamente per interromperne l'esecuzione o per saltare direttamente al ciclo successivo.
+Nel corpo dei loop è possibile usare le parole chiave `break` e `continue` rispettivamente per interromperne l'esecuzione o per saltare direttamente al ciclo successivo. 
 
-<!------------------- END SLIDE 024 -------------------------->
+<!------------------- END SLIDE 024 it -------------------------->
 
-<!----------------- BEGIN SLIDE 025 -------------------------->
+<!----------------- BEGIN SLIDE 025 it -------------------------->
+
+####  I loop for…in e for…of
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 025
 
-#### I loop for…in e for…of
+
 
 
 Una speciale forma del costrutto `for` permette di iterare tra tutte le proprietà di un oggetto:
@@ -599,14 +859,20 @@ for (valore of array) {corpo}
 ```
 
 Ad ogni iterazione, il  *valore* conterrà il valore del successivo elemento dell'*array*
-*Vedremo più avanti cosa sono e come si creano altri oggetti iterabili*
+*Vedremo più avanti cosa sono e come si creano altri oggetti iterabili* 
 
-<!------------------- END SLIDE 025 -------------------------->
+<!------------------- END SLIDE 025 it -------------------------->
 
-<!----------------- BEGIN SLIDE 026 -------------------------->
+<!----------------- BEGIN SLIDE 026 it -------------------------->
+
+####  Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 026
 
-#### Esempi
+
 
 
 ```javascript
@@ -627,24 +893,31 @@ while(i>0) { i=i+1; }
 
 //ciclo do
 do { i=i+1; } while(i>0);  
-```
+``` 
 
-<!------------------- END SLIDE 026 -------------------------->
+<!------------------- END SLIDE 026 it -------------------------->
 
-<!----------------- BEGIN SLIDE 027 -------------------------->
-> 027
+<!----------------- BEGIN SLIDE 027 it -------------------------->
 
-## Funzioni
-
+## 4. Funzioni
 
 
+<!----------------- COLUMN 1 -------------------------->
 
-<!------------------- END SLIDE 027 -------------------------->
+> 027 
 
-<!----------------- BEGIN SLIDE 028 -------------------------->
+<!------------------- END SLIDE 027 it -------------------------->
+
+<!----------------- BEGIN SLIDE 028 it -------------------------->
+
+####  Dichiarazione
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 028
 
-#### Dichiarazione
+
 
 
 In Javascript è possibile creare nuove funzioni con le seguenti sintassi:  
@@ -668,14 +941,20 @@ Le parentesi dopo il nome della funzione vanno sempre inserite, anche se la list
 
 Il **corpo** della funzione è costituito da una sequenza di istruzioni Javascript valide.   
 Ogni istruzione è separata dalla successiva da un punto e virgola. 
-Nel corpo è possibile utilizzare i parametri tramite il nome delle variabili ad essi associate.
+Nel corpo è possibile utilizzare i parametri tramite il nome delle variabili ad essi associate. 
 
-<!------------------- END SLIDE 028 -------------------------->
+<!------------------- END SLIDE 028 it -------------------------->
 
-<!----------------- BEGIN SLIDE 029 -------------------------->
+<!----------------- BEGIN SLIDE 029 it -------------------------->
+
+####  Funzioni freccia (lambda) 
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 029
 
-#### Funzioni freccia (lambda) 
+
 
 
 ES6, come Java 8, permette di definire funzioni anonime (lambda) con una sintassi semplificata  `(parametri) => espressione`:
@@ -714,14 +993,20 @@ var self = this;
 this.nums.forEach(      
  function (v) { if (v % 5 === 0) self.fives.push(v); }
 );   
-```
+``` 
 
-<!------------------- END SLIDE 029 -------------------------->
+<!------------------- END SLIDE 029 it -------------------------->
 
-<!----------------- BEGIN SLIDE 030 -------------------------->
+<!----------------- BEGIN SLIDE 030 it -------------------------->
+
+####  Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 030
 
-#### Esempi
+
 
 
 ```javascript
@@ -740,14 +1025,20 @@ var h1 = function(a) {return a+1;}
 
 //oggetto funzione assegnato a una variabile
 var h2 = new Function("a","return a+1;");     
-```
+``` 
 
-<!------------------- END SLIDE 030 -------------------------->
+<!------------------- END SLIDE 030 it -------------------------->
 
-<!----------------- BEGIN SLIDE 031 -------------------------->
+<!----------------- BEGIN SLIDE 031 it -------------------------->
+
+####  scope di blocco
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 031
 
-#### scope di blocco
+
 
 
 Le funzioni sono visibili solo all'interno del blocco che le definisce (qui non è necessaria alcuna sintassi specifica):
@@ -764,14 +1055,20 @@ Le funzioni sono visibili solo all'interno del blocco che le definisce (qui non 
  //nel blocco esterno continua ad esistere la precedente versione
  foo() === 1;       
 }
-```
+``` 
 
-<!------------------- END SLIDE 031 -------------------------->
+<!------------------- END SLIDE 031 it -------------------------->
 
-<!----------------- BEGIN SLIDE 032 -------------------------->
+<!----------------- BEGIN SLIDE 032 it -------------------------->
+
+### 4.1. Riferimento
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 032
 
-### Riferimento
+
 
 
 Le funzioni Javascript sono in realtà variabili con valore di tipo **Function**.
@@ -788,14 +1085,20 @@ Una volta ottenuto il riferimento a una funzione è possibile:
 
 - Accedere a tutti gli elementi della funzione, per modificarla o ridefinirla, tramite le proprietà di **Function**.
 
-- Verificare se una funzione è definita come si farebbe con qualsiasi variabile, ad esempio testandola con un `if(nome_funzione)`.
+- Verificare se una funzione è definita come si farebbe con qualsiasi variabile, ad esempio testandola con un `if(nome_funzione)`. 
 
-<!------------------- END SLIDE 032 -------------------------->
+<!------------------- END SLIDE 032 it -------------------------->
 
-<!----------------- BEGIN SLIDE 033 -------------------------->
+<!----------------- BEGIN SLIDE 033 it -------------------------->
+
+### 4.2. Chiamata
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 033
 
-### Chiamata
+
 
 
 Per richiamare una funzione, si accoda la lista dei parametri, tra parentesi, all'espressione che fa riferimento alla funzione stessa:
@@ -808,14 +1111,20 @@ Gli argomenti sono una lista di espressioni valide separate da virgole.
 
 E' possibile omettere uno o più parametri al termine della lista. In questo caso, tali parametri varranno *undefined* nel corpo della funzione.
 
-Se la funzione non ha parametri, è comunque necessario specificare le due parentesi dopo il nome.
+Se la funzione non ha parametri, è comunque necessario specificare le due parentesi dopo il nome. 
 
-<!------------------- END SLIDE 033 -------------------------->
+<!------------------- END SLIDE 033 it -------------------------->
 
-<!----------------- BEGIN SLIDE 034 -------------------------->
+<!----------------- BEGIN SLIDE 034 it -------------------------->
+
+####  Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 034
 
-#### Esempi
+
 
 
 ```javascript
@@ -828,28 +1137,40 @@ f(); //ritorna undefined
 var r = h1(3); //r=4 
 
 var r2 = h2(4); //r=5 
-```
+``` 
 
-<!------------------- END SLIDE 034 -------------------------->
+<!------------------- END SLIDE 034 it -------------------------->
 
-<!----------------- BEGIN SLIDE 035 -------------------------->
+<!----------------- BEGIN SLIDE 035 it -------------------------->
+
+### 4.3. Passaggio di Parametri
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 035
 
-### Passaggio di Parametri
+
 
 
 Il passaggio dei parametri alle funzioni Javascript avviene in maniera diversa a seconda del tipo del parametro stesso:
 
 - I tipi booleano, stringa, numero e null sono passati *per valore*. Nella funzione, cioè, è presente una copia del valore usato come argomento. Cambiamenti locali alla funzione non influenzano il valore dell'argomento usato nella chiamata alla funzione stessa.
 
-- Il tipo oggetto è passato *per riferimento*. La manipolazione del contenuto dell'oggetto si riflette sull'oggetto usato come argomento.
+- Il tipo oggetto è passato *per riferimento*. La manipolazione del contenuto dell'oggetto si riflette sull'oggetto usato come argomento. 
 
-<!------------------- END SLIDE 035 -------------------------->
+<!------------------- END SLIDE 035 it -------------------------->
 
-<!----------------- BEGIN SLIDE 036 -------------------------->
+<!----------------- BEGIN SLIDE 036 it -------------------------->
+
+####  Passaggio di Parametri - sintassi estesa
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 036
 
-#### Passaggio di Parametri - sintassi estesa
+
 
 
 In ES6 è possibile specificare **valori di default per i parametri** (come ad esempio in PHP o C):  
@@ -860,14 +1181,20 @@ In ES6 è possibile specificare **valori di default per i parametri** (come ad e
 
 `function f( ...args ) {return args.length;}`
 
-`function f (x,...a) {return x*a.reduce((t,v,i,r) => a+v, 0);}`
+`function f (x,...a) {return x*a.reduce((t,v,i,r) => a+v, 0);}` 
 
-<!------------------- END SLIDE 036 -------------------------->
+<!------------------- END SLIDE 036 it -------------------------->
 
-<!----------------- BEGIN SLIDE 037 -------------------------->
+<!----------------- BEGIN SLIDE 037 it -------------------------->
+
+### 4.4. Ritorno
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 037
 
-### Ritorno
+
 
 
 Le funzioni restituiscono il controllo al chiamante al termine del loro blocco di istruzioni.
@@ -878,14 +1205,20 @@ Le funzioni restituiscono il controllo al chiamante al termine del loro blocco d
 
 L'*espressione* può essere di qualsiasi tipo. Essa viene valutata e il valore risultante è restituito.
 
-Se la funzione non esegue una return, Javascript sottintende un `return undefined` implicito.        
+Se la funzione non esegue una return, Javascript sottintende un `return undefined` implicito. 
 
-<!------------------- END SLIDE 037 -------------------------->
+<!------------------- END SLIDE 037 it -------------------------->
 
-<!----------------- BEGIN SLIDE 038 -------------------------->
+<!----------------- BEGIN SLIDE 038 it -------------------------->
+
+### 4.5. Closures
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 038
 
-### Closures
+
 
 
 Una **closure** (chiusura) è, tecnicamente, un'espressione (tipicamente una funzione) *associata a un contesto che valorizza le sue variabili libere*. 
@@ -895,12 +1228,18 @@ In particolare, ogni esecuzione di una funzione ha un contesto associato.
 
 Una *closure* si crea proprio a partire da una funzione, quando quest'ultima restituisce come valore di ritorno una nuova funzione creata dinamicamente (cioè con uno dei tre costrutti visti in precedenza). 
 
-<!------------------- END SLIDE 038 -------------------------->
+<!------------------- END SLIDE 038 it -------------------------->
 
-<!----------------- BEGIN SLIDE 039 -------------------------->
+<!----------------- BEGIN SLIDE 039 it -------------------------->
+
+####  Comportamento delle closures
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 039
 
-#### Comportamento delle closures
+
 
 
 Una *closure*, cioè una funzione creata all'interno di un'altra funzione e poi restituita, *mantiene il contesto di esecuzione della funzione che l'ha creata*.
@@ -909,25 +1248,35 @@ Questo significa che il contesto di ciascuna chiamata della funzione "generatric
 
 La *closure* potrà fare riferimento (in lettura e scrittura) ai parametri e alle variabili dichiarate nel contesto della funzione che l'ha creata. 
 
-Poiché ogni chiamata a funzione ha un suo contesto distinto, i valori "visti" dalla *closure* non saranno influenzati da successive chiamate alla funzione generatrice.
+Poiché ogni chiamata a funzione ha un suo contesto distinto, i valori "visti" dalla *closure* non saranno influenzati da successive chiamate alla funzione generatrice. 
 
-<!------------------- END SLIDE 039 -------------------------->
+<!------------------- END SLIDE 039 it -------------------------->
 
-<!----------------- BEGIN SLIDE 040 -------------------------->
+<!----------------- BEGIN SLIDE 040 it -------------------------->
+
+####  Closures - Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 040
 
-#### Closures - Esempi
+
 
 
 Un uso comune per le closure è fornire parametri a una funzione che verrà eseguita in seguito: è il caso ad esempio delle funzioni passate come argomento a `setTimeout` (che verrà illustrata più avanti).
 
 Se dobbiamo passare una funzione come argomento, o assegnarla a una variabile, non possiamo fornirgli parametri, ma al posto della funzione possiamo usare una *wrapper closure* che la chiama con i parametri desiderati.
 
-Si vedano gli esempi seguenti...
+Si vedano gli esempi seguenti... 
 
-<!------------------- END SLIDE 040 -------------------------->
+<!------------------- END SLIDE 040 it -------------------------->
 
-<!----------------- BEGIN SLIDE 041 -------------------------->
+<!----------------- BEGIN SLIDE 041 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 041
 
 
@@ -950,11 +1299,15 @@ function closureGenF(y) {
 }
 o.p = closureGenF(3);   
 o.p() //CORRETTO: verrà chiamata f(3)! 
-```
+``` 
 
-<!------------------- END SLIDE 041 -------------------------->
+<!------------------- END SLIDE 041 it -------------------------->
 
-<!----------------- BEGIN SLIDE 042 -------------------------->
+<!----------------- BEGIN SLIDE 042 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 042
 
 
@@ -976,21 +1329,26 @@ function clickHandler(oToHighlight) {
 
 element1.onclick = clickHandler(linkedelement1);  
 element2.onclick = clickHandler(linkedelement2);  
-```
+``` 
 
-<!------------------- END SLIDE 042 -------------------------->
+<!------------------- END SLIDE 042 it -------------------------->
 
-<!----------------- BEGIN SLIDE 043 -------------------------->
-> 043
+<!----------------- BEGIN SLIDE 043 it -------------------------->
 
-## Oggetti
-
+## 5. Oggetti
 
 
+<!----------------- COLUMN 1 -------------------------->
 
-<!------------------- END SLIDE 043 -------------------------->
+> 043 
 
-<!----------------- BEGIN SLIDE 044 -------------------------->
+<!------------------- END SLIDE 043 it -------------------------->
+
+<!----------------- BEGIN SLIDE 044 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 044
 
 Javascript **non è un linguaggio object oriented simile a quelli più noti (come Java)**, e il suo concetto di oggetto è molto più simile a quello di un array associativo.
@@ -1003,14 +1361,20 @@ Non esiste vera ereditarietà negli oggetti Javascript, e non è possibile dichi
 
 Gli oggetti si creano utilizzando l'operatore **new** applicato alla loro **funzione costruttore**:  `o =  new Object();`
 
-Un metodo di creazione alternativo consiste nell'utilizzo del costrutto `{"proprietà": valore, ...}` , che crea un oggetto con le proprietà date assegnate ai corrispondenti valori.
+Un metodo di creazione alternativo consiste nell'utilizzo del costrutto `{"proprietà": valore, ...}` , che crea un oggetto con le proprietà date assegnate ai corrispondenti valori. 
 
-<!------------------- END SLIDE 044 -------------------------->
+<!------------------- END SLIDE 044 it -------------------------->
 
-<!----------------- BEGIN SLIDE 045 -------------------------->
+<!----------------- BEGIN SLIDE 045 it -------------------------->
+
+### 5.1. Proprietà
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 045
 
-### Proprietà
+
 
 
 Le proprietà di un oggetto Javascript possono contenere valori di qualsiasi tipo.  
@@ -1027,14 +1391,20 @@ Per accedere a una proprietà, si possono usare due sintassi:
 
 Se si tenta di leggere il valore di una proprietà non definita in un oggetto, si ottiene il valore *undefined* (come per ogni variabile non assegnata).
 È possibile **aggiungere dinamicamente proprietà** agli oggetti semplicemente assegnando loro un valore. 
-Non è possibile aggiungere proprietà a variabili che non siano di tipo oggetto (oggetti predefiniti o creati con `new`)
+Non è possibile aggiungere proprietà a variabili che non siano di tipo oggetto (oggetti predefiniti o creati con `new`) 
 
-<!------------------- END SLIDE 045 -------------------------->
+<!------------------- END SLIDE 045 it -------------------------->
 
-<!----------------- BEGIN SLIDE 046 -------------------------->
+<!----------------- BEGIN SLIDE 046 it -------------------------->
+
+####  Proprietà - Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 046
 
-#### Proprietà - Esempi
+
 
 
 ```javascript
@@ -1064,14 +1434,20 @@ var nome = "pippo";
 v=o2[nome]; 
 //accesso a una proprietà con nome dinamico
 //assegnato alla variabile nome
-```
+``` 
 
-<!------------------- END SLIDE 046 -------------------------->
+<!------------------- END SLIDE 046 it -------------------------->
 
-<!----------------- BEGIN SLIDE 047 -------------------------->
+<!----------------- BEGIN SLIDE 047 it -------------------------->
+
+### 5.2. Metodi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 047
 
-### Metodi
+
 
 
 I metodi di un oggetto Javascript sono semplicemente proprietà di tipo   **Function**.
@@ -1090,14 +1466,20 @@ Per aggiungere un metodo a un oggetto, è sufficiente creare una proprietà col 
 I metodi possono essere aggiunti in qualsiasi momento a un oggetto, esattamente come le proprietà.
 
 I metodi di un oggetto, *per far riferimento alle proprietà dell'oggetto in cui sono definiti*, devono utilizzare la parola chiave `this`: `this. proprietà`.  
-Omettendo `this`, Javascript cercherà le variabili col nome dato all'interno del metodo o tra le variabili globali!  
+Omettendo `this`, Javascript cercherà le variabili col nome dato all'interno del metodo o tra le variabili globali! 
 
-<!------------------- END SLIDE 047 -------------------------->
+<!------------------- END SLIDE 047 it -------------------------->
 
-<!----------------- BEGIN SLIDE 048 -------------------------->
+<!----------------- BEGIN SLIDE 048 it -------------------------->
+
+####  Metodi - Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 048
 
-#### Metodi - Esempi
+
 
 
 ```javascript
@@ -1122,14 +1504,20 @@ var o2 = {"pippo": "ciao", "pluto": 3, "metodo3": function(x) {return x;}}
 var o3 = new Object(); 
 o3.metodo3 = o.metodo1 
 //il metodo3 dell'oggetto o3 è una copia del metodo1 dell'oggetto o
-```
+``` 
 
-<!------------------- END SLIDE 048 -------------------------->
+<!------------------- END SLIDE 048 it -------------------------->
 
-<!----------------- BEGIN SLIDE 049 -------------------------->
+<!----------------- BEGIN SLIDE 049 it -------------------------->
+
+####  Definizione semplificata delle proprietà
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 049
 
-#### Definizione semplificata delle proprietà
+
 
 È possibile usare una sintassi compatta per la  **definizione di proprietà a partire da variabili**: la proprietà dell'oggetto può assumere automaticamente lo stesso nome della variabile usata per assegnargli un valore:
 
@@ -1149,14 +1537,20 @@ let o={s(x,y){return x+y}};
 
 ```javascript
 let o={p:"ciao", ["p_"+f()]: 42 }; 
-```
+``` 
 
-<!------------------- END SLIDE 049 -------------------------->
+<!------------------- END SLIDE 049 it -------------------------->
 
-<!----------------- BEGIN SLIDE 050 -------------------------->
+<!----------------- BEGIN SLIDE 050 it -------------------------->
+
+### 5.3. Funzioni Costruttore
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 050
 
-### Funzioni Costruttore
+
 
 
 Una funzione costruttore è un tipo speciale di funzione all'interno della quale
@@ -1167,11 +1561,15 @@ Una funzione costruttore è un tipo speciale di funzione all'interno della quale
 
 Le funzioni costruttore possono essere usate come argomento per l'operatore `new`, esattamente come i nomi degli oggetti standard di Javascript: `new funzione(parametri)`
 
-Le funzioni costruttore non dovrebbero mai essere richiamate direttamente.
+Le funzioni costruttore non dovrebbero mai essere richiamate direttamente. 
 
-<!------------------- END SLIDE 050 -------------------------->
+<!------------------- END SLIDE 050 it -------------------------->
 
-<!----------------- BEGIN SLIDE 051 -------------------------->
+<!----------------- BEGIN SLIDE 051 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 051
 
 
@@ -1179,14 +1577,20 @@ Quando si usa un costruttore con `new`, Javascript crea un oggetto vuoto derivat
 
 All'interno del costruttore, `this` punta al nuovo oggetto.
 In questo modo, il costruttore può popolare il nuovo oggetto, aggiungendo proprietà e metodi attraverso `this`.
-Va ricordato che i metodi inseriti in un oggetto, per fare riferimento alle proprietà dell'oggetto stesso, devono riferirvisi attraverso `this`.
+Va ricordato che i metodi inseriti in un oggetto, per fare riferimento alle proprietà dell'oggetto stesso, devono riferirvisi attraverso `this`. 
 
-<!------------------- END SLIDE 051 -------------------------->
+<!------------------- END SLIDE 051 it -------------------------->
 
-<!----------------- BEGIN SLIDE 052 -------------------------->
+<!----------------- BEGIN SLIDE 052 it -------------------------->
+
+####  Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 052
 
-#### Esempi
+
 
 
 ```javascript
@@ -1210,14 +1614,20 @@ o.getW = function() {return this.w;}
         
 o.getV = function() {return v;} 
 //SBAGLIATO! V fa riferimento alla variabile GLOBALE v!       
-```
+``` 
 
-<!------------------- END SLIDE 052 -------------------------->
+<!------------------- END SLIDE 052 it -------------------------->
 
-<!----------------- BEGIN SLIDE 053 -------------------------->
+<!----------------- BEGIN SLIDE 053 it -------------------------->
+
+### 5.4. Prototipi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 053
 
-### Prototipi
+
 
 
 Quando si crea un oggetto in Javascript usando la `new`, gli si assegna implicitamente un *prototipo*.
@@ -1235,14 +1645,20 @@ Grazie a questo effetto, e potendo anche riassegnare dinamicamente il prototipo 
 Il prototipo degli oggetti creati da una funzione costruttore si può esaminare e modificare accedendo alla sua proprietà `prototype`.
 Se invece disponiamo di un oggetto istanza, possiamo accedere al suo prototipo risalendo prima alla sua funzione costruttore tramite la proprietà `constructor`, oppure usando la proprietà `__proto__` (meno supportata).
 
-L'operatore `instanceof` permette di verificare se una funzione costruttore è presente in un qualsiasi punto della catena di prototipi di un oggetto.  
+L'operatore `instanceof` permette di verificare se una funzione costruttore è presente in un qualsiasi punto della catena di prototipi di un oggetto. 
 
-<!------------------- END SLIDE 053 -------------------------->
+<!------------------- END SLIDE 053 it -------------------------->
 
-<!----------------- BEGIN SLIDE 054 -------------------------->
+<!----------------- BEGIN SLIDE 054 it -------------------------->
+
+####  Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 054
 
-#### Esempi
+
 
 
 ```javascript
@@ -1262,11 +1678,15 @@ o1.z = function() {return this.v;}
 
 o1.z(); //ritorna 2
 o2.z(); //ERRORE, z è solo in o1!
-```
+``` 
 
-<!------------------- END SLIDE 054 -------------------------->
+<!------------------- END SLIDE 054 it -------------------------->
 
-<!----------------- BEGIN SLIDE 055 -------------------------->
+<!----------------- BEGIN SLIDE 055 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 055
 
 
@@ -1286,14 +1706,20 @@ o2.x(); //ritorna 5
 o1 instanceof myObject //ritorna true     
 o1 instanceof Array //ritorna false     
 [1,2,3] instanceof Array //ritorna true     
-```
+``` 
 
-<!------------------- END SLIDE 055 -------------------------->
+<!------------------- END SLIDE 055 it -------------------------->
 
-<!----------------- BEGIN SLIDE 056 -------------------------->
+<!----------------- BEGIN SLIDE 056 it -------------------------->
+
+### 5.5. Getter e Setter
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 056
 
-### Getter e Setter
+
 
 
 In Javascript, **getter** e **setter** permettono di creare pseudo variabili in un oggetto. Una pseudo variabile non è associata direttamente a una vera variabile dell'oggetto, ma funziona come se lo fosse.
@@ -1319,14 +1745,20 @@ var o = {
 }
 ```
 
-Per inserirli nei costruttori, è invece necessario usare il nuovo metodo `defineProperty` sui loro prototipi, come vedremo più avanti   
+Per inserirli nei costruttori, è invece necessario usare il nuovo metodo `defineProperty` sui loro prototipi, come vedremo più avanti 
 
-<!------------------- END SLIDE 056 -------------------------->
+<!------------------- END SLIDE 056 it -------------------------->
 
-<!----------------- BEGIN SLIDE 057 -------------------------->
+<!----------------- BEGIN SLIDE 057 it -------------------------->
+
+####  Metodo Object.defineProperty
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 057
 
-#### Metodo Object.defineProperty
+
 
 
 `Object.defineProperty(object, propertyName, descriptor)` inserisce o sovrascrive una proprietà in un oggetto.
@@ -1369,26 +1801,38 @@ Object.defineProperty(obj.prototype, "pippo", {
 //getter e setter definiti nel prototipo di una funzione costruttore
 ``` 
 
-<!------------------- END SLIDE 057 -------------------------->
+<!------------------- END SLIDE 057 it -------------------------->
 
-<!----------------- BEGIN SLIDE 058 -------------------------->
+<!----------------- BEGIN SLIDE 058 it -------------------------->
+
+### 5.6. Membri pubblici, privati e "privilegiati"
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 058
 
-### Membri pubblici, privati e "privilegiati"
+
 
 
 In Javascript non esiste la nozione esplicita di pubblico e privato, come in molti linguaggi a oggetti.    
 
 Tuttavia, è possibile **simulare questo tipo di comportamento** usando opportunamente le tecniche appena esposte.
 
-Vedremo quindi come definire proprietà (e metodi) in modo che siano visibili all'esterno dell'oggetto oppure utilizzabili solo dai suoi metodi interni.
+Vedremo quindi come definire proprietà (e metodi) in modo che siano visibili all'esterno dell'oggetto oppure utilizzabili solo dai suoi metodi interni. 
 
-<!------------------- END SLIDE 058 -------------------------->
+<!------------------- END SLIDE 058 it -------------------------->
 
-<!----------------- BEGIN SLIDE 059 -------------------------->
+<!----------------- BEGIN SLIDE 059 it -------------------------->
+
+####  Membri pubblici
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 059
 
-#### Membri pubblici
+
 
 
 Le proprietà e i metodi pubblici si possono creare come abbiamo visto finora, cioè assegnandole all'oggetto `this` all'interno del costruttore.
@@ -1399,14 +1843,20 @@ Tuttavia, i *coding standard*  di Javascript preferiscono procedere in modo dive
 
 - I metodi sono **aggiunti al prototype del costruttore**  
 
-L'effetto finale è lo stesso, ma come vedremo ha un certo impatto sulle proprietà private.
+L'effetto finale è lo stesso, ma come vedremo ha un certo impatto sulle proprietà private. 
 
-<!------------------- END SLIDE 059 -------------------------->
+<!------------------- END SLIDE 059 it -------------------------->
 
-<!----------------- BEGIN SLIDE 060 -------------------------->
+<!----------------- BEGIN SLIDE 060 it -------------------------->
+
+####  Membri pubblici - Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 060
 
-#### Membri pubblici - Esempi
+
 
 
 ```javascript
@@ -1416,14 +1866,20 @@ function myObject(a) {
 myObject.prototype.m = function(x) {return this.v+x;} //metodo pubblico       
 
 var o = new myObject(1);   
-```
+``` 
 
-<!------------------- END SLIDE 060 -------------------------->
+<!------------------- END SLIDE 060 it -------------------------->
 
-<!----------------- BEGIN SLIDE 061 -------------------------->
+<!----------------- BEGIN SLIDE 061 it -------------------------->
+
+####  Membri privati
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 061
 
-#### Membri privati
+
 
 
 Le proprietà e i metodi privati si possono creare sfruttando l'effetto *closure* del costruttore
@@ -1434,14 +1890,20 @@ I metodi privati **possono accedere ai membri pubblici dell'oggetto**, ma per ov
 Dichiareremo una proprietà privata (che chiameremo `THIS`) e la assegneremo al valore di `this` nel costruttore. I metodi privati potranno quindi accedere ai membri pubblici con la sintassi `THIS.p`.
 
 Le proprietà e i metodi privati **non sono accessibili dall'esterno dell'oggetto** ma, al contrario dei comuni linguaggi object-oriented,   **non sono accessibili neppure dai metodi pubblici** creati come visto in precedenza.
-Quindi le proprietà e i metodi privati possono essere manipolati solo da altri metodi privati o dal costruttore in cui sono dichiarati!
+Quindi le proprietà e i metodi privati possono essere manipolati solo da altri metodi privati o dal costruttore in cui sono dichiarati! 
 
-<!------------------- END SLIDE 061 -------------------------->
+<!------------------- END SLIDE 061 it -------------------------->
 
-<!----------------- BEGIN SLIDE 062 -------------------------->
+<!----------------- BEGIN SLIDE 062 it -------------------------->
+
+####  Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 062
 
-#### Esempi
+
 
 
 ```javascript
@@ -1462,14 +1924,20 @@ myObject.prototype.m2 = function() {pm(); return p;}
 //metodo pubblico che usa membri privati
 
 o.m2(); //ERRORE, in quanto p e pm non sono accessibili da metodi pubblici  
-```
+``` 
 
-<!------------------- END SLIDE 062 -------------------------->
+<!------------------- END SLIDE 062 it -------------------------->
 
-<!----------------- BEGIN SLIDE 063 -------------------------->
+<!----------------- BEGIN SLIDE 063 it -------------------------->
+
+####  Membri privilegiati
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 063
 
-#### Membri privilegiati
+
 
 
 Non poter accedere ai membri privati dai metodi pubblici rende i membri privati utili solo per funzioni interne, ad esempio di inizializzazione.
@@ -1478,14 +1946,20 @@ Tuttavia, **è possibile creare speciali metodi pubblici che hanno accesso anche
 
 In pratica, molti preferiscono dichiarare sempre metodi privilegiati invece che pubblici, per avere una maggior simmetria col comportamento standard dei linguaggi a oggetti.
 
-Creare metodi privilegiati è molto semplice: basta usare la tecnica "base" di creazione dei metodi vista all'inizio, cioè **definirli direttamente nella funzione costruttore** (e non aggiungerli al prototipo) e la closure farà il resto.  
+Creare metodi privilegiati è molto semplice: basta usare la tecnica "base" di creazione dei metodi vista all'inizio, cioè **definirli direttamente nella funzione costruttore** (e non aggiungerli al prototipo) e la closure farà il resto. 
 
-<!------------------- END SLIDE 063 -------------------------->
+<!------------------- END SLIDE 063 it -------------------------->
 
-<!----------------- BEGIN SLIDE 064 -------------------------->
+<!----------------- BEGIN SLIDE 064 it -------------------------->
+
+####  Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 064
 
-#### Esempi
+
 
 ```javascript
 function myObject(a) {   
@@ -1508,14 +1982,20 @@ myObject.prototype.m2 = function() {pm(); return p;}
 o.m2(); //ERRORE, in quanto p e pm non sono accessibili da metodi pubblici  
 
 o.m3(); //ritorna 6
-```
+``` 
 
-<!------------------- END SLIDE 064 -------------------------->
+<!------------------- END SLIDE 064 it -------------------------->
 
-<!----------------- BEGIN SLIDE 065 -------------------------->
+<!----------------- BEGIN SLIDE 065 it -------------------------->
+
+### 5.7. Classi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 065
 
-### Classi
+
 
 
 ES6 introduce un nuovo concetto di classe, simile a quello dei linguaggi object-oriented come Java o C++.      
@@ -1544,14 +2024,20 @@ Una classe può essere dichiarata con il suo nome oppure assegnata come *espress
 
 ```javascript
 let Shape =  class { constructor(id) { this._id = id;} }   
-```
+``` 
 
-<!------------------- END SLIDE 065 -------------------------->
+<!------------------- END SLIDE 065 it -------------------------->
 
-<!----------------- BEGIN SLIDE 066 -------------------------->
+<!----------------- BEGIN SLIDE 066 it -------------------------->
+
+####  Metodi speciali
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 066
 
-#### Metodi speciali
+
 
 
 È possibile usare la parola chiave `static` per dichiarare metodi richiamabili direttamente sulla classe, e non sulle sue istanze:   
@@ -1592,14 +2078,20 @@ class Shape {
  set x(x) { this._x = x; }       
  get x()   { return this._x; }        
 }
-```
+``` 
 
-<!------------------- END SLIDE 066 -------------------------->
+<!------------------- END SLIDE 066 it -------------------------->
 
-<!----------------- BEGIN SLIDE 067 -------------------------->
+<!----------------- BEGIN SLIDE 067 it -------------------------->
+
+####  Ereditarietà
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 067
 
-#### Ereditarietà
+
 
 
 È possibile generare **gerarchie di classi** usando la parola chiave `extends`. Nelle classi derivate, la parola chiave `super` permette di accedere ai metodi e al costruttore della classe base.
@@ -1617,14 +2109,20 @@ class Rectangle extends Shape {
 }  
 ```
 
-Non esistono modificatori di visibilità (*private*, *protected*,…): se necessario, si possono usare gli accorgimenti già validi per i prototipi per ottenere effetti simili.
+Non esistono modificatori di visibilità (*private*, *protected*,…): se necessario, si possono usare gli accorgimenti già validi per i prototipi per ottenere effetti simili. 
 
-<!------------------- END SLIDE 067 -------------------------->
+<!------------------- END SLIDE 067 it -------------------------->
 
-<!----------------- BEGIN SLIDE 068 -------------------------->
+<!----------------- BEGIN SLIDE 068 it -------------------------->
+
+####  Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 068
 
-#### Esempi
+
 
 
 ```javascript
@@ -1647,24 +2145,31 @@ let Shape = function(id,x,y) {
 }
 Shape.defaultShape = function(){return new Shape("default", 100, 100);}       
 Object.defineProperty(Shape.prototype,"x",{get: function(){return this._x}}           
-```
+``` 
 
-<!------------------- END SLIDE 068 -------------------------->
+<!------------------- END SLIDE 068 it -------------------------->
 
-<!----------------- BEGIN SLIDE 069 -------------------------->
-> 069
+<!----------------- BEGIN SLIDE 069 it -------------------------->
 
-## Spread e Destructuring Assignment
-
+## 6. Spread e Destructuring Assignment
 
 
+<!----------------- COLUMN 1 -------------------------->
 
-<!------------------- END SLIDE 069 -------------------------->
+> 069 
 
-<!----------------- BEGIN SLIDE 070 -------------------------->
+<!------------------- END SLIDE 069 it -------------------------->
+
+<!----------------- BEGIN SLIDE 070 it -------------------------->
+
+### 6.1. Espansione di espressioni (spread)
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 070
 
-### Espansione di espressioni (spread)
+
 
 
 È possibile usare l'operatore di *spread* (indicato con `...`, da non confondersi con la sintassi dei *rest parameters*) per **esplodere un array (o**  ***ogni oggetto iterabile***     **) nella sequenza dei suoi valori**           
@@ -1684,14 +2189,20 @@ var a = [ "a", "b",  ...p ]; //a=[ "a", "b", 1, 2 ]
 var str="ciao"; var chars = [...str]; 
 //chars=["c","i","a","o"]
 //l'ultimo esempio funziona perché la stringa è iterabile
-```
+``` 
 
-<!------------------- END SLIDE 070 -------------------------->
+<!------------------- END SLIDE 070 it -------------------------->
 
-<!----------------- BEGIN SLIDE 071 -------------------------->
+<!----------------- BEGIN SLIDE 071 it -------------------------->
+
+### 6.2. Destructuring Assignment
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 071
 
-### Destructuring Assignment
+
 
 Il destructuring assignament ("assegnazione destrutturante") permette di  **estrarre i valori di array o le proprietà di oggetti e assegnarli a variabili distinte**. 
 
@@ -1714,11 +2225,15 @@ Oppure assegnare la parte restante dell'array usando un   **rest parameter**:
 
 ```javascript
 var  [ a, ...b ]  = list; //a=1, b=[2,3]
-```
+``` 
 
-<!------------------- END SLIDE 071 -------------------------->
+<!------------------- END SLIDE 071 it -------------------------->
 
-<!----------------- BEGIN SLIDE 072 -------------------------->
+<!----------------- BEGIN SLIDE 072 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 072
 
 
@@ -1752,11 +2267,15 @@ La destrutturazione può essere invocata in modo **ricorsivo**:
 ```javascript
 var o2={p1:1, p2:"a", p3:{s1:2, s2:3}};     
 var {p3:a, p3:{s2:b}}=o2; //a={s1:2, s2:3}, b=3
-```
+``` 
 
-<!------------------- END SLIDE 072 -------------------------->
+<!------------------- END SLIDE 072 it -------------------------->
 
-<!----------------- BEGIN SLIDE 073 -------------------------->
+<!----------------- BEGIN SLIDE 073 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 073
 
 
@@ -1778,27 +2297,35 @@ f(["Ciao",10]); //restituisce "Ciao10"
 
 function g ({p1:a,p2:b}) {return a+b;}        
 g({p1:"Ciao",p2:10}); //restituisce "Ciao10"     
-```
+``` 
+
+<!------------------- END SLIDE 073 it -------------------------->
+
+<!----------------- BEGIN SLIDE 074 it -------------------------->
+
+## 7. Iteratori e Funzioni Generatrici
 
 
-<!------------------- END SLIDE 073 -------------------------->
+<!----------------- COLUMN 1 -------------------------->
 
-<!----------------- BEGIN SLIDE 074 -------------------------->
-> 074
+> 074 
 
-## Iteratori e Funzioni Generatrici
+<!------------------- END SLIDE 074 it -------------------------->
+
+<!----------------- BEGIN SLIDE 075 it -------------------------->
+
+### 7.1. Iteratori
+
+####  Definizione
 
 
+<!----------------- COLUMN 1 -------------------------->
 
-
-<!------------------- END SLIDE 074 -------------------------->
-
-<!----------------- BEGIN SLIDE 075 -------------------------->
 > 075
 
-### Iteratori
 
-#### Definizione
+
+
 
 
 Gli oggetti ES6 possono personalizzare la maniera in cui vengono "enumerati" tramite il costrutto for, che dispone di una nuova sintassi specifica per questo scopo.
@@ -1835,14 +2362,20 @@ function numbers(a,b) {
   }     
  }   
 }
-```
+``` 
 
-<!------------------- END SLIDE 075 -------------------------->
+<!------------------- END SLIDE 075 it -------------------------->
 
-<!----------------- BEGIN SLIDE 076 -------------------------->
+<!----------------- BEGIN SLIDE 076 it -------------------------->
+
+####  Uso
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 076
 
-#### Uso
+
 
 
 Un oggetto iterabile può essere enumerato usando il suo iteratore, ad esempio con un ciclo for:
@@ -1867,14 +2400,20 @@ let [a,b,,d] = numbers1_10 //a=1, b=2, d=4
 [0,...numbers1_10] //un array da 0 a 10
 ```
 
-Molti oggetti Javascript sono iterabili, come gli array e le stringhe, ma anche le Map e i Set che vedremo successivamente.                     
+Molti oggetti Javascript sono iterabili, come gli array e le stringhe, ma anche le Map e i Set che vedremo successivamente. 
 
-<!------------------- END SLIDE 076 -------------------------->
+<!------------------- END SLIDE 076 it -------------------------->
 
-<!----------------- BEGIN SLIDE 077 -------------------------->
+<!----------------- BEGIN SLIDE 077 it -------------------------->
+
+### 7.2. Generatori
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 077
 
-### Generatori
+
 
 
 Poiché definire un iteratore è abbastanza complesso, ES6 mette a disposizione un altro utile costrutto per creare oggetti iterabili con valori calcolati e, teoricamente, illimitati: le funzioni generatrici.
@@ -1907,23 +2446,26 @@ I generatori possono anche essere definiti in maniera anonima (espressioni di fu
 ```javascript
 var g_numbers1_10 = function *() {for(let i=1; i<11; ++i) yield i;}
 var o = {n:0, g_numbers1_10:function *() {for(let i=1; i<11; ++i) yield i}}      
-```  
+``` 
 
-    
+<!------------------- END SLIDE 077 it -------------------------->
 
-<!------------------- END SLIDE 077 -------------------------->
+<!----------------- BEGIN SLIDE 078 it -------------------------->
 
-<!----------------- BEGIN SLIDE 078 -------------------------->
-> 078
-
-## Eccezioni
+## 8. Eccezioni
 
 
+<!----------------- COLUMN 1 -------------------------->
+
+> 078 
+
+<!------------------- END SLIDE 078 it -------------------------->
+
+<!----------------- BEGIN SLIDE 079 it -------------------------->
 
 
-<!------------------- END SLIDE 078 -------------------------->
+<!----------------- COLUMN 1 -------------------------->
 
-<!----------------- BEGIN SLIDE 079 -------------------------->
 > 079
 
 
@@ -1933,14 +2475,20 @@ Un'eccezione segnala un *imprevisto*, spesso un *errore*, all'interno della norm
 
 Un'eccezione può venire sollevata dalle librerie di Javascript o dal codice scritto dall'utente, attraverso la parola chiave `throw`.
 
-Per gestire le eccezioni, è possibile avvalersi del costrutto `try ... catch ... finally`.
+Per gestire le eccezioni, è possibile avvalersi del costrutto `try ... catch ... finally`. 
 
-<!------------------- END SLIDE 079 -------------------------->
+<!------------------- END SLIDE 079 it -------------------------->
 
-<!----------------- BEGIN SLIDE 080 -------------------------->
+<!----------------- BEGIN SLIDE 080 it -------------------------->
+
+####  Gli handler
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 080
 
-#### Gli handler
+
 
 
 Una volta sollevata, un'eccezione risale lo *stack di chiamata* di Javascript finché non viene gestita. 
@@ -1949,14 +2497,20 @@ Ciò significa che un'eccezione generata in una funzione, se non viene gestita a
 Per gestire le eccezioni generate da un certo blocco di codice, è necessario inserire il blocco all'interno del costrutto `try ... catch` .
 - Qualsiasi eccezione sollevata all'interno del codice compreso tra `try`  e `catch` verrà passata al codice di gestione dichiarato dopo `catch`.
 
-Se ci si vuole assicurare che un certo codice sia eseguito *sempre* dopo il blocco protetto da `try ... catch`, indipendentemente dal sollevamento di eccezioni, è possibile aggiungere al blocco la clausola `finally`.
+Se ci si vuole assicurare che un certo codice sia eseguito *sempre* dopo il blocco protetto da `try ... catch`, indipendentemente dal sollevamento di eccezioni, è possibile aggiungere al blocco la clausola `finally`. 
 
-<!------------------- END SLIDE 080 -------------------------->
+<!------------------- END SLIDE 080 it -------------------------->
 
-<!----------------- BEGIN SLIDE 081 -------------------------->
+<!----------------- BEGIN SLIDE 081 it -------------------------->
+
+####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 081
 
-#### Esempio
+
 
 
 ```javascript
@@ -1980,24 +2534,31 @@ try {
 } catch (ex) {  
  //l'oggetto ex che arriva al blocco catch è quello sollevato con la throw
 }
-```
+``` 
 
-<!------------------- END SLIDE 081 -------------------------->
+<!------------------- END SLIDE 081 it -------------------------->
 
-<!----------------- BEGIN SLIDE 082 -------------------------->
-> 082
+<!----------------- BEGIN SLIDE 082 it -------------------------->
 
-## Oggetti Predefiniti
-
+## 9. Oggetti Predefiniti
 
 
+<!----------------- COLUMN 1 -------------------------->
 
-<!------------------- END SLIDE 082 -------------------------->
+> 082 
 
-<!----------------- BEGIN SLIDE 083 -------------------------->
+<!------------------- END SLIDE 082 it -------------------------->
+
+<!----------------- BEGIN SLIDE 083 it -------------------------->
+
+### 9.1. String
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 083
 
-### String
+
 
 
 Gli oggetti **String** sono usati in Javascript per contenere stringhe di caratteri. Possono essere creati implicitamente, utilizzando una costante stringa, o esplicitamente tramite il costruttore:  
@@ -2031,14 +2592,20 @@ restituisce la sottostringa che inizia *os* caratteri e termina a *oe* caratteri
 ritorna la stringa convertita in minuscolo
 
 - `toUpperCase()`    
-ritorna la stringa convertita in maiuscolo
+ritorna la stringa convertita in maiuscolo 
 
-<!------------------- END SLIDE 083 -------------------------->
+<!------------------- END SLIDE 083 it -------------------------->
 
-<!----------------- BEGIN SLIDE 084 -------------------------->
+<!----------------- BEGIN SLIDE 084 it -------------------------->
+
+####  Interpolazione di stringhe
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 084
 
-#### Interpolazione di stringhe
+
 
 
 ES6 permette di costruire stringhe interpolandole, cioè inserendovi all'interno, i valori di variabili senza dover usare la concatenazione, (come succede, ad esempio, in PHP).
@@ -2056,14 +2623,20 @@ var saluto="Ciao";
 ```javascript
 var prodotto = { quantita: 7, nome: "gelato", prezzounitario: 3 };          
 `You ordered ${prodotto.quantita} ${prodotto.nome}, for a total price of ${prodotto.quantita * prodotto.prezzounitario}  euros`;  
-```
+``` 
 
-<!------------------- END SLIDE 084 -------------------------->
+<!------------------- END SLIDE 084 it -------------------------->
 
-<!----------------- BEGIN SLIDE 085 -------------------------->
+<!----------------- BEGIN SLIDE 085 it -------------------------->
+
+### 9.2. RegExp
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 085
 
-### RegExp
+
 
 
 Javascript riconosce le espressioni regolari scritte nella sintassi Perl.   
@@ -2088,14 +2661,20 @@ divide la stringa in una serie di segmenti definiti dai separatori specificati c
 
 Per default, Javascript interrompe il processo di matching su una stringa appena trova un riscontro per l'espressione regolare. Per trovare tutti i riscontri possibili, usare il modificatore `/g`    
 
-Per rendere l'espressione *case insensitive*, usare il modificatore `/i`
+Per rendere l'espressione *case insensitive*, usare il modificatore `/i` 
 
-<!------------------- END SLIDE 085 -------------------------->
+<!------------------- END SLIDE 085 it -------------------------->
 
-<!----------------- BEGIN SLIDE 086 -------------------------->
+<!----------------- BEGIN SLIDE 086 it -------------------------->
+
+### 9.3. Array
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 086
 
-### Array
+
 
 
 Gli Array sono oggetti javascript predefiniti e possono contenere valori di qualsiasi tipo.  
@@ -2128,14 +2707,20 @@ inverte l'ordine dell'array. Attenzione: oltre a restituire l'array ordinato, qu
 restituisce il sotto array di lunghezza *l* (default, la massima possibile) che inizia all'indice *os*.  
 
 - `sort([sortfun])`     
-ordina l'array. La funzione opzionale `sortfun` può essere usata per specificare un criterio di ordinamento non standard. Attenzione: oltre a restituire l'array ordinato, questa funzione modifica l'array di origine.  
+ordina l'array. La funzione opzionale `sortfun` può essere usata per specificare un criterio di ordinamento non standard. Attenzione: oltre a restituire l'array ordinato, questa funzione modifica l'array di origine. 
 
-<!------------------- END SLIDE 086 -------------------------->
+<!------------------- END SLIDE 086 it -------------------------->
 
-<!----------------- BEGIN SLIDE 087 -------------------------->
+<!----------------- BEGIN SLIDE 087 it -------------------------->
+
+####  Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 087
 
-#### Esempi
+
 
 
 ```javascript
@@ -2157,14 +2742,20 @@ if (4 in a1) { a1[4] = a1[4]+1; }
 /*
 Nota: per creare un array associativo, è sufficiente creare dinamicamente delle proprietà (chiavi) in un oggetto Object vuoto
 */
-```
+``` 
 
-<!------------------- END SLIDE 087 -------------------------->
+<!------------------- END SLIDE 087 it -------------------------->
 
-<!----------------- BEGIN SLIDE 088 -------------------------->
+<!----------------- BEGIN SLIDE 088 it -------------------------->
+
+####  Array - Altri metodi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 088
 
-#### Array - Altri metodi
+
 
 
 - `forEach(function (valore, indice, array) {...} )`          
@@ -2192,14 +2783,20 @@ restituisce il primo/l'ultimo indice dell'elemento *v* nell'array, opzionalmente
 restituisce il primo elemento per cui la funzione vale true 
 
 - `findIndex(function (valore, indice, array) {return …} )`           
-restituisce l'indice del primo elemento per cui la funzione vale true  
+restituisce l'indice del primo elemento per cui la funzione vale true 
 
-<!------------------- END SLIDE 088 -------------------------->
+<!------------------- END SLIDE 088 it -------------------------->
 
-<!----------------- BEGIN SLIDE 089 -------------------------->
+<!----------------- BEGIN SLIDE 089 it -------------------------->
+
+### 9.4. Date
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 089
 
-### Date
+
 
 
 L'oggetto **Date** permette di manipolare valori di tipo data e ora. Dispone di diversi costruttori:
@@ -2214,14 +2811,20 @@ Gli oggetti Date possono essere confrontati tra loro con i normali operatori di 
 
 I metodi degli oggetti Date permettono di leggerne e scriverne tutti i membri:
 
-Ad esempio, `getYear`, `getMonth`, `setYear`, `setMonth`, `getDay` (restituisce il *giorno della settimana*), `getDate` (restituisce il *giorno del mese*), `setDate` (imposta il giorno del mese: se il valore passato è maggiore del massimo consentito, *la funzione gestisce automaticamente l'incremento del mese/anno della data*)
+Ad esempio, `getYear`, `getMonth`, `setYear`, `setMonth`, `getDay` (restituisce il *giorno della settimana*), `getDate` (restituisce il *giorno del mese*), `setDate` (imposta il giorno del mese: se il valore passato è maggiore del massimo consentito, *la funzione gestisce automaticamente l'incremento del mese/anno della data*) 
 
-<!------------------- END SLIDE 089 -------------------------->
+<!------------------- END SLIDE 089 it -------------------------->
 
-<!----------------- BEGIN SLIDE 090 -------------------------->
+<!----------------- BEGIN SLIDE 090 it -------------------------->
+
+####  Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 090
 
-#### Esempi
+
 
 
 ```javascript
@@ -2241,14 +2844,20 @@ if (oggi.getHours() > 12)
 //calcola una la data di 70 giorni nel futuro
 futuro = new Date();
 futuro.setDate(futuro.getDate()+70);   
-```
+``` 
 
-<!------------------- END SLIDE 090 -------------------------->
+<!------------------- END SLIDE 090 it -------------------------->
 
-<!----------------- BEGIN SLIDE 091 -------------------------->
+<!----------------- BEGIN SLIDE 091 it -------------------------->
+
+### 9.5. Set
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 091
 
-### Set
+
 
 
 ES6 mette a disposizione due nuove **classi contenitore** (che si affiancano ad Array) presenti nelle librerie di tutti i linguaggi object oriented:  **Map** e **Set**.
@@ -2274,14 +2883,20 @@ s.delete(2);
 s.has(2) === false;     
 s.size === 3    
 for (let v of s) console.log(s);   
-```
+``` 
 
-<!------------------- END SLIDE 091 -------------------------->
+<!------------------- END SLIDE 091 it -------------------------->
 
-<!----------------- BEGIN SLIDE 092 -------------------------->
+<!----------------- BEGIN SLIDE 092 it -------------------------->
+
+### 9.6. Map
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 092
 
-### Map
+
 
 
 Map rappresenta un'associazione tra chiavi e valori.  **Chiavi e valori possono essere di qualsiasi tipo (anche oggetti)`. Una volta creata una Map (`new Map()`) è possibile:
@@ -2309,15 +2924,20 @@ m.get(4)==="four";
 for(v of m) console.log(v);   
 for(v of m.keys()) console.log(v);     
 for(v of m.values()) console.log(v);   
-```
+``` 
 
-<!------------------- END SLIDE 092 -------------------------->
+<!------------------- END SLIDE 092 it -------------------------->
+
+<!----------------- BEGIN SLIDE 094 it -------------------------->
+
+### 9.7. Promise
 
 
-<!----------------- BEGIN SLIDE 094 -------------------------->
+<!----------------- COLUMN 1 -------------------------->
+
 > 094
 
-### Promise
+
 
 Le promises ES6   **sostituiscono le funzioni callback**   come sistema per restituire valori (o errori) in maniera asincrona. Una promise rappresenta il risultato di una computazione che terminerà in futuro.
 
@@ -2337,14 +2957,20 @@ p = new Promise((resolve,reject) => {
  resolve(10); //risultato 10      
  //oppure reject(messaggio);       
 })
-```
+``` 
 
-<!------------------- END SLIDE 094 -------------------------->
+<!------------------- END SLIDE 094 it -------------------------->
 
-<!----------------- BEGIN SLIDE 095 -------------------------->
+<!----------------- BEGIN SLIDE 095 it -------------------------->
+
+####  Handlers
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 095
 
-#### Handlers
+
 
 
 Anche se è possibile creare Promise come appena visto, è più comune utilizzare le Promise restituite da alcune API asincrone di Javascript.  
@@ -2373,14 +2999,20 @@ p.then(
 
 p.finally(     
  ()=>{console.log("done")}); //solo finally
-```
+``` 
 
-<!------------------- END SLIDE 095 -------------------------->
+<!------------------- END SLIDE 095 it -------------------------->
 
-<!----------------- BEGIN SLIDE 096 -------------------------->
+<!----------------- BEGIN SLIDE 096 it -------------------------->
+
+####  Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 096
 
-#### Esempi
+
 
 
 ```javascript
@@ -2407,14 +3039,20 @@ v_proxy = doMyWorkAsync(1);
 v_proxy.then((v) => {   
  console.log("Valore restituito: " + v);
 });
-```
+``` 
 
-<!------------------- END SLIDE 096 -------------------------->
+<!------------------- END SLIDE 096 it -------------------------->
 
-<!----------------- BEGIN SLIDE 097 -------------------------->
+<!----------------- BEGIN SLIDE 097 it -------------------------->
+
+####  Concatenazione
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 097
 
-#### Concatenazione
+
 
 È spesso utile *concatenare* delle operazioni asincrone, cioè avviare un'operazione asincrona quando la precedente termina, passandole come argomento il risultato di quest'ultima.
 
@@ -2422,14 +3060,20 @@ Con le promises questo è possibile grazie al fatto che i metodi `then` e `catch
 
 Nel corpo di un handler usato in una catena, la `return` corrisponderà a una chiamata a *resolve* col rispettivo valore, mentre un'eccezione (`throw`) verrà trasformata in una chiamata a *reject*.
 
-In questo modo, è possibile chiamare una serie di `then` concatenati, specificando in ciascuno cosa fare quando l'operazione precedente termina.
+In questo modo, è possibile chiamare una serie di `then` concatenati, specificando in ciascuno cosa fare quando l'operazione precedente termina. 
 
-<!------------------- END SLIDE 097 -------------------------->
+<!------------------- END SLIDE 097 it -------------------------->
 
-<!----------------- BEGIN SLIDE 098 -------------------------->
+<!----------------- BEGIN SLIDE 098 it -------------------------->
+
+####  Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 098
 
-#### Esempi
+
 
 
 ```javascript
@@ -2463,14 +3107,20 @@ doMyWorkAsync(1)
   console.log("Finito");  
  }
 )
-```
+``` 
 
-<!------------------- END SLIDE 098 -------------------------->
+<!------------------- END SLIDE 098 it -------------------------->
 
-<!----------------- BEGIN SLIDE 099 -------------------------->
+<!----------------- BEGIN SLIDE 099 it -------------------------->
+
+### 9.8. Async Functions
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 099
 
-### Async Functions
+
 
 Le funzioni asincrone, dichiarate tramite il costrutto `async function`, sono un metodo per *gestire la creazione delle Promise e/o il codice dipendente dal soddisfacimento di una o più Promise in maniera più lineare e semplice*.
 
@@ -2498,14 +3148,20 @@ async function pf2(x) {
  else throw "x negativo"; //reject          
 }    
 pf2(1).then((v)=>{console.log(v)},(e)=>{console.log("Errore: "+e)});   
-```   
+``` 
 
-<!------------------- END SLIDE 099 -------------------------->
+<!------------------- END SLIDE 099 it -------------------------->
 
-<!----------------- BEGIN SLIDE 100 -------------------------->
+<!----------------- BEGIN SLIDE 100 it -------------------------->
+
+####  await e gli handlers impliciti
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 100
 
-#### await e gli handlers impliciti
+
 
 
 All'interno di una *async function* è inoltre possibile **sincronizzarsi** in maniera semplificata con altre Promise, senza utilizzare i costrutti `then` e `catch`, ma lavorando in maniera sincrona col costrutto `await`.
@@ -2518,14 +3174,20 @@ il valore passato alla *reject* di *p* diventerà **un'eccezione** sollevata dal
 
 A tutti gli effetti await "scarica" l'asincronia della Promise nidificata (*p* nell'esempio) su quella della funzione async che la contiene, rendendo in un certo senso sincrona la Promise su cui viene eseguita.  
 
-Per questo motivo **await si può usare solo un funzioni async**: pur rimanendo bloccata sulla await, la funzione async non è in effetti bloccante per lo script, in quanto per sua natura ritorna automaticamente essa stessa una Promise.    
+Per questo motivo **await si può usare solo un funzioni async**: pur rimanendo bloccata sulla await, la funzione async non è in effetti bloccante per lo script, in quanto per sua natura ritorna automaticamente essa stessa una Promise. 
 
-<!------------------- END SLIDE 100 -------------------------->
+<!------------------- END SLIDE 100 it -------------------------->
 
-<!----------------- BEGIN SLIDE 101 -------------------------->
+<!----------------- BEGIN SLIDE 101 it -------------------------->
+
+####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 101
 
-#### Esempio
+
 
 
 ```javascript
@@ -2549,7 +3211,12 @@ pf2(1).then(
  (e)=>{console.log("Errore: "+e)});    
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 La funzione pf1(y) ritorna una Promise.
 
@@ -2559,26 +3226,35 @@ La Promise restituita da pf2(x,y)
 
 - **Chiamerà la reject**   (secondo parametro del `then`) nel caso in cui pf2 sollevi un'eccezione, esplicitamente (`throw`) o per la chiamata a *reject* della pf1 su cui pf2 esegue un `await`. 
 
-- **Chiamarà la resolve**    (primo parametro del `then`) se pf2, dopo che pf1 ha chiamato la sua *resolve*, ritorna normalmente il proprio valore con una `return`.
+- **Chiamarà la resolve**    (primo parametro del `then`) se pf2, dopo che pf1 ha chiamato la sua *resolve*, ritorna normalmente il proprio valore con una `return`. 
 
-<!------------------- END SLIDE 101 -------------------------->
+<!------------------- END SLIDE 101 it -------------------------->
 
-<!----------------- BEGIN SLIDE 102 -------------------------->
-> 102
+<!----------------- BEGIN SLIDE 102 it -------------------------->
 
-## Javascript nei Browser
-
+## 10. Javascript nei Browser
 
 
+<!----------------- COLUMN 1 -------------------------->
 
-<!------------------- END SLIDE 102 -------------------------->
+> 102 
 
-<!----------------- BEGIN SLIDE 103 -------------------------->
+<!------------------- END SLIDE 102 it -------------------------->
+
+<!----------------- BEGIN SLIDE 103 it -------------------------->
+
+### 10.1. Script nella pagine HTML
+
+####  Incorporamento
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 103
 
-### Script nella pagine HTML
 
-#### Incorporamento
+
+
 
 
 Per incorporare uno script in una pagina HTML, si utilizza il tag \<script\> con attributo type impostato al valore "text/javascript".      
@@ -2596,14 +3272,20 @@ Esistono inoltre alcuni attributi HTML in cui si può incorporare del codice:
 
 - Gli attributi per la gestione degli eventi, come *onclick*, possono contenere frammenti di codice (ma non dichiarazioni), da eseguire al verificarsi dell'evento.   
 
-- L'attributo href del tag \<a\> può fare riferimento a una funzione javascript con la sintassi: "javascript:nomefunzione(argomenti)". In questo caso, il click del link eseguirà la chiamata alla funzione.        
+- L'attributo href del tag \<a\> può fare riferimento a una funzione javascript con la sintassi: "javascript:nomefunzione(argomenti)". In questo caso, il click del link eseguirà la chiamata alla funzione. 
 
-<!------------------- END SLIDE 103 -------------------------->
+<!------------------- END SLIDE 103 it -------------------------->
 
-<!----------------- BEGIN SLIDE 104 -------------------------->
+<!----------------- BEGIN SLIDE 104 it -------------------------->
+
+####  Esecuzione
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 104
 
-#### Esecuzione
+
 
 
 Il tag \<script\> può apparire sia nella \<head\>, dove viene normalmente posto per la maggior parte degli script, sia in qualunque punto del \<body\>.  
@@ -2613,14 +3295,20 @@ Tutte le funzioni e le variabili dichiarate negli script diventano disponibili (
 Se uno script contiene codice immediato, cioè scritto al di fuori di funzioni, questo viene eseguito non appena il parser analizza il punto della pagina in cui il codice compare.  
 In questo modo, ad esempio, si può fare in modo che uno script venga valutato solo dopo che l'elemento HTML a cui si riferisce è stato caricato.
 
-Gli script possono utilizzare liberamente funzioni e variabili dichiarate in altri script inseriti nella stessa pagina.
+Gli script possono utilizzare liberamente funzioni e variabili dichiarate in altri script inseriti nella stessa pagina. 
 
-<!------------------- END SLIDE 104 -------------------------->
+<!------------------- END SLIDE 104 it -------------------------->
 
-<!----------------- BEGIN SLIDE 105 -------------------------->
+<!----------------- BEGIN SLIDE 105 it -------------------------->
+
+####  Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 105
 
-#### Esempi
+
 
 
 ```html
@@ -2633,14 +3321,20 @@ Gli script possono utilizzare liberamente funzioni e variabili dichiarate in alt
 <script type="text/javascript" src="script.js">      
 /* */
 </script>
-```
+``` 
 
-<!------------------- END SLIDE 105 -------------------------->
+<!------------------- END SLIDE 105 it -------------------------->
 
-<!----------------- BEGIN SLIDE 106 -------------------------->
+<!----------------- BEGIN SLIDE 106 it -------------------------->
+
+### 10.2. Oggetto window
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 106
 
-### Oggetto window
+
 
 
 Quando Javascript è usato all'interno del browser, sono disponibili alcuni oggetti particolari, relativi al browser stesso e alla pagina visualizzata.
@@ -2659,14 +3353,20 @@ L'interfaccia di window contiene alcune funzionalità molto utili, tra cui
 
 - La proprietà `document` permette di accedere al documento HTML visualizzato.
 
-- Altre proprietà, come ad esempio `statusbar`, sono supportate in maniera diversa dai browser.
+- Altre proprietà, come ad esempio `statusbar`, sono supportate in maniera diversa dai browser. 
 
-<!------------------- END SLIDE 106 -------------------------->
+<!------------------- END SLIDE 106 it -------------------------->
 
-<!----------------- BEGIN SLIDE 107 -------------------------->
+<!----------------- BEGIN SLIDE 107 it -------------------------->
+
+####  Oggetto window - Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 107
 
-#### Oggetto window - Esempi
+
 
 
 ```javascript
@@ -2676,14 +3376,20 @@ if (window.confirm("Sei sicuro di voler lasciare questa pagina?")) {…}
 //chiede all'untente di inserire un dato e lo avverte se non è stato specificato nulla  
 var citta = window.prompt("Luogo di Nascita","L'Aquila");     
 if (!citta) window.alert("Non hai specificato il luogo di nascita!");  
-```
+``` 
 
-<!------------------- END SLIDE 107 -------------------------->
+<!------------------- END SLIDE 107 it -------------------------->
 
-<!----------------- BEGIN SLIDE 108 -------------------------->
+<!----------------- BEGIN SLIDE 108 it -------------------------->
+
+####  I timer
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 108
 
-#### I timer
+
 
 
 Javascript, tramite l'oggetto **window**, permette di eseguire **azioni temporizzate**. A questo scopo si usano i seguenti metodi.
@@ -2700,14 +3406,20 @@ Entrambe le funzioni possono essere chiamate più volte, e restituiscono un *tim
  per le temporizzazioni avviate con `setTimeout()`
 
 - `clearInterval(id)`    
- per le temporizzazioni avviate con `setInterval()`
+ per le temporizzazioni avviate con `setInterval()` 
 
-<!------------------- END SLIDE 108 -------------------------->
+<!------------------- END SLIDE 108 it -------------------------->
 
-<!----------------- BEGIN SLIDE 109 -------------------------->
+<!----------------- BEGIN SLIDE 109 it -------------------------->
+
+####  I timer - Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 109
 
-#### I timer - Esempi
+
 
 
 ```javascript
@@ -2722,14 +3434,20 @@ if (nome) setTimeout(saluta,5000,nome);
 
 //avverte dell'ora corrente ogni minuto
 setInterval("d=new Date(); alert('Ora sono le '+d.getHours()+':'+d.getMinutes())",60000);       
-```
+``` 
 
-<!------------------- END SLIDE 109 -------------------------->
+<!------------------- END SLIDE 109 it -------------------------->
 
-<!----------------- BEGIN SLIDE 110 -------------------------->
+<!----------------- BEGIN SLIDE 110 it -------------------------->
+
+####  Oggetto document
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 110
 
-#### Oggetto document
+
 
 
 L'oggetto **document**, accessibile tramite la proprietà omonima di **window**, rappresenta il documento visibile nel browser.
@@ -2746,14 +3464,20 @@ La maggior parte dei metodi e delle proprietà offerti dall'oggetto document pro
 
 - Il metodo `close()` chiude lo stream di scrittura aperto con   `open()` e forza la visualizzazione di quanto scritto nel documento con `write()` e `writeln()`. Ogni successiva operazione di scrittura genererà una nuova `open()` implicita.
 
-L'oggetto document fornisce anche un sistema "proprietario" di Javascript per l'accesso alla struttura del documento visualizzato. Nei browser moderni, con supporto al W3C DOM, l'uso di questo sistema è tuttavia fortemente sconsigliato.    
+L'oggetto document fornisce anche un sistema "proprietario" di Javascript per l'accesso alla struttura del documento visualizzato. Nei browser moderni, con supporto al W3C DOM, l'uso di questo sistema è tuttavia fortemente sconsigliato. 
 
-<!------------------- END SLIDE 110 -------------------------->
+<!------------------- END SLIDE 110 it -------------------------->
 
-<!----------------- BEGIN SLIDE 111 -------------------------->
+<!----------------- BEGIN SLIDE 111 it -------------------------->
+
+####  L'oggetto Document - Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 111
 
-#### L'oggetto Document - Esempi
+
 
 
 ```javascript
@@ -2770,14 +3494,20 @@ for(i=0;i<10;++i) {
 }
 document.write("</table>");   
 document.close(); 
-```
+``` 
 
-<!------------------- END SLIDE 111 -------------------------->
+<!------------------- END SLIDE 111 it -------------------------->
 
-<!----------------- BEGIN SLIDE 112 -------------------------->
+<!----------------- BEGIN SLIDE 112 it -------------------------->
+
+### 10.3. Oggetto XMLHttpRequest
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 112
 
-### Oggetto XMLHttpRequest
+
 
 
 L'oggetto **XMLHttpRequest**, originariamente introdotto da Internet Explorer, è ora supportato da tutti i browser più diffusi.
@@ -2786,14 +3516,20 @@ Il suo scopo è quello di *permettere al codice Javascript l'esecuzione di richi
 
 Questo oggetto è alla base delle tecniche **AJAX**, con cui gli script che controllano una pagina web possono dialogare col server senza la necessità di "cambiare pagina".
 
-Per motivi di sicurezza, l'oggetto XMLHttpRequest può effettuare connessioni   *solo con l'host a cui appartiene la pagina*   in cui ha sede lo script, a meno che l'host contattato non ritorni oppurtuni     *CORS headers* .
+Per motivi di sicurezza, l'oggetto XMLHttpRequest può effettuare connessioni   *solo con l'host a cui appartiene la pagina*   in cui ha sede lo script, a meno che l'host contattato non ritorni oppurtuni     *CORS headers* . 
 
-<!------------------- END SLIDE 112 -------------------------->
+<!------------------- END SLIDE 112 it -------------------------->
 
-<!----------------- BEGIN SLIDE 113 -------------------------->
+<!----------------- BEGIN SLIDE 113 it -------------------------->
+
+####  XMLHttpRequest: istanziazione
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 113
 
-#### XMLHttpRequest: istanziazione
+
 
 
 *L'interfaccia di XMLHttpRequest*  è standard, ma esistono sistemi browser-dipendenti per accedere a questo oggetto.
@@ -2802,28 +3538,40 @@ Se nel browser è definito il costruttore omonimo (`typeof XMLHttpRequest! = "Un
 `var XHR = new XMLHttpRequest()`
 
 Ad esempio, in Internet Explorer, si usava il costruttore ActiveXObject (`typeof ActiveXObject != "Undefined"`) passandogli la stringa di identificazione dell'oggetto, che può essere "MSXML2.XmlHttp.6.0" (preferita) o "MSXML2.XmlHttp.3.0" (vecchie versioni del browser):
-`var XHR = new ActiveXObject ("MSXML2.XmlHttp.3.0")`;
+`var XHR = new ActiveXObject ("MSXML2.XmlHttp.3.0")`; 
 
-<!------------------- END SLIDE 113 -------------------------->
+<!------------------- END SLIDE 113 it -------------------------->
 
-<!----------------- BEGIN SLIDE 114 -------------------------->
+<!----------------- BEGIN SLIDE 114 it -------------------------->
+
+####  XMLHttpRequest: uso
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 114
 
-#### XMLHttpRequest: uso
+
 
 
 Il *pattern d'uso di XMLHttpRequest* è duplice, a seconda che si scelga la modalità di chiamata sincrona o asincrona:
 
 - **Modalità sincrona**: la richiesta al server blocca lo script (e la pagina associata) finché non viene ricevuta la risposta.
 
-- **Modalità asincrona**: la richiesta viene inviata, e lo script continua la sua esecuzione, venendo poi avvisato dell'arrivo della risposta tramite un *evento*.
+- **Modalità asincrona**: la richiesta viene inviata, e lo script continua la sua esecuzione, venendo poi avvisato dell'arrivo della risposta tramite un *evento*. 
 
-<!------------------- END SLIDE 114 -------------------------->
+<!------------------- END SLIDE 114 it -------------------------->
 
-<!----------------- BEGIN SLIDE 115 -------------------------->
+<!----------------- BEGIN SLIDE 115 it -------------------------->
+
+####  XMLHttpRequest: uso sincrono
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 115
 
-#### XMLHttpRequest: uso sincrono
+
 
 
 Si prepara la richiesta usando il metodo `open`, a cui si passano il verbo HTTP e la url da chiamare. Il terzo parametro deve essere   *false* per avviare una richiesta sincrona:
@@ -2844,14 +3592,20 @@ Si controlla se la richiesta ha restituito un errore HTTP tramite la proprietà 
 if (xhr.status == 200) {...}   
 ```
 
-Si accede ai dati restituiti dal server (se necessario) tramite la proprietà `responseText`
+Si accede ai dati restituiti dal server (se necessario) tramite la proprietà `responseText` 
 
-<!------------------- END SLIDE 115 -------------------------->
+<!------------------- END SLIDE 115 it -------------------------->
 
-<!----------------- BEGIN SLIDE 116 -------------------------->
+<!----------------- BEGIN SLIDE 116 it -------------------------->
+
+####  XMLHttpRequest: uso sincrono - Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 116
 
-#### XMLHttpRequest: uso sincrono - Esempio
+
 
 
 ```javascript
@@ -2866,14 +3620,20 @@ if (req.status==200) {
 } else {
  alert("errore");  
 }
-```
+``` 
 
-<!------------------- END SLIDE 116 -------------------------->
+<!------------------- END SLIDE 116 it -------------------------->
 
-<!----------------- BEGIN SLIDE 117 -------------------------->
+<!----------------- BEGIN SLIDE 117 it -------------------------->
+
+####  XMLHttpRequest: uso asincrono
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 117
 
-#### XMLHttpRequest: uso asincrono
+
 
 
 Si prepara la richiesta usando il metodo `open`, a cui si passano il verbo HTTP e la url da chiamare. Il terzo parametro deve essere   *true* per avviare una richiesta sincrona:
@@ -2910,14 +3670,20 @@ All'interno degli handler dichiarati
 
 - In caso di errore (handler `onerror`), i valori delle proprietà sopracitate non saranno disponibili.
 
-In ogni momento, è possibile invocare il metodo `abort` per interrompere la richiesta HTTP in corso.
+In ogni momento, è possibile invocare il metodo `abort` per interrompere la richiesta HTTP in corso. 
 
-<!------------------- END SLIDE 117 -------------------------->
+<!------------------- END SLIDE 117 it -------------------------->
 
-<!----------------- BEGIN SLIDE 118 -------------------------->
+<!----------------- BEGIN SLIDE 118 it -------------------------->
+
+####  XMLHttpRequest: uso asincrono – Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 118
 
-#### XMLHttpRequest: uso asincrono – Esempio
+
 
 
 ```javascript
@@ -2949,14 +3715,20 @@ req.onerror = function () {
 };
 
 req.send(null);     
-```
+``` 
 
-<!------------------- END SLIDE 118 -------------------------->
+<!------------------- END SLIDE 118 it -------------------------->
 
-<!----------------- BEGIN SLIDE 119 -------------------------->
+<!----------------- BEGIN SLIDE 119 it -------------------------->
+
+####  XMLHttpRequest: uso asincrono – esempio con promise
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 119
 
-#### XMLHttpRequest: uso asincrono – esempio con promise
+
 
 
 ```javascript
@@ -2980,14 +3752,20 @@ p.then(
  function(t){alert(t);}    
  function(e){alert("Problema: "+e);}    
 );
-```
+``` 
 
-<!------------------- END SLIDE 119 -------------------------->
+<!------------------- END SLIDE 119 it -------------------------->
 
-<!----------------- BEGIN SLIDE 120 -------------------------->
+<!----------------- BEGIN SLIDE 120 it -------------------------->
+
+####  XMLHttpRequest e JSON
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 120
 
-#### XMLHttpRequest e JSON
+
 
 
 Spesso, quando si scambiano dati con uno script tramite la XMLHttpRequest, accade che il server debba passare a Javascript     *strutture dati complesse*, e non semplice testo o HTML.
@@ -3010,14 +3788,20 @@ Oppure, in ES\>=5, tramite i metodi dell'oggetto JSON:
 
 ```javascript 
 dati = JSON.parse(xhr.responseText)     
-```
+``` 
 
-<!------------------- END SLIDE 120 -------------------------->
+<!------------------- END SLIDE 120 it -------------------------->
 
-<!----------------- BEGIN SLIDE 121 -------------------------->
+<!----------------- BEGIN SLIDE 121 it -------------------------->
+
+### 10.4. Fetch API
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 121
 
-### Fetch API
+
 
 
 Le API Fetch costituiscono una generica interfaccia per il recupero di risorse, anche attraverso al rete, e in questo modo sostituiscono e migliorano anche l'oggetto     *XMLHttpRequest*, rendendo inutile l'uso di librerie come JQuery per effettuare chiamate AJAX complesse.  
@@ -3032,12 +3816,18 @@ Sono disponibili metodi per gestire il contenuto della *Response* generata dalla
 
 *Per approfondimenti si veda https://developer.mozilla.org/en-US/docs/Web/API/Fetch\_API/Using\_Fetch* 
 
-<!------------------- END SLIDE 121 -------------------------->
+<!------------------- END SLIDE 121 it -------------------------->
 
-<!----------------- BEGIN SLIDE 122 -------------------------->
+<!----------------- BEGIN SLIDE 122 it -------------------------->
+
+####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 122
 
-#### Esempio
+
 
 
 ```javascript
@@ -3058,24 +3848,31 @@ fetch(requrl, {
   //gestisce gli errori di rete e quelli generati negli handler             
   alert(error);  
 });
-```
+``` 
 
-<!------------------- END SLIDE 122 -------------------------->
+<!------------------- END SLIDE 122 it -------------------------->
 
-<!----------------- BEGIN SLIDE 123 -------------------------->
-> 123
+<!----------------- BEGIN SLIDE 123 it -------------------------->
 
-## Moduli
-
+## 11. Moduli
 
 
+<!----------------- COLUMN 1 -------------------------->
 
-<!------------------- END SLIDE 123 -------------------------->
+> 123 
 
-<!----------------- BEGIN SLIDE 124 -------------------------->
+<!------------------- END SLIDE 123 it -------------------------->
+
+<!----------------- BEGIN SLIDE 124 it -------------------------->
+
+### 11.1. Moduli: esportazione
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 124
 
-### Moduli: esportazione
+
 
 
 Ogni file javascript **può rappresentare un modulo**.
@@ -3117,12 +3914,18 @@ export {inc} from  "path/modulo1.js";
 export {inc as add1} from  "path/modulo1.js";  
 ``` 
 
-<!------------------- END SLIDE 124 -------------------------->
+<!------------------- END SLIDE 124 it -------------------------->
 
-<!----------------- BEGIN SLIDE 125 -------------------------->
+<!----------------- BEGIN SLIDE 125 it -------------------------->
+
+### 11.2. Moduli: importazione
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 125
 
-### Moduli: importazione
+
 
 
 **Tutti i valori esportati** da un modulo possono essere importati da un altro usando l'espressione `import *` ed assegnando loro un *namespace* (o meglio un oggetto che li conterrà):
@@ -3162,12 +3965,18 @@ import v, * as m1 from "path/modulo1.js";
 import v, { inc as add1 } from "path/modulo1.js";   
 ``` 
 
-<!------------------- END SLIDE 125 -------------------------->
+<!------------------- END SLIDE 125 it -------------------------->
 
-<!----------------- BEGIN SLIDE 126 -------------------------->
+<!----------------- BEGIN SLIDE 126 it -------------------------->
+
+### 11.3. Moduli nelle pagine HTML 
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 126
 
-### Moduli nelle pagine HTML 
+
 
 
 Sebbene i moduli siano utili per realizzare programmi complessi in Javascript fuori dal browser (ad esempio per node.js), anche le pagine web possono trarre benefici dall'organizzazione del codice in moduli. Bisogna però tenere presente che i moduli non funzionano come i classici script:  
@@ -3197,12 +4006,18 @@ Un modulo **non verrà mai scaricato più di una volta**, anche se importato in 
 
 Nell'indicare il path di un modulo all'interno degli import, si dovrà fornire una URL assoluta o relativa che permetta al browser di scaricarlo. Attenzione:   **molti browser non supportano path relativi come "lib.js"**   (il file da scaricare è nella stessa directory della risorsa che lo sta importando): è necessario invece scrivere "./lib.js" 
 
-<!------------------- END SLIDE 126 -------------------------->
+<!------------------- END SLIDE 126 it -------------------------->
 
-<!----------------- BEGIN SLIDE 127 -------------------------->
+<!----------------- BEGIN SLIDE 127 it -------------------------->
+
+## 12. Riferimenti
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 127
 
-## Riferimenti
+
 
 
 **ECMAScript 2023 Language Specification**      
@@ -3211,13 +4026,18 @@ https://tc39.es/ecma262
 **MDN Web Docs**    
 https://developer.mozilla.org 
 
-<!------------------- END SLIDE 127 -------------------------->
+<!------------------- END SLIDE 127 it -------------------------->
+
+<!----------------- BEGIN SLIDE 128 it -------------------------->
+
+## 13. Esempi
 
 
-<!----------------- BEGIN SLIDE 128 -------------------------->
+<!----------------- COLUMN 1 -------------------------->
+
 > 128
 
-## 9. Esempi
+
 
 Di seguito trovate un elenco dei principali esempi mostrati o sviluppati durante le lezioni. Questi esempi sono tutti disponibili su GitHub, all'indirizzo [https://github.com/orgs/WebEngineering-Univaq], e sono *parte integrante* delle lezioni stesse, in quanto mostrano l'effettivo uso delle nozioni illustrate in aula e riportate su questa documentazione (dove, quando possibile, troverete dei riferimenti a questi esempi).
 
@@ -3236,7 +4056,6 @@ La lista che segue può non essere sempre aggiornata: nel repository potrete spe
 *Script di paginazione per tabelle*
 
 - JS_Example_simpleswitchededitor    
-*Controlli di input intelligenti basati su Javascript*
+*Controlli di input intelligenti basati su Javascript* 
 
-
-<!------------------- END SLIDE 128 -------------------------->
+<!------------------- END SLIDE 128 it -------------------------->

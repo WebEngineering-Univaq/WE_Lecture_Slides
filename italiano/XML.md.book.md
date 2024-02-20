@@ -1,8 +1,23 @@
-<!----------------- BEGIN SLIDE 001 -------------------------->
+---
+title: eXtensible Markup Language (XML)    
+course: Web Engineering
+organization: University of L'Aquila
+
+author: Giuseppe Della Penna
+---
+
+
+<!----------------- BEGIN SLIDE 001 it -------------------------->
+
+#  eXtensible Markup Language (XML)    
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 001
 
 
-#  eXtensible Markup Language (XML)    
+
 
 **Concetti di base**
 
@@ -13,7 +28,6 @@ Università degli Studi di L'Aquila
 giuseppe.dellapenna@univaq.it    
 http://people.disim.univaq.it/dellapenna
 
-**Versione documento: 051025**
 
 > *Questo documento si basa sulle slide del corso di Web Engineering, riorganizzate per una migliore esperienza di lettura. Non è un libro di testo completo o un manuale tecnico, e deve essere utilizzato insieme a tutti gli altri materiali didattici del corso. Si prega di segnalare eventuali errori o omissioni all'autore.*
 
@@ -83,14 +97,20 @@ http://people.disim.univaq.it/dellapenna
 
 
 
-<!------------------- END TOC -------------------------->
+<!------------------- END TOC --------------------------> 
 
-<!------------------- END SLIDE 001 -------------------------->
+<!------------------- END SLIDE 001 it -------------------------->
 
-<!----------------- BEGIN SLIDE 002 -------------------------->
-> 002
+<!----------------- BEGIN SLIDE 002 it -------------------------->
 
 ## 1. Introduzione a XML
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 002
+
+
 
 
 XML è un metalinguaggio, cioè un linguaggio sulla cui base vengono creati nuovi linguaggi.
@@ -99,24 +119,36 @@ In particolare, XML definisce le regole di base per la creazione **di linguaggi 
 
 XML deriva da SGML, un altro metalinguaggio noto ma diffuso solo in ambienti professionali (coe l'editoria).
 
-Rispetto a SGML, XML è stato notevolmente **semplificato** e sono state aggiunte piccole **estensioni** per renderne l'uso più agevole.
+Rispetto a SGML, XML è stato notevolmente **semplificato** e sono state aggiunte piccole **estensioni** per renderne l'uso più agevole. 
 
-<!------------------- END SLIDE 002 -------------------------->
+<!------------------- END SLIDE 002 it -------------------------->
 
-<!----------------- BEGIN SLIDE 003 -------------------------->
-> 003
+<!----------------- BEGIN SLIDE 003 it -------------------------->
 
 ### 1.1. La Famiglia di XML
 
 
-![XML Family](xml1.png)
+<!----------------- COLUMN 1 -------------------------->
 
-<!------------------- END SLIDE 003 -------------------------->
+> 003
 
-<!----------------- BEGIN SLIDE 004 -------------------------->
-> 004
+
+
+
+![XML Family](xml1.png) 
+
+<!------------------- END SLIDE 003 it -------------------------->
+
+<!----------------- BEGIN SLIDE 004 it -------------------------->
 
 ### 1.2. XML: Vantaggi e Svantaggi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 004
+
+
 
 XML è semplice da imparare e usare:
 
@@ -128,11 +160,15 @@ XML è semplice da imparare e usare:
 
 - **L'elaborazione automatica** di un linguaggio XML è particolarmente semplice ed efficiente. Le rigide regole di formato e di identificazione dei linguaggi basati su XML ne rendono il trattamento automatico molto conveniente.
 
-- Essendo puro testo (strutturati esattamente come HTML), i dati XML possono essere trasportati usando il **protocollo HTTP** anche attraverso firewall (SOAP, servizi web).
+- Essendo puro testo (strutturati esattamente come HTML), i dati XML possono essere trasportati usando il **protocollo HTTP** anche attraverso firewall (SOAP, servizi web). 
 
-<!------------------- END SLIDE 004 -------------------------->
+<!------------------- END SLIDE 004 it -------------------------->
 
-<!----------------- BEGIN SLIDE 005 -------------------------->
+<!----------------- BEGIN SLIDE 005 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 005
 
 D'altra parte, XML introduce alcune nuove problematiche realtive alla complessità:
@@ -141,14 +177,20 @@ D'altra parte, XML introduce alcune nuove problematiche realtive alla complessit
 
 - Le librerie di manipolazione XML non sono veloci come i parser scritti ad-hoc per formati specifici, soprattutto se binari.  
 
-- In generale, quindi, l'uso di XML si presenta più oneroso in termini di risorse necessarie (tempi di trasmissione, memoria e tempo CPU necessari alla sua decodifica, ecc.)
+- In generale, quindi, l'uso di XML si presenta più oneroso in termini di risorse necessarie (tempi di trasmissione, memoria e tempo CPU necessari alla sua decodifica, ecc.) 
 
-<!------------------- END SLIDE 005 -------------------------->
+<!------------------- END SLIDE 005 it -------------------------->
 
-<!----------------- BEGIN SLIDE 006 -------------------------->
-> 006
+<!----------------- BEGIN SLIDE 006 it -------------------------->
 
 ### 1.3. XML: Applicazioni
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 006
+
+
 
 
 Nonostante gli svantaggi visti, l'uso di XML è diffusissimo:
@@ -169,14 +211,20 @@ SMIL, SVG,…
 XMLSchema, XMI,… 
 
 - **Security**    
-XML Encryption, XML Signature   
+XML Encryption, XML Signature 
 
-<!------------------- END SLIDE 006 -------------------------->
+<!------------------- END SLIDE 006 it -------------------------->
 
-<!----------------- BEGIN SLIDE 007 -------------------------->
-> 007
+<!----------------- BEGIN SLIDE 007 it -------------------------->
 
 ### 1.4. Un Esempio di Documento XML
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 007
+
+
 
 
 ```xml
@@ -202,14 +250,20 @@ XML Encryption, XML Signature
   </album>   
  </CD>   
 </collection>  
-```
+``` 
 
-<!------------------- END SLIDE 007 -------------------------->
+<!------------------- END SLIDE 007 it -------------------------->
 
-<!----------------- BEGIN SLIDE 008 -------------------------->
-> 008
+<!----------------- BEGIN SLIDE 008 it -------------------------->
 
 ## 2. La Struttura di un Documento XML
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 008
+
+
 
 
 Un documento XML è composto da un prologo e da un corpo
@@ -226,21 +280,32 @@ Il corpo del documento può contenere:
 
 - **entità** (simili da macro testuali)
 
-- I tag possono anche contenere **attributi** e **namespaces**.
+- I tag possono anche contenere **attributi** e **namespaces**. 
 
-<!------------------- END SLIDE 008 -------------------------->
+<!------------------- END SLIDE 008 it -------------------------->
 
-<!----------------- BEGIN SLIDE 009 -------------------------->
-> 009
+<!----------------- BEGIN SLIDE 009 it -------------------------->
 
 ## 3. Prologo: Dichiarazione XML
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 009
+
+
 
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?> 
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 La prima riga del prologo è la **dichiarazione XML**, che è obbligatoria e deve essere posta all'immediato inizio del documento. 
 
@@ -254,18 +319,20 @@ Gli attributi della dichiarazione XML sono:
 
 - `encoding`: (opzionale) è nome della codifica dei caratteri usata nel documento (default: UTF-8)
 
-- `standalone`: (opzionale) se vale yes indica che il file non fa riferimento ad altri file esterni. (default: *no*)
+- `standalone`: (opzionale) se vale yes indica che il file non fa riferimento ad altri file esterni. (default: *no*) 
 
+<!------------------- END SLIDE 009 it -------------------------->
 
-
-
-
-<!------------------- END SLIDE 009 -------------------------->
-
-<!----------------- BEGIN SLIDE 010 -------------------------->
-> 010
+<!----------------- BEGIN SLIDE 010 it -------------------------->
 
 ### 3.1. Codifica del testo
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 010
+
+
 
 
 **I documenti XML, sono costituiti soprattutto da testo**, per cui è importante capire come questo può essere rappresentato su una macchina.
@@ -278,14 +345,20 @@ La **codifica dei caratteri** (*character* *encoding*) definisce infine il modo 
 
 Molti standard storici di codifica dei caratteri (ad esempio gli ISO 8859, ancora largamente diffusi) utilizzano un singolo byte per ogni code point che rappresenta semplicemente la posizione del carattere nel set. Ad esempio, la "A" nel set codificato ISO 8859-1 è il 65° carattere, ed è quindi codificata per la rappresentazione un byte con il valore di 65.                    
 
-Quando si comunicano informazioni testuali è quindi necessario specificare il set in uso e il corrispondente encoding, in modo che tali caratteri possano essere rappresentati in modo affidabile.     
+Quando si comunicano informazioni testuali è quindi necessario specificare il set in uso e il corrispondente encoding, in modo che tali caratteri possano essere rappresentati in modo affidabile. 
 
-<!------------------- END SLIDE 010 -------------------------->
+<!------------------- END SLIDE 010 it -------------------------->
 
-<!----------------- BEGIN SLIDE 011 -------------------------->
-> 011
+<!----------------- BEGIN SLIDE 011 it -------------------------->
 
 ### 3.2. Unicode
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 011
+
+
 
 
 Lo **Unicode Consortium**   ha definito un ampio set di caratteri che include tutti quelli necessari a qualsiasi sistema di scrittura nel mondo.          
@@ -310,14 +383,20 @@ Incredibilmente, persino l'uso malizioso dei *character encoding*    Unicode pu�
 
 **UTF-7, originariamente definito per codificare il solo BMP, permetteva codifiche alternative di caratteri ASCII come "\<" e "\>". Le vecchie versioni**  **di Internet Explorer** potevano essere indotte a interpretare una pagina come UTF-7, e in questo caso le sequenze +ADw- e +AD4-, che le maggior parte dei validatori tratta come come testo semplice, venivano trasformate in "\<" e "\>" permettendo attacchi                 **XSS**.
 
-Poiché **molti caratteri di lingue diverse possono somigliarsi visivamente**, è possibile indurre un utente a navigare su un sito il cui indirizzo è visivamente simile a quello di un sito sicuro, anche se in realtà i caratteri in esso contenuti sono diversi, e quindi porteranno a un sito malevolo (attacchi di **omografia**), ad esempio usando il carattere cirillico "а" (Unicode 0430) invece di quello ASCII (Unicode 0041)         
+Poiché **molti caratteri di lingue diverse possono somigliarsi visivamente**, è possibile indurre un utente a navigare su un sito il cui indirizzo è visivamente simile a quello di un sito sicuro, anche se in realtà i caratteri in esso contenuti sono diversi, e quindi porteranno a un sito malevolo (attacchi di **omografia**), ad esempio usando il carattere cirillico "а" (Unicode 0430) invece di quello ASCII (Unicode 0041) 
 
-<!------------------- END SLIDE 011 -------------------------->
+<!------------------- END SLIDE 011 it -------------------------->
 
-<!----------------- BEGIN SLIDE 012 -------------------------->
-> 012
+<!----------------- BEGIN SLIDE 012 it -------------------------->
 
 ## 4. Document Type Definitions e grammatiche XML
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 012
+
+
 
 
 Ai documenti XML possono (e dovrebbero) essere associate delle specifiche che **definiscono formalmente il linguaggio** utilizzato nel documento e le sue regole sintattiche.
@@ -326,14 +405,20 @@ Il sistema predefinito in XML per creare queste specifiche è la *document type 
 
 Se a un documento è associata una **DTD**, è necessario inserire nel prologo una dichiarazione DOCTYPE che dichiari l'associazione. Questa dichiarazione eredita la sintassi del corrispondente SGML.
 
-Esistono tuttavia altri sistemi di definizione per le specifiche dei linguaggi XML, come gli **schemi**, che usano metodi di associazione diversi.
+Esistono tuttavia altri sistemi di definizione per le specifiche dei linguaggi XML, come gli **schemi**, che usano metodi di associazione diversi. 
 
-<!------------------- END SLIDE 012 -------------------------->
+<!------------------- END SLIDE 012 it -------------------------->
 
-<!----------------- BEGIN SLIDE 013 -------------------------->
-> 013
+<!----------------- BEGIN SLIDE 013 it -------------------------->
 
 ## 5. Prologo: Dichiarazione DOCTYPE
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 013
+
+
 
 ```java
 <!DOCTYPE RootElement ExternalDTDReference [InternalDTDSubset ]>
@@ -349,17 +434,20 @@ La dichiarazione si apre con il tag `<!DOCTYPE` ed è chiusa dal simbolo `>`. Al
 
     - `PUBLIC "pubid" "uri"`  , dove *pubid* è un identificatore univoco per la DTD e *uri* punta a un file di riferimento che la contiene.  
 
-- **InternalDTDSubset** *(opzionale)* è un DTD, o un suo frammento, che può essere specificato direttamente all'interno del documento.
+- **InternalDTDSubset** *(opzionale)* è un DTD, o un suo frammento, che può essere specificato direttamente all'interno del documento. 
 
+<!------------------- END SLIDE 013 it -------------------------->
 
-
-
-<!------------------- END SLIDE 013 -------------------------->
-
-<!----------------- BEGIN SLIDE 014 -------------------------->
-> 014
+<!----------------- BEGIN SLIDE 014 it -------------------------->
 
 ## 6. Elementi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 014
+
+
 
 
 Gli **elementi** sono alla base della struttura dei documenti XML.
@@ -368,23 +456,35 @@ Un elemento è un **frammento di dati**, *limitato* ed *indentificato* (tramite 
 
 Il contenuto di un elemento è tutto ciò che appare tra il suo tag di apertura e il suo tag di chiusura.
 
-Gli elementi possono essere nidificati, cioè degli elementi possono far parte del contenuto di un elemento più esterno.
+Gli elementi possono essere nidificati, cioè degli elementi possono far parte del contenuto di un elemento più esterno. 
 
-<!------------------- END SLIDE 014 -------------------------->
+<!------------------- END SLIDE 014 it -------------------------->
 
-<!----------------- BEGIN SLIDE 015 -------------------------->
-> 015
+<!----------------- BEGIN SLIDE 015 it -------------------------->
 
 ### 6.1. Struttura
 
-![Document structure](xml2.png)
 
-<!------------------- END SLIDE 015 -------------------------->
+<!----------------- COLUMN 1 -------------------------->
 
-<!----------------- BEGIN SLIDE 016 -------------------------->
-> 016
+> 015
+
+
+
+![Document structure](xml2.png) 
+
+<!------------------- END SLIDE 015 it -------------------------->
+
+<!----------------- BEGIN SLIDE 016 it -------------------------->
 
 ### 6.2. Regole di Base
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 016
+
+
 
 
 I nomi degli elementi sono **case-sensitive**.
@@ -393,14 +493,20 @@ I nomi degli elementi sono **case-sensitive**.
 
 Nel caso di elementi nidificati, **i tag di chiusura devono apparire in ordine inverso a quello di apertura**, cioè i contenuti degli elementi non si possono "accavallare".
 
-Ogni documento XML deve avere un unico elemento "**radice**", in cui tutti gli altri sono nidificati.
+Ogni documento XML deve avere un unico elemento "**radice**", in cui tutti gli altri sono nidificati. 
 
-<!------------------- END SLIDE 016 -------------------------->
+<!------------------- END SLIDE 016 it -------------------------->
 
-<!----------------- BEGIN SLIDE 017 -------------------------->
-> 017
+<!----------------- BEGIN SLIDE 017 it -------------------------->
 
 ### 6.3. Sintassi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 017
+
+
 
 
 ```xml
@@ -421,18 +527,29 @@ Ogni documento XML deve avere un unico elemento "**radice**", in cui tutti gli a
 </a>
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Il tag di apertura di un elemento ha la forma mostrata in (1), dove *nome* è il nome dell'elemento. Il corrispondente tag di chiusura è mostrato in (2)  
 
-Infine, alcuni elementi possono essere privi di contenuto: in questo caso è possibile omettere il tag di chiusura scrivendo quello di apertura nella forma abbreviata mostrata in (3).
+Infine, alcuni elementi possono essere privi di contenuto: in questo caso è possibile omettere il tag di chiusura scrivendo quello di apertura nella forma abbreviata mostrata in (3). 
 
-<!------------------- END SLIDE 017 -------------------------->
+<!------------------- END SLIDE 017 it -------------------------->
 
-<!----------------- BEGIN SLIDE 018 -------------------------->
-> 018
+<!----------------- BEGIN SLIDE 018 it -------------------------->
 
 ### 6.4. Gerarchia
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 018
+
+
 
 
 ```xml
@@ -446,7 +563,12 @@ Infine, alcuni elementi possono essere privi di contenuto: in questo caso è pos
 </a>
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Gli elementi, nidificandosi, creano la **struttura ad albero** tipica dei documenti XML.
 
@@ -462,14 +584,20 @@ All'interno di questa struttura si definiscono alcuni "rapporti di parentela" ut
 
 - *b*, *c*, *d* e il *testo* sono **discendenti** di *a*, *d* è un discendente di *c*, il *testo* è un discendente di *b*
 
-- *a* è un **predecessore** di *b*, *c*, *d* e del *testo*, *b* è un predecessore del *testo*, *c* è un predecessore di *d*.
+- *a* è un **predecessore** di *b*, *c*, *d* e del *testo*, *b* è un predecessore del *testo*, *c* è un predecessore di *d*. 
 
-<!------------------- END SLIDE 018 -------------------------->
+<!------------------- END SLIDE 018 it -------------------------->
 
-<!----------------- BEGIN SLIDE 019 -------------------------->
-> 019
+<!----------------- BEGIN SLIDE 019 it -------------------------->
 
 ## 7. Attributi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 019
+
+
 
 
 Gli attributi permettono di specificare **proprietà degli elementi**, modificandone o meglio definendone il significato.
@@ -478,14 +606,20 @@ Gli attributi vengono **inseriti all'interno dei tag di apertura** degli element
 
 **L'ordine** con cui gli attributi appaiono nel tag di apertura non è considerato significativo.
 
-Il valore di un attributo deve essere **semplice**: in caso contrario è meglio usare un elemento nidificato per contenerlo.
+Il valore di un attributo deve essere **semplice**: in caso contrario è meglio usare un elemento nidificato per contenerlo. 
 
-<!------------------- END SLIDE 019 -------------------------->
+<!------------------- END SLIDE 019 it -------------------------->
 
-<!----------------- BEGIN SLIDE 020 -------------------------->
-> 020
+<!----------------- BEGIN SLIDE 020 it -------------------------->
 
 ### 7.1. Regole di Base
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 020
+
+
 
 
 I nomi degli attributi sono **case-sensitive**.
@@ -496,14 +630,20 @@ Non sono ammessi attributi senza valore (solo nome).
 
 Il valore degli attributi deve essere specificato **tra virgolette semplici o doppie**.
 
-Il valore può contenere **riferimenti ad entità** ma nessun altra struttura XML (elementi, processing instructions, ecc...).  
+Il valore può contenere **riferimenti ad entità** ma nessun altra struttura XML (elementi, processing instructions, ecc...). 
 
-<!------------------- END SLIDE 020 -------------------------->
+<!------------------- END SLIDE 020 it -------------------------->
 
-<!----------------- BEGIN SLIDE 021 -------------------------->
-> 021
+<!----------------- BEGIN SLIDE 021 it -------------------------->
 
 ### 7.2. Sintassi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 021
+
+
 
 
 ```xml
@@ -523,7 +663,12 @@ Il valore può contenere **riferimenti ad entità** ma nessun altra struttura XM
 </a>
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 La sintassi di base per un attributo inserito nel tag di apertura di un elemento è mostrata in (1)
 
@@ -531,26 +676,38 @@ Per specificare più attributi è sufficiente elencarli separandone la definizio
 
 Per includere virgolette nel valore, è necessario usare un tipo diverso da quello usato per delimitare il valore stesso (3) 
 
-<!------------------- END SLIDE 021 -------------------------->
+<!------------------- END SLIDE 021 it -------------------------->
 
-<!----------------- BEGIN SLIDE 022 -------------------------->
-> 022
+<!----------------- BEGIN SLIDE 022 it -------------------------->
 
 ## 8. Namespaces
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 022
+
+
 
 
 I namespaces servono a dichiarare **l'appartenenza di elementi e attributi a un particolare linguaggio** XML, fornendone una semantica. 
 
 Sono particolarmente utili se **più linguaggi vengono mescolati nello stesso documento**, con possibili di collisioni tra nomi.
 
-Le **dichiarazioni di namespace** sono inserite nei tag di apertura, in modo simile a un attributo, e sono valide per l'elemento e il suo contenuto.
+Le **dichiarazioni di namespace** sono inserite nei tag di apertura, in modo simile a un attributo, e sono valide per l'elemento e il suo contenuto. 
 
-<!------------------- END SLIDE 022 -------------------------->
+<!------------------- END SLIDE 022 it -------------------------->
 
-<!----------------- BEGIN SLIDE 023 -------------------------->
-> 023
+<!----------------- BEGIN SLIDE 023 it -------------------------->
 
 ### 8.1. Sintassi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 023
+
+
 
 
 ```xml
@@ -561,7 +718,12 @@ Le **dichiarazioni di namespace** sono inserite nei tag di apertura, in modo sim
 [3] <tag xmlns="uri" xmlns:prf="uri">       
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Le dichiarazione di namespace esplicito (1), inserita in un tag di apertura, indica che tutti gli elementi il cui nome è prefissato da "*prf*: " (prefisso di namespace) andranno considerati appartenenti al namespace identificato da *uri*.
 
@@ -569,14 +731,20 @@ La speciale dichiarazione di namespace standard (2) indica il namespace di appar
 
 In ogni elemento si possono dichiarare più prefissi di namespace espliciti, ma solo un namespace di default (3)
 
-Gli uri usati nelle dichiarazioni sono solo identificatori convenzionali per associati ai diversi namespaces, e non puntano ad alcuna informazione particolare.  
+Gli uri usati nelle dichiarazioni sono solo identificatori convenzionali per associati ai diversi namespaces, e non puntano ad alcuna informazione particolare. 
 
-<!------------------- END SLIDE 023 -------------------------->
+<!------------------- END SLIDE 023 it -------------------------->
 
-<!----------------- BEGIN SLIDE 024 -------------------------->
-> 024
+<!----------------- BEGIN SLIDE 024 it -------------------------->
 
 ####  Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 024
+
+
 
 
 ```xml
@@ -592,7 +760,12 @@ Gli uri usati nelle dichiarazioni sono solo identificatori convenzionali per ass
 </a>
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Saper manipolare e comprendere i namespace è importante per poter gestire i documenti XML complessi e la loro semantica.  
 
@@ -606,14 +779,20 @@ In questo esempio:
 
 - Il namespace "*ns4*" contiene l'elemento *xsl:f* e l'attributo *xsl:attr*.    
 
-*Notare che esistono due elementi d nel documento, appartenenti a namespace diversi*.   
+*Notare che esistono due elementi d nel documento, appartenenti a namespace diversi*. 
 
-<!------------------- END SLIDE 024 -------------------------->
+<!------------------- END SLIDE 024 it -------------------------->
 
-<!----------------- BEGIN SLIDE 025 -------------------------->
-> 025
+<!----------------- BEGIN SLIDE 025 it -------------------------->
 
 ## 9. Entità
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 025
+
+
 
 
 Nel gergo XML, i documenti sono costituiti da una serie di *entità*. 
@@ -626,26 +805,38 @@ Le entità si distinguono in *parsed* e *unparsed*:
 
 - Ogni entità *parsed* ha un suo corrispondente valore testuale. Il parser XML sostituisce l'entità col suo valore quando analizza il documento.    
 
-- Una entità *unparsed*, invece, non viene sostituita dal parser, e può avere un valore anche non testuale, accessibile tramite le *notazioni*.    
+- Una entità *unparsed*, invece, non viene sostituita dal parser, e può avere un valore anche non testuale, accessibile tramite le *notazioni*. 
 
-<!------------------- END SLIDE 025 -------------------------->
+<!------------------- END SLIDE 025 it -------------------------->
 
-<!----------------- BEGIN SLIDE 026 -------------------------->
-> 026
+<!----------------- BEGIN SLIDE 026 it -------------------------->
 
 ### 9.1. Uso
 
 
+<!----------------- COLUMN 1 -------------------------->
+
+> 026
+
+
+
+
 Le entità parsed sono un modo pratico per inserire stringhe nel documento facendo riferimento a una definizione esterna, invece di scriverle esplicitamente.
 
-Sono utili nel caso ci siano **caratteri non digitabili** direttamente, o per **espandere stringhe** usate di frequente, oppure per scrivere **caratteri che non sono ammessi in maniera esplicita in un contesto**, perché riservati (come le virgolette o i simboli '\<' e '\>').
+Sono utili nel caso ci siano **caratteri non digitabili** direttamente, o per **espandere stringhe** usate di frequente, oppure per scrivere **caratteri che non sono ammessi in maniera esplicita in un contesto**, perché riservati (come le virgolette o i simboli '\<' e '\>'). 
 
-<!------------------- END SLIDE 026 -------------------------->
+<!------------------- END SLIDE 026 it -------------------------->
 
-<!----------------- BEGIN SLIDE 027 -------------------------->
-> 027
+<!----------------- BEGIN SLIDE 027 it -------------------------->
 
 ### 9.2. Sintassi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 027
+
+
 
 
 ```xml
@@ -664,20 +855,31 @@ Sono utili nel caso ci siano **caratteri non digitabili** direttamente, o per **
 &#x20; =  [spazio]   
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Nel caso delle entità **parsed**:
 
 - Le **entità generali**, che possono rappresentare stringhe qualsiasi, sono definite nel DTD e si richiamano nel documento XML con la sintassi (1), dove *nome* è il nome dell'entità.
 
-- Le **entità carattere**, che rappresentano singoli caratteri UNICODE, si richiamano con la sintassi (2), dove numero è il codice decimale UNICODE per il carattere, oppure con la sintassi (3), dove numero è il codice esadecimale UNICODE per il carattere.
+- Le **entità carattere**, che rappresentano singoli caratteri UNICODE, si richiamano con la sintassi (2), dove numero è il codice decimale UNICODE per il carattere, oppure con la sintassi (3), dove numero è il codice esadecimale UNICODE per il carattere. 
 
-<!------------------- END SLIDE 027 -------------------------->
+<!------------------- END SLIDE 027 it -------------------------->
 
-<!----------------- BEGIN SLIDE 028 -------------------------->
-> 028
+<!----------------- BEGIN SLIDE 028 it -------------------------->
 
 ## 10. Testo
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 028
+
+
 
 
 Il testo inseribile nei documenti XML comprende tutti i caratteri **definiti nel set di caratteri dichiarato nel documento**.
@@ -686,14 +888,20 @@ Il testo inseribile nei documenti XML comprende tutti i caratteri **definiti nel
 
 È possibile inserire stringhe predefinite tramite **entità generali**.
 
-**Non è possibile usare esplicitamente i caratteri '\>', '\<' e '&'**, per i quali è sempre necessario usare le corrispondenti entità carattere.
+**Non è possibile usare esplicitamente i caratteri '\>', '\<' e '&'**, per i quali è sempre necessario usare le corrispondenti entità carattere. 
 
-<!------------------- END SLIDE 028 -------------------------->
+<!------------------- END SLIDE 028 it -------------------------->
 
-<!----------------- BEGIN SLIDE 029 -------------------------->
-> 029
+<!----------------- BEGIN SLIDE 029 it -------------------------->
 
 ## 11. Sezioni CDATA
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 029
+
+
 
 
 ```xml
@@ -704,20 +912,31 @@ solo testo!<
 ]]>
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Le sezioni CDATA di definire esplicitamente **aree in cui si trova solo testo**.
 
 All'interno delle sezioni CDATA il parser non effettua alcuna operazione di riconoscimento ed espansione per elementi, attributi, entità e altre strutture XML  
 
-Il tag di apertura di una sezione CDATA è la stringa `<![CDATA[`, mentre il tag d chiusura è `]]>`, che ovviamente non può comparire nel contenuto.
+Il tag di apertura di una sezione CDATA è la stringa `<![CDATA[`, mentre il tag d chiusura è `]]>`, che ovviamente non può comparire nel contenuto. 
 
-<!------------------- END SLIDE 029 -------------------------->
+<!------------------- END SLIDE 029 it -------------------------->
 
-<!----------------- BEGIN SLIDE 030 -------------------------->
-> 030
+<!----------------- BEGIN SLIDE 030 it -------------------------->
 
 ## 12. Processing Instructions
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 030
+
+
 
 
 Le Processing Instructions (PI) vengono usate per   **passare informazioni extra ai programmi che manipoleranno il file XML** e possono apparire ovunque nel documento.
@@ -729,7 +948,12 @@ Notare che la dichiarazione XML non è altro che una processing instruction.
 All'interno del tag è possibile scrivere qualsiasi tipo di dati testuali. L'unica regola è che i dati non possono contenere la sequenza "?\>". I due esempi riportati sotto sono rispettivamente (1) la PI che associa a un documento il suo foglio di stile XSL e (2) uno script PHP.
 
 -------
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 ```java
 <?xml-stylesheet type="text/xsl" href="sms_pdf.xslt"?>      
@@ -738,14 +962,20 @@ All'interno del tag è possibile scrivere qualsiasi tipo di dati testuali. L'uni
 
 ```java
 <?target  data ?>
-```
+``` 
 
-<!------------------- END SLIDE 030 -------------------------->
+<!------------------- END SLIDE 030 it -------------------------->
 
-<!----------------- BEGIN SLIDE 031 -------------------------->
-> 031
+<!----------------- BEGIN SLIDE 031 it -------------------------->
 
 ## 13. Commenti
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 031
+
+
 
 ```java
 <!-- Questo è un commento XML (e SGML) -->    
@@ -759,33 +989,43 @@ I commenti XML seguono la sintassi SGML, e sono quindi identici a quelli usati, 
 
 Il tag di apertura di un commento è la sequenza `<!--`, mentre il tag di chiusura è la sequenza `-->`
 
-Il contenuto del commento è testo generico, che non deve però contenere la sequenza di chiusura.
+Il contenuto del commento è testo generico, che non deve però contenere la sequenza di chiusura. 
 
+<!------------------- END SLIDE 031 it -------------------------->
 
-<!------------------- END SLIDE 031 -------------------------->
-
-<!----------------- BEGIN SLIDE 032 -------------------------->
-> 032
+<!----------------- BEGIN SLIDE 032 it -------------------------->
 
 ## 14. Validazione di Documenti XML
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 032
+
+
 
 
 **Un documento XML è** ***ben formato*** se rispetta le regole generali di sintassi viste nella parte precedente.
 
 **Un documento XML è** ***valido*** se è ben formato e rispetta le regole sintattiche e semantiche contenute del DTD associato. *Un documento senza DTD non è mai valido*.
 
-Esistono **parser validanti e non validanti** . Questi ultimi possono ignorare tutto l'eventuale DTD, tranne le dichiarazioni di entità generali.
+Esistono **parser validanti e non validanti** . Questi ultimi possono ignorare tutto l'eventuale DTD, tranne le dichiarazioni di entità generali. 
 
-<!------------------- END SLIDE 032 -------------------------->
+<!------------------- END SLIDE 032 it -------------------------->
 
-<!----------------- BEGIN SLIDE 033 -------------------------->
-> 033
+<!----------------- BEGIN SLIDE 033 it -------------------------->
 
 ## 15. Riferimenti
 
 
+<!----------------- COLUMN 1 -------------------------->
+
+> 033
+
+
+
+
 **Specifica di XML dal W3C**    
-http://www.w3c.org/TR/XML/  
+http://www.w3c.org/TR/XML/ 
 
-<!------------------- END SLIDE 033 -------------------------->
-
+<!------------------- END SLIDE 033 it -------------------------->

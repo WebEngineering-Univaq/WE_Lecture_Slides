@@ -1,8 +1,23 @@
-<!----------------- BEGIN SLIDE 001 -------------------------->
+---
+title: Document Object Model (DOM)   
+course: Web Engineering
+organization: University of L'Aquila
+
+author: Giuseppe Della Penna
+---
+
+
+<!----------------- BEGIN SLIDE 001 it -------------------------->
+
+#  Document Object Model (DOM)   
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 001
 
 
-# Document Object Model (DOM)   
+
 
 **XML, HTML, CSS ed Eventi**
 
@@ -12,7 +27,6 @@ Università degli Studi di L'Aquila
 giuseppe.dellapenna@univaq.it   
 http://people.disim.univaq.it/dellapenna
 
-**Versione documento: 051025**
 
 > *Questo documento si basa sulle slide del corso di Web Engineering, riorganizzate per una migliore esperienza di lettura. Non è un libro di testo completo o un manuale tecnico, e deve essere utilizzato insieme a tutti gli altri materiali didattici del corso. Si prega di segnalare eventuali errori o omissioni all'autore.*
 
@@ -20,16 +34,90 @@ http://people.disim.univaq.it/dellapenna
 
 <!----------------- BEGIN TOC -------------------------->
 
+ - [1. I Modelli a Oggetti](#1-i-modelli-a-oggetti)
+
+ - [2. DOM XML](#2-dom-xml)
+
+    - [2.1. La vista del DOM su XML](#21-la-vista-del-dom-su-xml)
+
+    - [2.2. Gli Oggetti del DOM](#22-gli-oggetti-del-dom)
+
+    - [2.3. L'oggetto Node](#23-l'oggetto-node)
+
+    - [2.4. Muoversi nell'Albero con Node](#24-muoversi-nell'albero-con-node)
+
+    - [2.5. Manipolare l'Albero con Node](#25-manipolare-l'albero-con-node)
+
+    - [2.6. L'Oggetto Document](#26-l'oggetto-document)
+
+    - [2.7. L'Oggetto Element](#27-l'oggetto-element)
+
+    - [2.8. Gli Oggetti NodeList e NamedNodeMap](#28-gli-oggetti-nodelist-e-namednodemap)
+
+ - [3. DOM HTML](#3-dom-html)
+
+    - [3.1. L'Oggetto HTMLDocument](#31-l'oggetto-htmldocument)
+
+    - [3.2. L'Oggetto HTMLElement](#32-l'oggetto-htmlelement)
+
+    - [3.3. L'Oggetto HTMLFormElement](#33-l'oggetto-htmlformelement)
+
+    - [3.4. L'Oggetto HTMLInputElement](#34-l'oggetto-htmlinputelement)
+
+    - [3.5. Gli Oggetti HTMLSelectElement e HTMLOptionElement](#35-gli-oggetti-htmlselectelement-e-htmloptionelement)
+
+    - [3.6. Gli Oggetti HTMLAnchorElement e HTMLImageElement](#36-gli-oggetti-htmlanchorelement-e-htmlimageelement)
+
+ - [4. DOM HTML: CSS](#4-dom-html-css)
+
+    - [4.1. Il DOM di CSS](#41-il-dom-di-css)
+
+    - [4.2. L'Oggetto CSSStyleSheet](#42-l'oggetto-cssstylesheet)
+
+    - [4.3. Gli Oggetti CSSRule e CSSStyleRule](#43-gli-oggetti-cssrule-e-cssstylerule)
+
+    - [4.4. L'Oggetto CSSStyleDeclaration](#44-l'oggetto-cssstyledeclaration)
+
+    - [4.5. Accesso allo stile di un elemento](#45-accesso-allo-stile-di-un-elemento)
+
+    - [4.6. Interfaccia CSS2Properties](#46-interfaccia-css2properties)
+
+ - [5. DOM HTML: Eventi](#5-dom-html-eventi)
+
+    - [5.1. Il Modello ad Eventi del DOM](#51-il-modello-ad-eventi-del-dom)
+
+    - [5.2. Event Bubbling](#52-event-bubbling)
+
+    - [5.3. Event Capturing](#53-event-capturing)
+
+    - [5.4. Propagazione di un Evento](#54-propagazione-di-un-evento)
+
+    - [5.5. Event Handlers](#55-event-handlers)
+
+    - [5.6. Struttura degli Eventi](#56-struttura-degli-eventi)
+
+ - [6. Approfondimenti](#6-approfondimenti)
+
+    - [6.1. Compatibilità dei nuovi standard](#61-compatibilità-dei-nuovi-standard)
+
+    - [6.2. Riferimenti](#62-riferimenti)
 
 
-<!------------------- END TOC -------------------------->
 
-<!------------------- END SLIDE 001 -------------------------->
+<!------------------- END TOC --------------------------> 
 
-<!----------------- BEGIN SLIDE 002 -------------------------->
+<!------------------- END SLIDE 001 it -------------------------->
+
+<!----------------- BEGIN SLIDE 002 it -------------------------->
+
+## 1. I Modelli a Oggetti
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 002
 
-## I Modelli a Oggetti
+
 
 
 Un **modello ad oggetti** definisce:
@@ -42,21 +130,31 @@ Un **modello ad oggetti** definisce:
 
 - Le **relazioni** e interazioni tra le interfacce e gli oggetti definiti.
 
-Nel nostro caso, il modello a oggetti è applicato alla struttura dei documenti XML.
+Nel nostro caso, il modello a oggetti è applicato alla struttura dei documenti XML. 
 
-<!------------------- END SLIDE 002 -------------------------->
+<!------------------- END SLIDE 002 it -------------------------->
 
-<!----------------- BEGIN SLIDE 003 -------------------------->
+<!----------------- BEGIN SLIDE 003 it -------------------------->
+
+## 2. DOM XML
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 003
 
-## DOM XML
 
 
-*Il DOM di base*
 
-<!------------------- END SLIDE 003 -------------------------->
+*Il DOM di base* 
 
-<!----------------- BEGIN SLIDE 004 -------------------------->
+<!------------------- END SLIDE 003 it -------------------------->
+
+<!----------------- BEGIN SLIDE 004 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 004
 
 
@@ -68,11 +166,15 @@ Il DOM XML:
 
 - Incapsula ogni elemento caratteristico di XML (elementi, attributi, commenti…) in un oggetto specifico, che ne fornisce una interfaccia di manipolazione.
 
-- Permette di manipolare la struttura del documento in maniera object-oriented.
+- Permette di manipolare la struttura del documento in maniera object-oriented. 
 
-<!------------------- END SLIDE 004 -------------------------->
+<!------------------- END SLIDE 004 it -------------------------->
 
-<!----------------- BEGIN SLIDE 005 -------------------------->
+<!----------------- BEGIN SLIDE 005 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 005
 
 
@@ -82,14 +184,20 @@ Esistono varie versioni del DOM, strutturate in *livelli*:
 
 - **Livello 2**: Modifica alcuni metodi del livello 1, e introduce il supporto ai *namespaces* e alla *clonazione* dei nodi.
 
-- **Livello 3**: Introduce nuovi metodi e interfacce per una *navigazione* più rapida nel documento, per il supporto dei *tipi* di nodo e per la *serializzazione*.
+- **Livello 3**: Introduce nuovi metodi e interfacce per una *navigazione* più rapida nel documento, per il supporto dei *tipi* di nodo e per la *serializzazione*. 
 
-<!------------------- END SLIDE 005 -------------------------->
+<!------------------- END SLIDE 005 it -------------------------->
 
-<!----------------- BEGIN SLIDE 006 -------------------------->
+<!----------------- BEGIN SLIDE 006 it -------------------------->
+
+### 2.1. La vista del DOM su XML
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 006
 
-### La vista del DOM su XML
+
 
 
 **Il DOM rappresenta i documenti come una struttura ad albero**.
@@ -98,14 +206,20 @@ In realtà, la struttura è una "foresta" perché può anche contenere più albe
 
 Il DOM definisce solo la sua vista logica sui dati: non specifica come debbano essere effettivamente strutturati in memoria.
 
-Tuttavia, l'utente che accede al documento tramite l'interfaccia DOM, lo "vedrà" effettivamente come un albero.
+Tuttavia, l'utente che accede al documento tramite l'interfaccia DOM, lo "vedrà" effettivamente come un albero. 
 
-<!------------------- END SLIDE 006 -------------------------->
+<!------------------- END SLIDE 006 it -------------------------->
 
-<!----------------- BEGIN SLIDE 007 -------------------------->
+<!----------------- BEGIN SLIDE 007 it -------------------------->
+
+####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 007
 
-#### Esempio
+
 
 Il documento XML che segue
 
@@ -124,38 +238,64 @@ Il documento XML che segue
 </song>  
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 corrisponde a questo albero
 
-![Document tree](domhtml1.png)
+![Document tree](domhtml1.png) 
 
-<!------------------- END SLIDE 007 -------------------------->
+<!------------------- END SLIDE 007 it -------------------------->
 
-<!----------------- BEGIN SLIDE 008 -------------------------->
+<!----------------- BEGIN SLIDE 008 it -------------------------->
+
+####  Elementi dell'albero DOM
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 008
 
-#### Elementi dell'albero DOM
+
 
 
 L'albero è composto da generici **nodi**, ognuno dei quali ha una classificazione più specifica a seconda della sua funzione all'interno del documento.
 
-<!----------------- COLUMN 001  -------------------------->
-
-![Tree elements](domhtml2.png)
+ 
 
 
-<!------------------- END SLIDE 008 -------------------------->
+<!----------------- COLUMN 2 -------------------------->
 
-<!----------------- BEGIN SLIDE 009 -------------------------->
+
+
+![Tree elements](domhtml2.png) 
+
+<!------------------- END SLIDE 008 it -------------------------->
+
+<!----------------- BEGIN SLIDE 009 it -------------------------->
+
+####  Esempio di albero DOM
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 009
 
-#### Esempio di albero DOM
+
 
 
 ![Document tree elements](domhtml3.png)
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 
 **Tipi** di nodo:
@@ -169,25 +309,36 @@ L'albero è composto da generici **nodi**, ognuno dei quali ha una classificazio
 - (2,3) sono *figli* di (1)
 - (1) è il *genitore* di (2,3)
 - (3) è un *fratello* di (2)
-- (4) è un *attributo* di (3) (speciale relazione extra-albero)
+- (4) è un *attributo* di (3) (speciale relazione extra-albero) 
+
+<!------------------- END SLIDE 009 it -------------------------->
+
+<!----------------- BEGIN SLIDE 010 it -------------------------->
+
+### 2.2. Gli Oggetti del DOM
 
 
-<!------------------- END SLIDE 009 -------------------------->
+<!----------------- COLUMN 1 -------------------------->
 
-<!----------------- BEGIN SLIDE 010 -------------------------->
 > 010
 
-### Gli Oggetti del DOM
 
 
-![DOM classes](domhtml4.png)
 
-<!------------------- END SLIDE 010 -------------------------->
+![DOM classes](domhtml4.png) 
 
-<!----------------- BEGIN SLIDE 011 -------------------------->
+<!------------------- END SLIDE 010 it -------------------------->
+
+<!----------------- BEGIN SLIDE 011 it -------------------------->
+
+### 2.3. L'oggetto Node
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 011
 
-### L'oggetto Node
+
 
 
 I nodi dell'albero DOM sono rappresentati da oggetti di classe **Node**
@@ -199,14 +350,20 @@ L'interfaccia di Node include le operazioni di base eseguibili su ogni nodo (ind
 
 I vari componenti del documento implementano anche delle interfacce derivate, che comprendono operazioni più specifiche per ciascun tipo.
 
-*Nota: Essendo il DOM in continua evoluzione, la specifica fornita qui è semplificata ed è scritta usando un IDL generico. Fate riferimento alla specifica ufficiale (vedi riferimenti a fine di questo documento) per le interfacce complete ed aggiornate*.         
+*Nota: Essendo il DOM in continua evoluzione, la specifica fornita qui è semplificata ed è scritta usando un IDL generico. Fate riferimento alla specifica ufficiale (vedi riferimenti a fine di questo documento) per le interfacce complete ed aggiornate*. 
 
-<!------------------- END SLIDE 011 -------------------------->
+<!------------------- END SLIDE 011 it -------------------------->
 
-<!----------------- BEGIN SLIDE 012 -------------------------->
+<!----------------- BEGIN SLIDE 012 it -------------------------->
+
+####  Interfaccia
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 012
 
-#### Interfaccia
+
 
 
 ```java
@@ -234,7 +391,12 @@ interface Node {
 };
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 L'attributo `nodeType` permette di identificare il tipo specifico di nodo tramite una serie di costanti definite anch'esse nell'interfaccia *Node*:
 
@@ -260,14 +422,20 @@ L'attributo `nodeType` permette di identificare il tipo specifico di nodo tramit
 
 - `DOCUMENT_FRAGMENT_NODE`: il nodo è un **frammento di documento**
 
-- `NOTATION_NODE`: il nodo è una `NOTATION`
+- `NOTATION_NODE`: il nodo è una `NOTATION` 
 
-<!------------------- END SLIDE 012 -------------------------->
+<!------------------- END SLIDE 012 it -------------------------->
 
-<!----------------- BEGIN SLIDE 013 -------------------------->
+<!----------------- BEGIN SLIDE 013 it -------------------------->
+
+####  nodeName e nodeValue
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 013
 
-#### nodeName e nodeValue
+
 
 
 |**Node type**  |**nodeName** |**nodeValue**
@@ -283,15 +451,20 @@ L'attributo `nodeType` permette di identificare il tipo specifico di nodo tramit
 |**Document**|"#document"|null|
 |**DocumentType**|Nome del document type  |null|
 |**DocumentFragment**|"#document-fragment"|null|
-|**Notation**|Nome della notazione   |null|
+|**Notation**|Nome della notazione   |null| 
+
+<!------------------- END SLIDE 013 it -------------------------->
+
+<!----------------- BEGIN SLIDE 014 it -------------------------->
+
+### 2.4. Muoversi nell'Albero con Node
 
 
-<!------------------- END SLIDE 013 -------------------------->
+<!----------------- COLUMN 1 -------------------------->
 
-<!----------------- BEGIN SLIDE 014 -------------------------->
 > 014
 
-### Muoversi nell'Albero con Node
+
 
 
 L'interfaccia di Node mette a disposizione diversi attributi per muoversi nell'albero DOM:  
@@ -308,14 +481,20 @@ L'interfaccia di Node mette a disposizione diversi attributi per muoversi nell'a
 
 - `attributes` restituisce la lista degli attributi del nodo corrente (una NamedNodeMap).  
 
-Gli oggetti restituiti da `childNodes` e `attributes` hanno anche un'interfaccia di tipo Array.
+Gli oggetti restituiti da `childNodes` e `attributes` hanno anche un'interfaccia di tipo Array. 
 
-<!------------------- END SLIDE 014 -------------------------->
+<!------------------- END SLIDE 014 it -------------------------->
 
-<!----------------- BEGIN SLIDE 015 -------------------------->
+<!----------------- BEGIN SLIDE 015 it -------------------------->
+
+### 2.5. Manipolare l'Albero con Node
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 015
 
-### Manipolare l'Albero con Node
+
 
 
 I metodi di *Node* per la manipolazione dei nodi figli sono:
@@ -330,14 +509,20 @@ I metodi di *Node* per la manipolazione dei nodi figli sono:
 
 Inoltre, è disponibile l'attributo `textContent` che, se assegnato a una stringa, sostituisce i figli del nodo corrente con un singolo nodo di testo contenente la stringa stessa. Questo attributo è disponibile anche in lettura.
 
-La legalità di ciascuno di questi metodi dipende dal tipo effettivo del nodo. Nel caso l'operazione non sia disponibile (ad esempio, `appendChild` su un nodo *Text*), viene sollevata un'eccezione di tipo *DOMException*.
+La legalità di ciascuno di questi metodi dipende dal tipo effettivo del nodo. Nel caso l'operazione non sia disponibile (ad esempio, `appendChild` su un nodo *Text*), viene sollevata un'eccezione di tipo *DOMException*. 
 
-<!------------------- END SLIDE 015 -------------------------->
+<!------------------- END SLIDE 015 it -------------------------->
 
-<!----------------- BEGIN SLIDE 016 -------------------------->
+<!----------------- BEGIN SLIDE 016 it -------------------------->
+
+### 2.6. L'Oggetto Document
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 016
 
-### L'Oggetto Document
+
 
 
 L'oggetto **Document** è uno speciale **Node** rappresenta il documento XML. 
@@ -348,14 +533,20 @@ I figli di Document sono la radice del documento e tutti i commenti e le process
 
 L'attributo `documentElement` permette di prelevare direttamente il nodo radice del documento XML.
 
-Tutti i nodi da inserire nel documento devono essere creati tramite i suoi metodi `CreateX()`
+Tutti i nodi da inserire nel documento devono essere creati tramite i suoi metodi `CreateX()` 
 
-<!------------------- END SLIDE 016 -------------------------->
+<!------------------- END SLIDE 016 it -------------------------->
 
-<!----------------- BEGIN SLIDE 017 -------------------------->
+<!----------------- BEGIN SLIDE 017 it -------------------------->
+
+####  Interfaccia
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 017
 
-#### Interfaccia
+
 
 
 ```java
@@ -377,20 +568,31 @@ interface Document : Node {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 *Document* eredita da Node tutte le funzionalità utili alla manipolazione dei suoi nodi.    
 
 Il metodo `getElementById` restituisce l'unico elemento presente nel documento che abbia il valore dato nel suo attributo di tipo ID. 
 
-Il metodo `getElementsByTagName` verrà  illustrato con l'oggetto Element.  
+Il metodo `getElementsByTagName` verrà  illustrato con l'oggetto Element. 
 
-<!------------------- END SLIDE 017 -------------------------->
+<!------------------- END SLIDE 017 it -------------------------->
 
-<!----------------- BEGIN SLIDE 018 -------------------------->
+<!----------------- BEGIN SLIDE 018 it -------------------------->
+
+####  Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 018
 
-#### Esempi
+
 
 
 ```java
@@ -416,7 +618,12 @@ radice.appendChild(
  /*8*/document.createProcessingInstruction("php", "echo('pippo');"));       
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Le interfacce per la manipolazione degli oggetti DOM si trovano nel package **org.w3c.dom**
 
@@ -434,11 +641,15 @@ Le interfacce per la manipolazione degli oggetti DOM si trovano nel package **or
 
 (7) Impostiamo il contenuto testuale del nodo (rimuovendo tutto il suo contenuto precedente, è possibile solo con il DOM livello 3).
 
-(8) Creiamo una  processing intruction con target "php" e contenuto "echo('pippo');" e la accodiamo ai figli della radice.      
+(8) Creiamo una  processing intruction con target "php" e contenuto "echo('pippo');" e la accodiamo ai figli della radice. 
 
-<!------------------- END SLIDE 018 -------------------------->
+<!------------------- END SLIDE 018 it -------------------------->
 
-<!----------------- BEGIN SLIDE 019 -------------------------->
+<!----------------- BEGIN SLIDE 019 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 019
 
 Il codice che segue
@@ -467,7 +678,12 @@ radice.appendChild(
  "php", "echo('pippo');"));    
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Crea la struttura XML seguente:
 
@@ -484,14 +700,20 @@ Crea la struttura XML seguente:
  <nodo8/>
  <nodo9/><?php echo('pippo');?>    
 </Radice>  
-```
+``` 
 
-<!------------------- END SLIDE 019 -------------------------->
+<!------------------- END SLIDE 019 it -------------------------->
 
-<!----------------- BEGIN SLIDE 020 -------------------------->
+<!----------------- BEGIN SLIDE 020 it -------------------------->
+
+### 2.7. L'Oggetto Element
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 020
 
-### L'Oggetto Element
+
 
 
 ```java
@@ -514,7 +736,12 @@ interface Element : Node {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Gli oggetti **Element** rappresentano i nodi di tipo elemento. 
 
@@ -532,12 +759,18 @@ Il metodo `getElementsByTagName` restituisce i soli figli del nodo che siano ele
 
 Il metodo `normalize` serve a fondere nodi *Text* adiacenti nel sottoalbero controllato dall'elemento. 
 
-<!------------------- END SLIDE 020 -------------------------->
+<!------------------- END SLIDE 020 it -------------------------->
 
-<!----------------- BEGIN SLIDE 021 -------------------------->
+<!----------------- BEGIN SLIDE 021 it -------------------------->
+
+####  Interfaccia NodeSelector
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 021
 
-#### Interfaccia NodeSelector
+
 
 
 ```java
@@ -547,20 +780,31 @@ interface NodeSelector {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 L'interfaccia *NodeSelector* è implementata dagli oggetti *Document* ed *Element* e permette di selezionare nodi discendenti usando i selettori CSS3.
 
 I due metodi accettano dei selettori CSS (anche composti) e restituiscono, nel caso di `querySelector`, il primo elemento che fa match col selettore tra i discendenti dell'oggetto a cui è applicato, mentre nel caso di `querySelectorAll` viene restituita una *NodeList* con tutti i match.
 
-*Si tratta di una funzionalità relativamente nuova ma ormai supportata da tutti i browser moderni (vedi https://developer.mozilla.org/en-US/docs/Web/API/Document\_object\_model/Locating\_DOM\_elements\_using\_selectors). Precedentemente la stessa cosa era possibile solo usando librerie di supporto come JQuery*.    
+*Si tratta di una funzionalità relativamente nuova ma ormai supportata da tutti i browser moderni (vedi https://developer.mozilla.org/en-US/docs/Web/API/Document\_object\_model/Locating\_DOM\_elements\_using\_selectors). Precedentemente la stessa cosa era possibile solo usando librerie di supporto come JQuery*. 
 
-<!------------------- END SLIDE 021 -------------------------->
+<!------------------- END SLIDE 021 it -------------------------->
 
-<!----------------- BEGIN SLIDE 022 -------------------------->
+<!----------------- BEGIN SLIDE 022 it -------------------------->
+
+####  Esempi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 022
 
-#### Esempi
+
 
 
 ```javascript
@@ -591,7 +835,12 @@ for(i=0; i<list.length(); i++)
  radice.querySelectorAll("nodo5");   
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Le interfacce per la manipolazione degli oggetti DOM si trovano nel package **org.w3c.dom**
 
@@ -605,11 +854,15 @@ Le interfacce per la manipolazione degli oggetti DOM si trovano nel package **or
 
 (5) `querySelector` restituisce il primo elemento con classe "pippo" o "pluto" tra i discendenti di radice.    
 
-(6) con questo  `querySelectorAll` otteniamo lo stesso risultato del punto 3.
+(6) con questo  `querySelectorAll` otteniamo lo stesso risultato del punto 3. 
 
-<!------------------- END SLIDE 022 -------------------------->
+<!------------------- END SLIDE 022 it -------------------------->
 
-<!----------------- BEGIN SLIDE 023 -------------------------->
+<!----------------- BEGIN SLIDE 023 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 023
 
 Il frammento di codice che segue
@@ -635,7 +888,12 @@ for(i=0; i<list.length(); i++)
 (list.item(i)).setAttributeNS ("prfx","attr", "val");          
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Crea la struttura XML seguente:
 
@@ -651,14 +909,20 @@ Crea la struttura XML seguente:
  <nodo8/>
  <nodo9/>
 </Radice>  
-```
+``` 
 
-<!------------------- END SLIDE 023 -------------------------->
+<!------------------- END SLIDE 023 it -------------------------->
 
-<!----------------- BEGIN SLIDE 024 -------------------------->
+<!----------------- BEGIN SLIDE 024 it -------------------------->
+
+### 2.8. Gli Oggetti NodeList e NamedNodeMap
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 024
 
-### Gli Oggetti NodeList e NamedNodeMap
+
 
 
 ```java
@@ -686,7 +950,12 @@ nmp = f.attributes;
 nmp.getNamedItem("a").value 
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Vari metodi del DOM restituiscono liste.
 
@@ -696,20 +965,30 @@ L'oggetto **NodeList** permette di gestire una lista ordinata di nodi.
 
 - Il metodo `item(i)` restituisce l'i-esimo nodo della lista.  
 
-L'oggetto **NamedNodeMap** contiene nodi accessibili, oltre che per indice (come in *NodeList*), anche attraverso il loro nome (cioè il valore del loro attributo `nodeName`).
+L'oggetto **NamedNodeMap** contiene nodi accessibili, oltre che per indice (come in *NodeList*), anche attraverso il loro nome (cioè il valore del loro attributo `nodeName`). 
 
-<!------------------- END SLIDE 024 -------------------------->
+<!------------------- END SLIDE 024 it -------------------------->
 
-<!----------------- BEGIN SLIDE 025 -------------------------->
+<!----------------- BEGIN SLIDE 025 it -------------------------->
+
+## 3. DOM HTML
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 025
 
-## DOM HTML
 
-*Il DOM delle pagine web*
 
-<!------------------- END SLIDE 025 -------------------------->
+*Il DOM delle pagine web* 
 
-<!----------------- BEGIN SLIDE 026 -------------------------->
+<!------------------- END SLIDE 025 it -------------------------->
+
+<!----------------- BEGIN SLIDE 026 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 026
 
 
@@ -724,25 +1003,35 @@ Il DOM HTML mette a disposizione tutte le classi e le proprietà viste finora, m
 
 - Una serie di classi derivate da Element forniscono accesso diretto alle proprietà più comuni dei rispettivi elementi HTML   
 
-Il DOM è comunque in continua evoluzione: si veda il "living standard" all'indirizzo https://dom.spec.whatwg.org  
+Il DOM è comunque in continua evoluzione: si veda il "living standard" all'indirizzo https://dom.spec.whatwg.org 
 
-<!------------------- END SLIDE 026 -------------------------->
+<!------------------- END SLIDE 026 it -------------------------->
 
-<!----------------- BEGIN SLIDE 027 -------------------------->
+<!----------------- BEGIN SLIDE 027 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 027
 
 Il DOM di livello 2 ha inoltre introdotto una serie di nuove caratteristiche specifiche per il DOM HTML:
 
 - Alcune nuove classi modellano i fogli di stile CSS e la loro applicazione agli elementi HTML.
 
-- Un modello a eventi permette la gestione dinamica delle pagine web, catturando e gestendo gli eventi utente come i click.
+- Un modello a eventi permette la gestione dinamica delle pagine web, catturando e gestendo gli eventi utente come i click. 
 
-<!------------------- END SLIDE 027 -------------------------->
+<!------------------- END SLIDE 027 it -------------------------->
 
-<!----------------- BEGIN SLIDE 028 -------------------------->
+<!----------------- BEGIN SLIDE 028 it -------------------------->
+
+### 3.1. L'Oggetto HTMLDocument
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 028
 
-### L'Oggetto HTMLDocument
+
 
 
 ```java
@@ -773,7 +1062,12 @@ interface HTMLCollection {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Gli oggetti **HTMLDocument** forniscono accesso a tutto il DOM del documento, tramite le funzioni ereditate dalla classe Document 
 
@@ -803,14 +1097,20 @@ Sono disponibili, nei browser più aggiornati, anche **metodi per selezionare el
 
 - Il valore dell'attributo `name` (`getElementsByName`)
 
-- Una o più classi ad essi assegnate (`getElementsByClassName`)
+- Una o più classi ad essi assegnate (`getElementsByClassName`) 
 
-<!------------------- END SLIDE 028 -------------------------->
+<!------------------- END SLIDE 028 it -------------------------->
 
-<!----------------- BEGIN SLIDE 029 -------------------------->
+<!----------------- BEGIN SLIDE 029 it -------------------------->
+
+### 3.2. L'Oggetto HTMLElement
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 029
 
-### L'Oggetto HTMLElement
+
 
 
 ```java
@@ -838,7 +1138,12 @@ interface HTMLElement : Element {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 In generale, gli oggetti collegati ai particolari elementi HTML dispongono di    **attributi corrispondenti agli attributi caratteristici dell'elemento stesso**.
 
@@ -859,14 +1164,20 @@ Le misure e la posizione di un elemento sono sempre relative al suo contenitore,
 
 - `innerHTML` permette di manipolare direttamente (leggere e scrivere) la struttura HTML contenuta nell'elemento. In particolare, permette di creare sottoalberi senza dover passare per createElement, appendChild, ecc.    
 
-- I metodi `getElementsByName`  e `getElementsByClassName`, con la stessa semantica di quelli presenti in Document, ma con uno scope limitato ai discendenti dell'elemento ai quali vengono applicati.   
+- I metodi `getElementsByName`  e `getElementsByClassName`, con la stessa semantica di quelli presenti in Document, ma con uno scope limitato ai discendenti dell'elemento ai quali vengono applicati. 
 
-<!------------------- END SLIDE 029 -------------------------->
+<!------------------- END SLIDE 029 it -------------------------->
 
-<!----------------- BEGIN SLIDE 030 -------------------------->
+<!----------------- BEGIN SLIDE 030 it -------------------------->
+
+### 3.3. L'Oggetto HTMLFormElement
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 030
 
-### L'Oggetto HTMLFormElement
+
 
 
 ```java
@@ -884,20 +1195,31 @@ interface HTMLFormElement : HTMLElement {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 L'oggetto HTMLFormElement dispone di attributi per tutti gli attributi dell'elemento \<form\>     
 
 L'attributo `elements` permette di accedere alla collection dei campi del modulo, il cui numero è indicato da `length`
 
-I metodi `submit` e `reset` hanno la stessa funzione dei corrispondenti bottoni del form.  
+I metodi `submit` e `reset` hanno la stessa funzione dei corrispondenti bottoni del form. 
 
-<!------------------- END SLIDE 030 -------------------------->
+<!------------------- END SLIDE 030 it -------------------------->
 
-<!----------------- BEGIN SLIDE 031 -------------------------->
+<!----------------- BEGIN SLIDE 031 it -------------------------->
+
+### 3.4. L'Oggetto HTMLInputElement
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 031
 
-### L'Oggetto HTMLInputElement
+
 
 
 ```java
@@ -927,7 +1249,12 @@ interface HTMLInputElement : HTMLElement {
 };
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 L'oggetto HTMLInputElement corrisponde all'elemento \<input\>   
 
@@ -937,12 +1264,18 @@ Il metodo `select` seleziona il testo nell'input testuale
 
 Il metodo `click` simula il click del mouse sugli input di tipo bottone. 
 
-<!------------------- END SLIDE 031 -------------------------->
+<!------------------- END SLIDE 031 it -------------------------->
 
-<!----------------- BEGIN SLIDE 032 -------------------------->
+<!----------------- BEGIN SLIDE 032 it -------------------------->
+
+### 3.5. Gli Oggetti HTMLSelectElement e HTMLOptionElement
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 032
 
-### Gli Oggetti HTMLSelectElement e HTMLOptionElement
+
 
 
 ```java
@@ -975,7 +1308,12 @@ interface HTMLOptionElement : HTMLElement {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 L'oggetto HTMLSelectElement corrisponde all'elemento \<select\>     
 
@@ -989,14 +1327,20 @@ Il metodo `add` permette di aggiungere un HTMLOptionElement alla lista nella pos
 
 I metodi `blur` e `focus`, vengono utilizzati per gestire il focus sul campo.
 
-Nell'oggetto HTMLOptionElement va notato l'attributo   `index`, che indica la posizione dell'opzione nella lista, e l'attributo `selected`, che ne determina la selezione
+Nell'oggetto HTMLOptionElement va notato l'attributo   `index`, che indica la posizione dell'opzione nella lista, e l'attributo `selected`, che ne determina la selezione 
 
-<!------------------- END SLIDE 032 -------------------------->
+<!------------------- END SLIDE 032 it -------------------------->
 
-<!----------------- BEGIN SLIDE 033 -------------------------->
+<!----------------- BEGIN SLIDE 033 it -------------------------->
+
+### 3.6. Gli Oggetti HTMLAnchorElement e HTMLImageElement
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 033
 
-### Gli Oggetti HTMLAnchorElement e HTMLImageElement
+
 
 
 ```java
@@ -1033,30 +1377,47 @@ interface HTMLImageElement : HTMLElement {
 };
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Altri esempi di oggetti rappresentanti elementi HTML: HTMLAnchorElement (\<a\>) e HTMLImageElement (\<img\>).      
 
 Gli attributi dell'interfaccia corrispondono a quelli dell'elemento.
 
-Gli oggetti corrispondenti a elementi "interattivi", come i link, possiedono sempre i metodi `focus` e `blur`.
+Gli oggetti corrispondenti a elementi "interattivi", come i link, possiedono sempre i metodi `focus` e `blur`. 
 
-<!------------------- END SLIDE 033 -------------------------->
+<!------------------- END SLIDE 033 it -------------------------->
 
-<!----------------- BEGIN SLIDE 034 -------------------------->
+<!----------------- BEGIN SLIDE 034 it -------------------------->
+
+## 4. DOM HTML: CSS
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 034
 
-## DOM HTML: CSS
 
 
-*L'interfaccia del DOM verso i fogli di stile*
 
-<!------------------- END SLIDE 034 -------------------------->
+*L'interfaccia del DOM verso i fogli di stile* 
 
-<!----------------- BEGIN SLIDE 035 -------------------------->
+<!------------------- END SLIDE 034 it -------------------------->
+
+<!----------------- BEGIN SLIDE 035 it -------------------------->
+
+### 4.1. Il DOM di CSS
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 035
 
-### Il DOM di CSS
+
 
 
 Per la manipolazione degli stili CSS applicati ai documenti (HTML, ma non solo), il DOM di livello 2 definisce una serie di nuove classi:
@@ -1067,14 +1428,20 @@ Per la manipolazione degli stili CSS applicati ai documenti (HTML, ma non solo),
 
 - Classi per la rappresentazione delle specifiche proprietà di stile (*CSSStyleDeclaration*).
 
-È possibile accedere allo stile calcolato per un elemento o a quello dichiarato nell'elemento stesso.
+È possibile accedere allo stile calcolato per un elemento o a quello dichiarato nell'elemento stesso. 
 
-<!------------------- END SLIDE 035 -------------------------->
+<!------------------- END SLIDE 035 it -------------------------->
 
-<!----------------- BEGIN SLIDE 036 -------------------------->
+<!----------------- BEGIN SLIDE 036 it -------------------------->
+
+### 4.2. L'Oggetto CSSStyleSheet
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 036
 
-### L'Oggetto CSSStyleSheet
+
 
 
 ```java
@@ -1088,7 +1455,12 @@ interface CSSStyleSheet : stylesheets::StyleSheet {
 };
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 L'interfaccia *CSSStyleSheet* permette di interagire con i fogli di stile incorporati in un documento.
 
@@ -1096,12 +1468,18 @@ L'interfaccia permette di inserire, modificare e cancellare **regole di stile** 
 
 Si usa solitamente solo per la creazione di **fogli di stile dinamici**. Per l'HTML dinamico è preferibile manipolare lo stile applicato agli elementi piuttosto che le regole che lo generano. 
 
-<!------------------- END SLIDE 036 -------------------------->
+<!------------------- END SLIDE 036 it -------------------------->
 
-<!----------------- BEGIN SLIDE 037 -------------------------->
+<!----------------- BEGIN SLIDE 037 it -------------------------->
+
+### 4.3. Gli Oggetti CSSRule e CSSStyleRule
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 037
 
-### Gli Oggetti CSSRule e CSSStyleRule
+
 
 
 ```java
@@ -1127,7 +1505,12 @@ interface CSSStyleRule : CSSRule {
 };
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 L'interfaccia *CSSRule* rappresenta un generica regola CSS, come indicato dall'attributo *type*.
 
@@ -1135,14 +1518,20 @@ Le regole più interessanti sono quelle di tipo STYLE\_RULE, rappresentate dalla
 
 Ogni *CSSStyleRule* rappresenta una singola regola di stile CSS.
 
-Una *CSSStyleRule* è composta da una stringa contenente il selettore della regola e la specifica degli attributi di stile, inseriti in una *CSSStyleDeclaration*.
+Una *CSSStyleRule* è composta da una stringa contenente il selettore della regola e la specifica degli attributi di stile, inseriti in una *CSSStyleDeclaration*. 
 
-<!------------------- END SLIDE 037 -------------------------->
+<!------------------- END SLIDE 037 it -------------------------->
 
-<!----------------- BEGIN SLIDE 038 -------------------------->
+<!----------------- BEGIN SLIDE 038 it -------------------------->
+
+### 4.4. L'Oggetto CSSStyleDeclaration
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 038
 
-### L'Oggetto CSSStyleDeclaration
+
 
 
 ```java
@@ -1161,7 +1550,12 @@ interface CSSStyleDeclaration {
 };
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Una *CSSStyleDeclaration* rappresenta un insieme di impostazioni per gli attributi di stile
 
@@ -1169,14 +1563,20 @@ Il metodo `item` permette di leggere il testo corrispondente a ciascuna impostaz
 
 È possibile leggere il valore e la priorità assegnati a un particolare attributo usando i metodi `getPropertyValue` e `getPropertyPriority`
 
-È infine possibile impostare o reimpostare il valore e la proprietà di uno specifico attributo attraverso il metodo `setProperty`, o eliminare l'impostazione di un attributo con `removeProperty`.
+È infine possibile impostare o reimpostare il valore e la proprietà di uno specifico attributo attraverso il metodo `setProperty`, o eliminare l'impostazione di un attributo con `removeProperty`. 
 
-<!------------------- END SLIDE 038 -------------------------->
+<!------------------- END SLIDE 038 it -------------------------->
 
-<!----------------- BEGIN SLIDE 039 -------------------------->
+<!----------------- BEGIN SLIDE 039 it -------------------------->
+
+### 4.5. Accesso allo stile di un elemento
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 039
 
-### Accesso allo stile di un elemento
+
 
 
 ```java
@@ -1190,18 +1590,29 @@ interface ElementCSSInlineStyle {
 };
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 L'interfaccia *ViewCSS* permette di leggere lo stile *calcolato* per un elemento (che è di **sola lettura**). In Javascript, questa interfaccia è implementata dall'oggetto *window*.
 
-L'interfaccia *ElementCSSInlineStyle* permette di **leggere e modificare** le regole di stile inserite nell'attributo *style* di un elemento. La classe HTMLElement implementa questa interfaccia nei browser che supportano il DOM di livello 2   
+L'interfaccia *ElementCSSInlineStyle* permette di **leggere e modificare** le regole di stile inserite nell'attributo *style* di un elemento. La classe HTMLElement implementa questa interfaccia nei browser che supportano il DOM di livello 2 
 
-<!------------------- END SLIDE 039 -------------------------->
+<!------------------- END SLIDE 039 it -------------------------->
 
-<!----------------- BEGIN SLIDE 040 -------------------------->
+<!----------------- BEGIN SLIDE 040 it -------------------------->
+
+### 4.6. Interfaccia CSS2Properties
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 040
 
-### Interfaccia CSS2Properties
+
 
 
 ```java
@@ -1235,37 +1646,60 @@ interface CSS2Properties {
 };
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
 
-*CSSProperties* è un'interfaccia facoltativa per **l'accesso rapido alle proprietà CSS**, come alternativa all'uso di `getProperty` e `setProperty` dell'interfaccia *CSSStyleDeclaration*. Se adottata, è solitamente **presente in tutti gli oggetti che implementano anche l'interfaccia CSSStyleDeclaration** .
 
-<!------------------- END SLIDE 040 -------------------------->
+<!----------------- COLUMN 2 -------------------------->
 
-<!----------------- BEGIN SLIDE 041 -------------------------->
+
+
+*CSSProperties* è un'interfaccia facoltativa per **l'accesso rapido alle proprietà CSS**, come alternativa all'uso di `getProperty` e `setProperty` dell'interfaccia *CSSStyleDeclaration*. Se adottata, è solitamente **presente in tutti gli oggetti che implementano anche l'interfaccia CSSStyleDeclaration** . 
+
+<!------------------- END SLIDE 040 it -------------------------->
+
+<!----------------- BEGIN SLIDE 041 it -------------------------->
+
+## 5. DOM HTML: Eventi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 041
 
-## DOM HTML: Eventi
 
-*L'interfaccia del DOM verso il mondo esterno*
 
-<!------------------- END SLIDE 041 -------------------------->
+*L'interfaccia del DOM verso il mondo esterno* 
 
-<!----------------- BEGIN SLIDE 042 -------------------------->
+<!------------------- END SLIDE 041 it -------------------------->
+
+<!----------------- BEGIN SLIDE 042 it -------------------------->
+
+### 5.1. Il Modello ad Eventi del DOM
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 042
 
-### Il Modello ad Eventi del DOM
+
 
 
 Il modello ad eventi del DOM, presente a partire dal livello 2, fornisce le interfacce e la semantica di un generico sistema di gestione degli eventi per i documenti HTML.
 
-Il modello DOM è costruito a partire da un sottoinsieme comune delle funzionalità custom presenti nei vari browser, in modo da garantire una certa interoperabilità.
+Il modello DOM è costruito a partire da un sottoinsieme comune delle funzionalità custom presenti nei vari browser, in modo da garantire una certa interoperabilità. 
 
-<!------------------- END SLIDE 042 -------------------------->
+<!------------------- END SLIDE 042 it -------------------------->
 
-<!----------------- BEGIN SLIDE 043 -------------------------->
+<!----------------- BEGIN SLIDE 043 it -------------------------->
+
+### 5.2. Event Bubbling
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 043
 
-### Event Bubbling
+
 
 
 Ogni evento ha un elemento **target**, che è quello sul quale è stato generato. Il target viene determinato esaminando la struttura DOM, che a volte può differire da quanto l'utente "vede"! 
@@ -1274,11 +1708,15 @@ Ad esempio, il click su un testo genera un evento click sul paragrafo che contie
 
 Dopo aver attivato l'eventuale event handler del target, l'evento viene riproposto a tutti gli elementi antenati del target secondo la gerarchia DOM, nell'ordine, fino ad arrivare all'oggetto Document. Questo comportamento prende il nome di **event bubbling**.
 
-Come vedremo, è possibile arrestare il bubbling dopo aver catturato un evento.   
+Come vedremo, è possibile arrestare il bubbling dopo aver catturato un evento. 
 
-<!------------------- END SLIDE 043 -------------------------->
+<!------------------- END SLIDE 043 it -------------------------->
 
-<!----------------- BEGIN SLIDE 044 -------------------------->
+<!----------------- BEGIN SLIDE 044 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 044
 
 
@@ -1294,28 +1732,42 @@ Un click sul testo del paragrafo attiva un processo di bubbling che "mostra" l'e
 </html>
 ```
 
-<!----------------- COLUMN 002  -------------------------->
-
-![Bubbling](domhtml5.png)
+ 
 
 
-<!------------------- END SLIDE 044 -------------------------->
+<!----------------- COLUMN 2 -------------------------->
 
-<!----------------- BEGIN SLIDE 045 -------------------------->
+
+
+![Bubbling](domhtml5.png) 
+
+<!------------------- END SLIDE 044 it -------------------------->
+
+<!----------------- BEGIN SLIDE 045 it -------------------------->
+
+### 5.3. Event Capturing
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 045
 
-### Event Capturing
+
 
 
 Nell'*event capturing*, gli eventi percorrono la gerarchia nel senso opposto al bubbling.
 
 L'evento viene proposto a tutti gli elementi antenati del target secondo la gerarchia DOM, nell'ordine, a partire da document fino ad arrivare all'oggetto che ha generato l'evento.
 
-I browser effettuano sempre prima una *fase di capturing* e poi una *fase di bubbling* per ogni evento generato. Gli handlers possono essere registrati per rispondere a una sola delle due fasi.
+I browser effettuano sempre prima una *fase di capturing* e poi una *fase di bubbling* per ogni evento generato. Gli handlers possono essere registrati per rispondere a una sola delle due fasi. 
 
-<!------------------- END SLIDE 045 -------------------------->
+<!------------------- END SLIDE 045 it -------------------------->
 
-<!----------------- BEGIN SLIDE 046 -------------------------->
+<!----------------- BEGIN SLIDE 046 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 046
 
 
@@ -1331,16 +1783,27 @@ Un click sul testo del paragrafo attiva un processo di capturing che "mostra" *p
 </html>
 ```
 
-<!----------------- COLUMN 002  -------------------------->
+ 
 
-![Capturing](domhtml6.png)
 
-<!------------------- END SLIDE 046 -------------------------->
+<!----------------- COLUMN 2 -------------------------->
 
-<!----------------- BEGIN SLIDE 047 -------------------------->
+
+
+![Capturing](domhtml6.png) 
+
+<!------------------- END SLIDE 046 it -------------------------->
+
+<!----------------- BEGIN SLIDE 047 it -------------------------->
+
+### 5.4. Propagazione di un Evento
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 047
 
-### Propagazione di un Evento
+
 
 Ogni evento viene prima propagato in fase di capturing e successivamente in fase di bubbling.    
 
@@ -1355,17 +1818,27 @@ Ogni evento viene prima propagato in fase di capturing e successivamente in fase
 </html>
 ```
 
-<!----------------- COLUMN 002  -------------------------->
-
-![Propagation](domhtml7.png)
+ 
 
 
-<!------------------- END SLIDE 047 -------------------------->
+<!----------------- COLUMN 2 -------------------------->
 
-<!----------------- BEGIN SLIDE 048 -------------------------->
+
+
+![Propagation](domhtml7.png) 
+
+<!------------------- END SLIDE 047 it -------------------------->
+
+<!----------------- BEGIN SLIDE 048 it -------------------------->
+
+### 5.5. Event Handlers
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 048
 
-### Event Handlers
+
 
 
 ```java
@@ -1378,7 +1851,12 @@ interface EventTarget {
 };
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Ogni elemento di un documento HTML, oltre all'oggetto *HTMLDocument* stesso, possono dichiarare uno o più handlers per determinati eventi.  
 
@@ -1386,28 +1864,40 @@ Un *EventListener* è di solito rappresentato da una funzione che prende in inpu
 
 Il metodo `addEventListener` permette di aggiungere su un elemento un *listener* per un determinato tipo di evento (*type*), attivando opzionalmente la modalità di cattura (*useCapture*)
 
-È possibile anche eliminare un listener preesistente con   `removeEventListener`.
+È possibile anche eliminare un listener preesistente con   `removeEventListener`. 
 
-<!------------------- END SLIDE 048 -------------------------->
+<!------------------- END SLIDE 048 it -------------------------->
 
-<!----------------- BEGIN SLIDE 049 -------------------------->
+<!----------------- BEGIN SLIDE 049 it -------------------------->
+
+####  Compatibilità
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 049
 
-#### Compatibilità
+
 
 
 Per **compatibilità verso il modello ad eventi precedentemente utilizzato dai browser**, gli *EventTarget* dispongono anche di una serie di attributi denominati "onX", dove X è un tipo di evento valido.
 
 Assegnare un *EventListener* (tipicamente una funzione) a uno di questi attributi corrisponde ad aggiungerlo, in modalità bubbling, al tipo di evento corrispondente all'attributo impostato.      
 
-Impostare a  *null* uno di questi attributi rimuove solo il listener eventualmente aggiunto attraverso l'attributo stesso.    
+Impostare a  *null* uno di questi attributi rimuove solo il listener eventualmente aggiunto attraverso l'attributo stesso. 
 
-<!------------------- END SLIDE 049 -------------------------->
+<!------------------- END SLIDE 049 it -------------------------->
 
-<!----------------- BEGIN SLIDE 050 -------------------------->
+<!----------------- BEGIN SLIDE 050 it -------------------------->
+
+### 5.6. Struttura degli Eventi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 050
 
-### Struttura degli Eventi
+
 
 
 ```java
@@ -1429,7 +1919,12 @@ interface Event {
 };
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Quando un *EventListener* viene attivato, gli viene passato un oggetto *Event* (o un suo derivato più specifico) che descrive l'evento da gestire.
 
@@ -1441,14 +1936,20 @@ L'attributo `currentTarget` indica l'elemento che sta attualmente gestendo l'eve
 
 Il metodo `stopPropagation` permette di arrestare il bubbling dell'evento (che si verifica se `bubbles` è true)  
 
-Il metodo `preventDefault` impedisce al browser di attuare l'azione di default, se esiste, associata all'evento (solo se `cancelable` è true).  
+Il metodo `preventDefault` impedisce al browser di attuare l'azione di default, se esiste, associata all'evento (solo se `cancelable` è true). 
 
-<!------------------- END SLIDE 050 -------------------------->
+<!------------------- END SLIDE 050 it -------------------------->
 
-<!----------------- BEGIN SLIDE 051 -------------------------->
+<!----------------- BEGIN SLIDE 051 it -------------------------->
+
+####  Gli Eventi del Mouse
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 051
 
-#### Gli Eventi del Mouse
+
 
 
 ```java
@@ -1466,7 +1967,12 @@ interface MouseEvent : UIEvent {
 };
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 I tipi di eventi mouse sono i seguenti:
 
@@ -1492,12 +1998,18 @@ Un evento del mouse è accompagnato da informazioni più dettagliate circa lo st
 
 - `button` indica quale bottone del mouse è stato premuto (0=sinistro, 1=centrale, 2=destro). 
 
-<!------------------- END SLIDE 051 -------------------------->
+<!------------------- END SLIDE 051 it -------------------------->
 
-<!----------------- BEGIN SLIDE 052 -------------------------->
+<!----------------- BEGIN SLIDE 052 it -------------------------->
+
+####  Gli Eventi della Tastiera
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 052
 
-#### Gli Eventi della Tastiera
+
 
 
 ```java
@@ -1515,7 +2027,12 @@ interface KeyboardEvent : UIEvent {
 };
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 **Il modello W3C di livello 2 non tratta attualmente gli eventi della tastiera**: i singoli browser hanno metodi proprietari per segnalare questi eventi, tuttavia ci sono anche qui degli standard di fatto, che stanno confluendo nello standard W3C di livello 3 (non ancora definitivo).
 
@@ -1537,12 +2054,18 @@ Un evento tastiera è accompagnato da informazioni più dettagliate circa lo sta
 
 - Nel *DOM Level 3 Events*  l'interfaccia *KeyboardEvent* (riportata qui di fianco) ha le due stringhe `code` (codice del carattere) e `key` (stringa rappresentante il carattere). 
 
-<!------------------- END SLIDE 052 -------------------------->
+<!------------------- END SLIDE 052 it -------------------------->
 
-<!----------------- BEGIN SLIDE 053 -------------------------->
+<!----------------- BEGIN SLIDE 053 it -------------------------->
+
+####  Gli Eventi HTML
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 053
 
-#### Gli Eventi HTML
+
 
 
 Alcuni oggetti HTML possono ricevere notifiche di eventi complessi ad essi specifici:
@@ -1571,24 +2094,31 @@ Alcuni oggetti HTML possono ricevere notifiche di eventi complessi ad essi speci
 
 - **scroll** (il contenuto di un elemento è fatto scorrere). 
 
-- **DOMContentLoaded** (il documento è stato completamente caricato e analizzato. Questo non comprende il completamento del caricamento di fogli di stile, immagini e sottoframe. Evento introdotto in tempi recenti, corrispondente al  *ready* di librerie come JQuery).  
+- **DOMContentLoaded** (il documento è stato completamente caricato e analizzato. Questo non comprende il completamento del caricamento di fogli di stile, immagini e sottoframe. Evento introdotto in tempi recenti, corrispondente al  *ready* di librerie come JQuery). 
 
-<!------------------- END SLIDE 053 -------------------------->
+<!------------------- END SLIDE 053 it -------------------------->
 
-<!----------------- BEGIN SLIDE 054 -------------------------->
-> 054
+<!----------------- BEGIN SLIDE 054 it -------------------------->
 
-## Approfondimenti
-
+## 6. Approfondimenti
 
 
+<!----------------- COLUMN 1 -------------------------->
 
-<!------------------- END SLIDE 054 -------------------------->
+> 054 
 
-<!----------------- BEGIN SLIDE 055 -------------------------->
+<!------------------- END SLIDE 054 it -------------------------->
+
+<!----------------- BEGIN SLIDE 055 it -------------------------->
+
+### 6.1. Compatibilità dei nuovi standard
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 055
 
-### Compatibilità dei nuovi standard
+
 
 
 Tutte le funzionalità introdotte con ECMAScript 5, 6 e oltre, nonché tutte le novità relative al DOM di HTML che vengono via via adottate dai browser più moderni **non sono ovviamente compatibili con quelli più datati**.
@@ -1599,18 +2129,23 @@ Per verificare la compatibilità di una certa funzione/API, è possibile cercare
 
 In caso di funzionalità con scarso supporto nei browser datati è utile, per ampliare la platea dei browser supportati, **inserire tra i propri script i relativi polyfill** , cioè librerie che integrano nei browser le funzionalità non supportate tramite opportuni workaround.   
 
-Provate ad utilizzare le librerie generate da  *https://polyfill.io* , che permette tra l'altro di scaricare i polyfill per le sole funzionalità di vostro interesse e solo se necessari al browser che le richiede, tutto in maniera automatica.  
+Provate ad utilizzare le librerie generate da  *https://polyfill.io* , che permette tra l'altro di scaricare i polyfill per le sole funzionalità di vostro interesse e solo se necessari al browser che le richiede, tutto in maniera automatica. 
 
-<!------------------- END SLIDE 055 -------------------------->
+<!------------------- END SLIDE 055 it -------------------------->
 
-<!----------------- BEGIN SLIDE 056 -------------------------->
+<!----------------- BEGIN SLIDE 056 it -------------------------->
+
+### 6.2. Riferimenti
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 056
 
-### Riferimenti
+
 
 
 **DOM Living Standard**   
-https://www.w3.org/TR/dom/   
+https://www.w3.org/TR/dom/ 
 
-<!------------------- END SLIDE 056 -------------------------->
-
+<!------------------- END SLIDE 056 it -------------------------->

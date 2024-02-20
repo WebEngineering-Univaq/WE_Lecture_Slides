@@ -1,9 +1,24 @@
-<!----------------- BEGIN SLIDE 001 -------------------------->
+---
+title: Java Servlets     
+course: Web Engineering
+organization: University of L'Aquila
+
+author: Giuseppe Della Penna
+---
+
+
+<!----------------- BEGIN SLIDE 001 it -------------------------->
+
+#  Java Servlets     
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 001
 
 
 
-#  Java Servlets     
+
     
 *Concetti e Programmazione di Base*
 
@@ -14,7 +29,6 @@ Università degli Studi di L'Aquila
 giuseppe.dellapenna@univaq.it    
 http://people.disim.univaq.it/dellapenna
 
-**Versione documento: 051025**
 
 > *Questo documento si basa sulle slide del corso di Web Engineering, riorganizzate per una migliore esperienza di lettura. Non è un libro di testo completo o un manuale tecnico, e deve essere utilizzato insieme a tutti gli altri materiali didattici del corso. Si prega di segnalare eventuali errori o omissioni all'autore.*
 
@@ -69,25 +83,31 @@ http://people.disim.univaq.it/dellapenna
     - [4.2. Filter](#42-filter)
 
  - [5. Riferimenti](#5-riferimenti)
- 
- - [6. Esempi di Codice](#6-esempi-di-codice)
+
+ - [6. Esempi di codice](#6-esempi-di-codice)
 
 
 
-<!------------------- END TOC -------------------------->
+<!------------------- END TOC --------------------------> 
 
-<!------------------- END SLIDE 001 -------------------------->
+<!------------------- END SLIDE 001 it -------------------------->
 
-<!----------------- BEGIN SLIDE 001b -------------------------->
+<!----------------- BEGIN SLIDE 001b it -------------------------->
 
 ## 1. Fondamenti delle Servlet Java
 
-<!------------------- END SLIDE 001b -------------------------->
+<!------------------- END SLIDE 001b it -------------------------->
 
-<!----------------- BEGIN SLIDE 002 -------------------------->
-> 002
+<!----------------- BEGIN SLIDE 002 it -------------------------->
 
 ### 1.1. Introduzione alle Servlet
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 002
+
+
 
 
 Le servlet sono particolari classi Java che vengono eseguite in server web opportunamente predisposti (**servlet containers**). 
@@ -100,14 +120,20 @@ Le **servlet API** di Java permettono di programmare in maniera completamente in
 
 Il codice è normale codice Java, che può far uso di tutte le librerie e le utilità del linguaggio, tra cui la connessione a tutti i DBMS tramite JDBC, l'uso di XML tramite JAXP, ecc.
 
-Le servlet sostituiscono i classici CGI fornendo un elevatissimo grado di sicurezza, versatilità e astrazione al programmatore.
+Le servlet sostituiscono i classici CGI fornendo un elevatissimo grado di sicurezza, versatilità e astrazione al programmatore. 
 
-<!------------------- END SLIDE 002 -------------------------->
+<!------------------- END SLIDE 002 it -------------------------->
 
-<!----------------- BEGIN SLIDE 003 -------------------------->
-> 003
+<!----------------- BEGIN SLIDE 003 it -------------------------->
 
 ### 1.2. Dove e Come Eseguire una Servlet
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 003
+
+
 
 
 Per eseguire una servlet è necessario disporre di un server che possa fungere da  **servlet container**, fornendo adeguato supporto alla loro attivazione ed esecuzione.
@@ -118,14 +144,20 @@ Il tradizionale server Apache HTTPD non è invece adatto a contenere servlet, tu
 
 Tomcat è un container  *leggero*, ed **implementa solo le tecnologie di base** per lo sviluppo delle web applications (*Servlet*, *JSP*). Il **JEE Web profile**  completo è disponibile in server più complessi, come *TomEE*, basato su Tomcat, o   *Glassfish*.
 
-**Attenzione**: a partire dalla versione 10, Tomcat è stato aggiornato per supportare l'evoluzione della Java EE, cioè la Jakarta EE: le web application scritte precedentemente non potranno essere eseguite su Tomcat 10 a meno che non siano adattate, principalmente modificando i package delle classi javax.\* in jakarta.\* (vedasi https://tomcat.apache.org/migration-10.html)        
+**Attenzione**: a partire dalla versione 10, Tomcat è stato aggiornato per supportare l'evoluzione della Java EE, cioè la Jakarta EE: le web application scritte precedentemente non potranno essere eseguite su Tomcat 10 a meno che non siano adattate, principalmente modificando i package delle classi javax.\* in jakarta.\* (vedasi https://tomcat.apache.org/migration-10.html) 
 
-<!------------------- END SLIDE 003 -------------------------->
+<!------------------- END SLIDE 003 it -------------------------->
 
-<!----------------- BEGIN SLIDE 004 -------------------------->
-> 004
+<!----------------- BEGIN SLIDE 004 it -------------------------->
 
 ####  Configurazione di Apache Tomcat
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 004
+
+
 
 Apache Tomcat, disponibile per tutte le piattaforme (è esso stesso un programma Java) può essere scaricato dal sito http://tomcat.apache.org/.  
 
@@ -143,14 +175,20 @@ Per poter accedere all'amministrazione, è prima di tutto necessario **creare un
 
 ```xml
 <user username="admin" password="adminpass" roles="admin,manager"/>
-```
+``` 
 
-<!------------------- END SLIDE 004 -------------------------->
+<!------------------- END SLIDE 004 it -------------------------->
 
-<!----------------- BEGIN SLIDE 005 -------------------------->
-> 005
+<!----------------- BEGIN SLIDE 005 it -------------------------->
 
 ### 1.3. Contesto di una Web Application
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 005
+
+
 
 
 Le applicazioni web sono eseguite in **contesti**. Ogni contesto, in generale, corrisponde a una particolare directory che viene configurata nel server e associata a una URL specifica. 
@@ -163,14 +201,20 @@ A questo punto, per testare il nuovo contesto, è possibile inserire un file htm
 
 Tuttavia, per avere un'applicazione web totalmente funzionante, è anche  necessario approntare una particolare struttura di sottodirectory nel contesto e scrivere alcuni file di configurazione. I principali elementi di questa struttura verranno illustrati di seguito.
 
-Tuttavia, **il metodo di installazione consigliato per le web application è quello di usare un IDE (ad esempio Netbeans) per realizzare l'applicazione ed effettuarne il packaging in un file *war* (Web ARchive), che potrà poi essere copiato *manualmente* nella directory webapps di Tomcat oppure installato *automaticamente* dall'IDE**.
+Tuttavia, **il metodo di installazione consigliato per le web application è quello di usare un IDE (ad esempio Netbeans) per realizzare l'applicazione ed effettuarne il packaging in un file *war* (Web ARchive), che potrà poi essere copiato *manualmente* nella directory webapps di Tomcat oppure installato *automaticamente* dall'IDE**. 
 
-<!------------------- END SLIDE 005 -------------------------->
+<!------------------- END SLIDE 005 it -------------------------->
 
-<!----------------- BEGIN SLIDE 006 -------------------------->
-> 006
+<!----------------- BEGIN SLIDE 006 it -------------------------->
 
 ### 1.4. Struttura delle directory di una Web Application
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 006
+
+
 
 
 Le directory corrispondenti ad una web application hanno una struttura base particolare che permette al server di accedere alle risorse dinamiche (servlet, jsp) e statiche (html, css, immagini, ecc.). In particolare:        
@@ -181,14 +225,20 @@ Le directory corrispondenti ad una web application hanno una struttura base part
 
 - La sottodirectory **WEB-INF/lib** contiene le librerie JAR necessarie all'applicazione, comprese quelle di terze parti, come i driver JDBC.  
 
-- Tutti le altre sottodirectory del contesto, compresa la stessa root directory, conterranno normali files come pagine html, fogli di stile, immagini o pagine JSP.    
+- Tutti le altre sottodirectory del contesto, compresa la stessa root directory, conterranno normali files come pagine html, fogli di stile, immagini o pagine JSP. 
 
-<!------------------- END SLIDE 006 -------------------------->
+<!------------------- END SLIDE 006 it -------------------------->
 
-<!----------------- BEGIN SLIDE 007 -------------------------->
-> 007
+<!----------------- BEGIN SLIDE 007 it -------------------------->
 
 ### 1.5. Inserimento di una servlet in una Web Application
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 007
+
+
 
 Un servlet è essenzialmente una classe Java che implementa l'interfaccia *Servlet*. Tuttavia, dopo aver compilato i relativi sorgenti e copiato il file di classe nella sottodirectory WEB-INF/classes, per renderlo disponibile come risorsa servlet, è necessario configurarne le funzionalità tramite un file denominato **web application deployment descriptor**. Questo file, denominato web.xml, deve essere inserito nella sottodirectory WEB-INF del contesto.
 
@@ -215,7 +265,12 @@ Un semplice esempio di descrittore è mostrato di seguito.
 </web-app>   
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Ciascuna servlet è configurata in un elemento   **\<servlet\>**   distinto. L'elemento **\<servlet-class\>**   deve contenere il nome completo della classe che implementa la servlet.  
 
@@ -223,14 +278,20 @@ Ciascuna servlet è configurata in un elemento   **\<servlet\>**   distinto. L'e
 
 ```
 http://[server address]/[context]/[url pattern]      
-```
+``` 
 
-<!------------------- END SLIDE 007 -------------------------->
+<!------------------- END SLIDE 007 it -------------------------->
 
-<!----------------- BEGIN SLIDE 008 -------------------------->
-> 008
+<!----------------- BEGIN SLIDE 008 it -------------------------->
 
 ### 1.6. Le Classi Base per le Servlet
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 008
+
+
 
 
 Alla base dell'implementazione di una servlet c'è l'interfaccia **Servlet**, che è implementata da una serie di classi base come **HttpServlet**. Tutte le servlet che creeremo saranno derivate (*extends*) da quest'ultima.
@@ -239,14 +300,20 @@ Le altre due classi base per la creazione di una servlet sono **ServletRequest**
 
 Un'istanza di **ServletRequest** viene passata dal contesto alla servlet quando questa viene invocata, e contiene tutte le informazioni inerenti la richiesta effettuata dal client: queste comprendono, ad esempio, i parametri GET e POST inviati dal client, le variabili di ambiente del server, gli *header* e il *payload* della richiesta HTTP.
 
-Un'istanza di **ServletResponse** viene passata alla servlet quando le si richiede di restituire del contenuto da inviare al client. I metodi di questa classe permettono di scrivere su uno *stream* che verrà poi indirizzato al client, modificare gli *header* della risposta HTTP, ecc.
+Un'istanza di **ServletResponse** viene passata alla servlet quando le si richiede di restituire del contenuto da inviare al client. I metodi di questa classe permettono di scrivere su uno *stream* che verrà poi indirizzato al client, modificare gli *header* della risposta HTTP, ecc. 
 
-<!------------------- END SLIDE 008 -------------------------->
+<!------------------- END SLIDE 008 it -------------------------->
 
-<!----------------- BEGIN SLIDE 009 -------------------------->
-> 009
+<!----------------- BEGIN SLIDE 009 it -------------------------->
 
 ### 1.7. Il Ciclo di Vita di una Servlet
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 009
+
+
 
 
 Il ciclo di vita di una servlet è scandito da una serie di chiamate, effettuate dal container, a particolari metodi dell'interfaccia Servlet.    
@@ -257,14 +324,20 @@ Il ciclo di vita di una servlet è scandito da una serie di chiamate, effettuate
 
 - **Finalizzazione**. Quando il container decide di rimuovere la servlet, chiama il suo metodo   `destroy`. Quest'ultimo viene solitamente utilizzato per chiudere connessioni a database, o scaricare altre risorse persistenti attivate dal metodo `init`.  
 
-La classe **HttpServlet** specializza questo sistema per la comunicazione HTTP, fornendo in particolare due metodi: `doGet` e `doPost`, corrispondenti alle due request più comuni in HTTP. Il metodo  `service` delle classe HTTPServlet provvede automaticamente a smistare le richieste al metodo opportuno.  
+La classe **HttpServlet** specializza questo sistema per la comunicazione HTTP, fornendo in particolare due metodi: `doGet` e `doPost`, corrispondenti alle due request più comuni in HTTP. Il metodo  `service` delle classe HTTPServlet provvede automaticamente a smistare le richieste al metodo opportuno. 
 
-<!------------------- END SLIDE 009 -------------------------->
+<!------------------- END SLIDE 009 it -------------------------->
 
-<!----------------- BEGIN SLIDE 010 -------------------------->
-> 010
+<!----------------- BEGIN SLIDE 010 it -------------------------->
 
 ### 1.8. Scrivere una Classe Servlet
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 010
+
+
 
 
 Per scrivere una semplice servlet è necessario creare una classe che estende   **javax.servlet.http.HttpServlet**.
@@ -287,14 +360,20 @@ La classe HttpServlet fornisce un'implementazione di default di tutti i metodi a
 
 La classe Servlet contiene altri metodi utili, come  `getServletContext`, tramite il quale si possono leggere molte informazioni sul contesto di esecuzione della servlet stessa.  
 
-Per compilare una servlet, è necessario che nel    **CLASSPATH** sia inclusa la libreria che definisce il package   **javax.servlet (o jakarta.servlet se si usa la Jakarta EE)**   . Una copia di questa libreria, chiamata  *servlet-api.jar*, è presente nella directory common/lib di Tomcat.    
+Per compilare una servlet, è necessario che nel    **CLASSPATH** sia inclusa la libreria che definisce il package   **javax.servlet (o jakarta.servlet se si usa la Jakarta EE)**   . Una copia di questa libreria, chiamata  *servlet-api.jar*, è presente nella directory common/lib di Tomcat. 
 
-<!------------------- END SLIDE 010 -------------------------->
+<!------------------- END SLIDE 010 it -------------------------->
 
-<!----------------- BEGIN SLIDE 011 -------------------------->
-> 011
+<!----------------- BEGIN SLIDE 011 it -------------------------->
 
 ####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 011
+
+
 
 
 ```java
@@ -310,20 +389,31 @@ public class class1 extends HttpServlet {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Una servlet di base estende la classe javax.servlet.http.HttpServlet   
 
 Per gestire le richieste HTTP, si sovrascrivono opportunamente i metodi corrispondenti: in questo esempio, il metodo `doGet` verrà chiamato per gestire le richieste HTTP GET.  
 
-> Si vedano le applicazioni di esempio: Java\_WebApp\_Base\_T10, Java\_WebApp\_Base_T9    
+> Si vedano le applicazioni di esempio: Java\_WebApp\_Base\_T10, Java\_WebApp\_Base_T9 
 
-<!------------------- END SLIDE 011 -------------------------->
+<!------------------- END SLIDE 011 it -------------------------->
 
-<!----------------- BEGIN SLIDE 012 -------------------------->
-> 012
+<!----------------- BEGIN SLIDE 012 it -------------------------->
 
 ####  Esempio con annotazioni di deployment
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 012
+
+
 
 
 ```java
@@ -340,18 +430,29 @@ public class class1 extends HttpServlet {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 È possibile trovare anche servlet annotate come in questo esempio.  
 
-In questo caso, l'annotazione sostituisce i corrispondenti elementi *servlet* e *servlet-mapping* nel file web.xml, che possono quindi essere omessi (si veda l'esempio di deployment descriptor nelle slide precedenti).    
+In questo caso, l'annotazione sostituisce i corrispondenti elementi *servlet* e *servlet-mapping* nel file web.xml, che possono quindi essere omessi (si veda l'esempio di deployment descriptor nelle slide precedenti). 
 
-<!------------------- END SLIDE 012 -------------------------->
+<!------------------- END SLIDE 012 it -------------------------->
 
-<!----------------- BEGIN SLIDE 013 -------------------------->
-> 013
+<!----------------- BEGIN SLIDE 013 it -------------------------->
 
 ### 1.9. Fornire Informazioni sulla Servlet
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 013
+
+
 
 
 È possibile, anche se non richiesto, fornire delle informazioni sulla servlet che possono essere utilizzate dal container.
@@ -360,14 +461,20 @@ Le informazioni potrebbero ad esempio includere l'autore e la versione della ser
 
 A questo scopo è sufficiente sovrascrivere il metodo `getServletInfo()` dell'interfaccia Servlet, che nella sua implementazione di default in HttpServlet si limita a resitutire *null*.
 
-Il metodo non prende alcun argomento e deve restituire una stringa.
+Il metodo non prende alcun argomento e deve restituire una stringa. 
 
-<!------------------- END SLIDE 013 -------------------------->
+<!------------------- END SLIDE 013 it -------------------------->
 
-<!----------------- BEGIN SLIDE 014 -------------------------->
-> 014
+<!----------------- BEGIN SLIDE 014 it -------------------------->
 
 ####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 014
+
+
 
 
 ```java
@@ -388,16 +495,27 @@ public class class1 extends HttpServlet {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
 
-La stringa restituita da `getServletInfo` verrà usata dal container per fornire informazioni sulla servlet.  
 
-<!------------------- END SLIDE 014 -------------------------->
+<!----------------- COLUMN 2 -------------------------->
 
-<!----------------- BEGIN SLIDE 015 -------------------------->
-> 015
+
+
+La stringa restituita da `getServletInfo` verrà usata dal container per fornire informazioni sulla servlet. 
+
+<!------------------- END SLIDE 014 it -------------------------->
+
+<!----------------- BEGIN SLIDE 015 it -------------------------->
 
 ### 1.10. Inizializzare e Finalizzare la Servlet
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 015
+
+
 
 
 L'inizializzazione di una servlet si effettua nel suo metodo `init`, che ha come parametro un oggetto *ServletConfig*.
@@ -412,14 +530,20 @@ Se l'inizializzazione incontra dei problemi, è possibile generare un'eccezione 
 
 La finalizzazione di una servlet si effettua nel suo metodo `destroy`.
 
-È necessario sovrascrivere questo metodo solo se esistono effettivamente operazioni da fare prima della distruzione della servlet.
+È necessario sovrascrivere questo metodo solo se esistono effettivamente operazioni da fare prima della distruzione della servlet. 
 
-<!------------------- END SLIDE 015 -------------------------->
+<!------------------- END SLIDE 015 it -------------------------->
 
-<!----------------- BEGIN SLIDE 016 -------------------------->
-> 016
+<!----------------- BEGIN SLIDE 016 it -------------------------->
 
 ####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 016
+
+
 
 
 ```java
@@ -446,18 +570,29 @@ public class class1 extends HttpServlet {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Il metodo `init`, dopo aver chiamato lo stesso metodo della classe superiore, può procedere con l'inizializzazione della servlet.   
 
-Se ci sono problemi di inizializzazione, viene generata una ServletException.  
+Se ci sono problemi di inizializzazione, viene generata una ServletException. 
 
-<!------------------- END SLIDE 016 -------------------------->
+<!------------------- END SLIDE 016 it -------------------------->
 
-<!----------------- BEGIN SLIDE 017 -------------------------->
-> 017
+<!----------------- BEGIN SLIDE 017 it -------------------------->
 
 ### 1.11. Scrivere la Risposta
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 017
+
+
 
 
 L'oggetto **HttpServletResponse** fornito a tutti i metodi di servizio permette di costruire la risposta da inviare al client.
@@ -470,14 +605,20 @@ L'oggetto **HttpServletResponse** fornito a tutti i metodi di servizio permette 
 
 - I metodi `getWriter()` e `getOutputStream()` permettono di aprire un canale, testuale o binario, su cui scrivere il contenuto della risposta. Vanno chiamati dopo aver (eventualmente) impostato il *content type* e gli altri *headers*.
 
-Altri metodi (che non tratteremo in questa sede) permettono di gestire, ad esempio, i cookie.
+Altri metodi (che non tratteremo in questa sede) permettono di gestire, ad esempio, i cookie. 
 
-<!------------------- END SLIDE 017 -------------------------->
+<!------------------- END SLIDE 017 it -------------------------->
 
-<!----------------- BEGIN SLIDE 018 -------------------------->
-> 018
+<!----------------- BEGIN SLIDE 018 it -------------------------->
 
 ####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 018
+
+
 
 
 ```java
@@ -501,20 +642,31 @@ public class class1 extends HttpServlet {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Nel caso comune in cui si debba restituire dell'HTML al client, è sufficiente prelevare il   **Writer** della response tramite il metodo   `getWriter()`  e scrivervi sopra tutto il testo da restituire dal browser.
 
 Qualunque altro parametro della risposta (in questo caso, il tipo) deve essere impostato *prima* di richiedere il canale di output.
 
-> Si vedano le applicazioni di esempio: Java\_Example\_Servlet, Java\_Example\_Servlet\_Fwk, Java\_Example\_Downloader, Java\_Example\_Imager    
+> Si vedano le applicazioni di esempio: Java\_Example\_Servlet, Java\_Example\_Servlet\_Fwk, Java\_Example\_Downloader, Java\_Example\_Imager 
 
-<!------------------- END SLIDE 018 -------------------------->
+<!------------------- END SLIDE 018 it -------------------------->
 
-<!----------------- BEGIN SLIDE 019 -------------------------->
-> 019
+<!----------------- BEGIN SLIDE 019 it -------------------------->
 
 ### 1.12. Leggere la Richiesta
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 019
+
+
 
 
 L'oggetto **HttpServletRequest** fornito a tutti i metodi di servizio contiene tutte le informazioni sulla richiesta del client.
@@ -535,12 +687,18 @@ I metodi ereditati dalla classe **ServletRequest**, infine, permettono di legger
 
 **Questi metodi non sono direttamente validi nel caso in cui si utilizzi la codifica** ***multipart/form-data***  **(upload di files)!** 
 
-<!------------------- END SLIDE 019 -------------------------->
+<!------------------- END SLIDE 019 it -------------------------->
 
-<!----------------- BEGIN SLIDE 020 -------------------------->
-> 020
+<!----------------- BEGIN SLIDE 020 it -------------------------->
 
 ####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 020
+
+
 
 
 ```java
@@ -566,20 +724,31 @@ public class class1 extends HttpServlet {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 I metodi `doGet` e `doPost` possono leggere i parametri interpretati della richiesta tramite     `getParameter()`  e `getParameterValues()` .
 
 - doGet può leggere la stringa di query in maniera raw chiamando      `getQueryString()`. 
 
-- doPost può leggere il payload del messaggio in maniera raw tramite gli stream restituiti da        `getReader()`  (testuale) e `getInputStream()`  (binario).
+- doPost può leggere il payload del messaggio in maniera raw tramite gli stream restituiti da        `getReader()`  (testuale) e `getInputStream()`  (binario). 
 
-<!------------------- END SLIDE 020 -------------------------->
+<!------------------- END SLIDE 020 it -------------------------->
 
-<!----------------- BEGIN SLIDE 021 -------------------------->
-> 021
+<!----------------- BEGIN SLIDE 021 it -------------------------->
 
 ####  Multipart
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 021
+
+
 
 
 Nel caso in cui la richiesta arrivi al server in formato **multipart/form-data**    (tipicamente usata nel caso la richiesta contenga anche dei file binari) è necessario configurare la servlet che la dovrà ricevere in maniera opportuna, altrimenti sarà impossibile decodificarla.  
@@ -596,14 +765,20 @@ Nel caso in cui la richiesta arrivi al server in formato **multipart/form-data**
 
 Tutti i parametri di cui sopra hanno dei default ragionevoli, ma si consiglia sempre di configurare almeno le dimensioni massime dei file e delle richieste in base ai requisiti della propria applicazione, in modo da evitare anche possibili attacchi.
 
-Dopo questa modifica, la servlet così configurata potrà accedere ai dati inviati usando la   `getParameter()`  già vista in precedenza, mentre per i file sarà necessario usare la `getPart()`  e poi lavorare con l'oggetto **Part** così ottenuto.
+Dopo questa modifica, la servlet così configurata potrà accedere ai dati inviati usando la   `getParameter()`  già vista in precedenza, mentre per i file sarà necessario usare la `getPart()`  e poi lavorare con l'oggetto **Part** così ottenuto. 
 
-<!------------------- END SLIDE 021 -------------------------->
+<!------------------- END SLIDE 021 it -------------------------->
 
-<!----------------- BEGIN SLIDE 022 -------------------------->
-> 022
+<!----------------- BEGIN SLIDE 022 it -------------------------->
 
 ####  Esempio multipart: configurazione servlet
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 022
+
+
 
 
 ```xml
@@ -627,7 +802,12 @@ Dopo questa modifica, la servlet così configurata potrà accedere ai dati invia
 </web-app>   
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Per abilitare una specifica servlet a ricevere richieste codificate   **multipart**, è necessario aggiungere la direttiva *multipart-config* alla sua definizione.
 
@@ -639,14 +819,20 @@ Tramite la direttiva  **multipart-config** è possibile anche specificare:
 
 - La dimensione massima complessiva della richiesta (**max-request-size**), default illimitata.
 
-- La dimensione massima dei file che verranno conservati in memoria e non salvati sul disco (nella directory di cui sopra) (**file-size-threshold**), default zero.
+- La dimensione massima dei file che verranno conservati in memoria e non salvati sul disco (nella directory di cui sopra) (**file-size-threshold**), default zero. 
 
-<!------------------- END SLIDE 022 -------------------------->
+<!------------------- END SLIDE 022 it -------------------------->
 
-<!----------------- BEGIN SLIDE 023 -------------------------->
-> 023
+<!----------------- BEGIN SLIDE 023 it -------------------------->
 
 ####  Esempio multipart: codice servlet
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 023
+
+
 
 
 ```java
@@ -676,7 +862,12 @@ public void doPost(HttpServletRequest in, HttpServletResponse out) {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 In una servlet configurata per la ricezione di richieste   **multipart**, è possibile usare la normale `getParameter()` per tutti i dati trasmessi tranne che per i file.
 
@@ -686,24 +877,31 @@ Il file è temporaneamente scritto su disco e deve essere spostato in una direct
 
 A questo scopo è utile leggere il file sotto forma di stream ( `getInputStream()`).
 
-> Si vedano le applicazioni di esempio: Java\_Example\_Servlet\_Multipart\_7, Java\_Example\_Uploader    
+> Si vedano le applicazioni di esempio: Java\_Example\_Servlet\_Multipart\_7, Java\_Example\_Uploader 
 
-<!------------------- END SLIDE 023 -------------------------->
+<!------------------- END SLIDE 023 it -------------------------->
 
-<!----------------- BEGIN SLIDE 024 -------------------------->
-> 024
+<!----------------- BEGIN SLIDE 024 it -------------------------->
 
 ## 2. Le Sessioni
 
 
+<!----------------- COLUMN 1 -------------------------->
 
+> 024 
 
-<!------------------- END SLIDE 024 -------------------------->
+<!------------------- END SLIDE 024 it -------------------------->
 
-<!----------------- BEGIN SLIDE 025 -------------------------->
-> 025
+<!----------------- BEGIN SLIDE 025 it -------------------------->
 
 ### 2.1. Introduzione alle Sessioni
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 025
+
+
 
 Il concetto di sessione è utilizzato ampiamente nella programmazione lato server. La sessione permette di **associare delle informazioni di stato alle richieste di un utente**, permettendo in pratica di aggirare la caratteristica *stateless* del protocollo HTTP.
 
@@ -717,14 +915,20 @@ Per trasmettere il session identifier con ogni richiesta, si utilizzano di solit
 I cookie sono la soluzione più semplice e adottata, ma risentono delle politiche di sicurezza del browser (ad esempio la disattivazione dei cookies).
 
 - **URL rewriting** : si tratta di inserire il session identifier all'interno delle URL, come parte del path o, più comunemente, come parametro GET.        
-Si tratta della soluzione più generica e compatibile, che però richiede la generazione dinamica di tutte le pagine (ogni link deve essere generato inserendovi il session identifier corrente).  
+Si tratta della soluzione più generica e compatibile, che però richiede la generazione dinamica di tutte le pagine (ogni link deve essere generato inserendovi il session identifier corrente). 
 
-<!------------------- END SLIDE 025 -------------------------->
+<!------------------- END SLIDE 025 it -------------------------->
 
-<!----------------- BEGIN SLIDE 026 -------------------------->
-> 026
+<!----------------- BEGIN SLIDE 026 it -------------------------->
 
 ### 2.2. Gestire le Sessioni con i Cookie
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 026
+
+
 
 
 Nelle servlet, creare ed utilizzare una sessione usando i cookies è molto semplice. La sessione è gestita da oggetti   **HttpSession**. Le *variabili di sessione* sono semplici stringhe a cui vengono associati generici valori di tipo Object.
@@ -745,14 +949,20 @@ I metodi di HttpSession permettono poi di utilizzare la sessione:
 
 - `removeAttribute(String)`    rimuove la variabile di stato indicata.
 
-- `invalidate()` chiude la sessione ed elimina tutte le informazioni di stato associate.
+- `invalidate()` chiude la sessione ed elimina tutte le informazioni di stato associate. 
 
-<!------------------- END SLIDE 026 -------------------------->
+<!------------------- END SLIDE 026 it -------------------------->
 
-<!----------------- BEGIN SLIDE 027 -------------------------->
-> 027
+<!----------------- BEGIN SLIDE 027 it -------------------------->
 
 ####  Esempio 1
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 027
+
+
 
 
 ```java
@@ -779,20 +989,31 @@ public class class1 extends HttpServlet {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Ad ogni richiesta GET alla servlet, se una sessione non è attiva, ne viene creata una e al suo interno viene inserita una variabile denominata "pagine" inizializzata a 1 (notare l'uso della classe Integer)    
 
 Il numero di pagine visitato durante la sessione viene quindi incrementato e stampato in output.
 
-> Si vedano le applicazioni di esempio: Java\_Example\_Servlet\_Sessions
+> Si vedano le applicazioni di esempio: Java\_Example\_Servlet\_Sessions 
 
-<!------------------- END SLIDE 027 -------------------------->
+<!------------------- END SLIDE 027 it -------------------------->
 
-<!----------------- BEGIN SLIDE 028 -------------------------->
-> 028
+<!----------------- BEGIN SLIDE 028 it -------------------------->
 
 ####  Esempio 2
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 028
+
+
 
 
 ```java
@@ -811,34 +1032,51 @@ public class class1 extends HttpServlet {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Questa semplice servlet mostra come salvare all'interno della sessione il valore del parametro "username" prelevato dalla request (probabilmente proveniente da una form).      
 
 Si tratta di una tipica operazione effettuata per concludere una procedura di login, tenendo traccia dell'utente attivato nella sessione corrente. 
 
-> Si vedano le applicazioni di esempio: Java\_Example\_Login, Java\_Example\_Login\_Middleware    
+> Si vedano le applicazioni di esempio: Java\_Example\_Login, Java\_Example\_Login\_Middleware 
 
-<!------------------- END SLIDE 028 -------------------------->
+<!------------------- END SLIDE 028 it -------------------------->
 
-<!----------------- BEGIN SLIDE 029 -------------------------->
-> 029
+<!----------------- BEGIN SLIDE 029 it -------------------------->
 
 ### 2.3. Gestire le Sessioni con le URL
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 029
+
+
 
 
 Le servlet dispongono anche di un sistema semiautomatico per gestire le sessioni tramite la riscrittura delle URL.
 
 In pratica, oltre al codice di gestione/creazione/uso della sessione visto precedentemente, è necessario far modificare ogni indirizzo internet che punta a una risorsa della nostra applicazione dal metodo `encodeUrl(String)` dell'oggetto **HttpServletResponse**. 
 
-Il metodo encodeURL determina se è necessario inserire il session identifier nella URL: nel caso in cui il metodo dei cookie sia utilizzabile, la URL non viene alterata.
+Il metodo encodeURL determina se è necessario inserire il session identifier nella URL: nel caso in cui il metodo dei cookie sia utilizzabile, la URL non viene alterata. 
 
-<!------------------- END SLIDE 029 -------------------------->
+<!------------------- END SLIDE 029 it -------------------------->
 
-<!----------------- BEGIN SLIDE 030 -------------------------->
-> 030
+<!----------------- BEGIN SLIDE 030 it -------------------------->
 
 ####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 030
+
+
 
 
 ```java
@@ -862,28 +1100,40 @@ public class class1 extends HttpServlet {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 In questo esempio, viene creata (se necessario) una sessione e sulla pagina viene stampata la URL della servlet corrente riscritta da  `encodeURL()` per includere il session identifier.  
 
-*Se il browser supporta i cookies, la URL non verrà modificata*.
+*Se il browser supporta i cookies, la URL non verrà modificata*. 
 
-<!------------------- END SLIDE 030 -------------------------->
+<!------------------- END SLIDE 030 it -------------------------->
 
-<!----------------- BEGIN SLIDE 031 -------------------------->
-> 031
+<!----------------- BEGIN SLIDE 031 it -------------------------->
 
 ## 3. Database nelle Web Application
 
 
+<!----------------- COLUMN 1 -------------------------->
 
+> 031 
 
-<!------------------- END SLIDE 031 -------------------------->
+<!------------------- END SLIDE 031 it -------------------------->
 
-<!----------------- BEGIN SLIDE 032 -------------------------->
-> 032
+<!----------------- BEGIN SLIDE 032 it -------------------------->
 
 ### 3.1. Java e i DBMS: il JDBC
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 032
+
+
 
 
 Una delle operazioni più comuni in un'applicazione web è la **gestione di dati immagazzinati in un database**.
@@ -907,14 +1157,20 @@ Se invece si desidera inviare una query che non restituisce risultati, ad esempi
 
 - Infine, terminato l'uso della base di dati, si può chiudere la connessione corrispondente chiamando il metodo `close` della **Connection**.
 
-Tutte le istruzioni JDBC, in caso di errore, sollevano eccezioni derivate da **SQLException**.
+Tutte le istruzioni JDBC, in caso di errore, sollevano eccezioni derivate da **SQLException**. 
 
-<!------------------- END SLIDE 032 -------------------------->
+<!------------------- END SLIDE 032 it -------------------------->
 
-<!----------------- BEGIN SLIDE 033 -------------------------->
-> 033
+<!----------------- BEGIN SLIDE 033 it -------------------------->
 
 ####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 033
+
+
 
 
 ```java
@@ -937,7 +1193,12 @@ stmt2.close();
 con.close(); 
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 In questo esempio si crea una connessione a un database *MySQL*.
 
@@ -951,14 +1212,20 @@ Per il driver MySQl, dalla versione 8, è utile usare i parametri qui esposti pe
 
 Alla connessione vengono anche passati la username e la password dell'utente con cui autenticarsi nel DBMS.
 
-Viene eseguita prima una query di selezione tramite   `executeQuery` e poi una di cancellamento tramite `executeUpdate`.
+Viene eseguita prima una query di selezione tramite   `executeQuery` e poi una di cancellamento tramite `executeUpdate`. 
 
-<!------------------- END SLIDE 033 -------------------------->
+<!------------------- END SLIDE 033 it -------------------------->
 
-<!----------------- BEGIN SLIDE 034 -------------------------->
-> 034
+<!----------------- BEGIN SLIDE 034 it -------------------------->
 
 ####  I ResultSet
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 034
+
+
 
 
 Tramite il **ResultSet** restituito dal metodo `executeQuery` è possibile leggere le colonne di ciascun record restituito da una query di selezione.
@@ -967,14 +1234,20 @@ I record devono essere letti uno alla volta: in ogni momento, il **ResultSet** p
 
 I valori dei vari campi del record corrente possono essere letti tramite i metodi `getX(nome_colonna)`, dove *X* è il **tipo Java** per il dato da estrarre (ad esempio `getString`, `getInt`, …) e *nome\_colonna* è il nome del campo del record da leggere.
 
-Per spostare il cursore del **RecordSet** al record successivo, si usa il metodo `next`. Il metodo restituisce *false* quando i record sono esauriti.
+Per spostare il cursore del **RecordSet** al record successivo, si usa il metodo `next`. Il metodo restituisce *false* quando i record sono esauriti. 
 
-<!------------------- END SLIDE 034 -------------------------->
+<!------------------- END SLIDE 034 it -------------------------->
 
-<!----------------- BEGIN SLIDE 035 -------------------------->
-> 035
+<!----------------- BEGIN SLIDE 035 it -------------------------->
 
 ####  Esempio ResultSet
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 035
+
+
 
 
 ```java
@@ -997,18 +1270,29 @@ stmt1.close();
 con.close(); 
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 In questo esempio, utilizziamo un ciclo *while* per iterare tra i risultati di una query di selezione.  
 
-Per ogni record viene stampato il valore del campo *nome*, di tipo stringa.
+Per ogni record viene stampato il valore del campo *nome*, di tipo stringa. 
 
-<!------------------- END SLIDE 035 -------------------------->
+<!------------------- END SLIDE 035 it -------------------------->
 
-<!----------------- BEGIN SLIDE 036 -------------------------->
-> 036
+<!----------------- BEGIN SLIDE 036 it -------------------------->
 
 ####  Limiti del metodo d'uso standard
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 036
+
+
 
 
 In un'applicazione web *data intensive*, in cui gli accessi al database sono molti e spesso concorrenti (più utenti connessi all'applicazione contemporaneamente), il "normale" pattern d'uso de JDBC presenta notevoli problemi.
@@ -1021,14 +1305,20 @@ Infatti, **l'apertura di una connessione al database è di solito un'operazione 
 
 - Autenticazione
 
-È necessario limitare l'overhead dovuto a queste operazioni, per rendere la web application più veloce possibile.    
+È necessario limitare l'overhead dovuto a queste operazioni, per rendere la web application più veloce possibile. 
 
-<!------------------- END SLIDE 036 -------------------------->
+<!------------------- END SLIDE 036 it -------------------------->
 
-<!----------------- BEGIN SLIDE 037 -------------------------->
-> 037
+<!----------------- BEGIN SLIDE 037 it -------------------------->
 
 ### 3.2. Il Connection Pooling
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 037
+
+
 
 
 Il connection pooling è una tecnica che permette di   **snellire le procedure di apertura delle connessioni JDBC** utilizzando una **cache di connessioni**, chiamata *connection pool*.
@@ -1041,28 +1331,40 @@ Quando l'applicazione chiude la connessione, **questa in realtà rimane aperta e
 
 Il pool viene inizialmente riempito con un certo numero di connessioni pronte. Tuttavia, se il pool si svuota (cioè tutte le sue connessioni sono in uso) e c'è richiesta di nuove connessioni, queste vengono create automaticamente, allargando il pool.
 
-Le connessioni lasciate inutilizzate nel pool per troppo tempo possono venir chiuse automaticamente per liberate le corrispondenti risorse del DBMS.
+Le connessioni lasciate inutilizzate nel pool per troppo tempo possono venir chiuse automaticamente per liberate le corrispondenti risorse del DBMS. 
 
-<!------------------- END SLIDE 037 -------------------------->
+<!------------------- END SLIDE 037 it -------------------------->
 
-<!----------------- BEGIN SLIDE 038 -------------------------->
-> 038
+<!----------------- BEGIN SLIDE 038 it -------------------------->
 
 ####  Supporto negli application server
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 038
+
+
 
 
 Il supporto al connection pooling, incorporato nelle più recenti versioni del JDBC, deve ovviamente avere supporto da parte del software (proprio come con i driver JDBC).  
 
 Tutti i più diffusi application server forniscono un'implementazione del connection pooling, ed esistono anche librerie esterne utilizzabili per aggiungere questo supporto ad ogni applicazione (non web).
 
-Attenzione: **ogni application server fornisce sistemi proprietari per configurare il connection pooling**. Vedremo in particolare come si utilizza il connection pooling su Tomcat.     
+Attenzione: **ogni application server fornisce sistemi proprietari per configurare il connection pooling**. Vedremo in particolare come si utilizza il connection pooling su Tomcat. 
 
-<!------------------- END SLIDE 038 -------------------------->
+<!------------------- END SLIDE 038 it -------------------------->
 
-<!----------------- BEGIN SLIDE 039 -------------------------->
-> 039
+<!----------------- BEGIN SLIDE 039 it -------------------------->
 
 ####  Uso con Tomcat
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 039
+
+
 
 
 Per configurare il connection pooling in Tomcat, si procede come segue:    
@@ -1075,14 +1377,20 @@ Per configurare il connection pooling in Tomcat, si procede come segue:
 
 - Si crea una normale connessione JDBC attraverso il DataSource.              
 
-- Si chiude la connessione al termine del suo uso.          
+- Si chiude la connessione al termine del suo uso. 
 
-<!------------------- END SLIDE 039 -------------------------->
+<!------------------- END SLIDE 039 it -------------------------->
 
-<!----------------- BEGIN SLIDE 040 -------------------------->
-> 040
+<!----------------- BEGIN SLIDE 040 it -------------------------->
 
 ####  Configurazione del contesto dell'applicazione (context.xml) per Tomcat
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 040
+
+
 
 
 ```xml
@@ -1102,7 +1410,12 @@ Per configurare il connection pooling in Tomcat, si procede come segue:
 </Context>  
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 La connessione è configurata all'interno di un elemento **Resource**, che ne contiene tutte le caratteristiche, compreso il driver, la username, la password e la stringa di connessione.
 
@@ -1118,14 +1431,20 @@ Gli attributi *maxActive*, *maxIdle* e *maxWait* servono a dimensionare il pool,
 
 **Attenzione: il driver indicato andrà copiato nella directory lib di Tomcat. Se lo si copia semplicemente nella WEB-INF/lib dell'applicazione (come parte del deployment), esso sarà invisibile al class loader usato per il pooling!**              
 
-**Attenzione: il nome della classe e la struttura della connection string possono cambiare in base alla versione del driver in uso da Tomcat (vedi esempi precedenti)**       
+**Attenzione: il nome della classe e la struttura della connection string possono cambiare in base alla versione del driver in uso da Tomcat (vedi esempi precedenti)** 
 
-<!------------------- END SLIDE 040 -------------------------->
+<!------------------- END SLIDE 040 it -------------------------->
 
-<!----------------- BEGIN SLIDE 041 -------------------------->
-> 041
+<!----------------- BEGIN SLIDE 041 it -------------------------->
 
 ####  Configurazione del deployment descriptor (web.xml)
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 041
+
+
 
 
 ```xml
@@ -1141,7 +1460,12 @@ Gli attributi *maxActive*, *maxIdle* e *maxWait* servono a dimensionare il pool,
 </web-app>  
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Nel deployment descriptor si inserisce un riferimento alla risorsa JNDI con un elemento **resource-ref**.
 
@@ -1149,14 +1473,20 @@ Gli attributi *res-type*  e *res-auth*  rispecchiano quelli *type* e *res* scrit
 
 *res-sharing-scope*  dovrebbe generalmente essere posto a "Shareable"  
 
-L'attributo *res-ref-name*    indica il nome JNDI utilizzato per la risorsa all'interno del codice. Le risorse di tipo DataSource hanno convenzionalmente un nome che inizia con "jdbc/".    
+L'attributo *res-ref-name*    indica il nome JNDI utilizzato per la risorsa all'interno del codice. Le risorse di tipo DataSource hanno convenzionalmente un nome che inizia con "jdbc/". 
 
-<!------------------- END SLIDE 041 -------------------------->
+<!------------------- END SLIDE 041 it -------------------------->
 
-<!----------------- BEGIN SLIDE 042 -------------------------->
-> 042
+<!----------------- BEGIN SLIDE 042 it -------------------------->
 
 ####  Uso nel codice Java
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 042
+
+
 
 
 ```java
@@ -1178,7 +1508,12 @@ try {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Si crea prima di tutto un *JNDI naming context* (**InitialContext**)
 
@@ -1188,14 +1523,20 @@ Si fa un cast dell'oggetto restituito sul tipo effettivo della risorsa (**DataSo
 
 Infine si crea la **Connection** JDBC usando il metodo `getConnection()`  del DataSource.  
 
-Dopo aver operato sulla connessione, la si chiude normalmente, determinandone il reinserimento nel pool. **Attenzione: se non si chiude, la connessione non rientrerà nel pool!**
+Dopo aver operato sulla connessione, la si chiude normalmente, determinandone il reinserimento nel pool. **Attenzione: se non si chiude, la connessione non rientrerà nel pool!** 
 
-<!------------------- END SLIDE 042 -------------------------->
+<!------------------- END SLIDE 042 it -------------------------->
 
-<!----------------- BEGIN SLIDE 043 -------------------------->
-> 043
+<!----------------- BEGIN SLIDE 043 it -------------------------->
 
 ####  Resource Injection
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 043
+
+
 
 
 ```java
@@ -1217,7 +1558,12 @@ class DatabaseService {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 La **Resource injection**   permette di evitare il complesso sistema di lookup delle risorse, e fare in modo che sia Java stesso a iniettare un riferimento al   *DataSource* in una variabile utente.
 
@@ -1227,22 +1573,29 @@ Basta far precedere la dichiarazione del campo dall'annotazione `@Resource`, con
 
 > Si vedano le applicazioni di esempio: Java\_Example\_Servlet\_Database, Java\_Example\_Newspaper\_DAO 
 
-<!------------------- END SLIDE 043 -------------------------->
+<!------------------- END SLIDE 043 it -------------------------->
 
-<!----------------- BEGIN SLIDE 044 -------------------------->
-> 044
+<!----------------- BEGIN SLIDE 044 it -------------------------->
 
 ## 4. Argomenti Avanzati
 
 
+<!----------------- COLUMN 1 -------------------------->
 
+> 044 
 
-<!------------------- END SLIDE 044 -------------------------->
+<!------------------- END SLIDE 044 it -------------------------->
 
-<!----------------- BEGIN SLIDE 045 -------------------------->
-> 045
+<!----------------- BEGIN SLIDE 045 it -------------------------->
 
 ### 4.1. ServletContextListener
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 045
+
+
 
 
 Un *context listener*  , è un elemento utile in generale per eseguire ogni operazione di "inizializzazione globale" (non specifica per una particolare servlet) della web application.    
@@ -1251,14 +1604,20 @@ Oggetti che implementano l'interfaccia **ServletContextListener** possono essere
 
 I due metodi `contextInitialized` e `contextDestroyed` di questi oggetti vengono chiamati rispettivamente all'avvio e alla chiusura della web application.  
 
-I metodi possono, tra l'altro, leggere modificare il **ServletContext** che verrà poi passato a tutte le servlet in fase di esecuzione.  
+I metodi possono, tra l'altro, leggere modificare il **ServletContext** che verrà poi passato a tutte le servlet in fase di esecuzione. 
 
-<!------------------- END SLIDE 045 -------------------------->
+<!------------------- END SLIDE 045 it -------------------------->
 
-<!----------------- BEGIN SLIDE 046 -------------------------->
-> 046
+<!----------------- BEGIN SLIDE 046 it -------------------------->
 
 ####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 046
+
+
 
 
 ```java
@@ -1281,20 +1640,31 @@ public class ContextInitializer implements ServletContextListener {
 </listener>  
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Questo context listener esegue inizializza alcune variabili di contesto all'avvio della web application, inserendole come attributi nel ServletContext.        
 
 Le singole servlet potranno prelevarle semplicemente con un'istruzione del tipo `getServletContext().getAttribute("appID")`      
 
-Perché il listener sia elaborato, è sufficiente   **aggiungere il frammento in basso, che ne specifica la classe, nel web.xml**.
+Perché il listener sia elaborato, è sufficiente   **aggiungere il frammento in basso, che ne specifica la classe, nel web.xml**. 
 
-<!------------------- END SLIDE 046 -------------------------->
+<!------------------- END SLIDE 046 it -------------------------->
 
-<!----------------- BEGIN SLIDE 047 -------------------------->
-> 047
+<!----------------- BEGIN SLIDE 047 it -------------------------->
 
 ### 4.2. Filter
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 047
+
+
 
 
 Un *filtro* è un elemento delle applicazioni web che permette di **modificare "al volo" le informazioni in input** (*HTTPServletRequest*) **o in output** (*HTTPServletResponse*) di una o più servlet.  
@@ -1307,14 +1677,20 @@ Il metodo  `doFilter`  viene invece invocato **a ogni richiesta** sulle servlet 
 
 È possibile **sostituire gli oggetti request e/o response**  con implementazioni speciali per controllare l'input/output.   
 
-È necessario **chiamare il metodo `doFilter` della FilterChain**.    
+È necessario **chiamare il metodo `doFilter` della FilterChain**. 
 
-<!------------------- END SLIDE 047 -------------------------->
+<!------------------- END SLIDE 047 it -------------------------->
 
-<!----------------- BEGIN SLIDE 048 -------------------------->
-> 048
+<!----------------- BEGIN SLIDE 048 it -------------------------->
 
 ####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 048
+
+
 
 ```java
 public class EmailObfuscatorFilter implements Filter {        
@@ -1345,20 +1721,31 @@ public class EmailObfuscatorFilter implements Filter {
 </filter-mapping>  
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Questo filtro non fa assolutamente nulla: si limita a chiamare il `doFilter` sulla *FilterChain*.
 
 Perché il filtro sia elaborato, è sufficiente **aggiungere il frammento in basso, che ne specifica la classe e gli url pattern associati, nel web.xml**.
 
-> Si vedano le applicazioni di esempio: Java\_Example\_Emailfilter
+> Si vedano le applicazioni di esempio: Java\_Example\_Emailfilter 
 
-<!------------------- END SLIDE 048 -------------------------->
+<!------------------- END SLIDE 048 it -------------------------->
 
-<!----------------- BEGIN SLIDE 049 -------------------------->
-> 049
+<!----------------- BEGIN SLIDE 049 it -------------------------->
 
 ## 5. Riferimenti
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 049
+
+
 
 
 **Servlet API: Java EE 8**    
@@ -1374,15 +1761,21 @@ https://docs.oracle.com/javaee/7/tutorial/servlets.htm
 http://docs.oracle.com/javase/tutorial/jdbc
 
 **Apache Tomcat**     
-https://tomcat.apache.org   
+https://tomcat.apache.org 
 
-<!------------------- END SLIDE 049 -------------------------->
+<!------------------- END SLIDE 049 it -------------------------->
 
-<!----------------- BEGIN SLIDE 050 -------------------------->
+<!----------------- BEGIN SLIDE 050 it -------------------------->
+
+## 6. Esempi di codice
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 049
 
 
-## 6. Esempi di codice
+
 
 Di seguito trovate un elenco dei principali esempi di codice mostrati o sviluppati durante le lezioni. Questi esempi sono tutti disponibili su GitHub, all'indirizzo [https://github.com/orgs/WebEngineering-Univaq], e sono *parte integrante* delle lezioni stesse, in quanto mostrano l'effettivo uso delle nozioni illustrate in aula e riportate su questa documentazione (dove, quando possibile, troverete dei riferimenti a questi esempi).
 
@@ -1421,13 +1814,15 @@ La lista che segue può non essere sempre aggiornata: nel repository potrete spe
 *Decodifica delle richieste multipart con le servlet*
 
 - Java\_Example\_Uploader    
-*Un semplice repository di file sviluppato con le servlet*
+*Un semplice repository di file sviluppato con le servlet* 
+
+<!------------------- END SLIDE 050 it -------------------------->
+
+<!----------------- BEGIN SLIDE 051 it -------------------------->
 
 
-<!------------------- END SLIDE 050 -------------------------->
+<!----------------- COLUMN 1 -------------------------->
 
-
-<!----------------- BEGIN SLIDE 051 -------------------------->
 > 051
 
 **Sessioni**
@@ -1465,6 +1860,6 @@ La lista che segue può non essere sempre aggiornata: nel repository potrete spe
 **Applicazioni web complete**
 
 - Java\_Example\_Newspaper\_DAO    
-*L'esempio del Newspaper, che mostra l'intero framework sviluppato nel corso*
+*L'esempio del Newspaper, che mostra l'intero framework sviluppato nel corso* 
 
-<!------------------- END SLIDE 051 -------------------------->
+<!------------------- END SLIDE 051 it -------------------------->

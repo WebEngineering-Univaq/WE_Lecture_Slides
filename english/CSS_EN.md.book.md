@@ -1,8 +1,25 @@
-<!----------------- BEGIN SLIDE 001 -------------------------->
+---
+title: Cascading Style Sheets
+course: Web Engineering
+organization: University of L'Aquila
+language: en
+author: Giuseppe Della Penna
+---
+
+
+<!----------------- BEGIN SLIDE 001 en -------------------------->
+
+#  Cascading Style Sheets
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
 > 001
 
 
-#  Cascading Style Sheets
+
 
 
 Giuseppe Della Penna
@@ -10,8 +27,6 @@ Giuseppe Della Penna
 Università degli Studi di L'Aquila   
 giuseppe.dellapenna@univaq.it   
 http://people.disim.univaq.it/dellapenna
-
-**Document version: 231124**
 
 > *This document is based on the slides of the Web Engineering course, translated into English and reorganized for a better reading experience. It is not a complete textbook or technical manual, and should be used in conjunction with all other teaching materials in the course. Please report any errors or omissions to the author.*
 
@@ -103,25 +118,35 @@ http://people.disim.univaq.it/dellapenna
 
 
 
-<!------------------- END TOC -------------------------->
+<!------------------- END TOC --------------------------> 
 
+<!------------------- END SLIDE 001 en -------------------------->
 
-<!------------------- END SLIDE 001 -------------------------->
-
-<!----------------- BEGIN SLIDE 002 -------------------------->
-> 002
+<!----------------- BEGIN SLIDE 002 en -------------------------->
 
 ## 1. Introduction to CSS
 
 
+<!----------------- COLUMN 1 -------------------------->
 
 
-<!------------------- END SLIDE 002 -------------------------->
 
-<!----------------- BEGIN SLIDE 003 -------------------------->
-> 003
+> 002 
+
+<!------------------- END SLIDE 002 en -------------------------->
+
+<!----------------- BEGIN SLIDE 003 en -------------------------->
 
 ### 1.1. The visual part of the web
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 003
+
+
 
 
 Cascading Style Sheets (CSS) are a language used to define the **visual/perceptual aspect (***presentation***) of HTML documents**. 
@@ -134,14 +159,22 @@ On different media, such as speech, CSS can be used to define the tone and speed
 
 Since version 3, CSS has become much more powerful and its development is continuous.  
 
-CSS (or its derivatives) can also be used to define visual aspects outside the web, for example for graphical user interfaces of desktop applications  
+CSS (or its derivatives) can also be used to define visual aspects outside the web, for example for graphical user interfaces of desktop applications 
 
-<!------------------- END SLIDE 003 -------------------------->
+<!------------------- END SLIDE 003 en -------------------------->
 
-<!----------------- BEGIN SLIDE 004 -------------------------->
-> 004
+<!----------------- BEGIN SLIDE 004 en -------------------------->
 
 ### 1.2. Style Sheets in HTML documents
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 004
+
+
 
 
 A CSS is a text document, consisting of a set of *style rules*. 
@@ -154,14 +187,22 @@ embedded CSS style sheets are written in the document \<head\>, inside a \<style
 
 it is also possible to write a style rule directly into a specific element using its style attribute. 
 
-finally, CSS style sheets can be imported from an external resource by writing, in the \<head\> section, a \<link\> tag with type = "text/css", rel = "stylesheet" and href = "style\_sheet\_uri".              
+finally, CSS style sheets can be imported from an external resource by writing, in the \<head\> section, a \<link\> tag with type = "text/css", rel = "stylesheet" and href = "style\_sheet\_uri". 
 
-<!------------------- END SLIDE 004 -------------------------->
+<!------------------- END SLIDE 004 en -------------------------->
 
-<!----------------- BEGIN SLIDE 005 -------------------------->
-> 005
+<!----------------- BEGIN SLIDE 005 en -------------------------->
 
 ####  Multiple Style Sheets
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 005
+
+
 
 
 If you specify multiple style sheets for the same document, CSS generally combines them in order of inclusion. 
@@ -172,12 +213,20 @@ However, it is possible to *conditionally* include a style sheet (or a group of 
 
 - User preferences 
 
-<!------------------- END SLIDE 005 -------------------------->
+<!------------------- END SLIDE 005 en -------------------------->
 
-<!----------------- BEGIN SLIDE 006 -------------------------->
-> 006
+<!----------------- BEGIN SLIDE 006 en -------------------------->
 
 ####  Media Types
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 006
+
+
 
 
 When you embed or link a style sheet in an HTML document, you can specify in the \<style\> or \<link\> element the *media* attribute. 
@@ -194,12 +243,20 @@ The media value is a comma-separated list of names of media descriptors, which i
 
 - `all`: for all types of media 
 
-<!------------------- END SLIDE 006 -------------------------->
+<!------------------- END SLIDE 006 en -------------------------->
 
-<!----------------- BEGIN SLIDE 007 -------------------------->
-> 007
+<!----------------- BEGIN SLIDE 007 en -------------------------->
 
 ####  Alternative Style Sheets
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 007
+
+
 
 
 Moreover, in HTML you can give a page three different styles for the same media type: 
@@ -208,24 +265,35 @@ Moreover, in HTML you can give a page three different styles for the same media 
 
 - **Preferred style**: this is the default style that will be combined with the persistent, if present. It is indicated by putting a `title = "style_name"` attribute in the \<link\> tags. 
 
-- **Alternative styles**: these are styles that can be loaded alternately to the preferred one, depending on user preferences. They are indicated by inserting the attribute `title = "style_name"` in the \<link\> tag and changing the rel attribute to `alternate stylesheet`.
+- **Alternative styles**: these are styles that can be loaded alternately to the preferred one, depending on user preferences. They are indicated by inserting the attribute `title = "style_name"` in the \<link\> tag and changing the rel attribute to `alternate stylesheet`. 
 
-<!------------------- END SLIDE 007 -------------------------->
+<!------------------- END SLIDE 007 en -------------------------->
 
-<!----------------- BEGIN SLIDE 008 -------------------------->
-> 008
+<!----------------- BEGIN SLIDE 008 en -------------------------->
 
 ## 2. Cascading Rules
 
 
+<!----------------- COLUMN 1 -------------------------->
 
 
-<!------------------- END SLIDE 008 -------------------------->
 
-<!----------------- BEGIN SLIDE 009 -------------------------->
-> 009
+> 008 
+
+<!------------------- END SLIDE 008 en -------------------------->
+
+<!----------------- BEGIN SLIDE 009 en -------------------------->
 
 ### 2.1. Rules
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 009
+
+
 
 
 A CSS rule defines a **formatting style** and a *class of elements* it must be applied to. 
@@ -242,12 +310,20 @@ SEL {P1: V1 [!important] P2: V2 P3: V3}
 
 The optional **`!important`** modifier, written after the value (but before the separator) of any property, is used to increase the *priority of the rule* during the *cascading* process, as we will see later. 
 
-<!------------------- END SLIDE 009 -------------------------->
+<!------------------- END SLIDE 009 en -------------------------->
 
-<!----------------- BEGIN SLIDE 010 -------------------------->
-> 010
+<!----------------- BEGIN SLIDE 010 en -------------------------->
 
 ####  Simple selectors
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 010
+
+
 
 
 A simple selector is a base selector followed by zero or more *attribute selectors, class selectors, ID selectors, pseudo classes* and *pseudo elements*. 
@@ -258,12 +334,20 @@ The **universal selector** (`*`) that matches any element.
 
 The **type selectors** (strings representing names of elements), which match any element with the given name. 
 
-<!------------------- END SLIDE 010 -------------------------->
+<!------------------- END SLIDE 010 en -------------------------->
 
-<!----------------- BEGIN SLIDE 011 -------------------------->
-> 011
+<!----------------- BEGIN SLIDE 011 en -------------------------->
 
 ####  Attribute Selectors
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 011
+
+
 
 
 A base selector can be followed by one or more attribute selectors. The selectors of this type can be written as follows: 
@@ -276,26 +360,42 @@ A base selector can be followed by one or more attribute selectors. The selector
 
 - `[A |= V]` (the element must have an attribute A whose value is a list separated by '-' containing V) 
 
-<!------------------- END SLIDE 011 -------------------------->
+<!------------------- END SLIDE 011 en -------------------------->
 
-<!----------------- BEGIN SLIDE 012 -------------------------->
-> 012
+<!----------------- BEGIN SLIDE 012 en -------------------------->
 
 ####  Class Selectors
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 012
+
+
 
 
 When working with HTML, there is a special abbreviated syntax, called class selector, to work with the *class* attribute of the elements 
 
 The syntax `S.C`, applicable to any simple selector S, is equivalent to `S[class~=C]`. 
 
-As a special case, you can write a class selector alone (while in general attribute selectors should follow another valid selector), which implies an universal selector: `.C` is equivalent to `*.C`, i.e., `*[class~=C]`
+As a special case, you can write a class selector alone (while in general attribute selectors should follow another valid selector), which implies an universal selector: `.C` is equivalent to `*.C`, i.e., `*[class~=C]` 
 
-<!------------------- END SLIDE 012 -------------------------->
+<!------------------- END SLIDE 012 en -------------------------->
 
-<!----------------- BEGIN SLIDE 013 -------------------------->
-> 013
+<!----------------- BEGIN SLIDE 013 en -------------------------->
 
 ####  ID Selectors
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 013
+
+
 
 
 In XML (and HTML), you can assign each element a unique ID. 
@@ -308,12 +408,20 @@ The selector `S#ID` matches the element which corresponds to the selector S and 
 
 It is possible (and common) to use ID selectors alone, just like class selectors, implying a universal selector: `#ID` is equivalent to `*#ID`, i.e., the element (of any type) with the specified ID. 
 
-<!------------------- END SLIDE 013 -------------------------->
+<!------------------- END SLIDE 013 en -------------------------->
 
-<!----------------- BEGIN SLIDE 014 -------------------------->
-> 014
+<!----------------- BEGIN SLIDE 014 en -------------------------->
 
 ####  Pseudo classes
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 014
+
+
 
 
 *Pseudo classes* identify elements based on some special properties. 
@@ -328,14 +436,22 @@ It is possible (and common) to use ID selectors alone, just like class selectors
 
 - `:focus` (the currently *focused* element, namely, the one that accepts keyboard input) 
 
-- `:active` (the currently *activated* element, for example by a mouse click)
+- `:active` (the currently *activated* element, for example by a mouse click) 
 
-<!------------------- END SLIDE 014 -------------------------->
+<!------------------- END SLIDE 014 en -------------------------->
 
-<!----------------- BEGIN SLIDE 015 -------------------------->
-> 015
+<!----------------- BEGIN SLIDE 015 en -------------------------->
 
 ####  Pseudo elements
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 015
+
+
 
 
 It is also possible to apply formatting to fictitious elements, not really part of the document and/or delimited by tags. These elements are called *pseudo elements*. 
@@ -346,12 +462,20 @@ It is also possible to apply formatting to fictitious elements, not really part 
 
 - `:before`, `:after`  (indicate the text position preceding and following an element, used in conjunction with the CSS *content* property) 
 
-<!------------------- END SLIDE 015 -------------------------->
+<!------------------- END SLIDE 015 en -------------------------->
 
-<!----------------- BEGIN SLIDE 016 -------------------------->
-> 016
+<!----------------- BEGIN SLIDE 016 en -------------------------->
 
 ####  Combination of selectors
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 016
+
+
 
 
 Two selectors S and T can be combined in a third selector in various ways: 
@@ -368,12 +492,20 @@ This selector matches the elements designated by T only if they immediately foll
 - `S, T`     
 This selector matches the elements designated by S or T (logical OR,   *selector grouping)* 
 
-<!------------------- END SLIDE 016 -------------------------->
+<!------------------- END SLIDE 016 en -------------------------->
 
-<!----------------- BEGIN SLIDE 017 -------------------------->
-> 017
+<!----------------- BEGIN SLIDE 017 en -------------------------->
 
 ### 2.2. Style Properties Value Deduction
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 017
+
+
 
 
 During the rendering process, CSS processors must determine the style to be assigned **to each element of the document**. 
@@ -391,12 +523,20 @@ The property can be inherited from the parent?
 3. **Default**    
 The property is set to the value given by the default stylesheet. 
 
-<!------------------- END SLIDE 017 -------------------------->
+<!------------------- END SLIDE 017 en -------------------------->
 
-<!----------------- BEGIN SLIDE 018 -------------------------->
-> 018
+<!----------------- BEGIN SLIDE 018 en -------------------------->
 
 ### 2.3. Cascading
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 018
+
+
 
 
 In a style sheet you can write several rules that match the same element (and it is often very useful). 
@@ -407,14 +547,22 @@ Moreover, CSS implicitly provides, besides the author style sheet (i.e., the one
 
 - The *browser* style sheet. Every browser should have its own default style sheet. 
 
-When CSS calculates the value of *each individual style property*, it takes in consideration all the rules that match the element to be formatted in any style sheet, and selects one through a **cascading** process.
+When CSS calculates the value of *each individual style property*, it takes in consideration all the rules that match the element to be formatted in any style sheet, and selects one through a **cascading** process. 
 
-<!------------------- END SLIDE 018 -------------------------->
+<!------------------- END SLIDE 018 en -------------------------->
 
-<!----------------- BEGIN SLIDE 019 -------------------------->
-> 019
+<!----------------- BEGIN SLIDE 019 en -------------------------->
 
 ####  Selection Rules
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 019
+
+
 
 
 When multiple rules match the same element, the final value of each property is selected using the following procedure. 
@@ -439,14 +587,22 @@ When multiple rules match the same element, the final value of each property is 
 
 3. **Order** *(for properties with same priority of origin and specificity)* 
 
-    - A rule takes precedence over those that *precede* it.
+    - A rule takes precedence over those that *precede* it. 
 
-<!------------------- END SLIDE 019 -------------------------->
+<!------------------- END SLIDE 019 en -------------------------->
 
-<!----------------- BEGIN SLIDE 020 -------------------------->
-> 020
+<!----------------- BEGIN SLIDE 020 en -------------------------->
 
 ### 2.4. Inheritance
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 020
+
+
 
 
 Many properties (see the specification) are automatically *inherited* by the children of an element, if there are no specific rules that require a different value. 
@@ -455,26 +611,39 @@ This default behavior is very useful when creating complex style sheets.
 
 For example, if you specify a font for the P tag, all the tags contained therein (e.g., B) have the same font, unless a style is assigned to them (collectively or individually) that specifies a different font. 
 
-It is also possible to force the inheritance of a property by specifying (where possible) the `inherit` keyword as the value of the property itself.
+It is also possible to force the inheritance of a property by specifying (where possible) the `inherit` keyword as the value of the property itself. 
 
-<!------------------- END SLIDE 020 -------------------------->
+<!------------------- END SLIDE 020 en -------------------------->
 
-<!----------------- BEGIN SLIDE 021 -------------------------->
-> 021
+<!----------------- BEGIN SLIDE 021 en -------------------------->
 
 ## 3. Base CSS properties
 
 
+<!----------------- COLUMN 1 -------------------------->
 
 
-<!------------------- END SLIDE 021 -------------------------->
 
-<!----------------- BEGIN SLIDE 022 -------------------------->
-> 022
+> 021 
+
+<!------------------- END SLIDE 021 en -------------------------->
+
+<!----------------- BEGIN SLIDE 022 en -------------------------->
 
 ### 3.1. Basic Elements of CSS
 
 ####  Measures and measurement units
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 022
+
+
+
+
 
 
 The measures are expressed in the CSS language by numbers (also floating point and in some cases negative) immediately followed by the name of the measurement unit. 
@@ -493,14 +662,22 @@ The *relative* units are `em` (current font-size), `ex` (current x-height). In m
 
 Relative units are very useful if you want to automatically adjust sizes based on the output device and its settings (e.g., printer or browser with various font sizes) 
 
-In many cases, the measures can also be expressed as *percentages*. The reference measure is usually the same property of the container element.
+In many cases, the measures can also be expressed as *percentages*. The reference measure is usually the same property of the container element. 
 
-<!------------------- END SLIDE 022 -------------------------->
+<!------------------- END SLIDE 022 en -------------------------->
 
-<!----------------- BEGIN SLIDE 023 -------------------------->
-> 023
+<!----------------- BEGIN SLIDE 023 en -------------------------->
 
 ####  Colors
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 023
+
+
 
 
 The colors can be defined in the CSS via the numerical RGB specification or through their own name. 
@@ -513,14 +690,22 @@ The short form `#RGB` is the number where each component has the value of the co
 
 *RGB decimal strings* are obtained using the construct `rgb(R, G, B)`,  where R, G and B are numbers between 0 and 255 or percentages (i.e., fractions of the maximum 255). 
 
-Finally, the colors for which a *name* is defined are  `maroon` (#800000), `red` (#ff0000), `orange` (#ffA500), `yellow` (#ffff00), `olive` (#808000), `purple` (#800080), `fuchsia` (#ff00ff), `white` #ffffff,   `lime` (#00ff00), `green` (#008000), `navy` (#000080), `blue` (#0000ff), `aqua` (#00ffff), `teal` (#008080), `black` (#000000), `silver` (#c0c0c0) and  `gray` (#808080)
+Finally, the colors for which a *name* is defined are  `maroon` (#800000), `red` (#ff0000), `orange` (#ffA500), `yellow` (#ffff00), `olive` (#808000), `purple` (#800080), `fuchsia` (#ff00ff), `white` #ffffff,   `lime` (#00ff00), `green` (#008000), `navy` (#000080), `blue` (#0000ff), `aqua` (#00ffff), `teal` (#008080), `black` (#000000), `silver` (#c0c0c0) and  `gray` (#808080) 
 
-<!------------------- END SLIDE 023 -------------------------->
+<!------------------- END SLIDE 023 en -------------------------->
 
-<!----------------- BEGIN SLIDE 024 -------------------------->
-> 024
+<!----------------- BEGIN SLIDE 024 en -------------------------->
 
 ####  Shortand Properties
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 024
+
+
 
 
 The CSS language has many properties that are often set in a group, such as the three properties that define a border (color, width, style) or the font properties(family, size, weight, ...). 
@@ -531,14 +716,22 @@ In a shorthand property the values of each "component" property are simply separ
 
 If one or more properties are omitted in the shorthand notation, their value is set to the default one. 
 
-For example, the CSS font property can be used to set all the font-style font-variant, font-weight, font-size, line-height and font-family properties.  
+For example, the CSS font property can be used to set all the font-style font-variant, font-weight, font-size, line-height and font-family properties. 
 
-<!------------------- END SLIDE 024 -------------------------->
+<!------------------- END SLIDE 024 en -------------------------->
 
-<!----------------- BEGIN SLIDE 025 -------------------------->
-> 025
+<!----------------- BEGIN SLIDE 025 en -------------------------->
 
 ### 3.2. Borders
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 025
+
+
 
 
 Most items can have a border on the four sides of their boxes. Each border can have different characteristics (color, thickness, style). It is also possible, for table cell borders, to specify how neighboring borders should be combined.   
@@ -551,14 +744,22 @@ The border thickness is a value that can be specified in any of the measurement 
 
 The main styles for the borders are `dotted`, `dashed`, `solid`, `double`, `groove`, `ridge`, `inset`, `outset`. However, most browsers only support solid, dotted and dashed styles.
 
-For all of the border properties there exist shorthands that allow one to set the same values for all sides at once and/or specify the three properties (color, thickness, style) with a single statement.   
+For all of the border properties there exist shorthands that allow one to set the same values for all sides at once and/or specify the three properties (color, thickness, style) with a single statement. 
 
-<!------------------- END SLIDE 025 -------------------------->
+<!------------------- END SLIDE 025 en -------------------------->
 
-<!----------------- BEGIN SLIDE 026 -------------------------->
-> 026
+<!----------------- BEGIN SLIDE 026 en -------------------------->
 
 ####  CSS Properties
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 026
+
+
 
 
  - `border` (`border-top`, `border-right`, `border-bottom`, `border-left`)    
@@ -575,14 +776,22 @@ For all of the border properties there exist shorthands that allow one to set th
 
  - `border-collapse`    
 **Values**:  `collapse` |  `separate`\*    
-**Elements**:  tables and internal inline elements       
+**Elements**:  tables and internal inline elements 
 
-<!------------------- END SLIDE 026 -------------------------->
+<!------------------- END SLIDE 026 en -------------------------->
 
-<!----------------- BEGIN SLIDE 027 -------------------------->
-> 027
+<!----------------- BEGIN SLIDE 027 en -------------------------->
 
 ####  Round corners with CSS3
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 027
+
+
 
 
 Before CSS3, smooth the corners of a box required complex tricks or even images. Now you can use the `border-radius property` (**you still need to give the element a border with the properties just described**)
@@ -592,12 +801,20 @@ Before CSS3, smooth the corners of a box required complex tricks or even images.
 
 Initial is the default value, which in this case is zero. 
 
-<!------------------- END SLIDE 027 -------------------------->
+<!------------------- END SLIDE 027 en -------------------------->
 
-<!----------------- BEGIN SLIDE 028 -------------------------->
-> 028
+<!----------------- BEGIN SLIDE 028 en -------------------------->
 
 ####  Image borders with CSS3
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 028
+
+
 
 
 It is also possible to create borders using images instead of normal lines.
@@ -623,12 +840,20 @@ Specifies how far the image extends beyond the natural outline of the element (b
 **Values** :   `stretch`\* | `repeat` | `round` | `initial` | `inherit`     
 Specifies whether images should be repeated, rounded, or stretched to cover the entire border. 
 
-<!------------------- END SLIDE 028 -------------------------->
+<!------------------- END SLIDE 028 en -------------------------->
 
-<!----------------- BEGIN SLIDE 029 -------------------------->
-> 029
+<!----------------- BEGIN SLIDE 029 en -------------------------->
 
 ### 3.3. Background
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 029
+
+
 
 
 All the *block* elements can have a background consisting of a solid color or an image
@@ -641,14 +866,22 @@ In the case of image backgrounds, the file to be used must be indicated through 
 
 - If the image has to "scroll" with the content of the window or remain fixed. 
 
-Thanks to their versatility, backgrounds are often used for improper purposes, such as creating graphics (buttons, structural elements of the page, etc.) that can not be achieved simply by importing images through the HTML \<img\> tag.   
+Thanks to their versatility, backgrounds are often used for improper purposes, such as creating graphics (buttons, structural elements of the page, etc.) that can not be achieved simply by importing images through the HTML \<img\> tag. 
 
-<!------------------- END SLIDE 029 -------------------------->
+<!------------------- END SLIDE 029 en -------------------------->
 
-<!----------------- BEGIN SLIDE 030 -------------------------->
-> 030
+<!----------------- BEGIN SLIDE 030 en -------------------------->
 
 ####  CSS Properties
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 030
+
+
 
 
 - `background-color`     
@@ -664,14 +897,22 @@ Thanks to their versatility, backgrounds are often used for improper purposes, s
 **Values**:  `left top` | `left center` | `left bottom` | `right top` | `right center` | `right bottom` | `center top` | `center center` | `center bottom` | *x% y%* | *measure* | `inherit`     
 
 - `background-repeat`    
-**Values**:  `repeat` | `repeat-x` | `repeat-y` | `no-repeat` | `inherit`     
+**Values**:  `repeat` | `repeat-x` | `repeat-y` | `no-repeat` | `inherit` 
 
-<!------------------- END SLIDE 030 -------------------------->
+<!------------------- END SLIDE 030 en -------------------------->
 
-<!----------------- BEGIN SLIDE 031 -------------------------->
-> 031
+<!----------------- BEGIN SLIDE 031 en -------------------------->
 
 ####  Shadows with CSS3
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 031
+
+
 
 
 In addition to the background color, with CSS3 you can give each element a shadow. 
@@ -685,16 +926,26 @@ The blur radius determines the size of the shadow blur area (which sums to the o
 
 The spread radius is optionally used to increase or decrease the size of the shadow (in addition to offset+blur).    
 
-To shade text, use the text-shadow property instead.    
+To shade text, use the text-shadow property instead. 
 
-<!------------------- END SLIDE 031 -------------------------->
+<!------------------- END SLIDE 031 en -------------------------->
 
-<!----------------- BEGIN SLIDE 032 -------------------------->
-> 032
+<!----------------- BEGIN SLIDE 032 en -------------------------->
 
 ### 3.4. Formatting
 
 ####  characters
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 032
+
+
+
+
 
 
 - `color` (font color)    
@@ -721,12 +972,20 @@ To shade text, use the text-shadow property instead.
 - `text-transform` (upper/lower case text)     
 **Values**:  `capitalize` | `uppercase` | `lowercase` | `none` 
 
-<!------------------- END SLIDE 032 -------------------------->
+<!------------------- END SLIDE 032 en -------------------------->
 
-<!----------------- BEGIN SLIDE 033 -------------------------->
-> 033
+<!----------------- BEGIN SLIDE 033 en -------------------------->
 
 ####  paragraphs
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 033
+
+
 
 
 - `line-height`    
@@ -746,14 +1005,22 @@ To shade text, use the text-shadow property instead.
 **Values**:  *measure* | `normal`
 
 - `letter-spacing` (space between letters)    
-**Values**:  *measure* | `normal`
+**Values**:  *measure* | `normal` 
 
-<!------------------- END SLIDE 033 -------------------------->
+<!------------------- END SLIDE 033 en -------------------------->
 
-<!----------------- BEGIN SLIDE 034 -------------------------->
-> 034
+<!----------------- BEGIN SLIDE 034 en -------------------------->
 
 ### 3.5. Lists
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 034
+
+
 
 
 Using CSS, you can create bulleted and numbered lists of simple types, with standard images or numbers (Arabic, Roman, etc..) as bullets, using the `list-style-type` attribute. 
@@ -766,12 +1033,20 @@ Depending on your browser, the margin and/or the padding of list-item elements d
 
 The list-type attributes can be applied to all items whose *display* property is set to *list-item*. 
 
-<!------------------- END SLIDE 034 -------------------------->
+<!------------------- END SLIDE 034 en -------------------------->
 
-<!----------------- BEGIN SLIDE 035 -------------------------->
-> 035
+<!----------------- BEGIN SLIDE 035 en -------------------------->
 
 ####  CSS Properties
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 035
+
+
 
 
 - `list-style-type` (standard bullets)     
@@ -781,16 +1056,26 @@ The list-type attributes can be applied to all items whose *display* property is
 **Values**:  *uri*  | `none` 
 
 - `list-style-position` (position of the bullet relative to the item text)     
-**Values**:  `inside`  | `outside`\*
+**Values**:  `inside`  | `outside`\* 
 
-<!------------------- END SLIDE 035 -------------------------->
+<!------------------- END SLIDE 035 en -------------------------->
 
-<!----------------- BEGIN SLIDE 036 -------------------------->
-> 036
+<!----------------- BEGIN SLIDE 036 en -------------------------->
 
 ### 3.6. Dynamic Content
 
 ####  Prefixes, suffixes, quotes and counters
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 036
+
+
+
+
 
 
 - `quotes`    
@@ -807,14 +1092,22 @@ Increments by one (or the given number) the values of the given counter for the 
 
 - `content`    
 **Values**: `none` | (*string* | `counter(C,S)` | `open-quote` | `close-quote`)+        
-Applies only to pseudo elements `:before` and `:after` and specifies the text that should be inserted before or after an element, respectively. The values of  `open-quote` and `close-quote` are those set by the `quotes` attribute. *C* can be any counter visible from the element. *S* (optional) is one of the values  defined for the `list-style-type`.
+Applies only to pseudo elements `:before` and `:after` and specifies the text that should be inserted before or after an element, respectively. The values of  `open-quote` and `close-quote` are those set by the `quotes` attribute. *C* can be any counter visible from the element. *S* (optional) is one of the values  defined for the `list-style-type`. 
 
-<!------------------- END SLIDE 036 -------------------------->
+<!------------------- END SLIDE 036 en -------------------------->
 
-<!----------------- BEGIN SLIDE 037 -------------------------->
-> 037
+<!----------------- BEGIN SLIDE 037 en -------------------------->
 
 ### 3.7. Cursors
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 037
+
+
 
 
 Using the `cursor` property allows one to define the shape that the mouse should have when it hovers over a certain element of the page.   
@@ -827,24 +1120,35 @@ Sets the shape of the mouse when it is above the element.
 
 The list of URI, optional, indicates one or more external resources to be used as a cursor. The browser uses the first one it can retrieve.
 
-In any case, you must also provide one of the standard cursors, as a single value or as the last choice in the list.    
+In any case, you must also provide one of the standard cursors, as a single value or as the last choice in the list. 
 
-<!------------------- END SLIDE 037 -------------------------->
+<!------------------- END SLIDE 037 en -------------------------->
 
-<!----------------- BEGIN SLIDE 038 -------------------------->
-> 038
+<!----------------- BEGIN SLIDE 038 en -------------------------->
 
 ## 4. CSS Box Model
 
 
+<!----------------- COLUMN 1 -------------------------->
 
 
-<!------------------- END SLIDE 038 -------------------------->
 
-<!----------------- BEGIN SLIDE 039 -------------------------->
-> 039
+> 038 
+
+<!------------------- END SLIDE 038 en -------------------------->
+
+<!----------------- BEGIN SLIDE 039 en -------------------------->
 
 ### 4.1. Controlling the Box Generation
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 039
+
+
 
 
 It is possible to specify how the box associated with an element should be generated. 
@@ -863,12 +1167,20 @@ There are also many other values that allow the block to "behave" like a certain
 
 - **None** disables the generation of the box, removing the associated element from the document. 
 
-<!------------------- END SLIDE 039 -------------------------->
+<!------------------- END SLIDE 039 en -------------------------->
 
-<!----------------- BEGIN SLIDE 040 -------------------------->
-> 040
+<!----------------- BEGIN SLIDE 040 en -------------------------->
 
 ### 4.2. Showing and Hiding Elements
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 040
+
+
 
 
 After generating the box related to an element, you can specify whether the contents of the box should be rendered or not. 
@@ -882,12 +1194,20 @@ After generating the box related to an element, you can specify whether the cont
 
 By setting the property to hidden, the element box is not removed from the document flow, so its footprint is still considered in the layout calculation. 
 
-<!------------------- END SLIDE 040 -------------------------->
+<!------------------- END SLIDE 040 en -------------------------->
 
-<!----------------- BEGIN SLIDE 041 -------------------------->
-> 041
+<!----------------- BEGIN SLIDE 041 en -------------------------->
 
 ### 4.3. Content Management
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 041
+
+
 
 
 In general, the content of a block is limited to the size of the block itself. The content, however, may be larger than its container. 
@@ -905,14 +1225,22 @@ In these cases, you can specify how to handle the part that overflows the contai
 
 - `auto` makes scroll bars appear inside the container, so that its content can be scrolled, only if it overflows the container. 
 
-Starting from CSS3, there are also the  `overflow-x` and `overflow-y` properties, with the same values but handling only horizontal or vertical overflow.  
+Starting from CSS3, there are also the  `overflow-x` and `overflow-y` properties, with the same values but handling only horizontal or vertical overflow. 
 
-<!------------------- END SLIDE 041 -------------------------->
+<!------------------- END SLIDE 041 en -------------------------->
 
-<!----------------- BEGIN SLIDE 042 -------------------------->
-> 042
+<!----------------- BEGIN SLIDE 042 en -------------------------->
 
 ### 4.4. Margins and Spaces
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 042
+
+
 
 
 - `margin` (`margin-right`, `margin-left`, `margin-top`, `margin-bottom`)         
@@ -927,12 +1255,20 @@ In many cases, margin and padding have the same visual effect, but you must alwa
 
 By setting the horizontal margins (`margin-right`, `margin-left`) of an element to the `auto` value, the browser will *center* it in its container. 
 
-<!------------------- END SLIDE 042 -------------------------->
+<!------------------- END SLIDE 042 en -------------------------->
 
-<!----------------- BEGIN SLIDE 043 -------------------------->
-> 043
+<!----------------- BEGIN SLIDE 043 en -------------------------->
 
 ### 4.5. Sizing
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 043
+
+
 
 
 The size of each element can be set in various ways, completely overwriting or constraining the natural size calculated by the browser. 
@@ -941,12 +1277,20 @@ In the first case, you can specify measures or percentages that are applied to t
 
 In the second case, you can specify minimum or maximum sizes, expressed as measures or percentages. 
 
-<!------------------- END SLIDE 043 -------------------------->
+<!------------------- END SLIDE 043 en -------------------------->
 
-<!----------------- BEGIN SLIDE 044 -------------------------->
-> 044
+<!----------------- BEGIN SLIDE 044 en -------------------------->
 
 ####  Sizing Properties
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 044
+
+
 
 
 - `width`, `height`    
@@ -965,12 +1309,20 @@ Determine how the width and height of the element are actually calculated, wheth
 
    - In `border-box` mode the values assigned to `width` and `height` will always determine the actual final dimensions of the box: in other words, these dimensions will be distributed between border, padding and interior space.   *Usually this mode is the most useful when the elements need to be precisely positioned*. 
 
-<!------------------- END SLIDE 044 -------------------------->
+<!------------------- END SLIDE 044 en -------------------------->
 
-<!----------------- BEGIN SLIDE 045 -------------------------->
-> 045
+<!----------------- BEGIN SLIDE 045 en -------------------------->
 
 ### 4.6. Positioning
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 045
+
+
 
 
 Items can be placed in four different ways, specified with the CSS attribute `position`:
@@ -985,12 +1337,20 @@ Items can be placed in four different ways, specified with the CSS attribute `po
 
 Elements with absolute or fixed positioning are **removed from the text flow**. Their position does not depend on the elements that surround them, though, if absolute, they continue to flow along with the rest of the page. 
 
-<!------------------- END SLIDE 045 -------------------------->
+<!------------------- END SLIDE 045 en -------------------------->
 
-<!----------------- BEGIN SLIDE 046 -------------------------->
-> 046
+<!----------------- BEGIN SLIDE 046 en -------------------------->
 
 ####  Positioning Properties
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 046
+
+
 
 
 - `position`    
@@ -1003,14 +1363,22 @@ Determines the element position, according to the rules defined by the value of 
 
 - `z-index`    
 **Values**:  *number* | `auto` | `inherit`     
-Determines the element position on the Z axis. Higher values move the element towards the user.
+Determines the element position on the Z axis. Higher values move the element towards the user. 
 
-<!------------------- END SLIDE 046 -------------------------->
+<!------------------- END SLIDE 046 en -------------------------->
 
-<!----------------- BEGIN SLIDE 047 -------------------------->
-> 047
+<!----------------- BEGIN SLIDE 047 en -------------------------->
 
 ### 4.7. Floats
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 047
+
+
 
 
 The floating technique allows to remove elements from the text flow and place them in a dynamic way on the left or right edge of the container. 
@@ -1019,14 +1387,22 @@ Floating elements are always distributed in the best possible way according to t
 
 The text outside floating elements flows around their margin. 
 
-This type of effect is often used to create menus, column layouts, etc.
+This type of effect is often used to create menus, column layouts, etc. 
 
-<!------------------- END SLIDE 047 -------------------------->
+<!------------------- END SLIDE 047 en -------------------------->
 
-<!----------------- BEGIN SLIDE 048 -------------------------->
-> 048
+<!----------------- BEGIN SLIDE 048 en -------------------------->
 
 ####  Floats Properties
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 048
+
+
 
 
 - `float`    
@@ -1035,21 +1411,30 @@ Set the object as floating on the left or right side of the container. The value
 
 - `clear`    
 **Values**:  `left` | `right` | `both`     
-The `clear` property set on an element requires all the floats of the type specified (`left`, `right` or `both`) to be placed on the page before the element itself.
+The `clear` property set on an element requires all the floats of the type specified (`left`, `right` or `both`) to be placed on the page before the element itself. 
 
-<!------------------- END SLIDE 048 -------------------------->
+<!------------------- END SLIDE 048 en -------------------------->
 
-<!----------------- BEGIN SLIDE 049 -------------------------->
-> 049
+<!----------------- BEGIN SLIDE 049 en -------------------------->
 
 ## 5. CSS Flexbox
 
 
+<!----------------- COLUMN 1 -------------------------->
 
 
-<!------------------- END SLIDE 049 -------------------------->
 
-<!----------------- BEGIN SLIDE 050 -------------------------->
+> 049 
+
+<!------------------- END SLIDE 049 en -------------------------->
+
+<!----------------- BEGIN SLIDE 050 en -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
 > 050
 
 Flexboxes are a new way of arranging objects, now implemented in all browsers, and widely used also for the creation of complex layouts.   
@@ -1060,14 +1445,22 @@ When defining a flexbox layout we must take into account two elements:
 
 - The layout container, or  *flex container* 
 
-- The elements arranged in the layout, or  *flex items*
+- The elements arranged in the layout, or  *flex items* 
 
-<!------------------- END SLIDE 050 -------------------------->
+<!------------------- END SLIDE 050 en -------------------------->
 
-<!----------------- BEGIN SLIDE 051 -------------------------->
-> 051
+<!----------------- BEGIN SLIDE 051 en -------------------------->
 
 ### 5.1. Contaniers
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 051
+
+
 
 
 **To make an element a flex container**, the well known  `display` property is used, which in this case must be set to the  `flex` value (or `inline-flex`, if the container must be inline).   
@@ -1082,9 +1475,15 @@ Defines the main axis of the arrangement. Possible directions are  `row`, `row-r
 - `flex-wrap`    
 Allows flex items to wrap if they don't all fit on the main axis. The values are  `nowrap` (default), `wrap` (wrap from top to bottom in row mode) and   `wrap-reverse` (wrap from bottom to top in row mode). 
 
-<!------------------- END SLIDE 051 -------------------------->
+<!------------------- END SLIDE 051 en -------------------------->
 
-<!----------------- BEGIN SLIDE 052 -------------------------->
+<!----------------- BEGIN SLIDE 052 en -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
 > 052
 
 
@@ -1119,14 +1518,22 @@ defines how items are arranged **on the secondary axis** ***of each row***. The 
 - `baseline`: items are arranged so that their baseline is aligned on each row.
 
 `align-content`         
-defines the alignment ***of all rows*** **on the secondary axis**. The possible values are the same as `justify-content`. For example, this property allows you to distribute the space between rows when `flex-direction` is `row` and elements wrap using `flex-wrap`.
+defines the alignment ***of all rows*** **on the secondary axis**. The possible values are the same as `justify-content`. For example, this property allows you to distribute the space between rows when `flex-direction` is `row` and elements wrap using `flex-wrap`. 
 
-<!------------------- END SLIDE 052 -------------------------->
+<!------------------- END SLIDE 052 en -------------------------->
 
-<!----------------- BEGIN SLIDE 053 -------------------------->
-> 053
+<!----------------- BEGIN SLIDE 053 en -------------------------->
 
 ### 5.2. Items
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 053
+
+
 
 
 Each flex item can be configured individually, possibly overwriting some of the global properties of the container, using the following properties: 
@@ -1147,21 +1554,30 @@ indicates the base size of the item, before any empty space is redistributed. It
 it is a shorthand to set `flex-grow`, `flex-shrink` and `flex-basis`.  
 
 - `align-self`   
-allows one to change the `align-items` alignment mode of the container for this specific item.   
+allows one to change the `align-items` alignment mode of the container for this specific item. 
 
-<!------------------- END SLIDE 053 -------------------------->
+<!------------------- END SLIDE 053 en -------------------------->
 
-<!----------------- BEGIN SLIDE 054 -------------------------->
-> 054
+<!----------------- BEGIN SLIDE 054 en -------------------------->
 
 ## 6. CSS Grids
 
 
+<!----------------- COLUMN 1 -------------------------->
 
 
-<!------------------- END SLIDE 054 -------------------------->
 
-<!----------------- BEGIN SLIDE 055 -------------------------->
+> 054 
+
+<!------------------- END SLIDE 054 en -------------------------->
+
+<!----------------- BEGIN SLIDE 055 en -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
 > 055
 
 Grids are an advanced CSS feature that allows you to **define grids** (rows by columns) and **distribute content on them**  . This is the "ultimate solution" to the problem of the well-known *grid layouts*, currently made with floats or flexboxes using some tricks.   
@@ -1172,14 +1588,22 @@ In a grid you first configure a  *container* by dividing the internal space with
 
 Elements inside the  *grid container* (*grid items*) occupy the grid spaces according to the directives associated with them, or automatically. In the latter case, the elements will be distributed naturally, in the given order, trying to occupy all the cells, row by row.   
 
-**To make an element a grid container**, you use the well known  `display` property, which in this case must be set to the `grid` value (or `inline-grid`, if the container must be inline).  
+**To make an element a grid container**, you use the well known  `display` property, which in this case must be set to the `grid` value (or `inline-grid`, if the container must be inline). 
 
-<!------------------- END SLIDE 055 -------------------------->
+<!------------------- END SLIDE 055 en -------------------------->
 
-<!----------------- BEGIN SLIDE 056 -------------------------->
-> 056
+<!----------------- BEGIN SLIDE 056 en -------------------------->
 
 ### 6.1. Rows and columns
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 056
+
+
 
 
 The structure of the grid inside the container can be defined in various ways.       
@@ -1209,14 +1633,22 @@ The same goes for the upper and lower ends, defined in the row specification. Yo
 
 When specifying row or column sizes, you can also use the special unit of measurement  `fr` (*fraction*), which indicates a fraction of the available space. 
 
-You can define the spaces between rows and columns using the  `grid-column-gap` and `grid-row-gap` properties.
+You can define the spaces between rows and columns using the  `grid-column-gap` and `grid-row-gap` properties. 
 
-<!------------------- END SLIDE 056 -------------------------->
+<!------------------- END SLIDE 056 en -------------------------->
 
-<!----------------- BEGIN SLIDE 057 -------------------------->
-> 057
+<!----------------- BEGIN SLIDE 057 en -------------------------->
 
 ### 6.2. Areas
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 057
+
+
 
 
 It is also possible to **give names to the actual grid cells** (always after defining them with the two properties `grid-template-rows` and `grid-template-columns`), which is often conceptually clearer, using the `grid-template-areas` property. For example  
@@ -1235,12 +1667,20 @@ Each string contains area/cell names, separated by spaces. A dot indicates an un
 
 The number of rows and columns specified must match what is defined with `grid-template-rows` and `grid-template-columns`. 
 
-<!------------------- END SLIDE 057 -------------------------->
+<!------------------- END SLIDE 057 en -------------------------->
 
-<!----------------- BEGIN SLIDE 058 -------------------------->
-> 058
+<!----------------- BEGIN SLIDE 058 en -------------------------->
 
 ### 6.3. Templates
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 058
+
+
 
 
 Finally, it is possible (but complex) to summarize the three properties just seen in a single definition using the `grid-template` property, for example 
@@ -1254,12 +1694,20 @@ The part of the specification preceding the slash (/) defines the rows (possibly
 
 The specification part after the slash defines the columns of all rows exactly as done with `grid-template-columns`. 
 
-<!------------------- END SLIDE 058 -------------------------->
+<!------------------- END SLIDE 058 en -------------------------->
 
-<!----------------- BEGIN SLIDE 059 -------------------------->
-> 059
+<!----------------- BEGIN SLIDE 059 en -------------------------->
 
 ### 6.4. Alignment
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 059
+
+
 
 
 To configure how the content cells content will align with respect to the their edges we can use the following properties:     
@@ -1278,14 +1726,22 @@ defines the vertical alignment of cell contents. The possible values are the sam
 
 We omit other more advanced properties, as they are poorly supported.  
 
-Each cell can have its own values for alignment properties, which override global properties: for example  `justify-self` and  `align-self`.
+Each cell can have its own values for alignment properties, which override global properties: for example  `justify-self` and  `align-self`. 
 
-<!------------------- END SLIDE 059 -------------------------->
+<!------------------- END SLIDE 059 en -------------------------->
 
-<!----------------- BEGIN SLIDE 060 -------------------------->
-> 060
+<!----------------- BEGIN SLIDE 060 en -------------------------->
 
 ### 6.5. Items
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 060
+
+
 
 
 You can specify in which cell (or cells) each item should be placed, instead of letting it be arranged according to the natural order.   
@@ -1317,11 +1773,17 @@ With reference to the grid defined in the previous slides,
 
    - C4 will extend horizontally from edge 'c4' to edge 'cend' and vertically from edge 'r3' to edge 'rend'.       
 
-These properties also have a more complex syntax, which is not explored here.   
+These properties also have a more complex syntax, which is not explored here. 
 
-<!------------------- END SLIDE 060 -------------------------->
+<!------------------- END SLIDE 060 en -------------------------->
 
-<!----------------- BEGIN SLIDE 061 -------------------------->
+<!----------------- BEGIN SLIDE 061 en -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
 > 061
 
 
@@ -1346,22 +1808,33 @@ With reference to the grid defined in the previous slides,
 
 This property also has a more complex syntax, which is not delved into here. 
 
-<!------------------- END SLIDE 061 -------------------------->
+<!------------------- END SLIDE 061 en -------------------------->
 
-<!----------------- BEGIN SLIDE 062 -------------------------->
-> 062
+<!----------------- BEGIN SLIDE 062 en -------------------------->
 
 ## 7. Responsive Design with CSS
 
 
+<!----------------- COLUMN 1 -------------------------->
 
 
-<!------------------- END SLIDE 062 -------------------------->
 
-<!----------------- BEGIN SLIDE 063 -------------------------->
-> 063
+> 062 
+
+<!------------------- END SLIDE 062 en -------------------------->
+
+<!----------------- BEGIN SLIDE 063 en -------------------------->
 
 ### 7.1. CSS Media Queries
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 063
+
+
 
 
 Media queries are one of the most important features introduced by CSS3 and supported by all modern browsers.
@@ -1387,14 +1860,22 @@ It is possible to merge (OR) several media queries using a comma, for example
 @media screen and (min-width: 300px), screen and (orientation: landscape) {...}    
 ```
 
-This media query is true if we are viewing on screen and the horizontal size is at least 300 pixels or the screen orientation is horizontal.
+This media query is true if we are viewing on screen and the horizontal size is at least 300 pixels or the screen orientation is horizontal. 
 
-<!------------------- END SLIDE 063 -------------------------->
+<!------------------- END SLIDE 063 en -------------------------->
 
-<!----------------- BEGIN SLIDE 064 -------------------------->
-> 064
+<!----------------- BEGIN SLIDE 064 en -------------------------->
 
 ### 7.2. Responsive Design
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 064
+
+
 
 
 Responsive design is a layout design technique introduced by Ethan Marcotte in his 2010 article on A List Apart:     
@@ -1412,14 +1893,22 @@ The three components of a responsive design are:
 
 When CSS media queries were not available, responsive design was achieved with the help of fluid design supported by scripts, but now you can get much more advanced effects using only stylesheets.  
 
-By applying specific changes to the stylesheets through media queries, it is possible, for example, to hide items, relocate others, decrease borders and spacings, etc..  
+By applying specific changes to the stylesheets through media queries, it is possible, for example, to hide items, relocate others, decrease borders and spacings, etc.. 
 
-<!------------------- END SLIDE 064 -------------------------->
+<!------------------- END SLIDE 064 en -------------------------->
 
-<!----------------- BEGIN SLIDE 065 -------------------------->
-> 065
+<!----------------- BEGIN SLIDE 065 en -------------------------->
 
 ####  Breakpoints
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 065
+
+
 
 
 The so-called *responsive breakpoints* are the limit values of certain properties (typically the width of the *viewport*) below and above which media queries activate to modify the visual structure of the site. For example:   
@@ -1442,14 +1931,22 @@ Remove "creative" paddings and spacings, slightly decrease the font size, etc..
 @media only screen and (max-width: 767px)
 ```
 
-Use a fixed design, for example 320 pixels wide, or use a min-width on the main elements so that they don't become too narrow. Linearize columns, hide secondary elements (parts of the header and footer, etc.), show more compact menus…
+Use a fixed design, for example 320 pixels wide, or use a min-width on the main elements so that they don't become too narrow. Linearize columns, hide secondary elements (parts of the header and footer, etc.), show more compact menus… 
 
-<!------------------- END SLIDE 065 -------------------------->
+<!------------------- END SLIDE 065 en -------------------------->
 
-<!----------------- BEGIN SLIDE 066 -------------------------->
-> 066
+<!----------------- BEGIN SLIDE 066 en -------------------------->
 
 ### 7.3. A Grid Layout with Floats
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 066
+
+
 
 
 Now we will see how to create a **liquid grid layout**, useful when webpage elements should be aligned in rows and columns, exploiting only *floats*.
@@ -1464,14 +1961,22 @@ Sources:
 
 - Finally, the inspiration for the liquid version of the grid is taken from http://www.designinfluences.com/fluid960gs/.  
 
-See also the introductory article on *fluid grids* by Ethan Marcotte: http://alistapart.com/article/fluidgrids     
+See also the introductory article on *fluid grids* by Ethan Marcotte: http://alistapart.com/article/fluidgrids 
 
-<!------------------- END SLIDE 066 -------------------------->
+<!------------------- END SLIDE 066 en -------------------------->
 
-<!----------------- BEGIN SLIDE 067 -------------------------->
-> 067
+<!----------------- BEGIN SLIDE 067 en -------------------------->
 
 ####  The rows
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 067
+
+
 
 
 This design allows to place up **to 16 columns on each row**.
@@ -1490,14 +1995,22 @@ The grid container has a small extra margin. It is not strictly needed, and it i
 .row { margin-bottom: 10px; }    
 ```
 
-Rows have a little spacing below, that can be removed.               
+Rows have a little spacing below, that can be removed. 
 
-<!------------------- END SLIDE 067 -------------------------->
+<!------------------- END SLIDE 067 en -------------------------->
 
-<!----------------- BEGIN SLIDE 068 -------------------------->
-> 068
+<!----------------- BEGIN SLIDE 068 en -------------------------->
 
 ####  The columns
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 068
+
+
 
 
 The *column* class, defines the common column properties:        
@@ -1524,14 +2037,22 @@ Classes  *one*, *two*, etc. define the horizontal span of the cell, in columns (
 .container .two.columns { width: 10.5%;}    
 ```
 
-Horizontal widths for columns from three to sitexteen are, respectively, 16.75%, 23%, 29.25%, 35.5%, 41.75%, 48%, 54.25%, 60.5%, 66.75%, 73%, 79.25%, 85.5%, 91.75%, 98%                 
+Horizontal widths for columns from three to sitexteen are, respectively, 16.75%, 23%, 29.25%, 35.5%, 41.75%, 48%, 54.25%, 60.5%, 66.75%, 73%, 79.25%, 85.5%, 91.75%, 98% 
 
-<!------------------- END SLIDE 068 -------------------------->
+<!------------------- END SLIDE 068 en -------------------------->
 
-<!----------------- BEGIN SLIDE 069 -------------------------->
-> 069
+<!----------------- BEGIN SLIDE 069 en -------------------------->
 
 ####  Floats encapsulation
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 069
+
+
 
 
 To conclude, some cross-browser tricks help to maintain the float columns inside their row:          
@@ -1549,14 +2070,22 @@ To conclude, some cross-browser tricks help to maintain the float columns inside
 .row:after { clear: both; }        
 
 .row{ zoom: 1; }   
-```
+``` 
 
-<!------------------- END SLIDE 069 -------------------------->
+<!------------------- END SLIDE 069 en -------------------------->
 
-<!----------------- BEGIN SLIDE 070 -------------------------->
-> 070
+<!----------------- BEGIN SLIDE 070 en -------------------------->
 
 ####  Example
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 070
+
+
 
 
 ```html
@@ -1587,14 +2116,22 @@ To conclude, some cross-browser tricks help to maintain the float columns inside
 
 |---|---|
 | A | B |
-| C | <table><tr><td>D</td><td>E</td></tr></table> |
+| C | <table><tr><td>D</td><td>E</td></tr></table> | 
 
-<!------------------- END SLIDE 070 -------------------------->
+<!------------------- END SLIDE 070 en -------------------------->
 
-<!----------------- BEGIN SLIDE 071 -------------------------->
-> 071
+<!----------------- BEGIN SLIDE 071 en -------------------------->
 
 ####  Media queries
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 071
+
+
 
 
 The grid layout *becomes linear* below a certain width: this is achieved by disabling the *floating* and not forcing a column width, so that the columns can "wrap".
@@ -1608,24 +2145,40 @@ In addition, in this example we fix the size of the entire layout to prevent it 
 .container .one.column, 
 .container .one.columns, ... {float: none; width: auto;}       
 }
-```
+``` 
 
-<!------------------- END SLIDE 071 -------------------------->
+<!------------------- END SLIDE 071 en -------------------------->
 
-<!----------------- BEGIN SLIDE 072 -------------------------->
-> 072
+<!----------------- BEGIN SLIDE 072 en -------------------------->
 
 ### 7.4. A Grid Layout with Flexbox
 
 
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 072
+
+
+
+
 We will now see how to create a **liquid grid layout**  using flexboxes. 
 
-<!------------------- END SLIDE 072 -------------------------->
+<!------------------- END SLIDE 072 en -------------------------->
 
-<!----------------- BEGIN SLIDE 073 -------------------------->
-> 073
+<!----------------- BEGIN SLIDE 073 en -------------------------->
 
 ####  The rows
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 073
+
+
 
 
 The *container* class is identical to the floats version:   
@@ -1648,14 +2201,22 @@ The *row* class activates flexbox positioning within it:
 
 The row is declared as a flex container (`display: flex`) whose direct children will be aligned horizontally (`flex-direction`), but will wrap if necessary (`flex-wrap`).  
 
-In addition, the row has also the properties of a flex child (see below), so that it can be nested in cells.     
+In addition, the row has also the properties of a flex child (see below), so that it can be nested in cells. 
 
-<!------------------- END SLIDE 073 -------------------------->
+<!------------------- END SLIDE 073 en -------------------------->
 
-<!----------------- BEGIN SLIDE 074 -------------------------->
-> 074
+<!----------------- BEGIN SLIDE 074 en -------------------------->
 
 ####  The columns
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 074
+
+
 
 
 The *column* class defines common column properties: 
@@ -1686,14 +2247,22 @@ Classes *one*, *two*, etc. allow one to define the width of each cell as the num
 .container.one.column { flex-basis: 4.25%; max-width: 4.25%;}   
 ```
 
-The sizes for cells three to sixteen columns wide are: 16.75%, 23%, 29.25%, 35.5%, 41.75%, 48%, 54.25%, 60.5%, 66.75%, 73%, 79.25%, 85.5%, 91.75%, 98% respectively.   
+The sizes for cells three to sixteen columns wide are: 16.75%, 23%, 29.25%, 35.5%, 41.75%, 48%, 54.25%, 60.5%, 66.75%, 73%, 79.25%, 85.5%, 91.75%, 98% respectively. 
 
-<!------------------- END SLIDE 074 -------------------------->
+<!------------------- END SLIDE 074 en -------------------------->
 
-<!----------------- BEGIN SLIDE 075 -------------------------->
-> 075
+<!----------------- BEGIN SLIDE 075 en -------------------------->
 
 ####  Media queries
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 075
+
+
 
 
 Media queries are adapted accordingly, disabling the flex when necessary:
@@ -1705,16 +2274,26 @@ Media queries are adapted accordingly, disabling the flex when necessary:
 .container .one.column,… { flex: none; display: block; width: auto; max-width: 100%;}          
 .row { flex: none; display: block; width: 100% }        
 }
-```
+``` 
 
-<!------------------- END SLIDE 075 -------------------------->
+<!------------------- END SLIDE 075 en -------------------------->
 
-<!----------------- BEGIN SLIDE 076 -------------------------->
-> 076
+<!----------------- BEGIN SLIDE 076 en -------------------------->
 
 ### 7.5. Cross-Browser Compatibility
 
 ####  Reset Stylesheet
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 076
+
+
+
+
 
 
 Different browsers apply to the properties **different default values**, corresponding to their *default stylesheet*.   
@@ -1762,25 +2341,41 @@ q:before, q:after
 
 table    
 { border-collapse: collapse; border-spacing: 0; }       
-```
+``` 
 
-<!------------------- END SLIDE 076 -------------------------->
+<!------------------- END SLIDE 076 en -------------------------->
 
-<!----------------- BEGIN SLIDE 077 -------------------------->
-> 077
+<!----------------- BEGIN SLIDE 077 en -------------------------->
 
 ## 8. References
 
 
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 077
+
+
+
+
 **Cascading Style Sheets (CSS)**       
-https://www.w3.org/Style/CSS   
+https://www.w3.org/Style/CSS 
 
-<!------------------- END SLIDE 077 -------------------------->
+<!------------------- END SLIDE 077 en -------------------------->
 
-<!----------------- BEGIN SLIDE 078 -------------------------->
-> 078
+<!----------------- BEGIN SLIDE 078 en -------------------------->
 
 ## 9. Examples
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
+> 078
+
+
 
 The main samples explained or developed during the classes are outlined below. These examples are all available in the GitHub, at the address 
 <https://github.com/orgs/WebEngineering-Univaq>, and are a *key component* of the classes itself, since they illustrate the practical use of the concepts presented during lectures and reported in this documentation (where, when possible, references to these examples can also be found).
@@ -1817,11 +2412,17 @@ The list below may not always be up to date: in the repository you may often fin
   *Shows how to turn a simple list into a menu using the `list-style` property along with other basic CSS properties*
 
 - css_properties_misc.html       
-  *Shows the use of various advanced CSS properties such as `content`, `quotes`, `counter-increment`, `cursor`*
+  *Shows the use of various advanced CSS properties such as `content`, `quotes`, `counter-increment`, `cursor`* 
 
-<!------------------- END SLIDE 078 -------------------------->
+<!------------------- END SLIDE 078 en -------------------------->
 
-<!----------------- BEGIN SLIDE 079 -------------------------->
+<!----------------- BEGIN SLIDE 079 en -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+
+
 > 079
 
 **Box model and positioning**
@@ -1833,16 +2434,16 @@ The list below may not always be up to date: in the repository you may often fin
   *Shows the use of the CSS property `overflow`*
 
 - css_properties_positioning_relative.html       
-  *Show how to use relative positioning (`position: relative`)**
+  *Shows how to use relative positioning (`position: relative`)**
 
 - css_properties_positioning_absolute.html       
-  *Show how to use absolute positioning (`position: absolute`)**
+  *Shows how to use absolute positioning (`position: absolute`)**
 
 - css_properties_positioning_fixed.html       
-  *Show how to use fixed positioning (`position: fixed`)**
+  *Shows how to use fixed positioning (`position: fixed`)**
 
 - css_properties_positioning_float.html       
-  *Show the use of the CSS properties `float` and `clear`*
+  *Shows the use of the CSS properties `float` and `clear`*
   
 - css_menu_multilev_flyout.html       
   *Shows how to turn a simple list into a flyout menu using the `list-style`, `display` and `position` properties along with other basic CSS properties*
@@ -1858,15 +2459,15 @@ The list below may not always be up to date: in the repository you may often fin
 **Advanced Topics**
 
 - css_3_transitions.html       
-  *Show the use of the CSS property `transition`*
+  *Shows the use of the CSS property `transition`*
 
 - css_3_animation.html       
-  *Show the use of the CSS property `animation` (and the at-rule `@keyframes`)*
+  *Shows the use of the CSS property `animation` (and the at-rule `@keyframes`)*
 
 - css_sprites.html        
-  *Shows how to use the CSS sprites technique to download multiple images efficiently
+  *Shows how to use the CSS sprites technique to download multiple images efficiently*
   
 - css_3_variables.html       
-  *Shows the use of CSS variables and constructs `var()` and `calc()`*
+  *Shows the use of CSS variables and constructs `var()` and `calc()`* 
 
-<!------------------- END SLIDE 079 -------------------------->
+<!------------------- END SLIDE 079 en -------------------------->

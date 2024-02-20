@@ -1,8 +1,23 @@
-<!----------------- BEGIN SLIDE 001 -------------------------->
+---
+title: Persistenza in Java: JPA  
+course: Web Engineering
+organization: University of L'Aquila
+
+author: Giuseppe Della Penna
+---
+
+
+<!----------------- BEGIN SLIDE 001 it -------------------------->
+
+#  Persistenza in Java: JPA  
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 001
 
 
-# Persistenza in Java: JPA  
+
 
 Giuseppe Della Penna
 
@@ -10,7 +25,6 @@ Università degli Studi di L'Aquila
 giuseppe.dellapenna@univaq.it    
 http://people.disim.univaq.it/dellapenna
 
-**Versione documento: 051025**
 
 > *Questo documento si basa sulle slide del corso di Web Engineering, riorganizzate per una migliore esperienza di lettura. Non è un libro di testo completo o un manuale tecnico, e deve essere utilizzato insieme a tutti gli altri materiali didattici del corso. Si prega di segnalare eventuali errori o omissioni all'autore.*
 
@@ -18,27 +32,143 @@ http://people.disim.univaq.it/dellapenna
 
 <!----------------- BEGIN TOC -------------------------->
 
+ - [1. Persistenza](#1-persistenza)
+
+    - [1.1. Jakarta Persistence API (JPA)](#11-jakarta-persistence-api-jpa)
+
+    - [1.2. Object-Relational Mapping (ORM)](#12-object-relational-mapping-orm)
+
+    - [1.3. Aggiungere JPA a un progetto Maven](#13-aggiungere-jpa-a-un-progetto-maven)
+
+ - [2. Architettura di JPA](#2-architettura-di-jpa)
+
+    - [2.1. Persistence Unit](#21-persistence-unit)
+
+    - [2.2. PersistenceContext ed EntityManager](#22-persistencecontext-ed-entitymanager)
+
+    - [2.3. Tipi di EntityManager](#23-tipi-di-entitymanager)
+
+ - [3. JPA: entità](#3-jpa-entità)
+
+    - [3.1. Campi](#31-campi)
+
+    - [3.2. Chiavi primarie](#32-chiavi-primarie)
+
+    - [3.3. Classi Embeddable](#33-classi-embeddable)
+
+    - [3.4. Collezioni Persistenti](#34-collezioni-persistenti)
+
+    - [3.5. Tabelle, Indici e Vincoli](#35-tabelle-indici-e-vincoli)
+
+    - [3.6. Ereditarietà](#36-ereditarietà)
+
+    - [3.7. Ciclo di Vita delle Entità](#37-ciclo-di-vita-delle-entità)
+
+    - [3.8. API dell'EntityManager](#38-api-dell'entitymanager)
+
+    - [3.9. Eventi di Persistenza](#39-eventi-di-persistenza)
+
+    - [3.10. Classi EntityListener](#310-classi-entitylistener)
+
+ - [4. JPA: Relazioni](#4-jpa-relazioni)
+
+    - [4.1. Relazioni @ManyToOne (N:1)](#41-relazioni-@manytoone-n1)
+
+    - [4.2. Relazioni @OneToOne (1:1)](#42-relazioni-@onetoone-11)
+
+    - [4.3. Relazioni @ManyToMany (M:N)](#43-relazioni-@manytomany-mn)
+
+    - [4.4. Relazioni @OneToMany (1:N)](#44-relazioni-@onetomany-1n)
+
+    - [4.5. Relazioni unidirezionali e bidirezionali](#45-relazioni-unidirezionali-e-bidirezionali)
+
+    - [4.6. Relazioni: inverse side](#46-relazioni-inverse-side)
+
+    - [4.7. Relazioni bidirezionali @OneToOne](#47-relazioni-bidirezionali-@onetoone)
+
+    - [4.8. Relazioni bidirezionali @ManyToOne](#48-relazioni-bidirezionali-@manytoone)
+
+    - [4.9. Relazioni bidirezionali @ManyToMany](#49-relazioni-bidirezionali-@manytomany)
+
+    - [4.10. Relazioni: riassunto delle modalità di definizione](#410-relazioni-riassunto-delle-modalità-di-definizione)
+
+    - [4.11. Caricamento (fetch) delle Relazioni](#411-caricamento-fetch-delle-relazioni)
+
+    - [4.12. Estensione (cascade) delle Operazioni sulle Relazioni](#412-estensione-cascade-delle-operazioni-sulle-relazioni)
+
+ - [5. JPA: Transazioni](#5-jpa-transazioni)
+
+    - [5.1. RESOURCE\_LOCAL](#51-resource\_local)
+
+    - [5.2. JTA](#52-jta)
+
+    - [5.3. Locking](#53-locking)
+
+ - [6. JPA: Query](#6-jpa-query)
+
+    - [6.1. API dell'EntityManager](#61-api-dell'entitymanager)
+
+    - [6.2. Query JPA](#62-query-jpa)
+
+    - [6.3. Interfaccia Query](#63-interfaccia-query)
+
+    - [6.4. JPQL: SELECT](#64-jpql-select)
+
+    - [6.5. JPQL: FROM](#65-jpql-from)
+
+    - [6.6. JPQL: JOIN nelle Clausole FROM](#66-jpql-join-nelle-clausole-from)
+
+    - [6.7. JPQL: WHERE](#67-jpql-where)
+
+    - [6.8. JPQL: Funzioni](#68-jpql-funzioni)
+
+    - [6.9. JPQL: Sottoquery](#69-jpql-sottoquery)
+
+    - [6.10. JPQL: GROUP BY e HAVING](#610-jpql-group-by-e-having)
+
+    - [6.11. JPQL: ORDER BY](#611-jpql-order-by)
+
+    - [6.12. JPQL: UPDATE e DELETE](#612-jpql-update-e-delete)
+
+ - [7. Argomenti Avanzati](#7-argomenti-avanzati)
+
+    - [7.1. Persistenza in PHP](#71-persistenza-in-php)
+
+    - [7.2. Riferimenti](#72-riferimenti)
 
 
-<!------------------- END TOC -------------------------->
 
-<!------------------- END SLIDE 001 -------------------------->
+<!------------------- END TOC --------------------------> 
 
-<!----------------- BEGIN SLIDE 002 -------------------------->
+<!------------------- END SLIDE 001 it -------------------------->
+
+<!----------------- BEGIN SLIDE 002 it -------------------------->
+
+## 1. Persistenza
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 002
 
-## Persistenza
+
 
 Un oggetto persistente ha uno stato che sopravvive al processo che lo ha creato, e quindi può essere successivamente ricaricato, riusato e aggiornato.
 
 Per realizzare la persistenza, gli oggetti vengono scritti e letti da un database 
 
-<!------------------- END SLIDE 002 -------------------------->
+<!------------------- END SLIDE 002 it -------------------------->
 
-<!----------------- BEGIN SLIDE 003 -------------------------->
+<!----------------- BEGIN SLIDE 003 it -------------------------->
+
+### 1.1. Jakarta Persistence API (JPA)
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 003
 
-### Jakarta Persistence API (JPA)
+
 
 
 JPA è un framework di persistenza generico che permette di rendere persistenti oggetti Java in maniera quasi del tutto trasparente al programmatore, fornendo: 
@@ -53,14 +183,20 @@ JPA fino a pochi anni fa era l'acronimo di **Java Persistence API**, sviluppata 
 
 *La differenza più evidente tra la "vecchia" versione di JPA e quella Jakarta è che tutti i namespace sono stati aggiornati, passando dal prefisso "javax." a "jakarta."*  
 
-JPA è solo un insieme di interfacce: come molte tecnologie Java, per essere usata ha bisogno di una libreria effettiva di persistenza, inserita nel programma, che sia compatibile con JPA stessa:  *EclipseLink*, *Hibernate*, *OpenJPA*,...
+JPA è solo un insieme di interfacce: come molte tecnologie Java, per essere usata ha bisogno di una libreria effettiva di persistenza, inserita nel programma, che sia compatibile con JPA stessa:  *EclipseLink*, *Hibernate*, *OpenJPA*,... 
 
-<!------------------- END SLIDE 003 -------------------------->
+<!------------------- END SLIDE 003 it -------------------------->
 
-<!----------------- BEGIN SLIDE 004 -------------------------->
+<!----------------- BEGIN SLIDE 004 it -------------------------->
+
+### 1.2. Object-Relational Mapping (ORM)
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 004
 
-### Object-Relational Mapping (ORM)
+
 
 
 Un elemento cardine della persistenza in un linguaggio a oggetti è la strategia con cui gli oggetti vengono mappati negli schemi relazionali di un DB.
@@ -71,14 +207,20 @@ Esistono due classi di annotazioni, che permettono di definire un mapping a live
 
 - Il livello logico corrisponde a quello object-oriented, e specifica entità e relazioni ad alto livello (come nel modello relazionale), lasciando a JPA l'onere di derivarne il modello fisico  
 
-- Il livello fisico è quello del database, con tabelle e colonne: a questo livello si dice a JPA direttamente come mappare gli elementi del database (anche preesistente) sugli oggetti
+- Il livello fisico è quello del database, con tabelle e colonne: a questo livello si dice a JPA direttamente come mappare gli elementi del database (anche preesistente) sugli oggetti 
 
-<!------------------- END SLIDE 004 -------------------------->
+<!------------------- END SLIDE 004 it -------------------------->
 
-<!----------------- BEGIN SLIDE 005 -------------------------->
+<!----------------- BEGIN SLIDE 005 it -------------------------->
+
+### 1.3. Aggiungere JPA a un progetto Maven
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 005
 
-### Aggiungere JPA a un progetto Maven
+
 
 
 ```xml
@@ -95,7 +237,12 @@ Esistono due classi di annotazioni, che permettono di definire un mapping a live
 </dependency>  
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Per usare JPA **in un’applicazione JSE** è necessario **inserirne un provider** nella propria applicazione.
 
@@ -103,34 +250,40 @@ In questo esempio usiamo il notissimo **Hibernate**. La versione importata in qu
 
 È inoltre necessario importare il **driver JDBC** relativo al DBMS sul quale si realizzerà la persistenza. In questo caso importiamo il driver di **MySQL 8** 
 
-Attenzione: se si usa JPA **in un’applicazione JEE**, il relativo server **fornisce la sua implementazione di JPA, e quindi non è necessario importarne una nell’applicazione**, a meno che non si voglia disabilitare quella built-in del server.
+Attenzione: se si usa JPA **in un’applicazione JEE**, il relativo server **fornisce la sua implementazione di JPA, e quindi non è necessario importarne una nell’applicazione**, a meno che non si voglia disabilitare quella built-in del server. 
+
+<!------------------- END SLIDE 005 it -------------------------->
+
+<!----------------- BEGIN SLIDE 006 it -------------------------->
+
+## 2. Architettura di JPA
 
 
-<!------------------- END SLIDE 005 -------------------------->
+<!----------------- COLUMN 1 -------------------------->
 
-<!----------------- BEGIN SLIDE 006 -------------------------->
-> 006
+> 006 
 
-## Architettura di JPA
+<!------------------- END SLIDE 006 it -------------------------->
 
-
-
-
-<!------------------- END SLIDE 006 -------------------------->
-
-<!----------------- BEGIN SLIDE 007 -------------------------->
+<!----------------- BEGIN SLIDE 007 it -------------------------->
 
 
-![Architettura JPA](JPA1.png)
+<!----------------- COLUMN 1 -------------------------->
+
+![Architettura JPA](JPA1.png) 
+
+<!------------------- END SLIDE 007 it -------------------------->
+
+<!----------------- BEGIN SLIDE 008 it -------------------------->
+
+### 2.1. Persistence Unit
 
 
+<!----------------- COLUMN 1 -------------------------->
 
-<!------------------- END SLIDE 007 -------------------------->
-
-<!----------------- BEGIN SLIDE 008 -------------------------->
 > 008
 
-### Persistence Unit
+
 
 
 Una *persistence unit* definisce l'insieme delle classi-entità gestite da un *entity manager*.
@@ -154,14 +307,20 @@ Ogni PU contiene
   - L'indicazione del data source (nel caso di applicazioni che usino connessioni ai dati gestite, ad esempio, tramite il *connection pooling*)
 
 - Una lista di (nome completi di) classi-entità da far gestire alla PU    
-  Specificare le classi da includere nella persistenza è solitamente necessario solo in ambienti JavaSE. Alcuni provider, come hibernate, eseguono l'autodetection di tutte le classi marcate con `@Entity`, ma questo non è sempre garantito.  
+  Specificare le classi da includere nella persistenza è solitamente necessario solo in ambienti JavaSE. Alcuni provider, come hibernate, eseguono l'autodetection di tutte le classi marcate con `@Entity`, ma questo non è sempre garantito. 
 
-<!------------------- END SLIDE 008 -------------------------->
+<!------------------- END SLIDE 008 it -------------------------->
 
-<!----------------- BEGIN SLIDE 009a -------------------------->
+<!----------------- BEGIN SLIDE 009a it -------------------------->
+
+####  Esempio – Applicazione JSE
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 009a
 
-#### Esempio – Applicazione JSE
+
 
 
 ```xml
@@ -182,14 +341,20 @@ Ogni PU contiene
   </properties>  
  </persistence-unit>
 </persistence>
-```
+``` 
 
-<!------------------- END SLIDE 009a -------------------------->
+<!------------------- END SLIDE 009a it -------------------------->
 
-<!----------------- BEGIN SLIDE 009b -------------------------->
+<!----------------- BEGIN SLIDE 009b it -------------------------->
+
+####  Esempio – Applicazione Web JSE (ad esempio su server Tomcat)
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 009b
 
-#### Esempio – Applicazione Web JSE (ad esempio su server Tomcat)
+
 
 
 ```xml
@@ -207,14 +372,20 @@ Ogni PU contiene
   </properties>
  </persistence-unit>
 </persistence>
-```
+``` 
 
-<!------------------- END SLIDE 009b -------------------------->
+<!------------------- END SLIDE 009b it -------------------------->
 
-<!----------------- BEGIN SLIDE 009c -------------------------->
+<!----------------- BEGIN SLIDE 009c it -------------------------->
+
+####  Esempio – Applicazione JEE
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 009c
 
-#### Esempio – Applicazione JEE
+
 
 
 ```xml
@@ -229,14 +400,20 @@ Ogni PU contiene
   </properties>
  </persistence-unit>
 </persistence>
-```
+``` 
 
-<!------------------- END SLIDE 009c -------------------------->
+<!------------------- END SLIDE 009c it -------------------------->
 
-<!----------------- BEGIN SLIDE 010 -------------------------->
+<!----------------- BEGIN SLIDE 010 it -------------------------->
+
+### 2.2. PersistenceContext ed EntityManager
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 010
 
-### PersistenceContext ed EntityManager
+
 
 
 Il **persistence context**  è una cache di oggetti-entità associata a una PU e da questa a una sorgente dati (ad es. connessione a database) tramite la quale gli oggetti sono creati, aggiornati e rimossi.
@@ -247,14 +424,20 @@ Se si preleva più volte (con una query, per ID, tramite un'enumerazione, ecc.) 
 
 I PC sono isolati tra di loro: le entità presenti in due PC aperti simultaneamente (in concorrenza) non si influenzano e non sono sincronizzate tra loro.
 
-L'EntityManager può essere usato, con modalità differenti, sia in applicazioni JEE che in applicazioni JSE.  
+L'EntityManager può essere usato, con modalità differenti, sia in applicazioni JEE che in applicazioni JSE. 
 
-<!------------------- END SLIDE 010 -------------------------->
+<!------------------- END SLIDE 010 it -------------------------->
 
-<!----------------- BEGIN SLIDE 011 -------------------------->
+<!----------------- BEGIN SLIDE 011 it -------------------------->
+
+### 2.3. Tipi di EntityManager
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 011
 
-### Tipi di EntityManager
+
 
 
 **Container-Managed EntityManager** 
@@ -275,21 +458,26 @@ L'EntityManager può essere usato, con modalità differenti, sia in applicazioni
 
 - EntityManager creati successivamente sono associati a persistence context diversi. 
 
-- La parte transazionale è tipicamente RESOURCE\_LOCAL, ma può essere anche JTA in applicazioni JEE. In questo caso, se quando l'EntityManager viene creato è già attiva una transazione JTA, quest'ultima verrà associata automaticamente all'EntityManager, altrimenti sarà l'EntityManager stesso a doversi legare a una transazione JTA aperta dal container tramite il metodo  *joinTransaction*.
+- La parte transazionale è tipicamente RESOURCE\_LOCAL, ma può essere anche JTA in applicazioni JEE. In questo caso, se quando l'EntityManager viene creato è già attiva una transazione JTA, quest'ultima verrà associata automaticamente all'EntityManager, altrimenti sarà l'EntityManager stesso a doversi legare a una transazione JTA aperta dal container tramite il metodo  *joinTransaction*. 
 
-<!------------------- END SLIDE 011 -------------------------->
+<!------------------- END SLIDE 011 it -------------------------->
 
-<!----------------- BEGIN SLIDE 012 -------------------------->
-> 012
+<!----------------- BEGIN SLIDE 012 it -------------------------->
 
-## JPA: entità
-
+## 3. JPA: entità
 
 
+<!----------------- COLUMN 1 -------------------------->
 
-<!------------------- END SLIDE 012 -------------------------->
+> 012 
 
-<!----------------- BEGIN SLIDE 013 -------------------------->
+<!------------------- END SLIDE 012 it -------------------------->
+
+<!----------------- BEGIN SLIDE 013 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 013
 
 
@@ -305,14 +493,20 @@ Sono supportate tutte le tecniche di modellazione a oggetti standard, come eredi
 
 La classe non deve essere *final*.
 
-Una serie di annotazioni definisce il mapping specifico dello stato della classe nel DB. Tuttavia, maggior parte di queste annotazioni ha dei default, quindi può essere omessa.  
+Una serie di annotazioni definisce il mapping specifico dello stato della classe nel DB. Tuttavia, maggior parte di queste annotazioni ha dei default, quindi può essere omessa. 
 
-<!------------------- END SLIDE 013 -------------------------->
+<!------------------- END SLIDE 013 it -------------------------->
 
-<!----------------- BEGIN SLIDE 014 -------------------------->
+<!----------------- BEGIN SLIDE 014 it -------------------------->
+
+####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 014
 
-#### Esempio
+
 
 
 ```java
@@ -354,16 +548,27 @@ public class Entity1 {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
 
-La classe Entity1 è *un'entità persistente*, i cui campi sono derivati da quelli della classe stessa.
 
-<!------------------- END SLIDE 014 -------------------------->
+<!----------------- COLUMN 2 -------------------------->
 
-<!----------------- BEGIN SLIDE 015 -------------------------->
+
+
+La classe Entity1 è *un'entità persistente*, i cui campi sono derivati da quelli della classe stessa. 
+
+<!------------------- END SLIDE 014 it -------------------------->
+
+<!----------------- BEGIN SLIDE 015 it -------------------------->
+
+### 3.1. Campi
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 015
 
-### Campi
+
 
 
 Lo stato persistente di una classe-entità è costituito dai dati in essa contenuti che vengono salvati sul DB.
@@ -376,14 +581,20 @@ Lo stato persistente di una classe-entità è costituito dai dati in essa conten
 - **AccessType.PROPERTY** indica che verranno resi persistenti i valori restituiti dai suoi metodi get/set, detti proprietà (che, come sappiamo, possono anche non essere mappati direttamente su dei campi, ma avere una rappresentazione interna più complessa).    
  I metodi get/set delle proprietà persistenti non devono mai essere final.  
 
-Se non si specifica `@Access`, il tipo di accesso viene dedotto dal punto in cui è inserita l'annotazione obbligatoria `@Id` (vedi più avanti)  
+Se non si specifica `@Access`, il tipo di accesso viene dedotto dal punto in cui è inserita l'annotazione obbligatoria `@Id` (vedi più avanti) 
 
-<!------------------- END SLIDE 015 -------------------------->
+<!------------------- END SLIDE 015 it -------------------------->
 
-<!----------------- BEGIN SLIDE 016 -------------------------->
+<!----------------- BEGIN SLIDE 016 it -------------------------->
+
+####  Annotazioni di tipo
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 016
 
-#### Annotazioni di tipo
+
 
 
 Su ogni dato (campo/metodo) persistente è possibile specificare dettagli del mapping usando alcune annotazioni:  
@@ -401,14 +612,20 @@ Su ogni dato (campo/metodo) persistente è possibile specificare dettagli del ma
 
 - `@Temporal` deve essere specificato (in congiunzione con `@Basic`) su dati di tipo Date o Calendar per indicare il tipo di dato del DB da mappare (**TemporalType.DATE**, **TemporalType.TIME** o **TemporalType.TIMESTAMP**). *I nuovi tipi java.time (come LocalDate) non necessitano di questa annotazione*.  
 
-*I campi che rappresentano relazioni andranno annotati in maniera diversa*.
+*I campi che rappresentano relazioni andranno annotati in maniera diversa*. 
 
-<!------------------- END SLIDE 016 -------------------------->
+<!------------------- END SLIDE 016 it -------------------------->
 
-<!----------------- BEGIN SLIDE 017 -------------------------->
+<!----------------- BEGIN SLIDE 017 it -------------------------->
+
+### 3.2. Chiavi primarie
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 017
 
-### Chiavi primarie
+
 
 
 Ogni classe-entità deve avere uno o più campi dichiarati come chiave primaria, che verranno mappati nella chiave della corrispondente tabella del DB.
@@ -430,12 +647,18 @@ Le strategie SEQUENCE e TABLE usano un generatore di default, che può essere ri
 
 **Un campo `@GeneratedValue` non deve mai essere assegnato esplicitamente nel codice!** 
 
-<!------------------- END SLIDE 017 -------------------------->
+<!------------------- END SLIDE 017 it -------------------------->
 
-<!----------------- BEGIN SLIDE 018 -------------------------->
+<!----------------- BEGIN SLIDE 018 it -------------------------->
+
+####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 018
 
-#### Esempio
+
 
 
 ```java
@@ -460,7 +683,12 @@ public class Entity1 {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 L'entità Entity1 ha i seguenti **campi**:
 
@@ -474,12 +702,18 @@ L'entità Entity1 ha i seguenti **campi**:
 
 - *localcache* sarà parte della classe Entity1 ma non della corrispondente entità persistente. 
 
-<!------------------- END SLIDE 018 -------------------------->
+<!------------------- END SLIDE 018 it -------------------------->
 
-<!----------------- BEGIN SLIDE 019 -------------------------->
+<!----------------- BEGIN SLIDE 019 it -------------------------->
+
+### 3.3. Classi Embeddable
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 019
 
-### Classi Embeddable
+
 
 
 Le classi *embeddable* non hanno una propria persistenza (cioè una tabella del DB corrispondente), ma vengono salvate aggregandole alle entità (proprietarie) in cui sono incorporate.
@@ -490,12 +724,18 @@ L'entità proprietaria di una classe embeddable può anche alterarne il mapping 
 
 **Attenzione**: se un campo `@Embedded` punta a una classe `@Embeddable` **contenente campi esplicitamente o implicitamente marcati con** ***nullable=false***, allora l'intero campo `@Embedded` sarà **ricorsivamente marcato come** ***nullable=false!*** 
 
-<!------------------- END SLIDE 019 -------------------------->
+<!------------------- END SLIDE 019 it -------------------------->
 
-<!----------------- BEGIN SLIDE 020 -------------------------->
+<!----------------- BEGIN SLIDE 020 it -------------------------->
+
+####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 020
 
-#### Esempio
+
 
 
 ```java
@@ -516,7 +756,12 @@ public class Embeddable1 {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 L'entità Entity1 ha i seguenti **campi**:
 
@@ -524,15 +769,20 @@ L'entità Entity1 ha i seguenti **campi**:
 
 - *aggregate*, in quanto `@Embedded`, verrà esploso nei campi della classe *Embeddable1*, cioè *description*  e *code*.
 
-- Da notare che *code* è *Integer* e non *int*, altrimenti diventerebbe implicitamente *optional=false* (o *nullable=false*) e, transitivamente, lo sarebbe anche *aggregate*.
+- Da notare che *code* è *Integer* e non *int*, altrimenti diventerebbe implicitamente *optional=false* (o *nullable=false*) e, transitivamente, lo sarebbe anche *aggregate*. 
 
-<!------------------- END SLIDE 020 -------------------------->
+<!------------------- END SLIDE 020 it -------------------------->
+
+<!----------------- BEGIN SLIDE 019b it -------------------------->
+
+### 3.4. Collezioni Persistenti
 
 
-<!----------------- BEGIN SLIDE 019b -------------------------->
+<!----------------- COLUMN 1 -------------------------->
+
 > 019b
 
-### Collezioni Persistenti
+
 
 E' possibile rendere automaticamente persistenti anche *campi definiti come liste o mappe contenenti tipi base o classi embeddable*. 
 A questo scopo, i corrispondenti campi dovranno essere annotati con l'annotazione `@ElementCollection`
@@ -542,14 +792,20 @@ una tabella creata ad-hoc per contenere i valori della lista o mappa. Nel caso d
 usate per contenere i dati della chiave.
 
 In questi casi è sempre buona norma *capire se è il caso di gestire queste liste tramite relazioni esplicite*, rendendo la classe nella lista 
-un'entità invece che una classe embedded.
+un'entità invece che una classe embedded. 
 
-<!------------------- END SLIDE 019b -------------------------->
+<!------------------- END SLIDE 019b it -------------------------->
 
-<!----------------- BEGIN SLIDE 020b -------------------------->
+<!----------------- BEGIN SLIDE 020b it -------------------------->
+
+####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 020b
 
-#### Esempio
+
 
 
 ```java
@@ -575,7 +831,12 @@ public class Embeddable1 {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Per mappare Entity1 JPA creerà quattro tabelle: una per l'entità vera e propria, una per la collezione *aggregatedList*, 
 una per la collezione *aggregatedStrings* e una per la collezione *aggregatedMap*. A titolo di esempio, mostriamo il DDL
@@ -605,15 +866,20 @@ CREATE TABLE entity1_aggregatedmap (
  PRIMARY KEY (Entity1_id,aggregatedMap_KEY),
  FOREIGN KEY (Entity1_id) REFERENCES entity1 (id)
 );
-```
+``` 
 
-<!------------------- END SLIDE 020b -------------------------->
+<!------------------- END SLIDE 020b it -------------------------->
+
+<!----------------- BEGIN SLIDE 019c it -------------------------->
+
+### 3.5. Tabelle, Indici e Vincoli
 
 
-<!----------------- BEGIN SLIDE 019c -------------------------->
+<!----------------- COLUMN 1 -------------------------->
+
 > 019c
 
-### Tabelle, Indici e Vincoli
+
 
 Come abbiamo visto, JPA crea in generale una tabella relazionale avente lo stesso nome di
 ogni entità dichiarata nel codice. E' tuttavia possibile personalizzare vari aspetti di questa
@@ -635,12 +901,18 @@ La sintassi completa di questo parametro è
 uniqueConstraints = {@UniqueConstraint(name="<nome>", columnNames = {"<col1>", "<col2>"}),...}
 ``` 
 
-<!------------------- END SLIDE 019c -------------------------->
+<!------------------- END SLIDE 019c it -------------------------->
 
-<!----------------- BEGIN SLIDE 020c -------------------------->
+<!----------------- BEGIN SLIDE 020c it -------------------------->
+
+####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 020c
 
-#### Esempio
+
 
 ```java
 @Entity
@@ -673,7 +945,12 @@ public class Entity1 implements Serializable {
  private Embeddable1 aggregate2;    
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Hibernate genera il seguente DDL per l'entità mostrata:
 
@@ -693,15 +970,20 @@ CREATE TABLE entity1 (
  UNIQUE KEY unique1 (name,number),
  KEY indice1 (date,name)
 );
-```
+``` 
 
-<!------------------- END SLIDE 020c -------------------------->
+<!------------------- END SLIDE 020c it -------------------------->
+
+<!----------------- BEGIN SLIDE 021 it -------------------------->
+
+### 3.6. Ereditarietà
 
 
-<!----------------- BEGIN SLIDE 021 -------------------------->
+<!----------------- COLUMN 1 -------------------------->
+
 > 021
 
-### Ereditarietà
+
 
 
 Le classi-entità possono estendere altre entità ma anche classi non-entità (non annotate con `@Entity`) e astratte.  
@@ -717,28 +999,40 @@ Le gerarchie così ottenute possono essere mappate sul DB con tre strategie dive
 
 - `InheritanceType.TABLE_PER_CLASS`: ogni classe-entità non astratta della gerarchia viene mappata su una tabella diversa, **contenente tutti i campi propri ed ereditati**.
 
-È possibile anche variare la strategia di mapping per sotto-alberi di una gerarchia, inserendo altre annotazioni `@Inheritance` sulle radici delle sotto-gerarchie.  
+È possibile anche variare la strategia di mapping per sotto-alberi di una gerarchia, inserendo altre annotazioni `@Inheritance` sulle radici delle sotto-gerarchie. 
 
-<!------------------- END SLIDE 021 -------------------------->
+<!------------------- END SLIDE 021 it -------------------------->
 
-<!----------------- BEGIN SLIDE 022 -------------------------->
+<!----------------- BEGIN SLIDE 022 it -------------------------->
+
+####  Discriminatori
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 022
 
-#### Discriminatori
+
 
 
 Per le strategie SINGLE\_TABLE è necessario che JPA possa capire a quale entità della gerarchia corrispondono i dati "aggregati" nell'unica tabella (SINGLE\_TABLE). Per questo viene aggiunta alle tabelle una colonna detta "discriminatore":  
 
 - Si inserisce l'annotazione `@DiscriminatorColumn` con i parametri *name* (nome della colonna) e opzionalmente *discriminatorType* (con valori `discriminatorType.STRING`, il default, `discriminatorType.CHAR` o `discriminatorType.INTEGER`) sulla classe che riporta anche l'annotazione `@Inheritance`. Se questa annotazione viene omessa, la colonna verrà creata col nome di default "DTYPE".  
 
-- Si inserisce, su ciascuna classe non astratta della gerarchia (compresa eventualmente la radice!), l'annotazione `@DiscriminatorValue` avente come parametro un valore del tipo prescelto che indichi univocamente quella classe. Se questa annotazione viene omessa, JPA sceglierà dei valori dipendenti dall'implementazione (ad esempio il nome dell'entità).
+- Si inserisce, su ciascuna classe non astratta della gerarchia (compresa eventualmente la radice!), l'annotazione `@DiscriminatorValue` avente come parametro un valore del tipo prescelto che indichi univocamente quella classe. Se questa annotazione viene omessa, JPA sceglierà dei valori dipendenti dall'implementazione (ad esempio il nome dell'entità). 
 
-<!------------------- END SLIDE 022 -------------------------->
+<!------------------- END SLIDE 022 it -------------------------->
 
-<!----------------- BEGIN SLIDE 023 -------------------------->
+<!----------------- BEGIN SLIDE 023 it -------------------------->
+
+####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 023
 
-#### Esempio
+
 
 
 ```java
@@ -771,7 +1065,12 @@ private String tableSuperEntityField;}
 {private String tableDerivedEntityField;} 
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 **UnmappedSuperClass** è una classe semplice, quindi non è possibile renderla persistente, e non è mappata nelle derivate, che quindi non conterranno unmappedSuperClassField.  
 
@@ -786,14 +1085,20 @@ L'entità **JoinedSuperEntity** ha InheritanceType=JOINED.
 
 L'entità **TableSuperEntity** ha InheritanceType=TABLE\_PER\_CLASS.   
   Una tabella **TableSuperEntity**  conterrà i campi ***tableSuperEntityId***, ***tableSuperEntityField*** e ***mappedSuperClassField***, ereditato MappedSuperClass.   
-  Una tabella **TableDerivedEntity** conterrà i campi ***tableSuperEntityId***, ***tableSuperEntityField***, ***mappedSuperClassField***  (ereditati da TableSuperEntity) e ***tableDerivedEntityField***.
+  Una tabella **TableDerivedEntity** conterrà i campi ***tableSuperEntityId***, ***tableSuperEntityField***, ***mappedSuperClassField***  (ereditati da TableSuperEntity) e ***tableDerivedEntityField***. 
 
-<!------------------- END SLIDE 023 -------------------------->
+<!------------------- END SLIDE 023 it -------------------------->
 
-<!----------------- BEGIN SLIDE 024 -------------------------->
+<!----------------- BEGIN SLIDE 024 it -------------------------->
+
+####  Esempio (albero e modello relazionale)
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 024
 
-#### Esempio (albero e modello relazionale)
+
 
 
 ![Ereditarietà](JPA2.png)
@@ -806,15 +1111,20 @@ L'entità **TableSuperEntity** ha InheritanceType=TABLE\_PER\_CLASS.
 
 - **TableSuperEntity**(*_tableSuperEntityId_*, *tableSuperEntityField*, *mappedSuperClassField*)
 
-- **TableDerivedEntity**(*_tableSuperEntityId_*, *tableSuperEntityField*, *mappedSuperClassField, tableDerivedEntityField*)
+- **TableDerivedEntity**(*_tableSuperEntityId_*, *tableSuperEntityField*, *mappedSuperClassField, tableDerivedEntityField*) 
+
+<!------------------- END SLIDE 024 it -------------------------->
+
+<!----------------- BEGIN SLIDE 025 it -------------------------->
+
+####  Esempio (Dati)
 
 
-<!------------------- END SLIDE 024 -------------------------->
+<!----------------- COLUMN 1 -------------------------->
 
-<!----------------- BEGIN SLIDE 025 -------------------------->
 > 025
 
-#### Esempio (Dati)
+
 
 
 Supponiamo di inserire un'istanza in ogni classe-entità della gerarchia, impostando tutti i campi con la stessa (ovvia) stringa...
@@ -849,15 +1159,20 @@ Supponiamo di inserire un'istanza in ogni classe-entità della gerarchia, impost
 
 |**tableDerivedEntityId**|**mappedSuperClassField**|**tableSuperEntityField**|**tableDerivedEntityField**|
 |---|---|---|---|
-|6|table\_derived|table\_derived|table\_derived|
+|6|table\_derived|table\_derived|table\_derived| 
+
+<!------------------- END SLIDE 025 it -------------------------->
+
+<!----------------- BEGIN SLIDE 026 it -------------------------->
+
+### 3.7. Ciclo di Vita delle Entità
 
 
-<!------------------- END SLIDE 025 -------------------------->
+<!----------------- COLUMN 1 -------------------------->
 
-<!----------------- BEGIN SLIDE 026 -------------------------->
 > 026
 
-### Ciclo di Vita delle Entità
+
 
 
 In JPA, ogni oggetto-entità può trovarsi in quattro differenti stati:
@@ -894,23 +1209,34 @@ In JPA, ogni oggetto-entità può trovarsi in quattro differenti stati:
 
 - Il suo stato non viene sincronizzato col DB, e verrà rimossa dal DB e dal PC alla successiva commit, (ri)diventando nuova 
 
-<!------------------- END SLIDE 026 -------------------------->
+<!------------------- END SLIDE 026 it -------------------------->
 
-<!----------------- BEGIN SLIDE 027 -------------------------->
+<!----------------- BEGIN SLIDE 027 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 027
 
 
-![Ciclo di vita](JPA3.png)
+![Ciclo di vita](JPA3.png) 
+
+<!------------------- END SLIDE 027 it -------------------------->
+
+<!----------------- BEGIN SLIDE 028 it -------------------------->
+
+### 3.8. API dell'EntityManager
+
+####  Entità
 
 
-<!------------------- END SLIDE 027 -------------------------->
+<!----------------- COLUMN 1 -------------------------->
 
-<!----------------- BEGIN SLIDE 028 -------------------------->
 > 028
 
-### API dell'EntityManager
 
-#### Entità
+
+
 
 
 L'EntityManager dispone di API specifiche per la gestione del ciclo di vita delle entità  
@@ -929,14 +1255,20 @@ L'EntityManager dispone di API specifiche per la gestione del ciclo di vita dell
 
 - `close()`: distrugge il PC (tutte le entità diventano *detached*)
 
-- `clear()`: elimina tutte le entità dal PC (diventano tutte *detached*)
+- `clear()`: elimina tutte le entità dal PC (diventano tutte *detached*) 
 
-<!------------------- END SLIDE 028 -------------------------->
+<!------------------- END SLIDE 028 it -------------------------->
 
-<!----------------- BEGIN SLIDE 029 -------------------------->
+<!----------------- BEGIN SLIDE 029 it -------------------------->
+
+####  Persist
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 029
 
-#### Persist
+
 
 
 Persist accetta come parametro oggetti-entità e li rende persistenti, inserendoli nel PC e programmandone la INSERT nel DB associato. 
@@ -953,26 +1285,38 @@ L'inserimento nel DB avverrà di solito alla fine della transazione associata, m
 
 La persistenza si propaga agli oggetti in relazione con quello corrente se la relazione ha un *cascade* di tipo PERSIST o ALL.
 
-Eventuali compi `@Generated` dell'oggetto e lasciati a null vengono valorizzati in automatico al momento della chiamata a persist.  
+Eventuali compi `@Generated` dell'oggetto e lasciati a null vengono valorizzati in automatico al momento della chiamata a persist. 
 
-<!------------------- END SLIDE 029 -------------------------->
+<!------------------- END SLIDE 029 it -------------------------->
 
-<!----------------- BEGIN SLIDE 030 -------------------------->
+<!----------------- BEGIN SLIDE 030 it -------------------------->
+
+####  Remove
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 030
 
-#### Remove
+
 
 
 Remove accetta come parametro oggetti-entità  *managed* e li elimina, mettendoli in stato *removed* e programmandone la DELETE nel DB associato.
 
-Non è possibile rimuovere un'entità *detached* (cioè rimossa dal PC): se necessario, la si deve ri-prelevare dal DB o farne una merge prima di poterla rimuovere.  
+Non è possibile rimuovere un'entità *detached* (cioè rimossa dal PC): se necessario, la si deve ri-prelevare dal DB o farne una merge prima di poterla rimuovere. 
 
-<!------------------- END SLIDE 030 -------------------------->
+<!------------------- END SLIDE 030 it -------------------------->
 
-<!----------------- BEGIN SLIDE 031 -------------------------->
+<!----------------- BEGIN SLIDE 031 it -------------------------->
+
+####  Merge
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 031
 
-#### Merge
+
 
 
 Merge fonde l'oggetto-entità passatogli come parametro con quello eventualmente già presente nel DB (cioè *con la stessa chiave*), programmando una REPLACE.
@@ -987,26 +1331,38 @@ Il metodo **restituisce l'oggetto persistente** risultante dalla fusione (**l'og
 
 - Se l'oggetto passato a merge è già *managed*, il metodo non esegue alcuna operazione.
 
-- Se l'oggetto passato a merge è *removed*, il metodo solleva un'eccezione.
+- Se l'oggetto passato a merge è *removed*, il metodo solleva un'eccezione. 
 
-<!------------------- END SLIDE 031 -------------------------->
+<!------------------- END SLIDE 031 it -------------------------->
 
-<!----------------- BEGIN SLIDE 032 -------------------------->
+<!----------------- BEGIN SLIDE 032 it -------------------------->
+
+####  Flush / Refresh
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 032
 
-#### Flush / Refresh
+
 
 
 Flush forza l'EntityManager a eseguire immediatamente le operazioni SQL programmate sul DB, anche prima della fine della transazione.  In questo modo il PC viene immediatamente sincronizzato col DB.
 
-Refresh ricarica lo stato di un'entità  *managed* sovrascrivendolo con quello presente nel DB. È utile nel caso in cui dei processi esterni possano alterare direttamente nel DB lo stato di oggetti attualmente presenti nel PC.
+Refresh ricarica lo stato di un'entità  *managed* sovrascrivendolo con quello presente nel DB. È utile nel caso in cui dei processi esterni possano alterare direttamente nel DB lo stato di oggetti attualmente presenti nel PC. 
 
-<!------------------- END SLIDE 032 -------------------------->
+<!------------------- END SLIDE 032 it -------------------------->
 
-<!----------------- BEGIN SLIDE 033 -------------------------->
+<!----------------- BEGIN SLIDE 033 it -------------------------->
+
+### 3.9. Eventi di Persistenza
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 033
 
-### Eventi di Persistenza
+
 
 
 È possibile tracciare i più importanti eventi del ciclo di vita di un'entità usando dei metodi *listener*. 
@@ -1033,12 +1389,18 @@ Se il listener è un metodo dell'entità stessa o di una sua superclasse, allora
 
 *Un possibile uso può essere quello di compilare dei campi (calcolati/generati) prima della sincronizzazione col DB, o eseguire aggiornamenti speciali nell'applicazione quando un oggetto viene rimosso*. 
 
-<!------------------- END SLIDE 033 -------------------------->
+<!------------------- END SLIDE 033 it -------------------------->
 
-<!----------------- BEGIN SLIDE 034 -------------------------->
+<!----------------- BEGIN SLIDE 034 it -------------------------->
+
+### 3.10. Classi EntityListener
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 034
 
-### Classi EntityListener
+
 
 
 È possibile inserire uno o più listener anche in classi arbitrarie (non-entità, dette in questo caso *EntityListener*) alle seguenti condizioni:
@@ -1047,14 +1409,20 @@ Se il listener è un metodo dell'entità stessa o di una sua superclasse, allora
 
 - La classe EntityListener deve essere agganciata all'entità corrispondente tramite l'annotazione `@EntityListeners` (values={lista-classi})  
 
-- I metodi annotati come listener nella classe *EntityListener* devono accettare come parametro un oggetto della classe-entità corrispondente (o di una sua superclasse)
+- I metodi annotati come listener nella classe *EntityListener* devono accettare come parametro un oggetto della classe-entità corrispondente (o di una sua superclasse) 
 
-<!------------------- END SLIDE 034 -------------------------->
+<!------------------- END SLIDE 034 it -------------------------->
 
-<!----------------- BEGIN SLIDE 035 -------------------------->
+<!----------------- BEGIN SLIDE 035 it -------------------------->
+
+####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 035
 
-#### Esempio
+
 
 
 ```java
@@ -1078,7 +1446,12 @@ public class Entity1Listener {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Un'entità può diventare EntityListener di se stessa semplicemente annotandone dei metodi con gli eventi che vuole seguire. In tal caso i metodi devono essere void e non avere parametri  
 
@@ -1088,21 +1461,26 @@ Si possono connettere anche più eventi (annotazioni) allo stesso metodo
 
 Un EntityListener esterno non deve implementare alcuna interfaccia: basta che abbia dei metodi con le opportune annotazioni e un costruttore vuoto.  
 
-I metodi di un EntityListener esterno devono accettare come parametro un oggetto della classe entità corrispondente (o una superclasse della stessa).  
+I metodi di un EntityListener esterno devono accettare come parametro un oggetto della classe entità corrispondente (o una superclasse della stessa). 
 
-<!------------------- END SLIDE 035 -------------------------->
+<!------------------- END SLIDE 035 it -------------------------->
 
-<!----------------- BEGIN SLIDE 036 -------------------------->
-> 036
+<!----------------- BEGIN SLIDE 036 it -------------------------->
 
-## JPA: Relazioni
-
+## 4. JPA: Relazioni
 
 
+<!----------------- COLUMN 1 -------------------------->
 
-<!------------------- END SLIDE 036 -------------------------->
+> 036 
 
-<!----------------- BEGIN SLIDE 037 -------------------------->
+<!------------------- END SLIDE 036 it -------------------------->
+
+<!----------------- BEGIN SLIDE 037 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 037
 
 JPA supporta tutti i tipi più comuni di relazione, o meglio di cardinalità delle relazioni, cioè 1:1, 1:N, M:N
@@ -1117,14 +1495,20 @@ Nella owning side si può anche configurare il comportamento della relazione:
 
 - specificando se  **la relazione debba essere caricata in maniera**  ***eager*** **o** ***lazy***, tramite l'attributo  *fetch* dell'annotazione principale (come per `@Basic`, vedi dopo), che ha come default  *lazy*.
 
-- specificando **come le operazioni (aggiornamento, cancellazione, ecc.) sull'entità dell'owning side debbano propagarsi sulle entità in relazione**, tramite l'attributo  *cascade* dell'annotazione principale (vedi dopo)  
+- specificando **come le operazioni (aggiornamento, cancellazione, ecc.) sull'entità dell'owning side debbano propagarsi sulle entità in relazione**, tramite l'attributo  *cascade* dell'annotazione principale (vedi dopo) 
 
-<!------------------- END SLIDE 037 -------------------------->
+<!------------------- END SLIDE 037 it -------------------------->
 
-<!----------------- BEGIN SLIDE 038 -------------------------->
+<!----------------- BEGIN SLIDE 038 it -------------------------->
+
+### 4.1. Relazioni @ManyToOne (N:1)
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 038
 
-### Relazioni @ManyToOne (N:1)
+
 
 
 ```java
@@ -1165,18 +1549,29 @@ CREATE TABLE `relatedentity` (
 )
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 L'entità che dichiara questo tipo di relazione (*entity\_nto1\_owner*) è collegata con (attributo *relation*) una *singola* istanza di un'altra entità (*relatedentity*). 
 
-Qui di fianco vediamo la struttura relazionale creata da *hibernate* per ciascuna delle due entità. Si noti la FOREIGN KEY.
+Qui di fianco vediamo la struttura relazionale creata da *hibernate* per ciascuna delle due entità. Si noti la FOREIGN KEY. 
 
-<!------------------- END SLIDE 038 -------------------------->
+<!------------------- END SLIDE 038 it -------------------------->
 
-<!----------------- BEGIN SLIDE 039 -------------------------->
+<!----------------- BEGIN SLIDE 039 it -------------------------->
+
+### 4.2. Relazioni @OneToOne (1:1)
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 039
 
-### Relazioni @OneToOne (1:1)
+
 
 
 ```java
@@ -1202,18 +1597,29 @@ CREATE TABLE `entity_1to1_owner` (
 )
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 L'entità che dichiara questo tipo di relazione (*entity\_1to1\_owner*) è collegata con (attributo *relation*) una *singola* istanza di un'altra entità (*relatedentity*, la cui definizione è omessa). 
 
-In teoria, la cardinalità (in particolare l'"1" iniziale) imporrebbe che non esistano più istanze di *entity\_1to1\_owner* collegate con la stessa istanza di *relatedentity*. Ciò è verificabile inserendo nel database un vincolo UNIQUE sulla colonna della FOREIGN KEY (*relation\_id*). In questo caso, vediamo che *hibernate* ha effettivamente aggiunto questo controllo.
+In teoria, la cardinalità (in particolare l'"1" iniziale) imporrebbe che non esistano più istanze di *entity\_1to1\_owner* collegate con la stessa istanza di *relatedentity*. Ciò è verificabile inserendo nel database un vincolo UNIQUE sulla colonna della FOREIGN KEY (*relation\_id*). In questo caso, vediamo che *hibernate* ha effettivamente aggiunto questo controllo. 
 
-<!------------------- END SLIDE 039 -------------------------->
+<!------------------- END SLIDE 039 it -------------------------->
 
-<!----------------- BEGIN SLIDE 040 -------------------------->
+<!----------------- BEGIN SLIDE 040 it -------------------------->
+
+### 4.3. Relazioni @ManyToMany (M:N)
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 040
 
-### Relazioni @ManyToMany (M:N)
+
 
 
 ```java
@@ -1242,7 +1648,12 @@ CREATE TABLE `entity_mton_owner_relatedentity` (
 )
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 L'entità che dichiara questo tipo di relazione (*entity\_mton\_owner*) è collegata (attributo *relations*) con *molteplici* istanze di un'altra entità (*relatedentity*, la cui definizione è omessa). 
 
@@ -1252,14 +1663,20 @@ Nei DBMS relazionali, per realizzare questo tipo di relazione, è necessario int
 
 Questo avviene anche con JPA, che crea automaticamente la cosiddetta **join table** (*entity\_mton\_owner\_relatedentity*) ed imposta su di essa le necessarie FOREIGN KEY.
 
-La presenza della join table è del tutto trasparente per il programmatore, che continuerà a lavorare sull'attributo *relations*, il quale sarà però popolato da JPA tramite la join table.  
+La presenza della join table è del tutto trasparente per il programmatore, che continuerà a lavorare sull'attributo *relations*, il quale sarà però popolato da JPA tramite la join table. 
 
-<!------------------- END SLIDE 040 -------------------------->
+<!------------------- END SLIDE 040 it -------------------------->
 
-<!----------------- BEGIN SLIDE 041 -------------------------->
+<!----------------- BEGIN SLIDE 041 it -------------------------->
+
+### 4.4. Relazioni @OneToMany (1:N)
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 041
 
-### Relazioni @OneToMany (1:N)
+
 
 
 ```java
@@ -1289,7 +1706,12 @@ CREATE TABLE `entity_1ton_owner_relatedentity` (
 )
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 L'entità che dichiara questo tipo di relazione (*entity\_1ton\_owner*) è collegata con (attributo  *relations*) molteplici istanze di un'altra entità (*relatedentity*, la cui definizione è omessa).  
 
@@ -1299,14 +1721,20 @@ Per realizzare questa relazione, come indicata nel codice, nel modello relaziona
 
 Come nel caso della relazione `@OneToOne`, in teoria, la cardinalità imporrebbe che non esistano più istanze di  *entity\_1ton\_owner* collegate con la stessa istanza di  *relatedentity*. Ciò è verificabile inserendo nel database un vincolo UNIQUE sulla colonna *relations\_id*, della join table. In questo caso, vediamo che *hibernate* ha effettivamente aggiunto questo controllo.
 
-Tuttavia, se possibile, in questo caso **sarebbe** **stato più efficiente inserire la relazione nell'entità** ***relatedentity*** sotto forma di una `@ManyToOne`, perché questo avrebbe evitato la creazione della join table.  
+Tuttavia, se possibile, in questo caso **sarebbe** **stato più efficiente inserire la relazione nell'entità** ***relatedentity*** sotto forma di una `@ManyToOne`, perché questo avrebbe evitato la creazione della join table. 
 
-<!------------------- END SLIDE 041 -------------------------->
+<!------------------- END SLIDE 041 it -------------------------->
 
-<!----------------- BEGIN SLIDE 042 -------------------------->
+<!----------------- BEGIN SLIDE 042 it -------------------------->
+
+### 4.5. Relazioni unidirezionali e bidirezionali
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 042
 
-### Relazioni unidirezionali e bidirezionali
+
 
 
 Negli schemi relazionali le relazioni hanno sempre un verso, dato dal "lato" che dichiara la FOREIGN KEY (referente).  
@@ -1323,14 +1751,20 @@ Ogni relazione in JPA ha un ***owning side***, mentre le sole relazioni bidirezi
 
 Tuttavia, l'*owning side* di una relazione **è sempre quello che** ***guida la mappatura relazionale***. *Per questo motivo*, per le relazioni 1:N, l'  *owning side*  dovrebbe essere sempre quello "toOne", in modo da non avere la necessità di una *join table*.
 
-*La bidirezionalità delle relazioni è utile solo per percorrerle più agevolmente, in quanto entrambe le classi coinvolte conterranno un riferimento all'altra sotto forma di campo. Si possono sempre usare query e join per percorrere in entrambe le direzioni una relazione, anche se questa è unidirezionale*.  
+*La bidirezionalità delle relazioni è utile solo per percorrerle più agevolmente, in quanto entrambe le classi coinvolte conterranno un riferimento all'altra sotto forma di campo. Si possono sempre usare query e join per percorrere in entrambe le direzioni una relazione, anche se questa è unidirezionale*. 
 
-<!------------------- END SLIDE 042 -------------------------->
+<!------------------- END SLIDE 042 it -------------------------->
 
-<!----------------- BEGIN SLIDE 043 -------------------------->
+<!----------------- BEGIN SLIDE 043 it -------------------------->
+
+### 4.6. Relazioni: inverse side
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 043
 
-### Relazioni: inverse side
+
 
 
 L'*inverse side*  (per le sole relazioni bidirezionali) di una relazione:
@@ -1341,16 +1775,24 @@ L'*inverse side*  (per le sole relazioni bidirezionali) di una relazione:
 
 **JPA non sincronizza le relazioni bidirezionali: se si mette un oggetto A in relazione bidirezionale con B, bisogna manualmente mettere B in relazione con A, aggiornando gli opportuni campi su entrambi gli oggetti. In altre parole, non c'è alcun automatismo che fornisca agli oggetti riferiti il corrispondente riferimento "inverso"**. 
 
-*Generalmente, infatti, i metodi add o set che impostano una relazione nell'owning side aggiornano anche quella inversa impostando gli opportuni campi negli oggetti riferiti*.  
+*Generalmente, infatti, i metodi add o set che impostano una relazione nell'owning side aggiornano anche quella inversa impostando gli opportuni campi negli oggetti riferiti*. 
 
-<!------------------- END SLIDE 043 -------------------------->
+<!------------------- END SLIDE 043 it -------------------------->
 
-<!----------------- BEGIN SLIDE 044 -------------------------->
+<!----------------- BEGIN SLIDE 044 it -------------------------->
+
+### 4.7. Relazioni bidirezionali @OneToOne
+
+####  owning
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 044
 
-### Relazioni bidirezionali @OneToOne
 
-#### owning
+
+
 
 
 ```java
@@ -1383,7 +1825,12 @@ CREATE TABLE `entity_1to1b_owner` (
 )
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 L'owner side della relazione bidirezionale è identico a quello della corrispondente relazione unidirezionale.  
 
@@ -1391,14 +1838,20 @@ Tuttavia, per realizzare delle relazioni bidirezionali funzionanti bisogna segui
 
 L'owning side  **aggiorna la relazione dal suo lato**, e **fa aggiornare la relazione inversa** al corrispondente oggetto usando una chiamata interna, che vedremo nella slide successiva. 
 
-Se un oggetto è già in relazione, prima di rimuoverlo o sovrascriverlo bisogna **cancellare anche la sua relazione inversa**.
+Se un oggetto è già in relazione, prima di rimuoverlo o sovrascriverlo bisogna **cancellare anche la sua relazione inversa**. 
 
-<!------------------- END SLIDE 044 -------------------------->
+<!------------------- END SLIDE 044 it -------------------------->
 
-<!----------------- BEGIN SLIDE 045 -------------------------->
+<!----------------- BEGIN SLIDE 045 it -------------------------->
+
+####  inverse
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 045
 
-#### inverse
+
 
 
 ```java
@@ -1430,22 +1883,35 @@ CREATE TABLE `entity_1to1b_inverse` (
 )
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Sul lato inverso di una relazione bidirezionale inseriamo l'annotazione opposta (qui ovviamente rimane una `@OneToOne`) usando poi il parametro *mappedBy* per puntare al campo dell'owner side che dichiara la corrispondente relazione.  
 
 Il pattern di impostazione sul lato inverso richiede di **delegare gli aggiornamenti effettivi al lato owning**: quindi la *setInverseRelation* chiama la corrispondente *setRelation* dell'oggetto da relazionare passandogli come argomento l'oggetto corrente.
 
-Dotiamo gli oggetti sul lato inverso di **metodi interni** (dichiarati qui *package private*), i quali aggiornano semplicemente la relazione (assumendo che il lato opposto sia già aggiornato). Questi metodi saranno chiamati, come abbiamo visto, solo dall'owning side.  
+Dotiamo gli oggetti sul lato inverso di **metodi interni** (dichiarati qui *package private*), i quali aggiornano semplicemente la relazione (assumendo che il lato opposto sia già aggiornato). Questi metodi saranno chiamati, come abbiamo visto, solo dall'owning side. 
 
-<!------------------- END SLIDE 045 -------------------------->
+<!------------------- END SLIDE 045 it -------------------------->
 
-<!----------------- BEGIN SLIDE 046 -------------------------->
+<!----------------- BEGIN SLIDE 046 it -------------------------->
+
+### 4.8. Relazioni bidirezionali @ManyToOne
+
+####  owner
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 046
 
-### Relazioni bidirezionali @ManyToOne
 
-#### owner
+
+
 
 
 ```java
@@ -1478,7 +1944,12 @@ CREATE TABLE `entity_nto1b_owner` (
 )
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 L'owner side della relazione bidirezionale è identico a quello della corrispondente relazione unidirezionale.  
 
@@ -1488,14 +1959,20 @@ L'owner side **aggiorna la relazione dal suo lato**, e **fa aggiornare la relazi
 
 Se un oggetto è già in relazione, prima di rimuoverlo o sovrascriverlo bisogna **cancellare anche la sua relazione inversa**. 
 
-Tuttavia, in questo caso, l'inverse side conterrà una lista di oggetti in relazione, quindi utilizziamo i metodi *internalAddInverseRelation*  e i  *nternalRemoveInverseRelation* invece che il semplice *internalSetInverseRelation*  per aggiornare la relazione inversa.
+Tuttavia, in questo caso, l'inverse side conterrà una lista di oggetti in relazione, quindi utilizziamo i metodi *internalAddInverseRelation*  e i  *nternalRemoveInverseRelation* invece che il semplice *internalSetInverseRelation*  per aggiornare la relazione inversa. 
 
-<!------------------- END SLIDE 046 -------------------------->
+<!------------------- END SLIDE 046 it -------------------------->
 
-<!----------------- BEGIN SLIDE 047 -------------------------->
+<!----------------- BEGIN SLIDE 047 it -------------------------->
+
+####  inverse
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 047
 
-#### inverse
+
 
 
 ```java
@@ -1540,7 +2017,12 @@ CREATE TABLE `entity_nto1b_inverse` (
 )
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Il lato inverso di una relazione `@ManyToOne` sarà, ovviamente, un `@OneToMany` con il corretto parametro *mappedBy*. 
 
@@ -1548,16 +2030,24 @@ Poiché la relazione è "a molti", qui avremo una lista di oggetti in relazione,
 
 Abbiamo incluso anche un metodo *setInverseRelations* per sostituire tutta la lista con un'altra, anche se spesso non necessario, solo per mostrare il suo corretto codice: per far funzionare il sistema di aggiornamenti bidirezionali, non bisogna sostituire semplicemente la vecchia lista con quella nuova, ma è necessario rimuovere e poi aggiungere gli elementi uno a uno usando i metodi *addInverseRelation* e *removeInverseRelation*.
 
-Anche qui, i metodi *addInverseRelation* e *removeInverseRelation* delegano l'aggiornamento all'owner side, mentre i corrispondenti metodi  *internalAddInverseRelation* e *internalRemoveInverseRelation* aggiornano semplicemente la lista.
+Anche qui, i metodi *addInverseRelation* e *removeInverseRelation* delegano l'aggiornamento all'owner side, mentre i corrispondenti metodi  *internalAddInverseRelation* e *internalRemoveInverseRelation* aggiornano semplicemente la lista. 
 
-<!------------------- END SLIDE 047 -------------------------->
+<!------------------- END SLIDE 047 it -------------------------->
 
-<!----------------- BEGIN SLIDE 048 -------------------------->
+<!----------------- BEGIN SLIDE 048 it -------------------------->
+
+### 4.9. Relazioni bidirezionali @ManyToMany
+
+####  owner
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 048
 
-### Relazioni bidirezionali @ManyToMany
 
-#### owner
+
+
 
 
 ```java
@@ -1601,20 +2091,31 @@ CREATE TABLE `entity_mtonb_owner_entity_mtonb_inverse` (
 )
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Nelle relazioni `@ManyToMany` si applica la stessa strategia vista per le `@ManyToOne`, considerando però che anche nell'owner side adesso avremo una lista di oggetti in relazione, quindi dei metodi *addRelation* e *removeRelation*.
 
 Abbiamo incluso anche qui il metodo *setRelations* opzionale, che delega sempre il lavoro ad *addRelation* e *removeRelation*.
 
-I metodi *addRelation* e *removeRelation* eseguono l'aggiornamento sulla lista e poi chiamano i metodi  *internalAddInverseRelation* e *internalRemoveInverseRelation* dell'inverse side per aggiornare la direzione opposta della relazione.
+I metodi *addRelation* e *removeRelation* eseguono l'aggiornamento sulla lista e poi chiamano i metodi  *internalAddInverseRelation* e *internalRemoveInverseRelation* dell'inverse side per aggiornare la direzione opposta della relazione. 
 
-<!------------------- END SLIDE 048 -------------------------->
+<!------------------- END SLIDE 048 it -------------------------->
 
-<!----------------- BEGIN SLIDE 049 -------------------------->
+<!----------------- BEGIN SLIDE 049 it -------------------------->
+
+####  inverse
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 049
 
-#### inverse
+
 
 
 ```java
@@ -1658,28 +2159,45 @@ CREATE TABLE `entity_mtonb_inverse` (
 )
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Il lato inverso della relazione `@ManyToMany` è anch'esso dello stesso tipo, ma usa la proprietà *mappedBy* per far riferimento al campo della relazione corrispondente nella classe owner.  
 
 Come richiesto dal pattern, deleghiamo gli aggiornamenti veri e proprio all'owner side nei metodi pubblici  *addInverseRelation* e *removeInverseRelation*, mentre eseguiamo gli aggiornamenti locali nei corrispondenti metodi *internalAddInverseRelation* e *internalRemoveInverseRelation*, che verranno chiamati dall'owner side. 
 
-<!------------------- END SLIDE 049 -------------------------->
+<!------------------- END SLIDE 049 it -------------------------->
 
-<!----------------- BEGIN SLIDE 050 -------------------------->
+<!----------------- BEGIN SLIDE 050 it -------------------------->
+
+### 4.10. Relazioni: riassunto delle modalità di definizione
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 050
 
-### Relazioni: riassunto delle modalità di definizione
 
 
-![Relazioni](JPA4.png)
 
-<!------------------- END SLIDE 050 -------------------------->
+![Relazioni](JPA4.png) 
 
-<!----------------- BEGIN SLIDE 051 -------------------------->
+<!------------------- END SLIDE 050 it -------------------------->
+
+<!----------------- BEGIN SLIDE 051 it -------------------------->
+
+### 4.11. Caricamento (fetch) delle Relazioni
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 051
 
-### Caricamento (fetch) delle Relazioni
+
 
 
 È possibile specificare quando un'entità in relazione con un'altra entità verrà caricata in memoria.
@@ -1690,14 +2208,20 @@ A questo scopo si usa il parametro *fetch* dell'annotazione usata per dichiarare
 
 - `EAGER` (default per le relazioni "ToOne"): il dato in relazione viene caricato insieme all'entità che vi fa riferimento  
 
-- `LAZY` (default per le relazioni "ToMany"): il dato in relazione viene caricato solo quando si cerca di accedervi  
+- `LAZY` (default per le relazioni "ToMany"): il dato in relazione viene caricato solo quando si cerca di accedervi 
 
-<!------------------- END SLIDE 051 -------------------------->
+<!------------------- END SLIDE 051 it -------------------------->
 
-<!----------------- BEGIN SLIDE 052 -------------------------->
+<!----------------- BEGIN SLIDE 052 it -------------------------->
+
+### 4.12. Estensione (cascade) delle Operazioni sulle Relazioni
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 052
 
-### Estensione (cascade) delle Operazioni sulle Relazioni
+
 
 
 È possibile estendere (a cascata) alcune operazioni su un'entità a tutte quelle che sono in una certa relazione con essa.
@@ -1712,21 +2236,26 @@ A questo scopo si usa il parametro *cascade* dell'annotazione usata per dichiara
 
 - `ALL`: scorciatoia per specificare tutte le modalità appena elencate.
 
-**Il default è non eseguire alcuna operazione in cascata** quindi, ad esempio, quando si rende persistente una entità bisogna sempre sincerarsi di aver reso persistenti anche quelle in relazione con essa!
+**Il default è non eseguire alcuna operazione in cascata** quindi, ad esempio, quando si rende persistente una entità bisogna sempre sincerarsi di aver reso persistenti anche quelle in relazione con essa! 
 
-<!------------------- END SLIDE 052 -------------------------->
+<!------------------- END SLIDE 052 it -------------------------->
 
-<!----------------- BEGIN SLIDE 053 -------------------------->
-> 053
+<!----------------- BEGIN SLIDE 053 it -------------------------->
 
-## JPA: Transazioni
-
+## 5. JPA: Transazioni
 
 
+<!----------------- COLUMN 1 -------------------------->
 
-<!------------------- END SLIDE 053 -------------------------->
+> 053 
 
-<!----------------- BEGIN SLIDE 054 -------------------------->
+<!------------------- END SLIDE 053 it -------------------------->
+
+<!----------------- BEGIN SLIDE 054 it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 054
 
 
@@ -1744,14 +2273,20 @@ Un metodo di business che manipola dati solitamente ha questa struttura:
 
   - **Nelle applicazioni JSE le transazioni devono essere gestite localmente in maniera totalmente manuale**, quindi i passi appena elencati vanno implementati nel codice. In particolare, si userà il *transaction-type* **RESOURCE\_LOCAL**, che si poggia sulle transazioni native offerte dal driver JDBC del DBMS in uso.
 
-  - **Nelle applicazioni JEE, invece, le transazioni sono solitamente globali e gestite dal container**. In particolare, si userà il *transaction-type* **JTA**. Si potrà quindi decidere se lasciare al container la gestione completa delle transazioni, oppure controllarle manualmente.
+  - **Nelle applicazioni JEE, invece, le transazioni sono solitamente globali e gestite dal container**. In particolare, si userà il *transaction-type* **JTA**. Si potrà quindi decidere se lasciare al container la gestione completa delle transazioni, oppure controllarle manualmente. 
 
-<!------------------- END SLIDE 054 -------------------------->
+<!------------------- END SLIDE 054 it -------------------------->
 
-<!----------------- BEGIN SLIDE 055 -------------------------->
+<!----------------- BEGIN SLIDE 055 it -------------------------->
+
+### 5.1. RESOURCE\_LOCAL
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 055
 
-### RESOURCE\_LOCAL
+
 
 
 Le transazioni **RESOURCE\_LOCAL** sono usate nelle applicazioni JSE. 
@@ -1762,14 +2297,20 @@ Le API per la gestione di queste transazioni (*begin*, *commit*, *rollback*) son
 
 In generale è meglio chiamare il metodo *begin* della transazione **prima di effettuare qualsiasi operazione sui dati**, anche se read only (*altrimenti gli oggetti restituiti potrebbero non essere managed!*).
 
-Dopo un *commit* l'EntityManager rimane valido, tutti gli oggetti-entità da esso gestiti restano managed ed è possibile attivare una nuova transazione con un nuovo *begin*. Tuttavia, è spesso consigliato chiudere l'EntityManager alla fine della transazione e crearne uno nuovo se è necessaria una nuova transazione.  
+Dopo un *commit* l'EntityManager rimane valido, tutti gli oggetti-entità da esso gestiti restano managed ed è possibile attivare una nuova transazione con un nuovo *begin*. Tuttavia, è spesso consigliato chiudere l'EntityManager alla fine della transazione e crearne uno nuovo se è necessaria una nuova transazione. 
 
-<!------------------- END SLIDE 055 -------------------------->
+<!------------------- END SLIDE 055 it -------------------------->
 
-<!----------------- BEGIN SLIDE 056 -------------------------->
+<!----------------- BEGIN SLIDE 056 it -------------------------->
+
+####  Esempio
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 056
 
-#### Esempio
+
 
 
 ```java
@@ -1788,20 +2329,31 @@ try {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 La chiamata a *commit* sulla transazione genera una *flush* automatico sull'EntityManager.  
 
 La chiamata a *close* distrugge l'EntityManager e rilascia le risorse ad esso associate, cioè il PC e gli oggetti-entità in esso contenuti. Attenzione quindi a chiamare *close* sempre e solo alla fine del ciclo di vita dell'EntityManager, tramite un blocco *finally*.
 
-Nota: con transazioni non RESOURCE\_LOCAL, il metodo `joinTransaction()` dell'*EntityManager* non può essere chiamato.
+Nota: con transazioni non RESOURCE\_LOCAL, il metodo `joinTransaction()` dell'*EntityManager* non può essere chiamato. 
 
-<!------------------- END SLIDE 056 -------------------------->
+<!------------------- END SLIDE 056 it -------------------------->
 
-<!----------------- BEGIN SLIDE 057 -------------------------->
+<!----------------- BEGIN SLIDE 057 it -------------------------->
+
+### 5.2. JTA
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 057
 
-### JTA
+
 
 
 Le transazioni JTA sono tipiche delle applicazioni JEE. 
@@ -1812,14 +2364,20 @@ Come già visto, per utilizzare questa modalità è necessario specificare il tr
 
 Se si lavora al di fuori di un EJB (ad es. direttamente in una Servlet) oppure se si marca esplicitamente l'EJB con l'annotazione `@TransactionManagement(TransactionManagementType.BEAN)`, sarà possibile iniettare la transazione JTA (**UserTransaction**) generata dal server nel codice tramite l'annotazione `@Resource`, e quindi effettuare tutte le relative operazioni (apertura compresa) manualmente.
 
-Attenzione, però: verificate sempre il vostro server disponga delle librerie JTA, altrimenti non sarà possibile usare questa funzionalità. **Il server Tomcat, ad esempio, non ha supporto JTA** (mentre lo possiede il suo derivato *TomEE*). In questo caso, dovrete quindi usare le transazioni RESOURCE_LOCAL.
+Attenzione, però: verificate sempre il vostro server disponga delle librerie JTA, altrimenti non sarà possibile usare questa funzionalità. **Il server Tomcat, ad esempio, non ha supporto JTA** (mentre lo possiede il suo derivato *TomEE*). In questo caso, dovrete quindi usare le transazioni RESOURCE_LOCAL. 
 
-<!------------------- END SLIDE 057 -------------------------->
+<!------------------- END SLIDE 057 it -------------------------->
 
-<!----------------- BEGIN SLIDE 058 -------------------------->
+<!----------------- BEGIN SLIDE 058 it -------------------------->
+
+####  Esempio di Container-managed EntityManager in Container-managed JTA transaction con EJB
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 058
 
-#### Esempio di Container-managed EntityManager in Container-managed JTA transaction con EJB
+
 
 
 ```java
@@ -1843,7 +2401,12 @@ public class TestEntitiesEJB extends HttpServlet {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Nella servlet, l'annotazione `@EJB` inietta un riferimento all'EJB specificato nella variabile.  
 
@@ -1855,14 +2418,20 @@ Quando il metodo dell'EJB viene invocato:
 
 Quando il metodo EJB termina:
 
-- Il commit della transazione JTA è implicito, come pure il rollback nel caso il codice sollevi una RuntimeException di qualche tipo  
+- Il commit della transazione JTA è implicito, come pure il rollback nel caso il codice sollevi una RuntimeException di qualche tipo 
 
-<!------------------- END SLIDE 058 -------------------------->
+<!------------------- END SLIDE 058 it -------------------------->
 
-<!----------------- BEGIN SLIDE 059 -------------------------->
+<!----------------- BEGIN SLIDE 059 it -------------------------->
+
+####  Esempio di Container-managed EntityManager in Application-managed JTA transaction con EJB
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 059
 
-#### Esempio di Container-managed EntityManager in Application-managed JTA transaction con EJB
+
 
 
 ```java
@@ -1890,7 +2459,12 @@ public class Entity1Service_CE_AT {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Quando il metodo dell'EJB viene invocato:
 
@@ -1904,14 +2478,20 @@ Quando il metodo EJB termina:
 
 - Il commit della transazione JTA va effettuato esplicitamente  
 
-- Il rollback nel caso di errore viene svolto esplicitamente nel blocco catch  
+- Il rollback nel caso di errore viene svolto esplicitamente nel blocco catch 
 
-<!------------------- END SLIDE 059 -------------------------->
+<!------------------- END SLIDE 059 it -------------------------->
 
-<!----------------- BEGIN SLIDE 060 -------------------------->
+<!----------------- BEGIN SLIDE 060 it -------------------------->
+
+####  Esempio di Application-managed EntityManager in Container-managed JTA transaction con EJB
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 060
 
-#### Esempio di Application-managed EntityManager in Container-managed JTA transaction con EJB
+
 
 
 ```java
@@ -1932,7 +2512,12 @@ public class Entity1Service_AE_CT {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Quando il metodo dell'EJB viene invocato:
 
@@ -1946,14 +2531,20 @@ Quando il metodo EJB termina:
 
 - Il commit della transazione JTA è implicito, come pure il rollback nel caso il codice sollevi una RuntimeException di qualche tipo  
 
-- L‘EntityManager va chiuso esplicitamente, preferibilmente in un blocco finally.  
+- L‘EntityManager va chiuso esplicitamente, preferibilmente in un blocco finally. 
 
-<!------------------- END SLIDE 060 -------------------------->
+<!------------------- END SLIDE 060 it -------------------------->
 
-<!----------------- BEGIN SLIDE 061 -------------------------->
+<!----------------- BEGIN SLIDE 061 it -------------------------->
+
+####  Esempio di Application-managed EntityManager in Application-managed JTA transaction con EJB
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 061
 
-#### Esempio di Application-managed EntityManager in Application-managed JTA transaction con EJB
+
 
 
 ```java
@@ -1987,7 +2578,12 @@ public class Entity1Service_AE_AT {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Quando il metodo dell'EJB viene invocato:
 
@@ -2007,14 +2603,20 @@ Quando il metodo EJB termina:
 
 - Il rollback nel caso di errore viene svolto esplicitamente nel blocco catch  
 
-- L'entityManager va chiuso esplicitamente, preferibilmente in un blocco finally.  
+- L'entityManager va chiuso esplicitamente, preferibilmente in un blocco finally. 
 
-<!------------------- END SLIDE 061 -------------------------->
+<!------------------- END SLIDE 061 it -------------------------->
 
-<!----------------- BEGIN SLIDE 062 -------------------------->
+<!----------------- BEGIN SLIDE 062 it -------------------------->
+
+####  Esempio di Application-managed EntityManager in Application-managed JTA transaction senza EJB
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 062
 
-#### Esempio di Application-managed EntityManager in Application-managed JTA transaction senza EJB
+
 
 
 ```java
@@ -2050,30 +2652,47 @@ public class TestEntitiesAPP extends HttpServlet {
 }
 ```
 
-<!----------------- COLUMN 001  -------------------------->
+ 
 
-Il codice è identico allo stesso caso effettuato all'interno di un EJB. In questo caso, però, questa è l'unica combinazione valida.
 
-<!------------------- END SLIDE 062 -------------------------->
+<!----------------- COLUMN 2 -------------------------->
 
-<!----------------- BEGIN SLIDE 063 -------------------------->
+
+
+Il codice è identico allo stesso caso effettuato all'interno di un EJB. In questo caso, però, questa è l'unica combinazione valida. 
+
+<!------------------- END SLIDE 062 it -------------------------->
+
+<!----------------- BEGIN SLIDE 063 it -------------------------->
+
+####  Sintesi delle modalità d'uso
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 063
 
-#### Sintesi delle modalità d'uso
+
 
 |**Piattaforma**|**Tipo EntityManager** |**Tipo Transazioni**|
 |---|---|---|
 |**JSE**|*Application-Managed* |RESOURCE_LOCAL *Application-Managed*|
 |**JEE con EJB**|*Container-Managed* |JTA *Container-Managed* o *Application-Managed* |
 |**JEE con EJB**|*Application-Managed* |JTA *Container-Managed* o *Application-Managed* |
-|**JEE senza EJB**|*Application\_Managed*|JTA *Application-Managed*|
+|**JEE senza EJB**|*Application\_Managed*|JTA *Application-Managed*| 
 
-<!------------------- END SLIDE 063 -------------------------->
+<!------------------- END SLIDE 063 it -------------------------->
 
-<!----------------- BEGIN SLIDE 064 -------------------------->
+<!----------------- BEGIN SLIDE 064 it -------------------------->
+
+### 5.3. Locking
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 064
 
-### Locking
+
 
 
 JPA gestisce **l'accesso concorrente alle entità**, sia effettuato attraverso lo stesso EntityManager che tramite *EntityManager aperti in parallelo sulla stessa sorgente dati*, tramite due **modalità di locking**:
@@ -2100,40 +2719,55 @@ I valori più comuni per *LockModeType* sono
 
 - `NONE` (elimina il lock)  
 
-I lock **possono essere attivati solo all'interno di una transazione** e sono comunque **rilasciati al termine della transazione** che li ha creati.  
+I lock **possono essere attivati solo all'interno di una transazione** e sono comunque **rilasciati al termine della transazione** che li ha creati. 
 
-<!------------------- END SLIDE 064 -------------------------->
+<!------------------- END SLIDE 064 it -------------------------->
 
-<!----------------- BEGIN SLIDE 065 -------------------------->
-> 065
+<!----------------- BEGIN SLIDE 065 it -------------------------->
 
-## JPA: Query
-
+## 6. JPA: Query
 
 
+<!----------------- COLUMN 1 -------------------------->
 
-<!------------------- END SLIDE 065 -------------------------->
+> 065 
 
-<!----------------- BEGIN SLIDE 066 -------------------------->
+<!------------------- END SLIDE 065 it -------------------------->
+
+<!----------------- BEGIN SLIDE 066 it -------------------------->
+
+### 6.1. API dell'EntityManager
+
+####  Query
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 066
 
-### API dell'EntityManager
 
-#### Query
+
+
 
 
 L'EntityManager dispone di API specifiche per la gestione delle query  
 
 - `find()`: ricerca una entità in base alla sua chiave
 
-- `createQuery()`, `createNamedQuery()`, `createNativeQuery()`: crea una query complessa  
+- `createQuery()`, `createNamedQuery()`, `createNativeQuery()`: crea una query complessa 
 
-<!------------------- END SLIDE 066 -------------------------->
+<!------------------- END SLIDE 066 it -------------------------->
 
-<!----------------- BEGIN SLIDE 067 -------------------------->
+<!----------------- BEGIN SLIDE 067 it -------------------------->
+
+### 6.2. Query JPA
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 067
 
-### Query JPA
+
 
 
 JPA comprende un linguaggio di query SQL-like, denominato **JPQL**. 
@@ -2172,14 +2806,20 @@ Query q = em.createNamedQuery("N")
 TypedQuery q = em.createNamedQuery("N",Entity1.class)  
 ```
 
-3. Si esegue la query, ad esempio col metodo  `getResultList()`, che ritorna le entità estratte cotto forma di una List generica o tipata, a seconda del modo con cui si è costruita la query.  
+3. Si esegue la query, ad esempio col metodo  `getResultList()`, che ritorna le entità estratte cotto forma di una List generica o tipata, a seconda del modo con cui si è costruita la query. 
 
-<!------------------- END SLIDE 067 -------------------------->
+<!------------------- END SLIDE 067 it -------------------------->
 
-<!----------------- BEGIN SLIDE 068 -------------------------->
+<!----------------- BEGIN SLIDE 068 it -------------------------->
+
+### 6.3. Interfaccia Query
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 068
 
-### Interfaccia Query
+
 
 
 I metodi principali dell'interfaccia *Query* (e della derivata *TypedQuery*) sono i seguenti:
@@ -2211,14 +2851,20 @@ esegue la query e, se questa ritorna un solo risultato, lo restituisce. Solleva 
 - `executeUpdate()`   
 esegue una query di tipo UPDATE o DELETE e ritorna il numero di entità coinvolte  
 
-Da notare che tutti i metodi appena elencati, a parte `getResultList`, `getSingleResult` e `executeUpdate` restituiscono la query su cui sono chiamati, **in modo da poter essere concatenati**.
+Da notare che tutti i metodi appena elencati, a parte `getResultList`, `getSingleResult` e `executeUpdate` restituiscono la query su cui sono chiamati, **in modo da poter essere concatenati**. 
 
-<!------------------- END SLIDE 068 -------------------------->
+<!------------------- END SLIDE 068 it -------------------------->
 
-<!----------------- BEGIN SLIDE 069 -------------------------->
+<!----------------- BEGIN SLIDE 069 it -------------------------->
+
+### 6.4. JPQL: SELECT
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 069
 
-### JPQL: SELECT
+
 
 
 La clausola `SELECT`, come nell'SQL, apre una **query di estrazione**. È possibile estrarre:
@@ -2231,14 +2877,20 @@ La clausola `SELECT`, come nell'SQL, apre una **query di estrazione**. È possib
 
 **Se si specifica più di un dato da estrarre**, i valori ritornati dai metodi `getResultList` / `getSingleResult` saranno (liste di) array di oggetti (**Object[]**).
 
-È possibile usare la parola chiave `DISTINCT` per eliminare i duplicati.
+È possibile usare la parola chiave `DISTINCT` per eliminare i duplicati. 
 
-<!------------------- END SLIDE 069 -------------------------->
+<!------------------- END SLIDE 069 it -------------------------->
 
-<!----------------- BEGIN SLIDE 070 -------------------------->
+<!----------------- BEGIN SLIDE 070 it -------------------------->
+
+### 6.5. JPQL: FROM
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 070
 
-### JPQL: FROM
+
 
 
 La clausola `FROM` specifica le **entità da coinvolgere nella query**  (*dominio*).
@@ -2249,14 +2901,20 @@ Si possono specificare più entità, separandole con una virgola.
 
 In assenza di alias, i riferimenti a una entità (nelle altre clausole) andranno fatti usando il nome dell'entità stessa.
 
-Come in SQL, è possibile usare espressioni più complesse nella clausola FROM, ma per ora ci limiteremo a quelle di base.
+Come in SQL, è possibile usare espressioni più complesse nella clausola FROM, ma per ora ci limiteremo a quelle di base. 
 
-<!------------------- END SLIDE 070 -------------------------->
+<!------------------- END SLIDE 070 it -------------------------->
 
-<!----------------- BEGIN SLIDE 071 -------------------------->
+<!----------------- BEGIN SLIDE 071 it -------------------------->
+
+### 6.6. JPQL: JOIN nelle Clausole FROM
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 071
 
-### JPQL: JOIN nelle Clausole FROM
+
 
 
 L'operatore `JOIN` nella clausola FROM permette di percorrere relazioni associando entità.  
@@ -2269,14 +2927,20 @@ Ad esempio `Entity1 e1 JOIN e1.relE2 e2`  restituisce tutte le entità Entity1 c
 
 Come in SQL, il JOIN di default è `INNER`, quindi le entità che non hanno relazioni non verranno restituite. È possibile usare un `LEFT JOIN` per comprendere tutte le entità del lato sinistro, anche se non hanno relazioni col lato destro.
 
-*Ricordiamo comunque che i `JOIN` possono sempre essere realizzati citando nella clausola `FROM` tutte le entità coinvolte e poi usando la clausola `WHERE` per filtrare solo quelle in relazione, tipicamente usando operatori come `IN`, `MEMBER` e `=`*.
+*Ricordiamo comunque che i `JOIN` possono sempre essere realizzati citando nella clausola `FROM` tutte le entità coinvolte e poi usando la clausola `WHERE` per filtrare solo quelle in relazione, tipicamente usando operatori come `IN`, `MEMBER` e `=`*. 
 
-<!------------------- END SLIDE 071 -------------------------->
+<!------------------- END SLIDE 071 it -------------------------->
 
-<!----------------- BEGIN SLIDE 072 -------------------------->
+<!----------------- BEGIN SLIDE 072 it -------------------------->
+
+### 6.7. JPQL: WHERE
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 072
 
-### JPQL: WHERE
+
 
 
 L'espressione condizionale inserita in una clausola `WHERE` filtra le entità su cui opererà la query.  
@@ -2295,14 +2959,20 @@ Alcuni operatori particolari che si possono usare nella clausola WHERE in JPQL s
 
 - `IS [NOT] EMPTY` permette di controllare se un valore di tipo collection (compresi quelli usati per le relazioni "ToMany") (non) rappresenta un insieme vuoto: `exp1 IS EMPTY`
 
-- `[NOT] MEMBER [OF]` verifica se un valore si trova in una collezione:  `exp1 MEMBER OF exp2`
+- `[NOT] MEMBER [OF]` verifica se un valore si trova in una collezione:  `exp1 MEMBER OF exp2` 
 
-<!------------------- END SLIDE 072 -------------------------->
+<!------------------- END SLIDE 072 it -------------------------->
 
-<!----------------- BEGIN SLIDE 073 -------------------------->
+<!----------------- BEGIN SLIDE 073 it -------------------------->
+
+### 6.8. JPQL: Funzioni
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 073
 
-### JPQL: Funzioni
+
 
 
 Il JPQL comprende un certo numero di funzioni standard che possono essere usate nelle clausole `SELECT`, `WHERE` e `HAVING`. La loro semantica è identica a quella dell'SQL.
@@ -2345,14 +3015,20 @@ Il JPQL comprende un certo numero di funzioni standard che possono essere usate 
 
 **Funzioni Condizionali**  
 
--`CASE... WHEN... THEN... ELSE... END`
+-`CASE... WHEN... THEN... ELSE... END` 
 
-<!------------------- END SLIDE 073 -------------------------->
+<!------------------- END SLIDE 073 it -------------------------->
 
-<!----------------- BEGIN SLIDE 074 -------------------------->
+<!----------------- BEGIN SLIDE 074 it -------------------------->
+
+### 6.9. JPQL: Sottoquery
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 074
 
-### JPQL: Sottoquery
+
 
 
 È possibile usare sottoquery nelle clausole `WHERE` o `HAVING`, racchiudendole tra parentesi.  
@@ -2365,14 +3041,20 @@ Se la sottoquery restituisce **più valori**, è possibile usarla con i seguenti
 
 - `[NOT] IN` permette di verificare se un valore è contenuto tra quelli restituiti dalla query (la cui SELECT deve contenere una singola espressione!): `exp1 IN (SELECT e FROM Entity1 e)`
 
-- `ALL`, `ANY` come in SQL, permettono di effettuare un confronto logico tra un valore e ciascuno dei di valori restituiti da una sottoquery, mettendoli rispettivamente in AND o in OR: `exp1 > ALL (SELECT e.numero FROM Entity1 e)`
+- `ALL`, `ANY` come in SQL, permettono di effettuare un confronto logico tra un valore e ciascuno dei di valori restituiti da una sottoquery, mettendoli rispettivamente in AND o in OR: `exp1 > ALL (SELECT e.numero FROM Entity1 e)` 
 
-<!------------------- END SLIDE 074 -------------------------->
+<!------------------- END SLIDE 074 it -------------------------->
 
-<!----------------- BEGIN SLIDE 075 -------------------------->
+<!----------------- BEGIN SLIDE 075 it -------------------------->
+
+### 6.10. JPQL: GROUP BY e HAVING
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 075
 
-### JPQL: GROUP BY e HAVING
+
 
 
 Come in SQL, le clausole `GROUP BY` e `HAVING` permettono di **raggruppare i valori** e **filtrare i gruppi** in base alle loro proprietà aggregate.
@@ -2381,64 +3063,89 @@ Come in SQL, le clausole `GROUP BY` e `HAVING` permettono di **raggruppare i val
 
 Se si usa il raggruppamento, **le espressioni contenute nella SELECT potranno solo riferirsi ai campi di raggruppamento e a funzioni di aggregazione**, che sono quelle tipiche dell'SQL: `AVG`, `COUNT`, `MAX` e `MIN`.
 
-La clausola `HAVING` lavora come la `WHERE`, ma filtra i gruppi generati dalla GROUP BY. Anche qui, le espressioni condizionali potranno fare riferimento solo ai campi di raggruppamento e a funzioni di aggregazione.  
+La clausola `HAVING` lavora come la `WHERE`, ma filtra i gruppi generati dalla GROUP BY. Anche qui, le espressioni condizionali potranno fare riferimento solo ai campi di raggruppamento e a funzioni di aggregazione. 
 
-<!------------------- END SLIDE 075 -------------------------->
+<!------------------- END SLIDE 075 it -------------------------->
 
-<!----------------- BEGIN SLIDE 076 -------------------------->
+<!----------------- BEGIN SLIDE 076 it -------------------------->
+
+### 6.11. JPQL: ORDER BY
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 076
 
-### JPQL: ORDER BY
+
 
 
 La clausola `ORDER BY` permette di **ordinare i risultati** di una query sulla base di una o più proprietà di entità 
 
 Le proprietà usate nella clausola **devono però essere derivabili da quanto estratto dalla `SELECT`**: ad esempio, se si estrae un'entità, si possono usare tutti i suoi attributi come chiavi di ordinamento, ma se estrae solo un particolare attributo si potrà usare solo quest'ultimo come chiave.
 
-Più chiavi possono essere separate da virgole, e ciascuna chiave può avere un ordinamento `ASC` (ascendente) o `DESC` (discendente).
+Più chiavi possono essere separate da virgole, e ciascuna chiave può avere un ordinamento `ASC` (ascendente) o `DESC` (discendente). 
 
-<!------------------- END SLIDE 076 -------------------------->
+<!------------------- END SLIDE 076 it -------------------------->
 
-<!----------------- BEGIN SLIDE 077 -------------------------->
+<!----------------- BEGIN SLIDE 077 it -------------------------->
+
+### 6.12. JPQL: UPDATE e DELETE
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 077
 
-### JPQL: UPDATE e DELETE
+
 
 
 Le clausole `UPDATE` e `DELETE` vengono utilizzate, come in SQL, per eseguire operazioni di modifica o cancellazione multipla su tutte le entità **eventualmente filtrate da una clausola WHERE**.
 
 `UPDATE` ha come parametro il nome di un'entità con eventuale alias ed è seguita da una clausola `SET` che assegna un valore alle proprietà di questa entità: `UPDATE Entity1 e SET campo = "valore",... WHERE e.numero >= 10`
 
-`DELETE` deve essere seguita da una clausola `FROM` che indichi il nome di un'entità con eventuale alias: `DELETE FROM Entity1 e WHERE e.numero >= 10`
+`DELETE` deve essere seguita da una clausola `FROM` che indichi il nome di un'entità con eventuale alias: `DELETE FROM Entity1 e WHERE e.numero >= 10` 
 
-<!------------------- END SLIDE 077 -------------------------->
+<!------------------- END SLIDE 077 it -------------------------->
 
-<!----------------- BEGIN SLIDE 078 -------------------------->
-> 078
+<!----------------- BEGIN SLIDE 078 it -------------------------->
 
-## Argomenti Avanzati
-
+## 7. Argomenti Avanzati
 
 
+<!----------------- COLUMN 1 -------------------------->
 
-<!------------------- END SLIDE 078 -------------------------->
+> 078 
 
-<!----------------- BEGIN SLIDE 079 -------------------------->
+<!------------------- END SLIDE 078 it -------------------------->
+
+<!----------------- BEGIN SLIDE 079 it -------------------------->
+
+### 7.1. Persistenza in PHP
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 079
 
-### Persistenza in PHP
+
 
 
 Oltre a JPA in Java, tutti i framework di programmazione più diffusi forniscono sistemi di Object Relational Mapping e database abstraction.  
 
-In PHP, ad esempio, va citato **Doctrine** (http://www.doctrine-project.org/) che fornisce  *funzionalità, annotazioni e query language praticamente identici a JPA*, grazie ai quali dopo aver studiato JPA si potrà immediatamente usare Doctrine per la persistenza in PHP!  
+In PHP, ad esempio, va citato **Doctrine** (http://www.doctrine-project.org/) che fornisce  *funzionalità, annotazioni e query language praticamente identici a JPA*, grazie ai quali dopo aver studiato JPA si potrà immediatamente usare Doctrine per la persistenza in PHP! 
 
-<!------------------- END SLIDE 079 -------------------------->
+<!------------------- END SLIDE 079 it -------------------------->
 
-<!----------------- BEGIN SLIDE 080 -------------------------->
+<!----------------- BEGIN SLIDE 080 it -------------------------->
+
+### 7.2. Riferimenti
+
+
+<!----------------- COLUMN 1 -------------------------->
+
 > 080
 
-### Riferimenti
+
 
 
 **Jakarta Persistence Specification Project**  
@@ -2453,5 +3160,4 @@ https://github.com/jakartaee/persistence
 **Hybernate ORM**  
 https://hibernate.org/ 
 
-<!------------------- END SLIDE 080 -------------------------->
-
+<!------------------- END SLIDE 080 it -------------------------->
