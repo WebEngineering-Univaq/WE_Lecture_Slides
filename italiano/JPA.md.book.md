@@ -1,8 +1,7 @@
 ---
-title: Persistenza in Java: JPA  
+title: Persistenza in Java (JPA)
 course: Web Engineering
 organization: University of L'Aquila
-
 author: Giuseppe Della Penna
 ---
 
