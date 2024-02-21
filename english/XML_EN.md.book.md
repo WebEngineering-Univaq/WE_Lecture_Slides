@@ -133,7 +133,7 @@ Compared to SGML, XML has been greatly **simplified** and small **extensions** h
 
 
 
-![XML Family](xml1.png) 
+![XML Family](img/xml1.png) 
 
 <!------------------- END SLIDE 003 it -------------------------->
 
@@ -462,7 +462,7 @@ Elements can be nested, i.e., elements may be part of the contents of an outer e
 
 
 
-![Document structure](xml2.png) 
+![Document structure](img/xml2.png) 
 
 <!------------------- END SLIDE 015 it -------------------------->
 

@@ -257,7 +257,7 @@ A message is, essentially, a function to be called (**callback**) accompanied by
 
 
 
-![Execution model](javascript1.png) 
+![Execution model](img/javascript1.png) 
 
 <!------------------- END SLIDE 005 it -------------------------->
 

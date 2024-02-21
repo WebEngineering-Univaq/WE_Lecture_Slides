@@ -2,6 +2,7 @@
 title: Persistenza in Java (JPA)
 course: Web Engineering
 organization: University of L'Aquila
+
 author: Giuseppe Della Penna
 ---
 
@@ -25,7 +26,7 @@ giuseppe.dellapenna@univaq.it
 http://people.disim.univaq.it/dellapenna
 
 
-> *Questo documento si basa sulle slide del corso di Web Engineering, riorganizzate per una migliore esperienza di lettura. Non è un libro di testo completo o un manuale tecnico, e deve essere utilizzato insieme a tutti gli altri materiali didattici del corso. Si prega di segnalare eventuali errori o omissioni all'autore.*
+> *Questo documento si basa sulle slide del corso di Web Engineering, riorganizzate per migliorare l'esperienza di lettura. Non è un libro di testo completo o un manuale tecnico, e deve essere utilizzato insieme a tutti gli altri materiali didattici del corso. Si prega di segnalare eventuali errori o omissioni all'autore.*
 
 > Quest'opera è rilasciata con licenza CC BY-NC-SA 4.0. Per visualizzare una copia di questa licenza, visitate il sito https://creativecommons.org/licenses/by-nc-sa/4.0
 
@@ -269,7 +270,7 @@ Attenzione: se si usa JPA **in un’applicazione JEE**, il relativo server **for
 
 <!----------------- COLUMN 1 -------------------------->
 
-![Architettura JPA](JPA1.png) 
+![Architettura JPA](img/JPA1.png) 
 
 <!------------------- END SLIDE 007 it -------------------------->
 
@@ -1100,7 +1101,7 @@ L'entità **TableSuperEntity** ha InheritanceType=TABLE\_PER\_CLASS.
 
 
 
-![Ereditarietà](JPA2.png)
+![Ereditarietà](img/JPA2.png)
 
 - **SingleSuperEntity** (*_singleSuperEntityId_*, *singleSuperEntityField*, *mappedSuperClassField*, *singleDerivedEntityField*, DTYPE). 
 
@@ -1218,7 +1219,7 @@ In JPA, ogni oggetto-entità può trovarsi in quattro differenti stati:
 > 027
 
 
-![Ciclo di vita](JPA3.png) 
+![Ciclo di vita](img/JPA3.png) 
 
 <!------------------- END SLIDE 027 it -------------------------->
 
@@ -2183,7 +2184,7 @@ Come richiesto dal pattern, deleghiamo gli aggiornamenti veri e proprio all'owne
 
 
 
-![Relazioni](JPA4.png) 
+![Relazioni](img/JPA4.png) 
 
 <!------------------- END SLIDE 050 it -------------------------->
 

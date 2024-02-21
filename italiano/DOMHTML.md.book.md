@@ -28,7 +28,7 @@ giuseppe.dellapenna@univaq.it
 http://people.disim.univaq.it/dellapenna
 
 
-> *Questo documento si basa sulle slide del corso di Web Engineering, riorganizzate per una migliore esperienza di lettura. Non è un libro di testo completo o un manuale tecnico, e deve essere utilizzato insieme a tutti gli altri materiali didattici del corso. Si prega di segnalare eventuali errori o omissioni all'autore.*
+> *Questo documento si basa sulle slide del corso di Web Engineering, riorganizzate per migliorare l'esperienza di lettura. Non è un libro di testo completo o un manuale tecnico, e deve essere utilizzato insieme a tutti gli altri materiali didattici del corso. Si prega di segnalare eventuali errori o omissioni all'autore.*
 
 > Quest'opera è rilasciata con licenza CC BY-NC-SA 4.0. Per visualizzare una copia di questa licenza, visitate il sito https://creativecommons.org/licenses/by-nc-sa/4.0
 
@@ -247,7 +247,7 @@ Il documento XML che segue
 
 corrisponde a questo albero
 
-![Document tree](domhtml1.png) 
+![Document tree](img/domhtml1.png) 
 
 <!------------------- END SLIDE 007 it -------------------------->
 
@@ -272,7 +272,7 @@ L'albero è composto da generici **nodi**, ognuno dei quali ha una classificazio
 
 
 
-![Tree elements](domhtml2.png) 
+![Tree elements](img/domhtml2.png) 
 
 <!------------------- END SLIDE 008 it -------------------------->
 
@@ -288,7 +288,7 @@ L'albero è composto da generici **nodi**, ognuno dei quali ha una classificazio
 
 
 
-![Document tree elements](domhtml3.png)
+![Document tree elements](img/domhtml3.png)
 
  
 
@@ -325,7 +325,7 @@ L'albero è composto da generici **nodi**, ognuno dei quali ha una classificazio
 
 
 
-![DOM classes](domhtml4.png) 
+![DOM classes](img/domhtml4.png) 
 
 <!------------------- END SLIDE 010 it -------------------------->
 
@@ -1739,7 +1739,7 @@ Un click sul testo del paragrafo attiva un processo di bubbling che "mostra" l'e
 
 
 
-![Bubbling](domhtml5.png) 
+![Bubbling](img/domhtml5.png) 
 
 <!------------------- END SLIDE 044 it -------------------------->
 
@@ -1790,7 +1790,7 @@ Un click sul testo del paragrafo attiva un processo di capturing che "mostra" *p
 
 
 
-![Capturing](domhtml6.png) 
+![Capturing](img/domhtml6.png) 
 
 <!------------------- END SLIDE 046 it -------------------------->
 
@@ -1825,7 +1825,7 @@ Ogni evento viene prima propagato in fase di capturing e successivamente in fase
 
 
 
-![Propagation](domhtml7.png) 
+![Propagation](img/domhtml7.png) 
 
 <!------------------- END SLIDE 047 it -------------------------->
 

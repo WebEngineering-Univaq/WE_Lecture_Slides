@@ -244,7 +244,7 @@ The following XML document
 
 corresponds to this document tree
 
-![Document tree](domhtml1.png) 
+![Document tree](img/domhtml1.png) 
 
 <!------------------- END SLIDE 007 it -------------------------->
 
@@ -269,7 +269,7 @@ The tree is composed of generic **nodes**, each of which has a more specific cla
 
 
 
-![Tree elements](domhtml2.png) 
+![Tree elements](img/domhtml2.png) 
 
 <!------------------- END SLIDE 008 it -------------------------->
 
@@ -284,7 +284,7 @@ The tree is composed of generic **nodes**, each of which has a more specific cla
 
 
 
-![Document tree elements](domhtml3.png)
+![Document tree elements](img/domhtml3.png)
 
  
 
@@ -320,7 +320,7 @@ Node **relationships**:
 
 
 
-![DOM classes](domhtml4.png) 
+![DOM classes](img/domhtml4.png) 
 
 <!------------------- END SLIDE 010 it -------------------------->
 
@@ -1724,7 +1724,7 @@ A click on the text of the paragraph starts a bubbling process which "shows" the
 
 
 
-![Bubbling](domhtml5.png) 
+![Bubbling](img/domhtml5.png) 
 
 <!------------------- END SLIDE 044 it -------------------------->
 
@@ -1776,7 +1776,7 @@ A click on the text of the paragraph activates a capturing process that *first* 
 
 
 
-![Capturing](domhtml6.png) 
+![Capturing](img/domhtml6.png) 
 
 <!------------------- END SLIDE 046 it -------------------------->
 
@@ -1812,7 +1812,7 @@ Each event is propagated first in capturing phase and then in bubbling phase.
 
 
 
-![Propagation](domhtml7.png) 
+![Propagation](img/domhtml7.png) 
 
 <!------------------- END SLIDE 047 it -------------------------->
 
