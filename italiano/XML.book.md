@@ -76,6 +76,8 @@ http://people.disim.univaq.it/dellapenna
 
     - [8.1. Sintassi](#81-sintassi)
 
+    - [8.2. Esempi](#82-esempi)
+
  - [9. Entità](#9-entità)
 
     - [9.1. Uso](#91-uso)
@@ -419,9 +421,16 @@ Esistono tuttavia altri sistemi di definizione per le specifiche dei linguaggi X
 
 
 
-```java
+```xml
 <!DOCTYPE RootElement ExternalDTDReference [InternalDTDSubset ]>
 ```
+
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 La dichiarazione si apre con il tag `<!DOCTYPE` ed è chiusa dal simbolo `>`. Al suo interno appaiono i seguenti elementi.
 
@@ -736,7 +745,7 @@ Gli uri usati nelle dichiarazioni sono solo identificatori convenzionali per ass
 
 <!----------------- BEGIN SLIDE 024 it -------------------------->
 
-####  Esempi
+### 8.2. Esempi
 
 
 <!----------------- COLUMN 1 -------------------------->
@@ -938,15 +947,16 @@ Il tag di apertura di una sezione CDATA è la stringa `<![CDATA[`, mentre il tag
 
 
 
-Le Processing Instructions (PI) vengono usate per   **passare informazioni extra ai programmi che manipoleranno il file XML** e possono apparire ovunque nel documento.
+```xml
+<?target  data ?>
+```
 
-La forma generale di una PI prevede un tag di apertura del tipo `<?target`, dove *target* identifica quale applicazione dovrà elaborare la processing instruction, e un tag di chiusura `?>`.   
 
-Notare che la dichiarazione XML non è altro che una processing instruction.  
+```xml
+[1] <?xml-stylesheet type="text/xsl" href="style.xslt"?>      
+[2] <?php echo "hello" ?>  
+```
 
-All'interno del tag è possibile scrivere qualsiasi tipo di dati testuali. L'unica regola è che i dati non possono contenere la sequenza "?\>". I due esempi riportati sotto sono rispettivamente (1) la PI che associa a un documento il suo foglio di stile XSL e (2) uno script PHP.
-
--------
  
 
 
@@ -954,14 +964,13 @@ All'interno del tag è possibile scrivere qualsiasi tipo di dati testuali. L'uni
 
 
 
-```java
-<?xml-stylesheet type="text/xsl" href="sms_pdf.xslt"?>      
-<?php echo "hello" ?>  
-```
+Le Processing Instructions (PI) vengono usate per   **passare informazioni extra ai programmi che manipoleranno il file XML** e possono apparire ovunque nel documento.
 
-```java
-<?target  data ?>
-``` 
+La forma generale di una PI prevede un tag di apertura del tipo `<?target`, dove *target* identifica quale applicazione dovrà elaborare la processing instruction, e un tag di chiusura `?>`.   
+
+Notare che la dichiarazione XML non è altro che una processing instruction.  
+
+All'interno del tag è possibile scrivere qualsiasi tipo di dati testuali. L'unica regola è che i dati non possono contenere la sequenza "?\>". I due esempi riportati sotto sono rispettivamente (1) la PI che associa a un documento il suo foglio di stile XSL e (2) uno script PHP. 
 
 <!------------------- END SLIDE 030 it -------------------------->
 
@@ -976,9 +985,16 @@ All'interno del tag è possibile scrivere qualsiasi tipo di dati testuali. L'uni
 
 
 
-```java
+```xml
 <!-- Questo è un commento XML (e SGML) -->    
 ```
+
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 I commenti sono utili agli esseri umani, e vengono ignorati dai programmi di manipolazione XML. 
 

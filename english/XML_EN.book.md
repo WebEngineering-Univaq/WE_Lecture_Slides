@@ -76,6 +76,8 @@ http://people.disim.univaq.it/dellapenna
 
     - [8.1. Syntax](#81-syntax)
 
+    - [8.2. Examples](#82-examples)
+
  - [9. Entities](#9-entities)
 
     - [9.1. Use](#91-use)
@@ -298,6 +300,13 @@ In addition, tags may contain **attributes** and **namespaces**.
 <?xml version="1.0" encoding="UTF-8"?> 
 ```
 
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
+
 The first line of the prologue is the **XML declaration**, which is *mandatory* and must appear at *the very beginning of the document*. 
 
 The expression `<?xml` is called **the opening tag** of the XML declaration. The statement is closed by the symbol `?>`. 
@@ -414,6 +423,13 @@ However, there are other formalisms for the definition of XML languages, such as
 ```xml
 <!DOCTYPE RootElement ExternalDTDReference [InternalDTDSubset ]>
 ```
+
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 
 The declaration begins with the tag `<!DOCTYPE` and is closed by the symbol `>`. Inside there are the following:
@@ -727,7 +743,7 @@ In each element it is possible to declare multiple explicit namespace prefixes, 
 
 <!----------------- BEGIN SLIDE 024 it -------------------------->
 
-####  Examples
+### 8.2. Examples
 
 
 <!----------------- COLUMN 1 -------------------------->
@@ -928,13 +944,14 @@ The opening tag of a CDATA section is the string `<![CDATA[`, while the closing 
 
 
 
-The Processing Instructions (PIs) are used to **pass extra information to programs that manipulate the XML file** and can appear anywhere in the document. 
+```xml
+<?target  data ?>
+```
 
-The general form of a PI has an opening tag like `<?target` where *target* identifies which application will process the instruction, and a closing tag `?>`. 
-
-Note that the XML declaration is nothing more than a processing instruction.   
-
-Inside the tag you can write any type of textual data. The only rule is that the data cannot contain the sequence "?\>". The two examples below are respectively (1) the PI that associates an XSL style sheet to a document and (2) a PHP script. 
+```xml
+[1] <?xml-stylesheet type="text/xsl" href="style.xslt"?>      
+[2] <?php echo "hello" ?>  
+```
 
  
 
@@ -943,14 +960,13 @@ Inside the tag you can write any type of textual data. The only rule is that the
 
 
 
-```java
-<?xml-stylesheet type="text/xsl" href="sms_pdf.xslt"?>      
-<?php echo "hello" ?>  
-```
+The Processing Instructions (PIs) are used to **pass extra information to programs that manipulate the XML file** and can appear anywhere in the document. 
 
-```java
-<?target  data ?>
-``` 
+The general form of a PI has an opening tag like `<?target` where *target* identifies which application will process the instruction, and a closing tag `?>`. 
+
+Note that the XML declaration is nothing more than a processing instruction.   
+
+Inside the tag you can write any type of textual data. The only rule is that the data cannot contain the sequence "?\>". The two examples below are respectively (1) the PI that associates an XSL style sheet to a document and (2) a PHP script. 
 
 <!------------------- END SLIDE 030 it -------------------------->
 
@@ -968,6 +984,13 @@ Inside the tag you can write any type of textual data. The only rule is that the
 ```xml
 <!– This is a XML (and SGML) comment -->     
 ```
+
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 Comments are useful to humans, and are ignored by XML manipulation programs. 
 
