@@ -371,13 +371,22 @@ Although the Unicode character set is unique, there are more than one encodings 
 
   - UTF-8 uses  **one byte** to represent characters in the **ASCII** set, **two bytes** for the most common characters in other alphabets, **three bytes** for the rest of the BMP, and **four bytes** for supplementary characters. 
 
-  - UTF-16 uses 2 bytes for any character in the BMP and 4 bytes for additional characters.  
+  - UTF-16 uses two bytes for any character in the BMP and four bytes for additional characters.  
 
-  - UTF-32 uses 4 bytes for all characters.  
+  - UTF-32 uses four bytes for all characters.  
 
 So, although the code point for the letter "á" in the Unicode character set is always 225, in UTF-8 it is represented by two bytes.    
 
-In HTML, and on the Internet in general,  **Unicode with UTF-8 encoding is currently considered the standard**.
+In HTML, and on the Internet in general,  **Unicode with UTF-8 encoding is currently considered the standard**. 
+
+<!------------------- END SLIDE 011 it -------------------------->
+
+<!----------------- BEGIN SLIDE 011b it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 011b
 
 Incredibly, even the malicious use of Unicode character encodings can exploit some vulnerabilities that allow, for example, the theft of information.      
 
@@ -385,7 +394,7 @@ Incredibly, even the malicious use of Unicode character encodings can exploit so
 
 Since **many characters from different languages can visually resemble each other**, it is possible to trick a user into browsing a site whose address is visually similar to that of a secure site, even if the characters it contains are actually different, and will therefore lead to a malicious site (    **homography** attacks), for example using the Cyrillic character "а" (Unicode 0430) instead of the ASCII character (Unicode 0041) 
 
-<!------------------- END SLIDE 011 it -------------------------->
+<!------------------- END SLIDE 011b it -------------------------->
 
 <!----------------- BEGIN SLIDE 012 it -------------------------->
 
@@ -401,7 +410,7 @@ Since **many characters from different languages can visually resemble each othe
 
 XML documents can (and should) be associated to **a formal specification that defines the language used** in the document and its syntax rules. 
 
-The default XML way to create this specification is the *document type definition* **(DTD)** 
+The default XML way to create this specification is the *document type definition* (DTD)
 
 If a document has an associated DTD, you must include a DOCTYPE declaration in the prologue that declares the association. This statement inherits the syntax of the corresponding SGML one.
 
@@ -421,7 +430,7 @@ However, there are other formalisms for the definition of XML languages, such as
 
 
 ```xml
-<!DOCTYPE RootElement ExternalDTDReference [InternalDTDSubset ]>
+<!DOCTYPE RootElement ExternalDTDReference [InternalDTDSubset]>
 ```
 
  
@@ -494,13 +503,13 @@ Elements can be nested, i.e., elements may be part of the contents of an outer e
 
 
 
-Element names are **case-sensitive**. 
+- Element names are **case-sensitive**. 
 
-**Each element must be closed**, that is, its closing tag must appear before the end of the document. 
+- **Each element must be closed**, that is, its closing tag must appear before the end of the document. 
 
-In the case of nested elements, **end tags must appear in reverse order of opening**, i.e., the element contents cannot "overlap". 
+- In the case of nested elements, **end tags must appear in reverse order of opening**, i.e., the element contents cannot "overlap". 
 
-Every XML document must have **a unique "root" element**, where all the others are nested. 
+- Every XML document must have **a unique "root" element**, where all the others are nested. 
 
 <!------------------- END SLIDE 016 it -------------------------->
 
@@ -628,15 +637,15 @@ The value of an attribute should be **simple**: otherwise it is better to use a 
 
 
 
-Attribute names are **case-sensitive**. 
+- Attribute names are **case-sensitive**. 
 
-The same element cannot contain two attributes with the same name. 
+- The same element cannot contain two attributes with the same name. 
 
-Attributes with no value (only name) are not allowed. 
+- Attributes with no value (only name) are not allowed. 
 
-The attribute value must be specified **between single or double quotes**. 
+- The attribute value must be specified **between single or double quotes**. 
 
-The value may contain **entity references**, but no other structure (XML elements, processing instructions, etc.). 
+- The value may contain **entity references**, but no other structure (XML elements, processing instructions, etc.). 
 
 <!------------------- END SLIDE 020 it -------------------------->
 
@@ -785,7 +794,7 @@ In this example:
 
 - The namespace "*ns4*" contains the *xsl:attr* attribute and the *xsl:f* element    
 
-*Note that there are two elements d in the document, belonging to different namepsaces!* 
+Note that there are two elements *d* in the document, belonging to different namepsaces. 
 
 <!------------------- END SLIDE 024 it -------------------------->
 
@@ -889,11 +898,11 @@ For **parsed** entities:
 
 The text that can be inserted in XML documents **includes all the characters defined in UNICODE**. 
 
-You can insert special or reserved characters using **character entities**. 
+- You can insert special or reserved characters using **character entities**. 
 
-You can insert predefined strings using **general entities**. 
+- You can insert predefined strings using **general entities**. 
 
-**You can not explicitly use the characters '\>', '\<' and '&'**, for which you should always use the corresponding character entities. 
+- **You can not explicitly use the characters '\>', '\<' and '&'**, for which you should always use the corresponding character entities. 
 
 <!------------------- END SLIDE 028 it -------------------------->
 
@@ -992,14 +1001,10 @@ Inside the tag you can write any type of textual data. The only rule is that the
 
 
 
-Comments are useful to humans, and are ignored by XML manipulation programs. 
+Comments are useful to humans, and are ignored by XML manipulation programs. They may appear anywhere except within the value of an attribute. 
 
-Comments may appear anywhere except within the value of an attribute. 
-
-The comments follow the syntax of SGML, and are identical to those used, for example, in HTML. 
-
-The opening tag of a comment is the sequence `<!--`, and the closing tag is the sequence `-->` 
-
+The comments follow the syntax of SGML: the opening tag of a comment is the sequence `<!--`, 
+and the closing tag is the sequence `-->`.    
 The content of the comment is generic text, which should not contain the closing sequence. 
 
 <!------------------- END SLIDE 031 it -------------------------->
@@ -1018,7 +1023,8 @@ The content of the comment is generic text, which should not contain the closing
 
 **An XML document is** ***well formed*** if it respects the general syntax rules seen in the previous slides. 
 
-**An XML document is** ***valid*** if it is well formed and meets the syntactic and semantic rules contained in the associated DTD.    *A document with no DTD is never valid*. 
+**An XML document is** ***valid*** if it is well formed and meets the syntactic and semantic rules contained in the associated DTD. 
+*A document with no DTD is never valid*. 
 
 There are **validating and** **not validating parsers**. The latter may ignore any DTD, except for the definition of general entities. 
 

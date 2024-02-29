@@ -116,9 +116,9 @@ http://people.disim.univaq.it/dellapenna
 
 XML è un metalinguaggio, cioè un linguaggio sulla cui base vengono creati nuovi linguaggi.
 
-In particolare, XML definisce le regole di base per la creazione **di linguaggi markup**, cioè linguaggi il cui contenuto (testuale) è strutturato tramite particolari delimitatori detti tag.
+In particolare, XML definisce le regole di base per la creazione **di linguaggi markup**, cioè linguaggi il cui contenuto (testuale) è strutturato tramite particolari delimitatori detti *tag*.
 
-XML deriva da SGML, un altro metalinguaggio noto ma diffuso solo in ambienti professionali (coe l'editoria).
+XML deriva da SGML, un altro metalinguaggio noto ma diffuso solo in ambienti professionali (come l'editoria).
 
 Rispetto a SGML, XML è stato notevolmente **semplificato** e sono state aggiunte piccole **estensioni** per renderne l'uso più agevole. 
 
@@ -178,7 +178,7 @@ D'altra parte, XML introduce alcune nuove problematiche realtive alla complessit
 
 - Le librerie di manipolazione XML non sono veloci come i parser scritti ad-hoc per formati specifici, soprattutto se binari.  
 
-- In generale, quindi, l'uso di XML si presenta più oneroso in termini di risorse necessarie (tempi di trasmissione, memoria e tempo CPU necessari alla sua decodifica, ecc.) 
+In generale, quindi, l'uso di XML si presenta più oneroso in termini di risorse necessarie (tempi di trasmissione, memoria e tempo CPU necessari alla sua decodifica, ecc.) 
 
 <!------------------- END SLIDE 005 it -------------------------->
 
@@ -336,13 +336,13 @@ Gli attributi della dichiarazione XML sono:
 
 
 
-**I documenti XML, sono costituiti soprattutto da testo**, per cui è importante capire come questo può essere rappresentato su una macchina.
+**I documenti XML sono costituiti soprattutto da testo**, per cui è importante capire come questo può essere rappresentato su una macchina.
 
-Un **set di caratteri** (*character set* , *charset*) definisce l'insieme di caratteri (lettere, numeri, punteggiatura, simboli,…) necessari per un particolare scopo (non necessariamente legato alla trasmissione e conservazione digitale).  
+Un **set di caratteri** (*character set*, *charset*) definisce l'insieme di caratteri (lettere, numeri, punteggiatura, simboli,...) necessari per un particolare scopo (non necessariamente legato alla trasmissione e conservazione digitale).  
 
-Un **set di caratteri codificato**  è un set di caratteri a ciascuno dei quali è stato assegnato un numero univoco. Gli elementi di un set di caratteri codificato sono anche noti come       **code points** . Un code point, quindi, rappresenta la posizione di un carattere nel set di caratteri codificato: ad esempio, il code point per la lettera "á" nel set di caratteri codificati Unicode è 225.                
+Un **set di caratteri codificato**  è un set di caratteri a ciascuno dei quali è stato assegnato un numero univoco. Gli elementi di un set di caratteri codificato sono anche noti come  **code points**. Un code point, quindi, rappresenta la posizione di un carattere nel set di caratteri codificato: ad esempio, il code point per la lettera "á" nel set di caratteri codificati Unicode è 225.                
 
-La **codifica dei caratteri** (*character* *encoding*) definisce infine il modo in cui il set di caratteri codificato (o meglio i suoi code point numerici) verranno mappati su bytes per essere salvati su supporti digitali e trasmessi in rete.          
+La **codifica dei caratteri** (*character encoding*) definisce infine il modo in cui il set di caratteri codificato (o meglio i suoi code point numerici) verranno mappati su bytes per essere salvati su supporti digitali e trasmessi in rete.          
 
 Molti standard storici di codifica dei caratteri (ad esempio gli ISO 8859, ancora largamente diffusi) utilizzano un singolo byte per ogni code point che rappresenta semplicemente la posizione del carattere nel set. Ad esempio, la "A" nel set codificato ISO 8859-1 è il 65° carattere, ed è quindi codificata per la rappresentazione un byte con il valore di 65.                    
 
@@ -366,27 +366,36 @@ Lo **Unicode Consortium**   ha definito un ampio set di caratteri che include tu
 
 Lo standard Unicode è fondamentale per l'architettura del Web e dei sistemi operativi, e sta gradualmente sostituendo i set di caratteri specifici creati in passato da diverse organizzazioni, quali l'ISO.      
 
-I primi 65536 code points nel set di caratteri Unicode costituiscono il        **Basic Multilingual Plane**     (BMP), che include la maggior parte dei caratteri più comunemente usati. Sono inoltre disponibili circa un milione di code points aggiuntivi per        **caratteri supplementari**, comprese le emoji.  
+I primi 65536 code points nel set di caratteri Unicode costituiscono il **Basic Multilingual Plane** (BMP), che include la maggior parte dei caratteri più comunemente usati. Sono inoltre disponibili circa un milione di code points aggiuntivi per   **caratteri supplementari**, comprese le emoji.  
 
-Sebbene il set di caratteri Unicode sia unico, le codifiche disponibili sono più di una:   **UTF-8**, **UTF-16** e **UTF-32**. 
+Sebbene il set di caratteri Unicode sia unico, le codifiche disponibili sono più di una: **UTF-8**, **UTF-16** e **UTF-32**. 
 
 - UTF-8 utilizza  **un byte**  per rappresentare i caratteri nel set **ASCII**, **due byte** per i caratteri più comuni in altri alfabeti,  **tre byte** per il resto del BMP e  **quattro byte** per i caratteri supplementari.   
 
-- UTF-16 utilizza 2 byte per qualsiasi carattere nel BMP e 4 byte per i caratteri supplementari.  
+- UTF-16 utilizza due byte per qualsiasi carattere nel BMP e quattro byte per i caratteri supplementari.  
 
-- UTF-32 utilizza 4 byte per tutti i caratteri. 
+- UTF-32 utilizza quattro byte per tutti i caratteri. 
 
 Quindi, sebbene il code point per la lettera "á" nel set di caratteri Unicode sia sempre 225, in UTF-8 è rappresentato da due byte.             
 
-In HTML, e in generale su Internet, attualmente si considera come **standard lo Unicode con codifica UTF-8**.  
+In HTML, e in generale su Internet, attualmente si considera come **standard lo Unicode con codifica UTF-8**. 
 
-Incredibilmente, persino l'uso malizioso dei *character encoding*    Unicode può evidenziare **vulnerabilità** e permettere, ad esempio, il furto di informazioni.
+<!------------------- END SLIDE 011 it -------------------------->
 
-**UTF-7, originariamente definito per codificare il solo BMP, permetteva codifiche alternative di caratteri ASCII come "\<" e "\>". Le vecchie versioni**  **di Internet Explorer** potevano essere indotte a interpretare una pagina come UTF-7, e in questo caso le sequenze +ADw- e +AD4-, che le maggior parte dei validatori tratta come come testo semplice, venivano trasformate in "\<" e "\>" permettendo attacchi                 **XSS**.
+<!----------------- BEGIN SLIDE 011b it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 011b
+
+Incredibilmente, persino l'uso malizioso dei *character encoding* può evidenziare **vulnerabilità** e permettere, ad esempio, il furto di informazioni.
+
+**UTF-7, originariamente definito per codificare il solo BMP, permetteva codifiche alternative di caratteri ASCII come "\<" e "\>". Le vecchie versioni**  **di Internet Explorer** potevano essere indotte a interpretare una pagina come UTF-7, e in questo caso le sequenze +ADw- e +AD4-, che le maggior parte dei validatori tratta come come testo semplice, venivano trasformate in "\<" e "\>" permettendo attacchi **XSS**.
 
 Poiché **molti caratteri di lingue diverse possono somigliarsi visivamente**, è possibile indurre un utente a navigare su un sito il cui indirizzo è visivamente simile a quello di un sito sicuro, anche se in realtà i caratteri in esso contenuti sono diversi, e quindi porteranno a un sito malevolo (attacchi di **omografia**), ad esempio usando il carattere cirillico "а" (Unicode 0430) invece di quello ASCII (Unicode 0041) 
 
-<!------------------- END SLIDE 011 it -------------------------->
+<!------------------- END SLIDE 011b it -------------------------->
 
 <!----------------- BEGIN SLIDE 012 it -------------------------->
 
@@ -402,7 +411,7 @@ Poiché **molti caratteri di lingue diverse possono somigliarsi visivamente**, �
 
 Ai documenti XML possono (e dovrebbero) essere associate delle specifiche che **definiscono formalmente il linguaggio** utilizzato nel documento e le sue regole sintattiche.
 
-Il sistema predefinito in XML per creare queste specifiche è la *document type definition*     (DTD)
+Il sistema predefinito in XML per creare queste specifiche è la *document type definition* (DTD)
 
 Se a un documento è associata una **DTD**, è necessario inserire nel prologo una dichiarazione DOCTYPE che dichiari l'associazione. Questa dichiarazione eredita la sintassi del corrispondente SGML.
 
@@ -422,7 +431,7 @@ Esistono tuttavia altri sistemi di definizione per le specifiche dei linguaggi X
 
 
 ```xml
-<!DOCTYPE RootElement ExternalDTDReference [InternalDTDSubset ]>
+<!DOCTYPE RootElement ExternalDTDReference [InternalDTDSubset]>
 ```
 
  
@@ -495,13 +504,13 @@ Gli elementi possono essere nidificati, cioè degli elementi possono far parte d
 
 
 
-I nomi degli elementi sono **case-sensitive**.
+- I nomi degli elementi sono **case-sensitive**.
 
-**Ogni elemento deve essere chiuso**, cioè il suo tag di chiusura deve apparire prima della fine del documento.
+- **Ogni elemento deve essere chiuso**, cioè il suo tag di chiusura deve apparire prima della fine del documento.
 
-Nel caso di elementi nidificati, **i tag di chiusura devono apparire in ordine inverso a quello di apertura**, cioè i contenuti degli elementi non si possono "accavallare".
+- Nel caso di elementi nidificati, **i tag di chiusura devono apparire in ordine inverso a quello di apertura**, cioè i contenuti degli elementi non si possono "accavallare".
 
-Ogni documento XML deve avere un unico elemento "**radice**", in cui tutti gli altri sono nidificati. 
+- Ogni documento XML deve avere un unico elemento "**radice**", in cui tutti gli altri sono nidificati. 
 
 <!------------------- END SLIDE 016 it -------------------------->
 
@@ -630,15 +639,15 @@ Il valore di un attributo deve essere **semplice**: in caso contrario è meglio 
 
 
 
-I nomi degli attributi sono **case-sensitive**.
+- I nomi degli attributi sono **case-sensitive**.
 
-Lo stesso elemento non può contenere due attributi con lo stesso nome.
+- Lo stesso elemento non può contenere due attributi con lo stesso nome.
 
-Non sono ammessi attributi senza valore (solo nome).
+- Non sono ammessi attributi senza valore (solo nome).
 
-Il valore degli attributi deve essere specificato **tra virgolette semplici o doppie**.
+- Il valore degli attributi deve essere specificato **tra virgolette semplici o doppie**.
 
-Il valore può contenere **riferimenti ad entità** ma nessun altra struttura XML (elementi, processing instructions, ecc...). 
+- Il valore può contenere **riferimenti ad entità** ma nessun altra struttura XML (elementi, processing instructions, ecc...). 
 
 <!------------------- END SLIDE 020 it -------------------------->
 
@@ -787,7 +796,7 @@ In questo esempio:
 
 - Il namespace "*ns4*" contiene l'elemento *xsl:f* e l'attributo *xsl:attr*.    
 
-*Notare che esistono due elementi d nel documento, appartenenti a namespace diversi*. 
+Notare che esistono due elementi *d* nel documento, appartenenti a namespace diversi. 
 
 <!------------------- END SLIDE 024 it -------------------------->
 
@@ -892,11 +901,11 @@ Nel caso delle entità **parsed**:
 
 Il testo inseribile nei documenti XML comprende tutti i caratteri **definiti nel set di caratteri dichiarato nel documento**.
 
-È possibile inserire caratteri speciali o riservati tramite **entità carattere**.
+- È possibile inserire caratteri speciali o riservati tramite **entità carattere**.
 
-È possibile inserire stringhe predefinite tramite **entità generali**.
+- È possibile inserire stringhe predefinite tramite **entità generali**.
 
-**Non è possibile usare esplicitamente i caratteri '\>', '\<' e '&'**, per i quali è sempre necessario usare le corrispondenti entità carattere. 
+- **Non è possibile usare esplicitamente i caratteri '\>', '\<' e '&'**, per i quali è sempre necessario usare le corrispondenti entità carattere. 
 
 <!------------------- END SLIDE 028 it -------------------------->
 
@@ -996,14 +1005,11 @@ All'interno del tag è possibile scrivere qualsiasi tipo di dati testuali. L'uni
 
 
 
-I commenti sono utili agli esseri umani, e vengono ignorati dai programmi di manipolazione XML. 
+I commenti sono utili agli esseri umani, e vengono ignorati dai programmi di manipolazione XML.
+Possono apparire ovunque, tranne che all'interno del valore di un attributo.
 
-I commenti possono apparire ovunque, tranne che all'interno del valore di un attributo.
-
-I commenti XML seguono la sintassi SGML, e sono quindi identici a quelli usati, ad esempio, in HTML.
-
-Il tag di apertura di un commento è la sequenza `<!--`, mentre il tag di chiusura è la sequenza `-->`
-
+I commenti XML seguono la sintassi SGML: il tag di apertura di un commento è la sequenza 
+`<!--`, mentre il tag di chiusura è la sequenza `-->`.    
 Il contenuto del commento è testo generico, che non deve però contenere la sequenza di chiusura. 
 
 <!------------------- END SLIDE 031 it -------------------------->
@@ -1022,7 +1028,8 @@ Il contenuto del commento è testo generico, che non deve però contenere la seq
 
 **Un documento XML è** ***ben formato*** se rispetta le regole generali di sintassi viste nella parte precedente.
 
-**Un documento XML è** ***valido*** se è ben formato e rispetta le regole sintattiche e semantiche contenute del DTD associato. *Un documento senza DTD non è mai valido*.
+**Un documento XML è** ***valido*** se è ben formato e rispetta le regole sintattiche e semantiche contenute del DTD associato. 
+*Un documento senza DTD non è mai valido*.
 
 Esistono **parser validanti e non validanti** . Questi ultimi possono ignorare tutto l'eventuale DTD, tranne le dichiarazioni di entità generali. 
 
