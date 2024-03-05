@@ -268,15 +268,24 @@ Although the Unicode character set is unique, there are more than one encodings 
 
 So, although the code point for the letter "á" in the Unicode character set is always 225, in UTF-8 it is represented by two bytes. 
 
-In HTML, and on the Internet in general, **Unicode with UTF-8 encoding is currently considered the standard**.
+In HTML, and on the Internet in general, **Unicode with UTF-8 encoding is currently considered the standard**. 
+
+<!------------------- END SLIDE 007 it -------------------------->
+
+<!----------------- BEGIN SLIDE 007b it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 007b
 
 Incredibly, even the malicious use of Unicode character encodings can exploit some vulnerabilities that allow, for example, the theft of information. 
 
 **UTF-7, originally defined to encode BMP only, allowed alternative encodings of ASCII characters such as "\<" and "\>". Older versions of Internet Explorer** could be tricked into interpreting a page as UTF-7, and in this case the sequences +ADw- and +AD4-, which most validators treat as plain text, were transformed into "\<" and "\>" allowing XSS attacks. 
 
-Since **many characters from different languages can visually resemble each other**, it is possible to trick a user into browsing a site whose address is visually similar to that of a secure site, even if the characters it contains are actually different, and will therefore lead to a malicious site ( **homography** attacks), for example using the Cyrillic character "а" (Unicode 0430) instead of the ASCII character (Unicode 0041) 
+Since **many characters from different languages can visually resemble each other**, it is possible to trick a user into browsing a site whose address is visually similar to that of a secure site, even if the characters it contains are actually different, and will therefore lead to a malicious site ( **homography** attacks), for example using the Cyrillic character "а" (Unicode 0430) instead of the ASCII character (Unicode 0041). 
 
-<!------------------- END SLIDE 007 it -------------------------->
+<!------------------- END SLIDE 007b it -------------------------->
 
 <!----------------- BEGIN SLIDE 008 it -------------------------->
 
@@ -337,7 +346,6 @@ The **path** is a sequence of strings separated by slashes (/) which, as in a fi
 
 
 The resources exchanged over a network must be adequately **represented** in order to be understandable by the devices that are communicating. 
-
 For example, when you transmit an image you are not actually transmitting the image, but a representation of it, encoded for example using the JPEG format. 
 
 For communication to be effective, the two parties must agree not only on the protocol, but also on the formats to be used to exchange resources. 
@@ -734,7 +742,7 @@ The element `<br>` ends the current line. The text is wrapped, without starting 
 
 The `clear` attribute is used to indicate the distribution of floating objects before the line break. If present, the floats are arranged before break. *It is not allowed in HTML5*.
 
-Browsers can add implicit `<br>` instead of spaces to adapt the text to the window size (word wrap). Use nonbreakable spaces (&nbsp;) to avoid this effect. 
+Browsers can add implicit `<br>` instead of spaces to adapt the text to the window size (word wrap). Use nonbreakable spaces (`&nbsp;`) to avoid this effect. 
 
 <!------------------- END SLIDE 021 it -------------------------->
 
@@ -960,7 +968,7 @@ the *title* attribute can be used to write the complete form
 
 The `<blockquote>` element is used for quoting blocks of text, while `<q>` is used to include brief citations in the text flow     
 
-Both have a `cite` attribute that can be used to provide the URI of the original text 
+Both have a `cite` attribute that can be used to provide the URL of the original text 
 
 Browsers should include appropriate quotes before and after the citation
 
@@ -1018,7 +1026,7 @@ Text can still contain inline HTML tags except `<img>`, `<object>`, `<big>`, `<s
 
 These elements are used to indicate text revisions. 
 
-The `cite` attribute may be used to indicate a URI where details can be found on the corresponding revision. A brief indication of the reason for the revision may also be written in the title attribute. 
+The `cite` attribute may be used to indicate a URL where details can be found on the corresponding revision. A brief indication of the reason for the revision may also be written in the title attribute. 
 
 The `datetime` attribute can be used to write the date/time of the review 
 
@@ -1276,7 +1284,7 @@ Early HTML5 drafts described new elements like `<menu>` and `<menuitem>` that, t
 
 Menu items could be created using the common `<li>` and `<hr>` elements and with specific attributes like *type*, *label*, *icon*, *disabled*, *checked*, *radiogroup*, *default*, *command*.
 
-However, this element seemed to be useless and a potential source of ambiguities, thus **it has been removed from the final HTML5 specification**.
+However, this element seemed to be useless and a potential source of ambiguities, thus **it has been initially removed from the final HTML5 specification**, while it is now accepted as a mere synonym of `<ul>`, with different semantics.
 
 Currently, even if several browsers still contain a prototypal implementation of these elements, the most correct way to define a menu structure is to use the "common" unordered lists. 
 
@@ -1585,11 +1593,11 @@ To separately define the characteristics of each column in a group, it is possib
 **Content**: empty        
 **Attributes**: standard HTML, src, alt, ~~longdesc~~, width, height, ismap, usemap           
 
-Inserts in the document the external image referenced by the URI in the `src` attribute
+Inserts in the document the external image referenced by the URL in the `src` attribute
 
 An alternative text for the image (`alt`) is an essential feature for an HTML document with high accessibility. 
 
-The `longdesc` attribute can be used to point to the URI of a document that describes in detail the image. It is *deprecated* in HTML5.
+The `longdesc` attribute can be used to point to the URL of a document that describes in detail the image. It is *deprecated* in HTML5.
 
 The `width` and `height` attributes should always be used to give the browser a hint about the size to be reserved for the image on the page. If these measures differ from the actual size of the image, it will be resized accordingly (and proportionally, if you specify only one attribute). In HTML5 these attributes can no longer contain percentages and cannot be used to obtain not-proportional image scaling. 
 
@@ -1619,9 +1627,9 @@ The `width` and `height` attributes should always be used to give the browser a 
 
 The boolean attribute `ismap`, if present, turns the image into a **server-side image map** when it is part of a link created by an `<a>`. 
 
-When the image is clicked, activating the link, the coordinates of the click are added to the URI specified by the `href` attribute of the tag `<a>` as a *get parameter*. 
+When the image is clicked, activating the link, the coordinates of the click are added to the URL specified by the `href` attribute of the tag `<a>` as a *get parameter*. 
 
-For example, if the URI is http://test.org/test and the coordinates x=1, y=7, the browser will request the resource with the URI http://test.org/test?1,7 
+For example, if the URL is http://test.org/test and the coordinates x=1, y=7, the browser will request the resource with the URL http://test.org/test?1,7 
 
 <!------------------- END SLIDE 054 it -------------------------->
 
@@ -1830,7 +1838,7 @@ The element `<link>` can be appear several times but only in the document `<head
 
 A `<link>` does not generate a user-visible link, but declares a relation between the current document and other resources. The browser can use this information in various ways. 
 
-The `rel` (or `rev`, if the link is logically backwards) is crucial for `<link>` element, as it defines the type of relationship with the resource identified by the URI contained in the `href` attribute. 
+The `rel` (or `rev`, if the link is logically backwards) is crucial for `<link>` element, as it defines the type of relationship with the resource identified by the URL contained in the `href` attribute. 
 
 The *rev* and *charset* attributes are *deprecated* in HTML5.
 
@@ -1900,7 +1908,7 @@ Prefetching is used to prefetch into the browser resources cache that are not im
 
 <!----------------- BEGIN SLIDE 064 it -------------------------->
 
-####  Relative URI resolution
+####  Relative URL resolution
 
 
 <!----------------- COLUMN 1 -------------------------->
@@ -1911,16 +1919,16 @@ Prefetching is used to prefetch into the browser resources cache that are not im
 
 
 
-`<base>`: relative URI base
+`<base>`: relative URL base
 
 **Content**: empty        
 **Attributes**: standard HTML, href, target  
 
-This element, used in the document `<head>`, defines the base URI (`href` attribute) used to resolve all the relative URIs in the document 
+This element, used in the document `<head>`, defines the base URL (`href` attribute) used to resolve all the relative URIs in the document 
 
 The `target` attribute may be used to define the default target in a document with frames 
 
-If `<base>` is not specified, the base URI of the current document is used to resolve all the relative URIs 
+If `<base>` is not specified, the base URL of the current document is used to resolve all the relative URIs 
 
 <!------------------- END SLIDE 064 it -------------------------->
 
@@ -1990,9 +1998,9 @@ The HTML attribute *class* allows to group multiple HTML elements into classes, 
 
 The `<a>` element is used both to define the origin of a link or to mark link targets within a page. 
 
- - If `<a>` is a link source, the `href` attribute identifies the URI its the destination 
+ - If `<a>` is a link source, the `href` attribute identifies the URL its the destination 
 
- - If `<a>` is a link target, its `name` attribute is a unique name that can be addressed by the *fragment identifier* of a URI. This allows to define links to a particular point of the target document. 
+ - If `<a>` is a link target, its `name` attribute is a unique name that can be addressed by the *fragment identifier* of a URL. This allows to define links to a particular point of the target document. 
 
 The `name` attribute shares the same name space of the `id` attribute. In fact, you can use the id of any element as a *fragment identifier*. In HTML5, this is the preferred way.
 
@@ -2096,7 +2104,7 @@ In HTML5, controls are also allowed to appear outside the `<form>` element, as l
 **Content**: *block* (except other `<form>`), `<script>`        
 **Attributes**: standard HTML, method, action, enctype, name, accept-charset         
 
-A form requires at least specification, through the `action` attribute, of the resource URI that will process the data (e.g., a server side script) 
+A form requires at least specification, through the `action` attribute, of the resource URL that will process the data (e.g., a server side script) 
 
 The `method` attribute (*get* or *post*) specifies the method used to send the data to the specified resource. 
 

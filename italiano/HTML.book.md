@@ -262,15 +262,24 @@ Sebbene il set di caratteri Unicode sia unico, le codifiche disponibili sono pi�
 
 Quindi, sebbene il code point per la lettera "á" nel set di caratteri Unicode sia sempre 225, in UTF-8 è rappresentato da due byte.             
 
-In HTML, e in generale su Internet, attualmente si considera come **standard lo Unicode con codifica UTF-8**.  
+In HTML, e in generale su Internet, attualmente si considera come **standard lo Unicode con codifica UTF-8**. 
+
+<!------------------- END SLIDE 007 it -------------------------->
+
+<!----------------- BEGIN SLIDE 007b it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 007b
 
 Incredibilmente, persino l'uso malizioso dei *character encoding*    Unicode può evidenziare **vulnerabilità** e permettere, ad esempio, il furto di informazioni.
 
 - **UTF-7, originariamente definito per codificare il solo BMP, permetteva codifiche alternative di caratteri ASCII come "\<" e "\>". Le vecchie versioni**    **di Internet Explorer** potevano essere indotte a interpretare una pagina come UTF-7, e in questo caso le sequenze +ADw- e +AD4-, che le maggior parte dei validatori tratta come come testo semplice, venivano trasformate in "\<" e "\>" permettendo attacchi **XSS**.
 
-- Poiché **molti caratteri di lingue diverse possono somigliarsi visivamente**, è possibile indurre un utente a navigare su un sito il cui indirizzo è visivamente simile a quello di un sito sicuro, anche se in realtà i caratteri in esso contenuti sono diversi, e quindi porteranno a un sito malevolo (attacchi di **omografia**), ad esempio usando il carattere cirillico "а" (Unicode 0430) invece di quello ASCII (Unicode 0041) 
+- Poiché **molti caratteri di lingue diverse possono somigliarsi visivamente**, è possibile indurre un utente a navigare su un sito il cui indirizzo è visivamente simile a quello di un sito sicuro, anche se in realtà i caratteri in esso contenuti sono diversi, e quindi porteranno a un sito malevolo (attacchi di **omografia**), ad esempio usando il carattere cirillico "а" (Unicode 0430) invece di quello ASCII (Unicode 0041). 
 
-<!------------------- END SLIDE 007 it -------------------------->
+<!------------------- END SLIDE 007b it -------------------------->
 
 <!----------------- BEGIN SLIDE 008 it -------------------------->
 
@@ -327,8 +336,7 @@ Un "**Uniform Resource Locator** " (URL) è un tipo specifico di URI che non sol
 
 
 Le risorse scambiate su una rete devono essere adeguatamente **rappresentate** per poter essere comprensibili dai dispositivi che stanno dialogando.
-
-- Ad esempio, quando si trasmette un'immagine non si sta trasmettendo veramente l'immagine, ma una rappresentazione di quest'ultima, codificata ad esempio tramite il formato JPEG.
+Ad esempio, quando si trasmette un'immagine non si sta trasmettendo veramente l'immagine, ma una rappresentazione di quest'ultima, codificata ad esempio tramite il formato JPEG.
 
 Perché una comunicazione possa essere efficace, le due parti devono concordare, oltre che sul protocollo, anche sui formati da utilizzare per scambiare le risorse.   
 
@@ -683,9 +691,9 @@ Utilizzati per associare degli script agli eventi corrispondenti
 
 Il flusso di testo nei documenti HTML è suddiviso in paragrafi. L'elemento `<p>` delimita ogni singolo paragrafo.
 
-Ogni `<p>` è renderizzato come un blocco di testo separato, solitamente con un piccolo spazio prima e dopo  
+Ogni `<p>` è solitamente rappresentato come un blocco di testo separato, solitamente con un piccolo spazio prima e dopo.  
 
-Gli elementi `<p>` vuoti non sono validi 
+Gli elementi `<p>` vuoti non sono validi. 
 
 <!------------------- END SLIDE 020 it -------------------------->
 
@@ -710,7 +718,7 @@ L'elemento `<br>` termina la riga corrente. Il testo viene mandato a capo, senza
 
 L'attributo `clear` è usato per indicare la distribuzione degli oggetti floating rispetto all'interruzione di riga. Se presente, i float indicati vengono disposti prima dell'interruzione.     *È stato eliminato in HTML5*.
 
-I browser possono inserire dei `<br>` impliciti al posto degli spazi per adattare il testo alla dimensione della finestra (word wrap). Utilizzare i nonbreakable spaces (&nbsp;) per evitare questo effetto. 
+I browser possono inserire dei `<br>` impliciti al posto degli spazi per adattare il testo alla dimensione della finestra (word wrap). Utilizzare i nonbreakable spaces (`&nbsp;`) per evitare questo effetto. 
 
 <!------------------- END SLIDE 021 it -------------------------->
 
@@ -889,7 +897,7 @@ di solito equivalente a grassetto
 - `<cite>`:    Riferimento esterno o citazione 
 
 - `<dfn>`:    Testo di una definizione    
-da non confondere col le liste di definizione
+da non confondere con le liste di definizioni
 
 - `<code>`:  Codice sorgente
 
@@ -925,7 +933,7 @@ l'attributo *title* può essere usato per contenere la forma completa
 
 L'elemento `<blockquote>` è utilizzato per citare blocchi di testo, mentre `<q>` serve ad inserire brevi citazioni nel flusso del testo  
 
-Entrambi hanno un attributo `cite` che può essere usato per fornire la URI del testo citato  
+Entrambi hanno un attributo `cite` che può essere usato per fornire la URL del testo citato  
 
 I browser dovrebbero inserire opportune virgolette prima e dopo la citazione
 
@@ -952,9 +960,9 @@ L'uso di `<blockquote>` per indentare il testo è vivamente sconsigliato!
 **Contenuto**:  *inline*  con esclusioni    
 **Attributi**:  standard HTML
 
-Il rendering di HTML ignora gli spazi bianchi e i ritorni a capo nel testo. Il flusso del testo segue le sole regole dettate dagli elementi corrispondenti (`<p>`, `<br>`, …) e dalle dimensioni della finestra.    
+Il rendering di HTML ignora gli spazi bianchi e i ritorni a capo nel testo. Il flusso del testo segue le sole regole dettate dagli elementi corrispondenti (`<p>`, `<br>`,...) e dalle dimensioni della finestra.
 
-Con l'elemento `<pre>` si richiede al browser di rispettare la forma data al testo nel sorgente della pagina: il testo è renderizzato con un font a spaziatura fissa, gli spazi bianchi sono mantenuti e l'a capo automatico è disabilitato.    
+Con l'elemento `<pre>` si richiede al browser di rispettare la forma data al testo nel sorgente della pagina: il testo è visualizzato con un font a spaziatura fissa, gli spazi bianchi sono mantenuti e l'a capo automatico è disabilitato.    
 
 Nel testo preformattato si possono comunque usare i tag HTML inline tranne `<img>`, `<object>`, `<big>`, `<small>`, `<sub>` e `<sup>` 
 
@@ -979,7 +987,7 @@ Nel testo preformattato si possono comunque usare i tag HTML inline tranne `<img
 
 Questi elementi sono usati per indicare revisioni del testo.
 
-L'attributo `cite` può essere usato per indicare una URI in cui si trovano dettagli sulla corrispondente revisione. Un'indicazione sintetica del motivo della revisione si può inserire anche nell'attributo title.    
+L'attributo `cite` può essere usato per indicare una URL in cui si trovano dettagli sulla corrispondente revisione. Un'indicazione sintetica del motivo della revisione si può inserire anche nell'attributo title.    
 
 L'attributo `datetime` può essere usato per contenere la data/ora della revisione  
 
@@ -1221,7 +1229,8 @@ Inizialmente, i draft di HTML5 contenenvano specifici elementi come  `<menu>` e 
 
 Le voci dei menu potevano essere composte usando anche i comuni elementi `<li>` e `<hr>`, nonché attributi specifici quali  *type*, *label*, *icon*, *disabled*, *checked*, *radiogroup*, *default*, *command*. 
 
-Tuttavia, questo elemento è stato alla fine considerato poco utile e fonte di ambiguità, ed **è stato rimosso nella specifica finale di HTML5**.
+Tuttavia, questo elemento è stato alla fine considerato poco utile e fonte di ambiguità, ed **è stato inizialmente rimosso nella specifica finale di HTML5**,
+mentre ora è accettato come mero sinonimo di `<ul>`, con una semantica differente.
 
 Al momento attuale, sebbene alcuni browser contengano ancora una prototipale implementazione di questi elementi, il modo più corretto per strutturare un menu è usare le "comuni" liste non ordinate. 
 
@@ -1511,11 +1520,11 @@ Per definire separatamente le caratteristiche di ciascuna colonna in un gruppo, 
 **Contenuto**:  vuoto    
 **Attributi**:  standard HTML, src, alt, ~~longdesc~~, width, height, ismap, usemap           
 
-Inserisce nel documento l'immagine esterna referenziata dall'URI nell'attributo `src`
+Inserisce nel documento l'immagine esterna referenziata dall'URL nell'attributo `src`
 
 Il testo alternativo per l'immagine (`alt`) è una caratteristica essenziale per un documento HTML ad alta accessibilità.
 
-L'attributo `longdesc` può essere usato per puntare alla URI di un documento che descrive nel dettaglio l'immagine. È  *deprecated* in HTML5. 
+L'attributo `longdesc` può essere usato per puntare alla URL di un documento che descrive nel dettaglio l'immagine. È  *deprecated* in HTML5. 
 
 Gli attributi `width` e `height` dovrebbero essere sempre usati per fornire al browser un suggerimento sulle dimensioni da riservare per l'immagine sulla pagina. Se non corrispondono alle dimensioni reali dell'immagine, questa verrà ridimensionata di conseguenza (in maniera proporzionale se si specifica solo uno degli attributi). In HTML5  questi attributi non possono più contenere percentuali e non possono essere usati per ottenere ridimensionamenti non proporzionali. 
 
@@ -1543,9 +1552,9 @@ Gli attributi `width` e `height` dovrebbero essere sempre usati per fornire al b
 
 L'attributo booleano `ismap`, se presente, trasforma l'immagine in una **server-side image map**  quando questa è parte di un link creato da un elemento `<a>`.
 
-Quando l'immagine viene cliccata, attivando il link, le coordinate del click vengono aggiunte alla URI indicata dall'attributo `href` del tag `<a>` sotto forma di  *parametro get*.
+Quando l'immagine viene cliccata, attivando il link, le coordinate del click vengono aggiunte alla URL indicata dall'attributo `href` del tag `<a>` sotto forma di  *parametro get*.
 
-Ad esempio, se l'URI è http://test.org/test e le coordinate x=1,y=7 il browser richiederà la risorsa con la URI http://test.org/test?1,7 
+Ad esempio, se l'URL è http://test.org/test e le coordinate x=1,y=7 il browser richiederà la risorsa con la URL http://test.org/test?1,7 
 
 <!------------------- END SLIDE 054 it -------------------------->
 
@@ -1745,7 +1754,7 @@ L'elemento `<link>` è utilizzabile più volte e solo nella `<head>` del documen
 
 Un `<link>` di default non genera link visibili all'utente, ma dichiara delle relazioni tra il documento corrente ed altre risorse. I browser possono sfruttare queste informazioni in vari modi.
 
-L'attributo `rel` (o `rev`, se il collegamento è logicamente all'indietro) è fondamentale per gli elementi `<link>`, perché definisce il tipo di relazione con la risorsa identificati dall'URI contenuto nell'attributo `href`.    
+L'attributo `rel` (o `rev`, se il collegamento è logicamente all'indietro) è fondamentale per gli elementi `<link>`, perché definisce il tipo di relazione con la risorsa identificati dall'URL contenuto nell'attributo `href`.    
 
 Gli attributi   *rev* e *charset* sono  *deprecated* in HTML5. 
 
@@ -1816,7 +1825,7 @@ Indica il documento "chiave" nell'insieme cui appartiene il documento corrente, 
 
 <!----------------- BEGIN SLIDE 064 it -------------------------->
 
-####  Risoluzione delle URI relative
+####  Risoluzione delle URL relative
 
 
 <!----------------- COLUMN 1 -------------------------->
@@ -1826,16 +1835,16 @@ Indica il documento "chiave" nell'insieme cui appartiene il documento corrente, 
 
 
 
-`<base>`: base per le URI relative
+`<base>`: base per le URL relative
 
 **Contenuto**:  vuoto    
 **Attributi**:  standard HTML, href, target  
 
-Questo elemento, utilizzabile una sola volta nella `<head>` del documento, definisce (attributo `href`) la URI di base utilizzata per risolvere tutte le URI relative presenti nel documento.
+Questo elemento, utilizzabile una sola volta nella `<head>` del documento, definisce (attributo `href`) la URL di base utilizzata per risolvere tutte le URL relative presenti nel documento.
 
 L'attributo `target` può essere usato per definire il target di default in un documento con frames.  
 
-Se `<base>` non è specificato, la base della URI del documento corrente viene usata per risolvere tutte le URI relative. 
+Se `<base>` non è specificato, la base della URL del documento corrente viene usata per risolvere tutte le URL relative. 
 
 <!------------------- END SLIDE 064 it -------------------------->
 
@@ -1902,9 +1911,9 @@ L'attributo standard *class* permette infine di raggruppare diversi elementi HTM
 
 L'elemento `<a>` viene usato sia per definire l'origine di un link che per definirne particolari destinazioni.
 
-   - Se `<a>` è origine di un link, il suo attributo `href` individua l'URI della destinazione
+   - Se `<a>` è origine di un link, il suo attributo `href` individua l'URL della destinazione
 
-   - Se `<a>` è destinazione di un link, il suo attributo `name` è un nome univoco che potrà essere indirizzato dal *fragment identifier*   di una URI. Questo permette di definire link ad un punto particolare del documento destinazione.
+   - Se `<a>` è destinazione di un link, il suo attributo `name` è un nome univoco che potrà essere indirizzato dal *fragment identifier*   di una URL. Questo permette di definire link ad un punto particolare del documento destinazione.
 
 L'attributo `name` condivide lo stesso spazio di identificatori dell'attributo `id`. In effetti, è possibile usare l'**id** di qualsiasi elemento come *fragment identifier*. In HTML5, questa è la modalità preferita.         
 
@@ -2002,7 +2011,7 @@ In HTML5 i controlli possono anche apparire al di fuori dell'elemento   `<form>`
 **Contenuto**:  *blocco* (esclusi altri `<form>`), `<script>`     
 **Attributi**:  standard HTML, method, action, enctype, name, accept-charset         
 
-La definizione di un modulo richiede almeno la specifica, tramite l'attributo `action`, della URI della risorsa che ne elaborerà i dati (ad es. uno script server side)
+La definizione di un modulo richiede almeno la specifica, tramite l'attributo `action`, della URL della risorsa che ne elaborerà i dati (ad es. uno script server side)
 
 L'attributo `method` (*get* o *post*) permette di specificare il metodo di invio dei dati alla risorsa indicata.
 
