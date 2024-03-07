@@ -1347,7 +1347,7 @@ L'attributo ~~`width`~~ specifica la larghezza della tabella, in pixel o in perc
 
 L'attributo ~~`border`~~ imposta lo spessore del bordo esterno della tabella. Un valore pari a zero elimina il bordo (utile per utilizzare la formattazione avanzata dei bordi tramite CSS)
 
-L'attributo ~~`frame`~~ (*void, above, below, hsides, vsides, lhs, rhs, box, border*              ) determina quali dei bordi esterni della tabella saranno disegnati (con lo spessore dato da border). Il default è   *box*.
+L'attributo ~~`frame`~~ (*void, above, below, hsides, vsides, lhs, rhs, box, border*) determina quali dei bordi esterni della tabella saranno disegnati (con lo spessore dato da border). Il default è   *box*.
 
 L'attributo ~~`rules`~~ (*none, groups, rows, cols, all*) determina quali dei bordi interni alla tabella (tra le celle) saranno disegnati (con lo spessore dato da border). Il default è   *all*.
 
@@ -1430,11 +1430,11 @@ Gli attributi   *height*, *width*, *align*, *valign*, *abbr*, *axis* e *scope* s
 **Contenuto**:  uno o più `<tr>`     
 **Attributi**:  standard HTML, align, valign   
 
-Le righe di una tabella possono essere suddivise in tre gruppi: **intestazione** (`<thead>`), **corpo** (`<tbody>`) e **piè di tabella** (`<tfoot>`  ).
+Le righe di una tabella possono essere suddivise in tre gruppi: **intestazione** (`<thead>`), **corpo** (`<tbody>`) e **piè di tabella** (`<tfoot>`).
 
 Tipicamente, le righe in `<thead>` e `<tfoot>` vengono poste rispettivamente all'inizio e alla fine della tabella. Se la tabella è spezzata in più pagine, ogni segmento conterrà la stessa intestazione e piè di tabella.    
 
-Se si omettono i raggruppamenti, tutte le righe sono poste in un `<tbody>` esplicito. Non è possibile avere tabelle con soli `<thead>` e/o `<tfoot>`. Se specificati, questi due gruppi dovrebbero trovarsi entrambi all'inizio della definizione della tabella, prima del `<tbody>`.    
+Se si omettono i raggruppamenti, tutte le righe sono poste in un `<tbody>` implicito. Non è possibile avere tabelle con soli `<thead>` e/o `<tfoot>`. Se specificati, questi due gruppi dovrebbero trovarsi entrambi all'inizio della definizione della tabella, prima del `<tbody>`.    
 
 In HTML5 `<tfoot>` può apparire anche alla fine della definizione della tabella. 
 
@@ -1804,21 +1804,21 @@ Indica il documento "chiave" nell'insieme cui appartiene il documento corrente, 
 
 > 063b
 
-- **Alternate**: documento alternativo    
+- **alternate**: documento alternativo    
    Usando gli attributi hreflang, media e type, si possono definire alternative al documento corrente in base alla lingua e/o al dispositivo di lettura.     
    Un esempio molto comune è il tipo *application/rss+xml*, che collega a una pagina html il suo *feed RSS*.
 
-- **Stylesheet**: foglio di stile    
+- **stylesheet**: foglio di stile    
   Usato per collegare un foglii di stile al documento. Gli attributi type e media devono identificare rispettivamente il tipo MIME del foglio di stile (di solito     *text/css* ) e il dispositivo per il quale è pensato. Se si vogliono fornire fogli di stile alternativi, usare l'attributo title per dare un nome allo stile ed utilizzare il tipo composto "alternate stylesheet".    
 
-- **Shortcut icon**  : icona per il sito (standard di fatto    
-  L'immagine così collegata a una pagina web viene utilizzata dai browser come icona nella barra del titolo e tra i preferiti. Il tipo e la dimensione dell'immagine collegata sono soggetti a forti restrizioni.
+- **icon** (**shortcut icon**): icona per il sito
+  L'immagine così collegata a una pagina web viene utilizzata dai browser come icona nella barra del titolo e tra i preferiti. Il tipo e la dimensione dell'immagine collegata sono soggetti a restrizioni. La versione con *shortcut* viene mantenuta solo per compatibilità, e non dovrebbe essere usata.
 
-- **Preload**: precaricamento ad alta priorità di risorse esterne         
+- **preload**: precaricamento ad alta priorità di risorse esterne         
   Utilizzato per *precaricare* risorse, suggerendo cioè al browser quali risorse presenti nella pagina corrente sono ad alta priorità e quindi devono essere caricate al più presto nella cache locale. E’ usato principalmente con fogli di stile, script, font e immagini. L'attributo as si usa in questo caso per specificare il tipo della risorsa, ad esempio `as="style"`, `as= "image"` oppure `as="script"`.    
   Attenzione: il preloading non applica la risorsa, ma la carica soltanto: ad esempio, se precarichiamo un foglio di stile, dovremo comunque poi applicarlo facendovi riferimento con un normale elemento `<link>` di tipo *stylesheet*, oppure se precarichiamo uno script dovremo poi attivarlo facendovi riferimento con un elemento `<script>`.
   
-- **Prefetch**: precaricamento di risorse utili a pagine correlate    
+- **prefetch**: precaricamento di risorse utili a pagine correlate    
   Il *prefetching* viene utilizzato per precaricare nella cache del browser risorse non immediatamente necessarie alla pagina corrente, ma utili per le pagine ad essa collegate. Queste risorse verranno quindi scaricate, ma con bassa priorità rispetto al resto della pagina. 
 
 <!------------------- END SLIDE 063b it -------------------------->

@@ -27,7 +27,7 @@ http://people.disim.univaq.it/dellapenna
 
 > *This document is based on the slides of the Web Engineering course, translated into English and reorganized for a better reading experience. It is not a complete textbook or technical manual, and should be used in conjunction with all other teaching materials in the course. Please report any errors or omissions to the author.*
 
-> This work is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0
+> This work is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0 
 
 <!----------------- BEGIN TOC -------------------------->
 
@@ -1889,19 +1889,19 @@ Indicates the "key" document in the collection that owns the current one, to be 
 
 > 063b
 
-- **Alternate**: alternative document   
+- **alternate**: alternative document   
 Using the attributes *hreflang*, *media* and *type*, it is possible to define alternatives to the current document based on the language and/or reading device. A common example is the *application/rss+xml* type, which connects a web page to its *RSS feed*.
 
-- **Stylesheet**:  style sheet   
+- **stylesheet**:  style sheet   
 Used to connect a style sheet to the document. Attributes *type* and *media* must identify respectively the MIME type of the style sheet (usually *text/css)* and the device for which it is designed. If you want to provide alternative style sheets, use the *title* attribute to give a name to the style and use the composite type "alternate stylesheet". 
 
-- **Shortcut icon** : site icon ( *de facto* standard)   
-The image connected to a web page through this relation is used by browsers as an icon in the title bar and in the favorites list. The image type and size are subject to severe restrictions. 
+- **icon** (**shortcut icon**): site icon
+The image connected to a web page through this relation is used by browsers as an icon in the title bar and in the favorites list. The image type and size are subject to restrictions. The *shortcut* version is for compatibility only, and should be avoided.
 
-- **Preload**: high-priority preload of external resources      
+- **preload**: high-priority preload of external resources      
 Used to preload resources, suggesting to the browser which resources on the current page are *high priority* and therefore need to be *downloaded into the local cache as soon as possible*. It is mainly used with style sheets, scripts, fonts and images. In this case, the as attribute is used to specify the resource type, e.g., with `as="style"`, `as="image"`, or `as="script"`. Attention: preloading does not apply the resource, but only loads it: for example, if we preload a stylesheet, we will still have to apply it by using a normal `<link>` with `rel="stylesheet"`, or if we preload a script we will then have to activate it by referencing it with a `<script>` element.
 
-- **Prefetch**: prefetch resources useful to related pages     
+- **prefetch**: prefetch resources useful to related pages     
 Prefetching is used to prefetch into the browser resources cache that are not immediately needed by the current page, but *useful for the pages linked* to it. These resources will then be downloaded, but with a *lower priority* than to the rest of the page. 
 
 <!------------------- END SLIDE 063b it -------------------------->
