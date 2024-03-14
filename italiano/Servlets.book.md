@@ -161,23 +161,37 @@ Tomcat è un container  *leggero*, ed **implementa solo le tecnologie di base** 
 
 Apache Tomcat, disponibile per tutte le piattaforme (è esso stesso un programma Java) può essere scaricato dal sito http://tomcat.apache.org/.  
 
-L'istallazione su Windows e Unix è semplificata dall'uso di script di installazione completamente automatici.
+L'istallazione di Tomcat può essere assistita da uno script di installazione, ma normalmente l'applicativo è distribuito come un archivio compresso che è sufficiente decomprimere ed utilizzare tramite gli appositi script presenti nella directory *bin*.
 
-- Su entrambe le piattaforme, è possibile scegliere di avviare il server come **servizio** (windows) o   **demone** (unix), cioè in automatico, oppure   **manualmente**.
+È possibile scegliere di avviare il server come **servizio** (windows) o **demone** (unix), cioè in automatico, oppure   **manualmente**. Ovviamente *su una macchina di sviluppo l'avvio manuale è consigliabile*.
 
-- È sempre necessario che l'istallazione di Java (o meglio del JRE) sia individuabile dallo script di istallazione di Tomcat. A questo scopo, verificare che la variabile di ambiente   **JAVA\_HOME** sia correttamente impostata.
+Se il server viene lanciato direttamente, e non attraverso un IDE, è sempre necessario che la corretta versione della JDK sia individuabile dallo script di avvio di Tomcat. A questo scopo, verificare che la variabile di ambiente  **JAVA\_HOME** sia correttamente impostata.
+
+Tomcat usa due cartelle principali per la sua esecuzione: **CATALINA_HOME** contiene i binari e le librerie del server, mentre **CATALINA_BASE** è l'area con i dati utente, comprese le applicazioni web installate e i log del server. Il default per **CATALINA_BASE** è lo stesso valore di **CATALINA_HOME**. È però utile, e in certi casi necessario, definire una **CATALINA_BASE** che punti a una cartella nella propria *home directory* (mentre probabilmente **CATALINA_HOME** sarà all'interno della cartella delle applicazioni del proprio sistema operativo). In questo modo avrete un ambiente ad-hoc in cui sviluppare e testare le applicazioni, totalmente sotto il vostro controllo. 
+
+<!------------------- END SLIDE 004 it -------------------------->
+
+<!----------------- BEGIN SLIDE 004b it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 004b
 
 Una volta mandato in esecuzione, Tomcat risponde di default alla porta   **8080**.
 
 Connettendosi alla url http://localhost:8080/manager/ è possibile configurare il server tramite un'applicazione web e monitorare lo stato delle web application in esecuzione sul server.    
 
-Per poter accedere all'amministrazione, è prima di tutto necessario **creare un utente con privilegi amministrativi**, aggiungendo al file **conf/tomcat-users.xml**  una riga come la seguente
+Per poter accedere all'amministrazione, è prima di tutto necessario **creare un utente con privilegi amministrativi**, aggiungendo al file **CATALINA_BASE/conf/tomcat-users.xml**  una riga come la seguente
 
 ```xml
 <user username="admin" password="adminpass" roles="admin,manager"/>
-``` 
+```
 
-<!------------------- END SLIDE 004 it -------------------------->
+Molti IDE, come ad esempio Netbeans, provvedono automaticamente a creare una **CATALINA_BASE** ad-hoc e configurare al suo interno un utente
+fittizio che verrà utilizzato per permettere all'IDE stesso di controllare Tomcat, rendendo le operazioni di avvio del server e deployment delle applicazioni del tutto trasparenti per l'utente. In una configurazione di sviluppo, e ancor più quando si sta imparando a sviluppare su questa piattaforma, si tratta della soluzione più pratica e indicata. 
+
+<!------------------- END SLIDE 004b it -------------------------->
 
 <!----------------- BEGIN SLIDE 005 it -------------------------->
 
@@ -195,9 +209,8 @@ Le applicazioni web sono eseguite in **contesti**. Ogni contesto, in generale, c
 
 Ogni contesto ha associati un insieme di *attributi* definiti dal sistema e dall'utente (vedremo come tali attributi possono essere utilizzati, ad esempio, per configurare l'applicazione), accessibili tramite l'oggetto **ServletContext**, e può essere essere configurato per *eseguire del codice all'avvio dell'applicazione* (cioè quando l'applicazione web viene installata o il server su cui è stata installata viene avviato) *o arrestata* (cioè quando l'applicazione web viene disinstallata o il server in cui è stata installata viene arrestato) utilizzando gli oggetti **ServletcontextListener**.
 
-Per creare manualmente un nuovo contesto è sufficiente creare una sottodirectory nella directory **webapps** di Tomcat. Il nome del contesto sarà quello della directory creata.
-
-A questo punto, per testare il nuovo contesto, è possibile inserire un file html nella directory indicata e provare a caricarlo con la URL http://localhost:8080/PATH/NOMEFILE, dove path è il nome del contesto. Ad esempio http://localhost/progetto/index.html   
+Per creare manualmente un nuovo contesto è sufficiente creare una sottodirectory nella directory **CATALINA_BASE/webapps** di Tomcat. Il nome del contesto sarà quello della directory creata.    
+A questo punto, per testare il nuovo contesto, è possibile inserire un file html nella directory indicata e provare a caricarlo con la URL http://localhost:8080/NOME\_CONTESTO/NOMEFILE, dove *NOME\_CONTESTO* è il nome della directory creata. Ad esempio http://localhost/progetto/index.html   
 
 Tuttavia, per avere un'applicazione web totalmente funzionante, è anche  necessario approntare una particolare struttura di sottodirectory nel contesto e scrivere alcuni file di configurazione. I principali elementi di questa struttura verranno illustrati di seguito.
 
@@ -244,6 +257,13 @@ Un servlet è essenzialmente una classe Java che implementa l'interfaccia *Servl
 
 Un semplice esempio di descrittore è mostrato di seguito.
 
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
+
 ```xml
 <?xml version="1.0" encoding="ISO-8859-1"?>     
 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">           
@@ -264,14 +284,6 @@ Un semplice esempio di descrittore è mostrato di seguito.
  </session-config>   
 </web-app>   
 ```
-
- 
-
-
-<!----------------- COLUMN 2 -------------------------->
-
-
-
 Ciascuna servlet è configurata in un elemento   **\<servlet\>**   distinto. L'elemento **\<servlet-class\>**   deve contenere il nome completo della classe che implementa la servlet.  
 
 È necessario poi mappare ciascuna servlet su una URL tramite l'elemento   **\<servlet-mapping\>**. L'**\<url-pattern\>**   specificato andrà a comporre la URL per la servlet nel seguente modo:  

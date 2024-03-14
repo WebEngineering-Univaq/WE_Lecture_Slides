@@ -163,24 +163,36 @@ Tomcat is a *lightweight* container, and **implements only the basic technologie
 
 Apache Tomcat is available for all platforms (it is itself a Java program) and can be downloaded from http://tomcat.apache.org/. 
 
-The installation on Windows and Unix is simplified by a fully automatic installation script. 
+The installation of Tomcat can be assisted by an installation script, but normally the application is distributed as a compressed archive that you just need to unzip and use by calling the appropriate scripts in the *bin* directory.
 
-   - On both platforms, you can choose to automatically start the server as a **service** (Windows) or **daemon** (UNIX), or **manually**. 
+You can choose to automatically start the server as a **service** (Windows) or **daemon** (UNIX), or **manually**. Of course, *on a development machine, manual start-up is preferred*.
 
-   - The Java installation (or, better, the JRE) must be available to the installation script. To this aim, make sure the **JAVA\_HOME** environment variable is correctly set. 
+If the server is launched directly, and not through an IDE, the correct version of the JDK must be discoverable by the Tomcat startup script. To this aim, make sure that the **JAVA\_HOME** environment variable is correctly set. 
+
+Tomcat uses two main folders for its execution: **CATALINA_HOME** contains the server binaries and libraries, while **CATALINA_BASE** is the area with user data, including installed web applications and server logs. The default for **CATALINA_BASE** is the same value as **CATALINA_HOME**. However, it is useful, and in some cases necessary, to define a **CATALINA_BASE** that points to a folder in your *home directory* (while **CATALINA_HOME** will probably be inside the applications folder of your operating system). In this way, you have an ad-hoc environment in which to develop and test applications, totally under your control. 
+
+<!------------------- END SLIDE 004 it -------------------------->
+
+<!----------------- BEGIN SLIDE 004b it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 004b
 
 Once executed, the default Tomcat instance responds on port **8080**. 
 
 Via the url http://localhost:8080/manager/ you can configure the server through a web application. and monitor the status of the web applications running in the server. 
 
-To access such administrative applications, you should first **create a user with administrative privileges**, adding to the **conf/tomcat-users.xml** file a line like the following 
-
+To access such administrative applications, you should first **create a user with administrative privileges**, adding to the **CATALINA_BASE/conf/tomcat-users.xml** file a line like the following 
 
 ```xml
 <user username="admin" password="adminpass" roles="admin,manager"/>
-``` 
+```
 
-<!------------------- END SLIDE 004 it -------------------------->
+Many IDEs, such as Netbeans, automatically create an ad-hoc **CATALINA_BASE** and configure a fictitious user within it that will be used to allow the IDE itself to control Tomcat, making the operations of starting the server and deploying applications completely transparent to the user. In a development setup, especially when you are learning how to develop on such a platform, this is the most practical and suitable solution. 
+
+<!------------------- END SLIDE 004b it -------------------------->
 
 <!----------------- BEGIN SLIDE 005 it -------------------------->
 
@@ -199,9 +211,9 @@ Web applications are executed in **contexts**. In general, each context correspo
 
 Each context has a set of associated system-defined and user-defined *attributes* (we will see how such attributes can be used, e.g., to configure the web application) accessible through the **ServletContext** object, and can be configured to *run some code when the application is started* (i.e., the web application is deployed or the server where it has been deployed is started) *or stopped* (i.e., the web application is undeployed or the server where it has been deployed is stopped) using **ServletcontextListener** objects.
 
-To manually create a new web application it is sufficient to create a subdirectory in the **webapps** directory of Tomcat. The context name will be the one of the directory. 
+To manually create a new web application it is sufficient to create a subdirectory in the **CATALINA_BASE/webapps** directory of Tomcat. The context name will be the one of the directory. 
 
-At this point, to test the new context, you can insert a plain html file in the directory and try loading the URL http://localhost:8080/PATH/FILENAME, where path is the name of the context. For example http://localhost/project/index.html     
+At this point, to test the new context, you can insert a plain html file in the directory and try loading the URL http://localhost:8080/CONTEXT\_NAME/FILENAME, where *CONTEXT\_NAME* is the name of the created subdirectory. For example http://localhost/project/index.html     
 
 However, in order to make a fully functional web application, we also need to prepare a special subdirectory structure in the context, and write some configuration files. The main elements of this structure are discussed below. 
 
@@ -248,7 +260,14 @@ Directories associated to a web application have a particular base structure whi
 
 A servlet is essentially a Java class implementing the *Servlet* interface. However, after compiling its sources and appropriately copying its class file in the WEB-INF/classes subdirectory, to make it available as a servlet resource, you must configure its features through a file called **web application deployment descriptor**. This file, named web.xml, must be placed in the WEB-INF subdirectory of the context. 
 
-A simple example of a descriptor is reported here. 
+A simple example of a descriptor is shown here. 
+
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
 
 ```xml
 <?xml version="1.0" encoding="ISO-8859-1"?>     
@@ -270,13 +289,6 @@ A simple example of a descriptor is reported here.
  </session-config>   
 </web-app>   
 ```
-
- 
-
-
-<!----------------- COLUMN 2 -------------------------->
-
-
 
 Each servlet is configured in a separate **\<servlet\>** element. The **\<servlet-class\>** element contains the full name of the class that implements the servlet. 
 

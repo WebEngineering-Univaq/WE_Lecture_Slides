@@ -1815,7 +1815,7 @@ Indica il documento "chiave" nell'insieme cui appartiene il documento corrente, 
   L'immagine così collegata a una pagina web viene utilizzata dai browser come icona nella barra del titolo e tra i preferiti. Il tipo e la dimensione dell'immagine collegata sono soggetti a restrizioni. La versione con *shortcut* viene mantenuta solo per compatibilità, e non dovrebbe essere usata.
 
 - **preload**: precaricamento ad alta priorità di risorse esterne         
-  Utilizzato per *precaricare* risorse, suggerendo cioè al browser quali risorse presenti nella pagina corrente sono ad alta priorità e quindi devono essere caricate al più presto nella cache locale. E’ usato principalmente con fogli di stile, script, font e immagini. L'attributo as si usa in questo caso per specificare il tipo della risorsa, ad esempio `as="style"`, `as= "image"` oppure `as="script"`.    
+  Utilizzato per *precaricare* risorse, suggerendo cioè al browser quali risorse presenti nella pagina corrente sono ad alta priorità e quindi devono essere caricate al più presto nella cache locale. E’ usato principalmente con fogli di stile, script, font e immagini. L'attributo `as` si usa in questo caso per specificare il tipo della risorsa, ad esempio `as="style"`, `as= "image"` oppure `as="script"`.    
   Attenzione: il preloading non applica la risorsa, ma la carica soltanto: ad esempio, se precarichiamo un foglio di stile, dovremo comunque poi applicarlo facendovi riferimento con un normale elemento `<link>` di tipo *stylesheet*, oppure se precarichiamo uno script dovremo poi attivarlo facendovi riferimento con un elemento `<script>`.
   
 - **prefetch**: precaricamento di risorse utili a pagine correlate    
@@ -2023,7 +2023,7 @@ Se si usa il metodo *post*, può essere necessario specificare anche il metodo d
 
 - L'attributo `name` fornisce un nome al modulo, da utilizzare per lo scripting.  
 
-- L'attributo `accept-charset`  è spesso utilizzato per indicare l'*encoding* dei caratteri strasmessi con la form,   *consentendone una corretta decodifica da parte del server*. 
+- L'attributo `accept-charset`  è spesso utilizzato per indicare l'*encoding* dei caratteri trasmessi con la form,   *consentendone una corretta decodifica da parte del server*. 
 
 <!------------------- END SLIDE 071 it -------------------------->
 
