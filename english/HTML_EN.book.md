@@ -323,7 +323,7 @@ A **"Uniform Resource Locator"** (URL) is a specific type of URI that not only i
 <protocol>://<host>:<port>/<path>?<query>#<fragment>
 ```
 
-In a URL, the *scheme* identifies the **protocol** for accessing the resource (http, ftp,...) 
+In a URL, the *schema* identifies the **protocol** for accessing the resource (http, ftp,...) 
 
 The *authority* consists of the FQDN of the **host** hosting the resource (or its IP address) possibly followed by the *port* number that identifies the logical service to connect to on the host (if omitted, it has a protocol-dependent default) 
 
@@ -941,7 +941,7 @@ not to be confused with definition lists
 - `<var>` : Variable name   
 
 - `<abbr>` : Abbreviation    
-the *title* attribute can be used to write the complete form
+the `title` attribute can be used to write the complete form
 
 - `<acronym>` : Acronym 
 
@@ -1280,9 +1280,9 @@ Usually `<dt>` are emphasized, while `<dd>` are indented
 
 
 
-Early HTML5 drafts described new elements like `<menu>` and `<menuitem>` that, together with attributes like *contextmenu* (on any HTML element) or *menu* (on `<button>`), allowed the to define menus (and toolbars) using a specific semantic markup. 
+Early HTML5 drafts described new elements like `<menu>` and `<menuitem>` that, together with attributes like `contextmenu` (on any HTML element) or `menu` (on `<button>`), allowed the to define menus (and toolbars) using a specific semantic markup. 
 
-Menu items could be created using the common `<li>` and `<hr>` elements and with specific attributes like *type*, *label*, *icon*, *disabled*, *checked*, *radiogroup*, *default*, *command*.
+Menu items could be created using the common `<li>` and `<hr>` elements and with specific attributes like `type`, `label`, `icon`, `disabled`, `checked`, `radiogroup`, `default`, `command`.
 
 However, this element seemed to be useless and a potential source of ambiguities, thus **it has been initially removed from the final HTML5 specification**, while it is now accepted as a mere synonym of `<ul>`, with different semantics.
 
@@ -1327,7 +1327,7 @@ The basic element for the table definition is `<table>`
 
 
 
-The widths of the table and its columns (attribute *witdh*) can be specified: 
+The widths of the table and its columns (attribute `witdh`) can be specified: 
 
    - In pixels (width = "10")  
 
@@ -1381,7 +1381,7 @@ A table is defined by the elements that are nested inside the `<table>`, which m
 
 The element `<caption>`, if present, has *inline* content and represents the caption of the table, which may be suitably rendered by the browser
 
-In HTML5 the *summary* attribute is *deprecated* and the *border* attribute may only have the value "1" or be omitted. 
+In HTML5 the `summary` attribute is *deprecated* and the `border` attribute may only have the value "1" or be omitted. 
 
 <!------------------- END SLIDE 045 it -------------------------->
 
@@ -1442,7 +1442,7 @@ The maximum number of cells present on a single line determines the number of co
 
 The ~~`align`~~ attribute (*left*, *right*, *center*, *justify*, *char*) defines the horizontal alignment for all cells in the row, and ~~`valign`~~ (*top*, *bottom*, *middle*, *baseline*) defines the vertical alignment. 
 
-The *align* and *valign* attributes are *deprecated* in HTML5 and CSS must be used instead. 
+The `align` and `valign` attributes are *deprecated* in HTML5 and CSS must be used instead. 
 
 <!------------------- END SLIDE 047 it -------------------------->
 
@@ -1475,7 +1475,7 @@ Attributes `abbr`, `axis`, `headers` and `scope` are used to provide advanced da
 
 The `width` and `height` attributes are used to provide information on cell size, but their use is **not recommended**, and should be replaced by the homonymous attributes of the `<col>` elements. 
 
-The  *height*, *width*, *align*, *valign*, *abbr*, *axis* and *scope*  attributes are *deprecated* in HTML5 and CSS must be used instead. 
+The  `height`, `width`, `align`, `valign`, `abbr`, `axis` and `scope`  attributes are *deprecated* in HTML5 and CSS must be used instead. 
 
 <!------------------- END SLIDE 048 it -------------------------->
 
@@ -1531,7 +1531,7 @@ Through one or more elements `<col>` **placed at the beginning of the table** (f
 
 Each `<col>` represents a number of columns equal to its `span` attribute. Each column will have the size specified by `width` and the corresponding cells will have the alignment given by `align` and `valign`. 
 
-In HTML5 these elements **can only appear inside a `<colgroup>`**. Moreover, The *align*, *valign* and *width* attributes are *deprecated* in HTML5 and CSS must be used instead. 
+In HTML5 these elements **can only appear inside a `<colgroup>`**. Moreover, The `align`, `valign` and `width` attributes are *deprecated* in HTML5 and CSS must be used instead. 
 
 <!------------------- END SLIDE 050 it -------------------------->
 
@@ -1771,7 +1771,7 @@ The `standby` attribute can be used to specify a text to be displayed during the
 
 The `width` and `height` attributes have the same purpose as in the `<img>` element  
 
-The *classid*, *codetype*, *codebase* and *standby* attributes are *deprecated* in HTML5. 
+The `classid`, `codetype`, `codebase` and `standby` attributes are *deprecated* in HTML5. 
 
 <!------------------- END SLIDE 059 it -------------------------->
 
@@ -1840,7 +1840,7 @@ A `<link>` does not generate a user-visible link, but declares a relation betwee
 
 The `rel` (or `rev`, if the link is logically backwards) is crucial for `<link>` element, as it defines the type of relationship with the resource identified by the URL contained in the `href` attribute. 
 
-The *rev* and *charset* attributes are *deprecated* in HTML5.
+The `rev` and `charset` attributes are *deprecated* in HTML5.
 
 `<link>` elements are used, for example, to link a document to its style sheets, to specify alternative documents in other languages, to define a logical reading sequence in a set of documents, etc.. 
 
@@ -1890,10 +1890,10 @@ Indicates the "key" document in the collection that owns the current one, to be 
 > 063b
 
 - **alternate**: alternative document   
-Using the attributes *hreflang*, *media* and *type*, it is possible to define alternatives to the current document based on the language and/or reading device. A common example is the *application/rss+xml* type, which connects a web page to its *RSS feed*.
+Using the attributes `hreflang`, `media` and `type`, it is possible to define alternatives to the current document based on the language and/or reading device. A common example is the *application/rss+xml* type, which connects a web page to its *RSS feed*.
 
 - **stylesheet**:  style sheet   
-Used to connect a style sheet to the document. Attributes *type* and *media* must identify respectively the MIME type of the style sheet (usually *text/css)* and the device for which it is designed. If you want to provide alternative style sheets, use the *title* attribute to give a name to the style and use the composite type "alternate stylesheet". 
+Used to connect a style sheet to the document. Attributes `type` and `media` must identify respectively the MIME type of the style sheet (usually *text/css)* and the device for which it is designed. If you want to provide alternative style sheets, use the `title` attribute to give a name to the style and use the composite type "alternate stylesheet". 
 
 - **icon** (**shortcut icon**): site icon
 The image connected to a web page through this relation is used by browsers as an icon in the title bar and in the favorites list. The image type and size are subject to restrictions. The *shortcut* version is for compatibility only, and should be avoided.
@@ -1956,9 +1956,9 @@ The `type` attribute specifies the MIME type of the style. In HTML5 this attribu
 
 The `media` attribute to specifies the devices for which the style has been designed. 
 
-Style sheets can also be imported from a file using the `<link>` element. In addition, you can specify a specific style for each HTML element via the *style* attribute. 
+Style sheets can also be imported from a file using the `<link>` element. In addition, you can specify a specific style for each HTML element via the `style` attribute. 
 
-The HTML attribute *class* allows to group multiple HTML elements into classes, useful to give them a uniform style. 
+The HTML attribute `class` allows to group multiple HTML elements into classes, useful to give them a uniform style. 
 
 <!------------------- END SLIDE 065 it -------------------------->
 
@@ -1993,7 +1993,7 @@ The HTML attribute *class* allows to group multiple HTML elements into classes, 
 `<a>`: active links to external resources 
 
 **Content**: *inline* (wothout nested links!)            
-**Attributes**: standard HTML, href, name, hreflang, type, rel, ~~rev~~, ~~charset~~, accesskey               
+**Attributes**: standard HTML, href, ~~name~~, hreflang, type, rel, ~~rev~~, ~~charset~~, accesskey               
              
 
 The `<a>` element is used both to define the origin of a link or to mark link targets within a page. 
@@ -2002,9 +2002,9 @@ The `<a>` element is used both to define the origin of a link or to mark link ta
 
  - If `<a>` is a link target, its `name` attribute is a unique name that can be addressed by the *fragment identifier* of a URL. This allows to define links to a particular point of the target document. 
 
-The `name` attribute shares the same name space of the `id` attribute. In fact, you can use the id of any element as a *fragment identifier*. In HTML5, this is the preferred way.
+**However, this use of `<a>`, which allows one to create destinations (or bookmarks) that are easily identifiable in documents, is *deprecated* in HTML5 together with the `name` attribute**: it is recommended to use as the target of *fragment identifiers* the `id` of an element already present on the page, so as not to overload the markup.
 
-The content of `<a>` may be any inline HTML, but you cannot have nested links. The default appearance of a link (underlined characters) can be varied by using style sheets. 
+The content of `<a>` may be any *inline* HTML, but you cannot have nested links. The default appearance of a link (underlined characters) can be varied by using style sheets. 
 
 <!------------------- END SLIDE 067 it -------------------------->
 
@@ -2024,7 +2024,7 @@ The content of `<a>` may be any inline HTML, but you cannot have nested links. T
 `<a>`: active links to other resources 
 
 **Content**: *inline* (wothout nested links!)            
-**Attributes**: standard HTML, href, name, hreflang, type, rel, ~~rev~~, ~~charset~~, accesskey               
+**Attributes**: standard HTML, href, ~~name~~, hreflang, type, rel, ~~rev~~, ~~charset~~, accesskey               
 
 The `hreflang`, `charset` and `type` attributes can be used to give the browser information about the link destination, such as the language of the document, its character set and the type (MIME) of its content. 
 
@@ -2034,7 +2034,7 @@ The `accesskey` attribute allows to specify a character that can be used as a sh
 
 The `title` attribute can be used to better describe the link destination. 
 
-The *rev* and *charset* attributes are *deprecated* in HTML5. 
+The `rev` and `charset` attributes are *deprecated* in HTML5. 
 
 <!------------------- END SLIDE 068 it -------------------------->
 
@@ -2081,7 +2081,7 @@ The controls may have an initial `value`, which is set when the form is created 
 
 When the form is submitted, the server receives the pairs (name, value) of each control. 
 
-In HTML5, controls are also allowed to appear outside the `<form>` element, as long as they have a `form` attribute set to the *id* of a `<form>` placed anywhere in the document. 
+In HTML5, controls are also allowed to appear outside the `<form>` element, as long as they have a `form` attribute set to the `id` of a `<form>` placed anywhere in the document. 
 
 <!------------------- END SLIDE 070 it -------------------------->
 

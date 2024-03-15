@@ -908,7 +908,7 @@ da non confondere con le liste di definizioni
 - `<var>`:    Nome di variabile
 
 - `<abbr>`:    Abbreviazione    
-l'attributo *title* può essere usato per contenere la forma completa
+l'attributo `title` può essere usato per contenere la forma completa
 
 - `<acronym>`:    Acronimo 
 
@@ -1225,9 +1225,9 @@ Di solito i `<dt>` sono enfatizzati, mentre i `<dd>` sono indentati
 
 
 
-Inizialmente, i draft di HTML5 contenenvano specifici elementi come  `<menu>` e `<menuitem>`   che, uniti ad attributi come *contextmenu* (per ogni elemento HTML) o *menu* (nei `<button>`), permettevano di definire menu (e toolbar) usando un markup semantico specifico.     
+Inizialmente, i draft di HTML5 contenenvano specifici elementi come  `<menu>` e `<menuitem>`   che, uniti ad attributi come `contextmenu` (per ogni elemento HTML) o `menu` (nei `<button>`), permettevano di definire menu (e toolbar) usando un markup semantico specifico.     
 
-Le voci dei menu potevano essere composte usando anche i comuni elementi `<li>` e `<hr>`, nonché attributi specifici quali  *type*, *label*, *icon*, *disabled*, *checked*, *radiogroup*, *default*, *command*. 
+Le voci dei menu potevano essere composte usando anche i comuni elementi `<li>` e `<hr>`, nonché attributi specifici quali  `type`, `label`, `icon`, `disabled`, `checked`, `radiogroup`, `default`, `command`. 
 
 Tuttavia, questo elemento è stato alla fine considerato poco utile e fonte di ambiguità, ed **è stato inizialmente rimosso nella specifica finale di HTML5**,
 mentre ora è accettato come mero sinonimo di `<ul>`, con una semantica differente.
@@ -1270,7 +1270,7 @@ L'elemento base della definizione delle tabelle è `<table>`
 
 
 
-Le larghezze delle colonne e della tabella stessa (attributo *witdh*) si possono specificare:
+Le larghezze delle colonne e della tabella stessa (attributo `witdh`) si possono specificare:
 
 - In pixel (width="10")  
 
@@ -1321,7 +1321,7 @@ Una tabella è definita dagli elementi che sono nidificati in `<table>`, che dev
 
 L'elemento `<caption>`, se presente, ha contenuto *inline* e rappresenta la didascalia della tabella, che potrà essere renderizzata un maniera opportuna dal browser  
 
-In HTML5  l'attributo  *summary* è *deprecated* e l'attributo *border* può valere solo "1" o essere omesso. 
+In HTML5  l'attributo  `summary` è *deprecated* e l'attributo `border` può valere solo "1" o essere omesso. 
 
 <!------------------- END SLIDE 045 it -------------------------->
 
@@ -1351,7 +1351,7 @@ L'attributo ~~`frame`~~ (*void, above, below, hsides, vsides, lhs, rhs, box, bor
 
 L'attributo ~~`rules`~~ (*none, groups, rows, cols, all*) determina quali dei bordi interni alla tabella (tra le celle) saranno disegnati (con lo spessore dato da border). Il default è   *all*.
 
-Tutti questi attributi sono *deprecated in*  HTML5 e i CSS devono essere usati al loro posto. 
+Tutti questi attributi sono *deprecated* in HTML5 e i CSS devono essere usati al loro posto. 
 
 <!------------------- END SLIDE 046 it -------------------------->
 
@@ -1378,7 +1378,7 @@ Il numero di massimo celle presenti su una singola riga determina il numero di c
 
 L'attributo ~~`align`~~ (*left*, *right*, *center*, *justify*, *char*) definisce l'allineamento orizzontale per tutte le celle della riga, mentre ~~`valign`~~ (*top*, *bottom*, *middle*, *baseline*) definisce quello verticale.
 
-Gli attributi *align* e *valign* sono *deprecated in*  HTML5 e i CSS devono essere usati al loro posto. 
+Gli attributi `align` e `valign` sono *deprecated in*  HTML5 e i CSS devono essere usati al loro posto. 
 
 <!------------------- END SLIDE 047 it -------------------------->
 
@@ -1409,7 +1409,7 @@ Gli attributi `abbr`, `axis`, `headers` e `scope`  sono utilizzati per fornire d
 
 Gli attributi `width` e `height` servono a fornire informazioni sulle dimensioni della cella. Sono però  **sconsigliati**: al loro posto andrebbero usati gli omonimi attributi degli elementi `<col>`.
 
-Gli attributi   *height*, *width*, *align*, *valign*, *abbr*, *axis* e *scope* sono   *deprecated* in HTML5. 
+Gli attributi   `height`, `width`, `align`, `valign`, `abbr`, `axis` e `scope` sono   *deprecated* in HTML5. 
 
 <!------------------- END SLIDE 048 it -------------------------->
 
@@ -1461,7 +1461,7 @@ Tramite uno o più elementi `<col>` **posti all'inizio della tabella** (prima de
 
 Ogni `<col>` rappresenta un numero di colonne pari al suo attributo `span`. Ciascuna colonna avrà la dimensione specificata dall'attributo `width` e le celle corrispondenti avranno l'allineamento definito da `align` e `valign`.
 
-In HTML5, questi elementi   **possono comparire solo all'interno di un `<colgroup>`**.   Inoltre, gli attributi  *align*,  *valign* e *width* sono *deprecated* in  HTML5 e i CSS devono essere usati al loro posto. 
+In HTML5, questi elementi   **possono comparire solo all'interno di un `<colgroup>`**.   Inoltre, gli attributi  `align`,  `valign` e `width` sono *deprecated* in  HTML5 e i CSS devono essere usati al loro posto. 
 
 <!------------------- END SLIDE 050 it -------------------------->
 
@@ -1690,7 +1690,7 @@ L'attributo `standby` può essere utilizzato per specificare un testo da mostrar
 
 Gli attributi `width` e `height` hanno lo stesso scopo descritto per l'elemento `<img>`.  
 
-Gli attributi    *classid*, *codetype*, *codebase* e *standby* sono   *deprecated* in HTML5. 
+Gli attributi    `classid`, `codetype`, `codebase` e `standby` sono   *deprecated* in HTML5. 
 
 <!------------------- END SLIDE 059 it -------------------------->
 
@@ -1756,7 +1756,7 @@ Un `<link>` di default non genera link visibili all'utente, ma dichiara delle re
 
 L'attributo `rel` (o `rev`, se il collegamento è logicamente all'indietro) è fondamentale per gli elementi `<link>`, perché definisce il tipo di relazione con la risorsa identificati dall'URL contenuto nell'attributo `href`.    
 
-Gli attributi   *rev* e *charset* sono  *deprecated* in HTML5. 
+Gli attributi   `rev` e `charset` sono  *deprecated* in HTML5. 
 
 I `<link>` sono usati, ad esempio, per collegare un documento ai suoi fogli di stile, per specificare documenti alternativi in altre lingue, per definire una sequenza logica di lettura in un insieme di documenti, ecc. 
 
@@ -1805,11 +1805,11 @@ Indica il documento "chiave" nell'insieme cui appartiene il documento corrente, 
 > 063b
 
 - **alternate**: documento alternativo    
-   Usando gli attributi hreflang, media e type, si possono definire alternative al documento corrente in base alla lingua e/o al dispositivo di lettura.     
+   Usando gli attributi `hreflang`, `media` e `type` si possono definire alternative al documento corrente in base alla lingua e/o al dispositivo di lettura.     
    Un esempio molto comune è il tipo *application/rss+xml*, che collega a una pagina html il suo *feed RSS*.
 
 - **stylesheet**: foglio di stile    
-  Usato per collegare un foglii di stile al documento. Gli attributi type e media devono identificare rispettivamente il tipo MIME del foglio di stile (di solito     *text/css* ) e il dispositivo per il quale è pensato. Se si vogliono fornire fogli di stile alternativi, usare l'attributo title per dare un nome allo stile ed utilizzare il tipo composto "alternate stylesheet".    
+  Usato per collegare un foglii di stile al documento. Gli attributi `type` e `media` devono identificare rispettivamente il tipo MIME del foglio di stile (di solito     *text/css* ) e il dispositivo per il quale è pensato. Se si vogliono fornire fogli di stile alternativi, usare l'attributo `title` per dare un nome allo stile ed utilizzare il tipo composto "alternate stylesheet".    
 
 - **icon** (**shortcut icon**): icona per il sito
   L'immagine così collegata a una pagina web viene utilizzata dai browser come icona nella barra del titolo e tra i preferiti. Il tipo e la dimensione dell'immagine collegata sono soggetti a restrizioni. La versione con *shortcut* viene mantenuta solo per compatibilità, e non dovrebbe essere usata.
@@ -1871,9 +1871,9 @@ L'attributo `type` specifica il tipo MIME dello stile. In HTML5 l'attributo ha c
 
 L'attributo `media` permette di specificare i dispositivi per cui lo stile è stato progettato.
 
-I fogli di stile possono essere anche importati dall'esterno con il tag `<link>`. Inoltre, è possibile specificare uno stile specifico per ogni elemento HTML tramite l'attributo standard  *style*.
+I fogli di stile possono essere anche importati dall'esterno con il tag `<link>`. Inoltre, è possibile specificare uno stile specifico per ogni elemento HTML tramite l'attributo standard  `style`.
 
-L'attributo standard *class* permette infine di raggruppare diversi elementi HTML in classi, utili per poter attribuire loro uno stile uniforme. 
+L'attributo standard `class` permette infine di raggruppare diversi elementi HTML in classi, utili per poter attribuire loro uno stile uniforme. 
 
 <!------------------- END SLIDE 065 it -------------------------->
 
@@ -1907,17 +1907,19 @@ L'attributo standard *class* permette infine di raggruppare diversi elementi HTM
 `<a>`: link attivi verso altre risorse
 
 **Contenuto**:  *inline* (ma senza altri link)   
-**Attributi**:  standard HTML, href, name, hreflang, type, rel, ~~rev~~, ~~charset~~, accesskey
+**Attributi**:  standard HTML, href, ~~name~~, hreflang, type, rel, ~~rev~~, ~~charset~~, accesskey
 
 L'elemento `<a>` viene usato sia per definire l'origine di un link che per definirne particolari destinazioni.
 
    - Se `<a>` è origine di un link, il suo attributo `href` individua l'URL della destinazione
 
-   - Se `<a>` è destinazione di un link, il suo attributo `name` è un nome univoco che potrà essere indirizzato dal *fragment identifier*   di una URL. Questo permette di definire link ad un punto particolare del documento destinazione.
+   - Se `<a>` è destinazione di un link, il suo attributo `name` è un nome univoco che potrà essere indirizzato dal *fragment identifier* di una URL. Questo permette di definire link ad un punto particolare del documento destinazione.    
+   
+   
+**Questa funzione del tag `<a>`, che permette di creare destinazioni (spesso equiparate a bookmark) facilmente individuabili nei documenti,
+   è tuttavia *deprecated* in HTML5 insieme al relativo attributo `name`**: come destinazione dei *fragment identifier* si consiglia invece di usare l'`id` di un elemento già presente nella pagina, per non sovraccaricare il markup.
 
-L'attributo `name` condivide lo stesso spazio di identificatori dell'attributo `id`. In effetti, è possibile usare l'**id** di qualsiasi elemento come *fragment identifier*. In HTML5, questa è la modalità preferita.         
-
-Il contenuto di `<a>` può essere qualsiasi HTML inline, ma non si possono avere link nidificati. L'aspetto predefinito di un link (caratteri sottolineati) può essere variato a piacere usando i fogli di stile. 
+Il contenuto di `<a>` può essere qualsiasi HTML *inline*, ma non si possono avere link nidificati. L'aspetto predefinito di un link (caratteri sottolineati) può essere variato a piacere usando i fogli di stile. 
 
 <!------------------- END SLIDE 067 it -------------------------->
 
@@ -1936,7 +1938,7 @@ Il contenuto di `<a>` può essere qualsiasi HTML inline, ma non si possono avere
 `<a>`: link attivi verso altre risorse
 
 **Contenuto**:  *inline* (ma senza altri link)   
-**Attributi**:  standard HTML, href, name, hreflang, type, rel, ~~rev~~, ~~charset~~, accesskey 
+**Attributi**:  standard HTML, href, ~~name~~, hreflang, type, rel, ~~rev~~, ~~charset~~, accesskey 
 
 Gli attributi `hreflang`, `charset` e `type` possono essere usati per dare al browser delle informazioni sulla destinazione del link: lingua del documento, set di caratteri usato e tipo (MIME) del contenuto.
 
@@ -1946,7 +1948,7 @@ Gli attributi `rel` e `rev` permettono di dichiarare la relazione tra il documen
 
 L'attributo `title` può esserer usato per descrivere meglio la destinazione del link.  
 
-Gli attributi  *rev* e *charset* sono   *deprecated* in HTML5. 
+Gli attributi  `rev` e `charset` sono   *deprecated* in HTML5. 
 
 <!------------------- END SLIDE 068 it -------------------------->
 
@@ -1990,7 +1992,7 @@ I controlli possono avere un valore (`value`) iniziale, che viene impostato alla
 
 Quando il modulo viene inviato, il server riceve le coppie (nome, valore) di ciascun controllo.
 
-In HTML5 i controlli possono anche apparire al di fuori dell'elemento   `<form>`, a patto che abbiano un attributo  `form` impostato all'*id* di una `<form>`   posta all'interno del documento. 
+In HTML5 i controlli possono anche apparire al di fuori dell'elemento   `<form>`, a patto che abbiano un attributo  `form` impostato all'`id` di una `<form>`   posta all'interno del documento. 
 
 <!------------------- END SLIDE 070 it -------------------------->
 
