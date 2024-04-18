@@ -248,9 +248,9 @@ In HTML è possibile dotare di una pagina di tre diversi tipi di stile per lo st
 
 - **Stile persistente**: sono sempre caricati dal browser. Gli stili incorporati nel documento sono sempre persistenti.
 
-- **Stile preferito**: si tratta dello stile di default che verrà combinato a quello persistente, se presente. Si indica inserendo l'attributo `title="nome\_stile"` all'interno del tag \<link\>.      
+- **Stile preferito**: si tratta dello stile di default che verrà combinato a quello persistente, se presente. Si indica inserendo l'attributo `title="nome_stile"` all'interno del tag \<link\>.      
 
-- **Stili alternativi**: sono stili che possono essere caricati alternativamente a quello preferito, a seconda delle preferenze dell'utente. Si indicano inserendo l'attributo `title="nome\_stile"` all'interno del tag \<link\> e modificandone l'attributo rel ad `alternate stylesheet`. 
+- **Stili alternativi**: sono stili che possono essere caricati alternativamente a quello preferito, a seconda delle preferenze dell'utente. Si indicano inserendo l'attributo `title="nome_stile"` all'interno del tag \<link\> e modificandone l'attributo rel ad `alternate stylesheet`. 
 
 <!------------------- END SLIDE 007 it -------------------------->
 
@@ -286,7 +286,7 @@ Le classi di elementi sono invece definite con speciali pattern detti **selettor
 Un esempio di regola astratta è 
 
 ```css
-SEL {P1: V1 [!important] P2: V2 P3: V3}
+SEL {P1: V1 [!important]; P2: V2; P3: V3}
 ````
 
 Il modificatore **`!important`** , opzionale, scritto dopo il valore (ma prima del separatore) di qualsiasi proprietà, serve ad aumentare la *priorità della regola* durante il processo di *cascading*, come vedremo più avanti. 
@@ -473,9 +473,8 @@ Questo selettore fa match con gli elementi indicati da S e da T (or logico o *ra
 
 
 
-Durante il rendering, il processore CSS deve determinare lo stile da assegnare     **a ciascun elemento del documento**.
-
-- Questo implica calcolare il valore di **ogni singola proprietà** di stile che l'elemento può avere.
+Durante il rendering, il processore CSS deve determinare lo stile da assegnare     **a ciascun elemento del documento**.    
+Questo implica calcolare il valore di **ogni singola proprietà** di stile che l'elemento può avere.
 
 Per calcolare il valore di una specifica proprietà P per un elemento E, CSS procede come segue:
 

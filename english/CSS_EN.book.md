@@ -305,7 +305,7 @@ The *element classes* are defined through special patterns called  **selectors**
 An example of an abstract rule is 
 
 ```css
-SEL {P1: V1 [!important] P2: V2 P3: V3}
+SEL {P1: V1 [!important]; P2: V2; P3: V3}
 ````
 
 The optional **`!important`** modifier, written after the value (but before the separator) of any property, is used to increase the *priority of the rule* during the *cascading* process, as we will see later. 

@@ -1214,17 +1214,17 @@ con.close();
 
 In questo esempio si crea una connessione a un database *MySQL*.
 
-La classe del driver JDBC è   *com.mysql.cj.jdbc.Driver*.  Nota: se usate una versione del driver MySQL precedente alla 8, il nome della classe è c   *om.mysql.jdbc.Driver*. 
+La classe del driver JDBC è   *com.mysql.cj.jdbc.Driver*.  Nota: se usate una versione del driver MySQL precedente alla 8, il nome della classe è *com.mysql.jdbc.Driver*. 
 
 Attenzione: molti server hanno dei driver preinstallati per database comuni. Tuttavia potrebbero non averne l'ultima versione, soprattutto nel caso del driver MySQL versione 8. In questo caso, aggiungete il driver alla vostra applicazione!    
 
 La stringa di connessione specifica il tipo di DBMS (*mysql*) il punto di ascolto del DBMS (*localhost*), e il database da selezionare (*webdb*). Può inoltre includere altri parametri specificati come una *query string* . 
 
-Per il driver MySQl, dalla versione 8, è utile usare i parametri qui esposti per allineare la     *timezone* del JDBC con quella del server.
+Per il driver MySQL, dalla versione 8, è utile usare i parametri qui esposti per evitare conversioni di *timezone* nel passaggio di valori data tra il JDBC e MySQL (si veda (https://dev.mysql.com/doc/connectors/en/connector-j-time-instants.html).
 
 Alla connessione vengono anche passati la username e la password dell'utente con cui autenticarsi nel DBMS.
 
-Viene eseguita prima una query di selezione tramite   `executeQuery` e poi una di cancellamento tramite `executeUpdate`. 
+Viene eseguita prima una query di selezione tramite `executeQuery` e poi una di cancellamento tramite `executeUpdate`. 
 
 <!------------------- END SLIDE 033 it -------------------------->
 
