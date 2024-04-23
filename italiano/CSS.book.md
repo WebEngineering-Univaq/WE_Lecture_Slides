@@ -648,7 +648,7 @@ Infine, i colori per cui è definito un *nome proprio* sono `maroon` (#800000), 
 
 <!----------------- BEGIN SLIDE 024 it -------------------------->
 
-####  Shortand Properties
+####  Shorthand Properties
 
 
 <!----------------- COLUMN 1 -------------------------->
@@ -660,7 +660,7 @@ Infine, i colori per cui è definito un *nome proprio* sono `maroon` (#800000), 
 
 Il linguaggio CSS dispone di molte proprietà che spesso vengono impostate in gruppo, come ad esempio le tre proprietà che definiscono un bordo (colore, spessore, stile) o le proprietà di un font (famiglia, dimensione, peso, …).
 
-Per questo motivo, sono disponibili anche le cosiddette *proprietà shortand*, che permettono, con la loro particolare sintassi, di impostare con una sola operazione i valori di diverse proprietà.
+Per questo motivo, sono disponibili anche le cosiddette *proprietà shorthand*, che permettono, con la loro particolare sintassi, di impostare con una sola operazione i valori di diverse proprietà.
 
 Nell'impostare una proprietà shorthand, i valori di ogni singola proprietà "componente" vengono scritti di seguito, separati da uno spazio.   
 
@@ -708,7 +708,7 @@ Per tutte le proprietà esistono degli shorthand che permettono di impostare gli
 
 
 
-- `border` (`border-top`, `border-right`, `border-bottom`, `border-left`
+- `border` (`border-top`, `border-right`, `border-bottom`, `border-left`    
 **Valori**:  { *spessore, stile, colore*  } 
 
 - `border-color` (`border-top-color`,`border-right-color`,`border-bottom-color`,`border-left-color`)          

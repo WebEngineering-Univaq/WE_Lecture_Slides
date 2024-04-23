@@ -696,7 +696,7 @@ Finally, the colors for which a *name* is defined are  `maroon` (#800000), `red`
 
 <!----------------- BEGIN SLIDE 024 en -------------------------->
 
-####  Shortand Properties
+####  Shorthand Properties
 
 
 <!----------------- COLUMN 1 -------------------------->
@@ -710,7 +710,7 @@ Finally, the colors for which a *name* is defined are  `maroon` (#800000), `red`
 
 The CSS language has many properties that are often set in a group, such as the three properties that define a border (color, width, style) or the font properties(family, size, weight, ...). 
 
-For this reason, there are also the so-called *shortand* properties, which allow, with their particular syntax, to set in a single operation the values of several properties. 
+For this reason, there are also the so-called *shorthand* properties, which allow, with their particular syntax, to set in a single operation the values of several properties. 
 
 In a shorthand property the values of each "component" property are simply separated by a space. 
 
@@ -730,8 +730,6 @@ For example, the CSS font property can be used to set all the font-style font-va
 
 
 > 025
-
-
 
 
 Most items can have a border on the four sides of their boxes. Each border can have different characteristics (color, thickness, style). It is also possible, for table cell borders, to specify how neighboring borders should be combined.   
@@ -762,7 +760,7 @@ For all of the border properties there exist shorthands that allow one to set th
 
 
 
- - `border` (`border-top`, `border-right`, `border-bottom`, `border-left`)    
+ - `border` (`border-top`, `border-right`, `border-bottom`, `border-left`)      
 **Values**:  {*width, style, color*} 
 
  - `border-color` (`border-top-color`,`border-right-color`,`border-bottom-color`,`border-left-color`)       
