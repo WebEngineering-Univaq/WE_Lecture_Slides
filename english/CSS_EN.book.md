@@ -797,7 +797,7 @@ Before CSS3, smooth the corners of a box required complex tricks or even images.
 - `border-radius` (`border-top-left-radius`, `border-top-right-radius`, `border-bottom-right-radius`, `border-bottom-left-radius`)                    
 **Values**: *radius* | *percentage* | `initial` | `inherit`  
 
-Initial is the default value, which in this case is zero. 
+`initial` is the default value, which in this case is zero. 
 
 <!------------------- END SLIDE 027 en -------------------------->
 
@@ -924,7 +924,7 @@ The blur radius determines the size of the shadow blur area (which sums to the o
 
 The spread radius is optionally used to increase or decrease the size of the shadow (in addition to offset+blur).    
 
-To shade text, use the text-shadow property instead. 
+To shade text, use the `text-shadow` property instead. 
 
 <!------------------- END SLIDE 031 en -------------------------->
 
@@ -1029,7 +1029,7 @@ When you create custom lists with image bullets, you should always adjust the in
 
 Depending on your browser, the margin and/or the padding of list-item elements determine the indentation of the element itself and/or space between the bullet and the associated text. 
 
-The list-type attributes can be applied to all items whose *display* property is set to *list-item*. 
+The list-type attributes can be applied to all items whose `display` property is set to `list-item`. 
 
 <!------------------- END SLIDE 034 en -------------------------->
 

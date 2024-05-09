@@ -743,7 +743,7 @@ Prima dell'avvento dei CSS3, per smussare gli angoli dei bordi era necessario us
 - `border-radius` (`border-top-left-radius`, `border-top-right-radius`, `border-bottom-right-radius`, `border-bottom-left-radius`)                        
 **Valori**: *raggio* | *percentuale* | `initial` | `inherit`  
 
-Initial corrisponde al valore di default, che in questo caso è zero. 
+`initial` corrisponde al valore di default, che in questo caso è zero. 
 
 <!------------------- END SLIDE 027 it -------------------------->
 
@@ -835,7 +835,7 @@ Grazie all'elevata versatilità degli sfondi, questi vengono spesso utilizzati p
 **Valori**:   `left top` | `left center` | `left bottom` | `right top` | `right center` | `right bottom` | `center top` | `center center` | `center bottom` | *x% y%* | *misura* | `inherit`     
 
 - `background-repeat` (estensione dell'immagine di fondo)           
-**Valori**:  `repeat` | `repeat-x` | `repeat-y` | `no-repeat` | `inherit 
+**Valori**:  `repeat` | `repeat-x` | `repeat-y` | `no-repeat` | `inherit` 
 
 <!------------------- END SLIDE 030 it -------------------------->
 
@@ -862,7 +862,7 @@ Il raggio di sfumatura determina la dimensione dell'area di sfumatura dell'ombra
 
 Il raggio di diffusione viene opzionalmente usato per aumentare o diminuire la dimensione dell'ombra (oltre a offset+sfumatura).                      
 
-Per ombreggiare il testo, si usa la proprietà specifica text-shadow. 
+Per ombreggiare il testo, si usa la proprietà specifica `text-shadow`. 
 
 <!------------------- END SLIDE 031 it -------------------------->
 
@@ -961,7 +961,7 @@ Quando si creano liste di tipo personalizzato con immagini, bisogna sempre regol
 
 A seconda del browser, il margine e/o il padding dell'elemento list-item determinano il rientro dell'elemento stesso e/o lo spazio tra il punto elenco e il testo associato.  
 
-Gli attributi di tipo list possono essere applicati a tutti gli elementi per la cui proprietà *display* sia impostata al valore *list-item*. 
+Gli attributi di tipo list possono essere applicati a tutti gli elementi per la cui proprietà `display` sia impostata al valore `list-item`. 
 
 <!------------------- END SLIDE 034 it -------------------------->
 
