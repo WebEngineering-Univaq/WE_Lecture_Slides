@@ -304,7 +304,7 @@ Il codice Javascript, nella sua esecuzione, interagisce tipicamente con le **API
 
 - Sintassi estesa per i parametri di funzione
 
-- Operatore Spread 
+- Operatore spread 
 
 - Interpolazione di stringhe
 
@@ -390,8 +390,8 @@ Nel realizzare uno script, è sempre necessario quindi **domandarsi quali siano 
 Per verificare la compatibilità di una certa funzione/API, è possibile cercare su  **MDN** (*https://developer.mozilla.org/en-US/docs/Web* ) o su siti come  *https://caniuse.com/*.
 
 In caso di funzionalità con scarso supporto nei browser datati è utile, per ampliare la platea dei browser supportati, **inserire tra i propri script i relativi polyfill** , cioè librerie che integrano nei browser le funzionalità non supportate tramite opportuni workaround.   
-Provate ad utilizzare le librerie generate da  *https://polyfill.io* , che permette tra l'altro di scaricare i polyfill per le sole funzionalità di vostro interesse e solo se necessari al browser che le richiede, tutto in maniera automatica.  
-In alternativa, potete usare un transpiler come Babel (  *https://babeljs.io*) per trasformare i vostri script rendendoli retrocompatibili con specifici browser datati. Babel manipola la sintassi e integra i polyfill necessari. 
+Provate ad utilizzare le librerie generate da  *https://polyfill.io*, che permette tra l'altro di scaricare i polyfill per le sole funzionalità di vostro interesse e solo se necessari al browser che le richiede, tutto in maniera automatica.  
+In alternativa, potete usare un transpiler come Babel (*https://babeljs.io*) per trasformare i vostri script rendendoli retrocompatibili con specifici browser datati. Babel manipola la sintassi e integra i polyfill necessari. 
 
 <!------------------- END SLIDE 009 it -------------------------->
 
@@ -446,7 +446,7 @@ Javascript gestisce quattro diversi tipi di dato:
 
 **Null**
 
-- Il tipo nullo ha un unico valore, null. 
+- Il tipo nullo ha un unico valore, *null*. 
 
 <!------------------- END SLIDE 011 it -------------------------->
 
@@ -466,11 +466,9 @@ Le variabili javascript sono identificate da sequenze alfanumeriche il cui primo
 
 Le variabili non hanno un tipo: questo viene dedotto automaticamente dal valore assegnato alla variabile, e può cambiare di volta in volta.
 
-Le variabili possono essere dichiarate scrivendo `var nome`
+Le variabili possono essere dichiarate scrivendo `var nome`. 
 
-- Il valore iniziale di una variabile è sempre lo speciale valore `undefined`.
-
-- È anche possibile inizializzare la variabile durante la sua dichiarazione scrivendo `var nome = valore`
+Il valore iniziale di una variabile è sempre lo speciale valore `undefined`. È anche possibile inizializzare la variabile durante la sua dichiarazione scrivendo `var nome = valore`.
 
 Se si assegna un valore a una variabile non dichiarata, javascript la crea automaticamente. Questa pratica è **sconsigliata** perché le variabili create automaticamente **sono sempre globali**.
 
@@ -529,7 +527,7 @@ Non è consentito:
 
 - Duplicare nomi di parametro nelle funzioni
 
-- Scrivere proprietà *read-only* o *get-only*
+- Assegnare valori a proprietà *read-only* o *get-only*
 
 Inoltre:
 
@@ -553,7 +551,7 @@ Inoltre:
 
 Prima di ES6, le variabili dichiarate con la parola chiave  `var` non erano globali, ma erano in ogni caso *function-scoped*, cioè accessibili in tutta la funzione di appartenenza.  
 
-In ES6, come in gran parte degli linguaggi, una variabile dichiarata con la nuova parola chiave `let` è *block-scoped*, **cioè visibile solo nel blocco** ({...}) in cui si trova la sua dichiarazione, e **non può essere ridichiarata** all'interno dello stesso blocco.
+In ES6, come in gran parte degli linguaggi, una variabile dichiarata con la nuova parola chiave `let` è *block-scoped*, **cioè visibile solo nel blocco** (\{...\}) in cui si trova la sua dichiarazione, e **non può essere ridichiarata** all'interno dello stesso blocco.
 
 ```javascript
 for (let i  = 0; i < a.length; i++) {   let x  = a[i]; … }    
@@ -598,7 +596,9 @@ Le costanti possono essere dichiarate tramite la parola chiave `const`.
 const PI = 3.141593;  
 ```
 
-Nota: un *oggetto costante* non può essere riassegnato, ma il suo contenuto può variare. 
+Le costanti hanno scope di blocco come le variabili dichiarate con il `let`.
+
+Nota: un *oggetto costante* non può essere riassegnato, ma il suo contenuto può variare poiché la costante, in questo caso, è solo il *riferimento* all'oggetto assegnato all'identificatore. 
 
 <!------------------- END SLIDE 016 it -------------------------->
 
@@ -619,7 +619,7 @@ Oltre che a numeri, può essere applicata a stringhe, nel qual caso diventa l'op
 
 `-` **(differenza)**, `/` **(quoziente)**, `*` **(prodotto)**, `%` **(modulo)**
 
-`=` (assegnamento), `+=`, `-=` (assegnamento con somma/differenza)     
+`=` **(assegnamento)**, `+=`, `-=` **(assegnamento con somma/differenza)**    
 Gli assegnamenti con somma/differenza hanno la stessa semantica dei loro corrispondenti in C o Java. L'assegnamento con somma può essere applicato anche a stringhe, esattamente come l'operatore di somma.
 
 `++` **(incremento)**, `--` **(decremento)**
@@ -762,7 +762,7 @@ switch (espressione) {
 } 
 ```
 
-L'espressione viene valutata e confrontata con i valori dei diversi `case`. Vengono quindi eseguite le istruzioni *a partire dal primo* `case`* con lo stesso valore dell'espressione. Se nessun case è selezionato, vengono eseguite le istruzioni del `default`, se presenti.
+L'espressione viene valutata e confrontata con i valori dei diversi `case`. Vengono quindi eseguite le istruzioni *a partire dal primo `case`* con lo stesso valore dell'espressione. Se nessun case è selezionato, vengono eseguite le istruzioni del `default`, se presenti.
 
 Se si desidera limitare l'esecuzione a un gruppo di istruzioni, è necessario introdurre la parola chiave `break`. 
 
@@ -814,9 +814,13 @@ Javascript dispone dei costrutti  `for`, `while` e `do ... while`, con la stessa
 
 ```javascript
 for (inizializzazione; condizione; aggiornamento) {corpo} 
+```
 
+```javascript
 while (condizione) {corpo} 
+```
 
+```javascript
 do {corpo} while (condizione) 
 ```
 
@@ -984,7 +988,7 @@ Nel corpo delle funzioni freccia il valore di `this` viene propagato dall'estern
 this.nums.forEach(
  (v) => {if (v % 5 === 0) this.fives.push(v); }
 );  
-```;  
+```  
 
 Mentre in ES\<6 avremmo dovuto scrivere        
 
@@ -1103,9 +1107,13 @@ Una volta ottenuto il riferimento a una funzione è possibile:
 
 Per richiamare una funzione, si accoda la lista dei parametri, tra parentesi, all'espressione che fa riferimento alla funzione stessa:
 
-`nome_funzione(argomenti)`
+```javascript
+nome_funzione(argomenti)
+```
 
-`espressione_con_valore_Function(argomenti)`
+```javascript
+espressione_con_valore_Function(argomenti)
+```
 
 Gli argomenti sono una lista di espressioni valide separate da virgole.
 
@@ -1175,13 +1183,19 @@ Il passaggio dei parametri alle funzioni Javascript avviene in maniera diversa a
 
 In ES6 è possibile specificare **valori di default per i parametri** (come ad esempio in PHP o C):  
 
-`function f(x, y=7, z=42) {...}`
+```javascript
+function f(x, y=7, z=42) {...}
+```
 
 È inoltre posibile definire **funzioni variadiche**, cioè ad arietà variabile, come in altri linguaggi (C, Java, ecc.), specificando un ultimo parametro (indicato con la sintassi `...variable`) nel quale verranno inseriti, sotto forma di array, tutti gli  *altri* argomenti passati alla funzione ( *rest parameters*): 
 
-`function f( ...args ) {return args.length;}`
+```javascript
+function f( ...args ) {return args.length;}
+```
 
-`function f (x,...a) {return x*a.reduce((t,v,i,r) => a+v, 0);}` 
+```javascript
+function f (x,...a) {return x*a.reduce((t,v,i,r) => a+v, 0);}
+``` 
 
 <!------------------- END SLIDE 036 it -------------------------->
 
@@ -1201,7 +1215,9 @@ Le funzioni restituiscono il controllo al chiamante al termine del loro blocco d
 
 È possibile *restituire un valore* al chiamante, in modo da poter usare la funzione in espressioni più complesse, utilizzando la sintassi
 
-`return expression`
+```javascript
+return expression
+```
 
 L'*espressione* può essere di qualsiasi tipo. Essa viene valutata e il valore risultante è restituito.
 
