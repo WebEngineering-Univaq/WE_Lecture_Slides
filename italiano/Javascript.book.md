@@ -1984,7 +1984,7 @@ function myObject(a) {
  var THIS = this; //workaround per rendere this disponibile nei metodi privati         
  var pm = function() {p=p-1;} //metodo privato      
  var pm2 = function() {return THIS.m()+1;} //metodo privato che chiama un metodo pubblico        
-  this.m3 = function() {pm(); return p;} //metodo privilegiato: è pubblico e usa membri privati          
+ this.m3 = function() {pm(); return p;} //metodo privilegiato: è pubblico e usa membri privati          
 }
 myObject.prototype.m = function(x) {return this.v+x;} //metodo pubblico       
 
@@ -2018,8 +2018,8 @@ ES6 introduce un nuovo concetto di classe, simile a quello dei linguaggi object-
 
 La sintassi per la definizione di una classe è quella comune, che prevede l'uso della parola chiave `class`.
 
-**Una classe ES6 può contenere solo metodi** , che si dichiarano senza la parola chiave `function`. Le altre proprietà della classe sono inizializzate nel costruttore assegnandole, come nel sistema prototipale.      
-Il costruttore si dichiara come un metodo con il nome riservato       `constructor`. 
+**Inizialmente una classe ES6 poteva contenere solo metodi**, che si dichiarano senza la parola chiave `function`. Le altre proprietà della classe erano inizializzate nel costruttore assegnandole a un valore, come nel sistema prototipale.  
+Il costruttore si dichiara come un metodo con il nome riservato `constructor`. 
 
 ```javascript
 class Shape {      
@@ -2036,6 +2036,28 @@ class Shape {
 s = new Shape("test",1,2)    
 ```
 
+Successivamente è stata aggiunta la possibilità di dichiarare le proprietà semplicemente elencandole nella definizione della classe, con un inizializzatore opzionale:
+
+```javascript
+class Shape {  
+ _id;
+ _x=0;
+ _y=0;
+ 
+ constructor(id, x, y) { 
+  this._id = id; 
+  this.move(x, y); 
+ }
+ move(x, y) {
+  this._x = x; 
+  this._y = y; 
+ }
+} 
+
+s = new Shape("test",1,2)    
+```
+
+
 Una classe può essere dichiarata con il suo nome oppure assegnata come *espressione di classe* a un identificatore.
 
 ```javascript
@@ -2046,7 +2068,7 @@ let Shape =  class { constructor(id) { this._id = id;} }
 
 <!----------------- BEGIN SLIDE 066 it -------------------------->
 
-####  Metodi speciali
+####  Membri statici
 
 
 <!----------------- COLUMN 1 -------------------------->
@@ -2056,10 +2078,14 @@ let Shape =  class { constructor(id) { this._id = id;} }
 
 
 
-È possibile usare la parola chiave `static` per dichiarare metodi richiamabili direttamente sulla classe, e non sulle sue istanze:   
+È possibile usare la parola chiave `static` per dichiarare metodi e proprietà richiamabili direttamente sulla classe, e non sulle sue istanze:   
 
 ```javascript
 class Shape {      
+ _id;
+ _x=0;
+ _y=0;
+ 
  constructor(id, x, y) { 
   this._id = id; 
   this.move(x, y); 
@@ -2068,18 +2094,37 @@ class Shape {
   this._x = x; 
   this._y = y; 
  }
+ 
  static defaultShape() { 
   return new Shape("default", 100, 100); 
  } 
 }
 
 s = Shape.defaultShape();   
-```
+``` 
 
-È possibile dichiarare  *getter* e *setter* con la sintassi di ES5 
+<!------------------- END SLIDE 066 it -------------------------->
+
+<!----------------- BEGIN SLIDE 066b it -------------------------->
+
+####  Getter e setter
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 066b
+
+
+
+
+È possibile dichiarare  *getter* e *setter* nelle classi con la sintassi di ES5:
 
 ```javascript
 class Shape {       
+ _id;
+ _x=0;
+ _y=0;
+ 
  constructor(id, x, y) { 
   this._id = id; 
   this.move(x, y); 
@@ -2088,15 +2133,74 @@ class Shape {
   this._x = x; 
   this._y = y; 
  }
+ 
  static defaultShape() { 
   return new Shape("default", 100, 100); 
  }    
+
  set x(x) { this._x = x; }       
  get x()   { return this._x; }        
+ set y(y) { this._y = y; }       
+ get y()   { return this._y; }        
 }
 ``` 
 
-<!------------------- END SLIDE 066 it -------------------------->
+<!------------------- END SLIDE 066b it -------------------------->
+
+<!----------------- BEGIN SLIDE 066c it -------------------------->
+
+####  Membri privati
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 066c
+
+
+
+Infine, è stata introdotta la possibilità di dichiarare membri **privati** senza bisogno di usare i complessi workaround visti in precedenza,
+necessari quando si usa la sintassi base basata sui prototipi. Per rendere privato un campo o una funzione è necessario che il suo nome inizi
+col carattere cancellino (`#`). Da notare che il cancellino è parte del nome, quindi dovrà essere usato anche quando si fa riferimento all'elemento
+dichiarato. Un elemento privato è utilizzabile, come di consueto, solo dai membri della stessa classe (è a tutti gli effetti come un metodo *privilegiato*
+descritto in precedenza).
+
+```javascript
+class Shape {       
+ _id;
+ //private fields
+ #_x=0; 
+ #_y=0;
+ 
+ constructor(id, x, y) { 
+  this._id = id; 
+  this.move(x, y); 
+ }
+ 
+ //public method calling private method
+ move(x, y) { 
+  if (x>0 && y>0) this.#setPosition(x,y);
+  else throw new Error("position cannot be negative");
+ }
+ 
+ //private method
+ #setPosition(x,y) {
+  this.#_x = x;
+  this.#_y = y;
+ }
+ 
+ static defaultShape() { 
+  return new Shape("default", 100, 100); 
+ }    
+
+ //public methods (getters and setters) accessing private fields
+ set x(x) { this.#_x = x; }       
+ get x()   { return this.#_x; }        
+ set y(y) { this.#_y = y; }       
+ get y()   { return this.#_y; }        
+}
+``` 
+
+<!------------------- END SLIDE 066c it -------------------------->
 
 <!----------------- BEGIN SLIDE 067 it -------------------------->
 
@@ -2123,9 +2227,7 @@ class Rectangle extends Shape {
   return "Rectangle > " + super.toString(); 
  } 
 }  
-```
-
-Non esistono modificatori di visibilità (*private*, *protected*,…): se necessario, si possono usare gli accorgimenti già validi per i prototipi per ottenere effetti simili. 
+``` 
 
 <!------------------- END SLIDE 067 it -------------------------->
 
@@ -2147,20 +2249,41 @@ Non esistono modificatori di visibilità (*private*, *protected*,…): se necess
 // zucchero sintattico, e vengono rimappate internamente sul vecchio    
 // sistema di gestione degli oggetti.  
 
-class Shape {    
- constructor(id, x, y) {this._id = id; this.move(x,y);}         
- move(x, y) { this._x = x; this._y = y; }       
- static defaultShape () { return new Shape("default", 100, 100); }            
- get x() { return this._x; }      
-}}
-//IDENTICO A
+class Shape {   
+ _id;
+ #_x=0; 
+ #_y=0; 
+ constructor(id, x, y) { 
+  this._id = id; 
+  this.move(x, y); 
+ } 
+ move(x, y) { 
+  if (x>0 && y>0) this.#setPosition(x,y);
+  else throw new Error("position cannot be negative");
+ }
+ #setPosition(x,y) {
+  this.#_x = x; this.#_y = y;
+ } 
+ static defaultShape() { 
+  return new Shape("default", 100, 100); 
+ }    
+ set x(x) { this.#_x = x; }       
+ get x()   { return this.#_x; }  
+}; 
+//IDENTICO A (eliminando il carattere # dai membri privati)
 let Shape = function(id,x,y) {         
  this._id = id;    
- this.move = function(x, y){ this._x = x; this._y = y; }          
+ let _x = 0;    
+ let _y = 0;    
+ let setPosition = function(x, y){ _x = x; _y = y; }          
+ this.move = function(x, y){
+  if (x>0 && y>0) setPosition(x,y);
+  else throw new Error("position cannot be negative"); 
+ }          
+ Object.defineProperty(this,"x",{get: function(){return _x}, set: function(x){_x=x}});           
  this.move(x, y);   
-}
-Shape.defaultShape = function(){return new Shape("default", 100, 100);}       
-Object.defineProperty(Shape.prototype,"x",{get: function(){return this._x}}           
+};
+Shape.defaultShape = function(){return new Shape("default", 100, 100);};   
 ``` 
 
 <!------------------- END SLIDE 068 it -------------------------->
@@ -2455,7 +2578,7 @@ numbers1_10 = g_numbers1_10()
 for(n of numbers1_10) console.log(n) 
 ```
 
-Infatti possiamo anche scrivere numbers1\_10[Symbol.iterator]() per prelevare l'iteratore corrispondente al generatore, e manipolarlo come visto precedentemente.                          
+Infatti possiamo anche scrivere `numbers1_10[Symbol.iterator]()` per prelevare l'iteratore corrispondente al generatore, e manipolarlo come visto precedentemente.                          
 
 I generatori possono anche essere definiti in maniera anonima (espressioni di funzione) e come metodi di oggetti:                      
 
@@ -2491,7 +2614,11 @@ Un'eccezione segnala un *imprevisto*, spesso un *errore*, all'interno della norm
 
 Un'eccezione può venire sollevata dalle librerie di Javascript o dal codice scritto dall'utente, attraverso la parola chiave `throw`.
 
-Per gestire le eccezioni, è possibile avvalersi del costrutto `try ... catch ... finally`. 
+Per gestire le eccezioni, è possibile avvalersi del costrutto `try ... catch ... finally`.
+
+Javascript permette di passare a `throw` *qualsiasi tipo di valore*, che poi sarà catturato dai costrutti `catch`. In pratica, però,
+è sempre consigliabile fare `throw` di un oggetto `Error` (predefinito in Javascript) o di una delle sue sottoclassi predefinite (come `RangeError` o `TypeError`) o definite dall'utente (tramite il costrutto `extends` di `class`). Il costruttore di `Error` accetta opzionalmente un messaggio testuale 
+e altre opzioni utili per definirne la causa e la posizione. 
 
 <!------------------- END SLIDE 079 it -------------------------->
 
@@ -2510,8 +2637,8 @@ Per gestire le eccezioni, è possibile avvalersi del costrutto `try ... catch ..
 Una volta sollevata, un'eccezione risale lo *stack di chiamata* di Javascript finché non viene gestita. 
 Ciò significa che un'eccezione generata in una funzione, se non viene gestita all'interno di quest'ultima, si propagherà alle sue funzioni chiamanti, fino ad arrivare al *runtime* di Javascript.
 
-Per gestire le eccezioni generate da un certo blocco di codice, è necessario inserire il blocco all'interno del costrutto `try ... catch` .
-- Qualsiasi eccezione sollevata all'interno del codice compreso tra `try`  e `catch` verrà passata al codice di gestione dichiarato dopo `catch`.
+Per gestire le eccezioni generate da un certo blocco di codice, è necessario inserire il blocco all'interno del costrutto `try ... catch`.
+Qualsiasi eccezione sollevata all'interno del codice compreso tra `try`  e `catch` verrà passata al codice di gestione dichiarato dopo `catch`.
 
 Se ci si vuole assicurare che un certo codice sia eseguito *sempre* dopo il blocco protetto da `try ... catch`, indipendentemente dal sollevamento di eccezioni, è possibile aggiungere al blocco la clausola `finally`. 
 
@@ -2531,7 +2658,8 @@ Se ci si vuole assicurare che un certo codice sia eseguito *sempre* dopo il bloc
 
 ```javascript
 try { 
- … codice…
+ ...codice...
+ throw new Error("Problema!")
 } catch(e) {
  //le eccezioni generate da javascipt sono oggetti la cui proprietà message   
  //riporta il messaggio di errore associato  
@@ -2657,7 +2785,7 @@ var prodotto = { quantita: 7, nome: "gelato", prezzounitario: 3 };
 
 Javascript riconosce le espressioni regolari scritte nella sintassi Perl.   
 
-Per descrivere un'espressione regolare costante è sufficiente usare la sintassi `/*espressione*/`. 
+Per descrivere un'espressione regolare costante è sufficiente usare la sintassi `/espressione/`. 
 
 Espressioni regolari variabili possono essere create tramite il costruttore **RegExp**. 
 
@@ -2915,7 +3043,7 @@ for (let v of s) console.log(s);
 
 
 
-Map rappresenta un'associazione tra chiavi e valori.  **Chiavi e valori possono essere di qualsiasi tipo (anche oggetti)`. Una volta creata una Map (`new Map()`) è possibile:
+Map rappresenta un'associazione tra chiavi e valori.  *Chiavi e valori possono essere di qualsiasi tipo (anche oggetti)*. Una volta creata una Map (`new Map()`) è possibile:
 
 - **Creare** nuove associazioni o aggiornare quelle esistenti col metodo `set()`
 

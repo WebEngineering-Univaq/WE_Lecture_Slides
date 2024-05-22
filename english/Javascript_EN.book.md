@@ -2026,11 +2026,32 @@ ES6 introduces a new class concept, similar to that of object-oriented languages
 
 The syntax for defining a class is the common one, which involves the use of the `class` keyword.
 
-**An ES6 class can only contain methods**, declared without the `function` keyword. Other class properties are initialized in the constructor by assigning them, as in the prototype system.    
-The constructor is declared as a method with the reserved name   `constructor`. 
+**Initially, an ES6 class could only contain methods**, declared without the `function` keyword. Other class properties are initialized in the constructor by assigning them a value, as in the prototype system.    
+The constructor is declared as a method with the reserved name `constructor`. 
 
 ```javascript
 class Shape {      
+ constructor(id, x, y) {
+  this._id = id; 
+  this.move(x, y); 
+ }
+ move(x, y) {
+  this._x = x; 
+  this._y = y; 
+ }
+} 
+
+s = new Shape("test",1,2)    
+```
+
+Later, the ability to declare properties by simply listing them in the class definition, with an optional initializer, has been added:
+
+```javascript
+class Shape {  
+ _id;
+ _x=0;
+ _y=0;
+ 
  constructor(id, x, y) { 
   this._id = id; 
   this.move(x, y); 
@@ -2054,7 +2075,7 @@ let Shape =  class { constructor(id) { this._id = id;} }
 
 <!----------------- BEGIN SLIDE 066 it -------------------------->
 
-####  Special methods
+####  Static members
 
 
 <!----------------- COLUMN 1 -------------------------->
@@ -2063,10 +2084,14 @@ let Shape =  class { constructor(id) { this._id = id;} }
 
 
 
-You can use the `static` keyword to declare methods that can be invoked directly on the class, and not on its instances:     
+You can use the `static` keyword to declare methods and properties that can be invoked directly on the class, and not on its instances:     
 
 ```javascript
 class Shape {      
+  _id;
+ _x=0;
+ _y=0;
+ 
  constructor(id, x, y) { 
   this._id = id; 
   this.move(x, y); 
@@ -2075,35 +2100,111 @@ class Shape {
   this._x = x; 
   this._y = y; 
  }
+ 
  static defaultShape() { 
   return new Shape("default", 100, 100); 
  } 
 }
 
 s = Shape.defaultShape();   
-```
+``` 
 
-It is possible to declare *getters* and *setters* with the ES5 syntax: 
+<!------------------- END SLIDE 066 it -------------------------->
+
+<!----------------- BEGIN SLIDE 066b it -------------------------->
+
+####  Getters and setters
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 066b
+
+
+
+It is possible to declare *getters* and *setters* in classes with the ES5 syntax: 
 
 ```javascript
 class Shape {       
+  _id;
+ _x=0;
+ _y=0;
+ 
  constructor(id, x, y) { 
   this._id = id; 
   this.move(x, y); 
  }
  move(x, y) {
-  this._x = x; 
+  this._x = x;
   this._y = y; 
  }
+ 
  static defaultShape() { 
   return new Shape("default", 100, 100); 
  }    
+
  set x(x) { this._x = x; }       
  get x()   { return this._x; }        
+ set y(y) { this._y = y; }       
+ get y()   { return this._y; }        
 }
 ``` 
 
-<!------------------- END SLIDE 066 it -------------------------->
+<!------------------- END SLIDE 066b it -------------------------->
+
+<!----------------- BEGIN SLIDE 066c it -------------------------->
+
+####  Private members
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 066c
+
+
+
+Finally, classes allow to declare **private** members without the need of complex workarounds as previously described. 
+To make a field or function private, its name must begin with the hash character (`#`). Note that the hash is part of the name, 
+so it must also be used when referring to the element. A private element can be accessed, as usual, only by members of 
+the same class (it is like a previously described *privileged* method).
+
+```javascript
+class Shape {       
+  _id;
+ //private fields
+ #_x=0; 
+ #_y=0;
+ 
+ constructor(id, x, y) { 
+  this._id = id; 
+  this.move(x, y); 
+ }
+ 
+ //public method calling private method
+ move(x, y) { 
+  if (x>0 && y>0) this.#setPosition(x,y);
+  else throw new Error("position cannot be negative");
+ }
+ 
+ //private method
+ #setPosition(x,y) { 
+  this.#_x = x; 
+  this.#_y = y; 
+ }
+ 
+ static defaultShape() { 
+  return new Shape("default", 100, 100); 
+ }    
+
+ //public methods (getters and setters) accessing private fields
+ set x(x) { this.#_x = x; }       
+ get x()   { return this.#_x; }        
+ set y(y) { this.#_y = y; }       
+ get y()   { return this.#_y; }        
+}
+``` 
+
+<!------------------- END SLIDE 066c it -------------------------->
 
 <!----------------- BEGIN SLIDE 067 it -------------------------->
 
@@ -2129,9 +2230,7 @@ class Rectangle extends Shape {
   return "Rectangle > " + super.toString(); 
  } 
 }  
-```
-
-There are no visibility modifiers (*private*, *protected*,...): if necessary, you can use the techniques already illustrated for prototypes to achieve similar effects. 
+``` 
 
 <!------------------- END SLIDE 067 it -------------------------->
 
@@ -2152,20 +2251,41 @@ There are no visibility modifiers (*private*, *protected*,...): if necessary, yo
 // versions. Actually, classes are only syntactic sugar, and are internally    
 // mapped on the old object management system.   
 
-class Shape {    
- constructor(id, x, y) {this._id = id; this.move(x,y);}         
- move(x, y) { this._x = x; this._y = y; }       
- static defaultShape () { return new Shape("default", 100, 100); }            
- get x() { return this._x; }      
-}
-//SAME AS
+class Shape {   
+ _id;
+ #_x=0; 
+ #_y=0; 
+ constructor(id, x, y) { 
+  this._id = id; 
+  this.move(x, y); 
+ } 
+ move(x, y) { 
+  if (x>0 && y>0) this.#setPosition(x,y);
+  else throw new Error("position cannot be negative");
+ }
+ #setPosition(x,y) {
+  this.#_x = x; this.#_y = y;
+ } 
+ static defaultShape() { 
+  return new Shape("default", 100, 100); 
+ }    
+ set x(x) { this.#_x = x; }       
+ get x()   { return this.#_x; }  
+}; 
+//SAME AS (remving the # from private members)
 let Shape = function(id,x,y) {         
  this._id = id;    
- this.move = function(x, y){ this._x = x; this._y = y; }          
+ let _x = 0;    
+ let _y = 0;    
+ let setPosition = function(x, y){ _x = x; _y = y; }          
+ this.move = function(x, y){
+  if (x>0 && y>0) setPosition(x,y);
+  else throw new Error("position cannot be negative"); 
+ }          
+ Object.defineProperty(this,"x",{get: function(){return _x}, set: function(x){_x=x}});           
  this.move(x, y);   
-}
-Shape.defaultShape = function(){return new Shape("default", 100, 100);}       
-Object.defineProperty(Shape.prototype,"x",{get: function(){return this._x}}           
+};
+Shape.defaultShape = function(){return new Shape("default", 100, 100);};            
 ``` 
 
 <!------------------- END SLIDE 068 it -------------------------->
@@ -2494,7 +2614,11 @@ An exception reports an *unexpected situation*, often a *mistake*, within the no
 
 An exception may be raised by libraries or by JavaScript code written by the user, through the `throw` keyword. 
 
-To handle exceptions, you can use the `try ... catch ... finally` construct. 
+To handle exceptions, you can use the `try ... catch ... finally` construct.
+
+Javascript allows you to pass *any type of value* to `throw`, which will then be captured by `catch` constructs. However,
+it is always advisable to `throw` an `Error` object (a Javascript predefined object) or one of its predefined (such as `RangeError` or `TypeError`) or user-defined (via the `extends` construct of `class`) subclasses. The constructor of `Error` optionally accepts a text message 
+and other options used to define its cause and location. 
 
 <!------------------- END SLIDE 079 it -------------------------->
 
@@ -2534,7 +2658,8 @@ If you want to ensure that a piece code is *always* executed after the `try ... 
 
 ```javascript
 try {
- … code…
+ ...code...
+ throw new Error("Problem!")
 } catch(e) {
  //exceptions generated by Javascript are objects whose message property     
  //contains the error message 
@@ -2659,7 +2784,7 @@ var prodotto = { quantita: 7, nome: "gelato", prezzounitario: 3 };
 
 JavaScript uses regular expressions written in Perl syntax. 
 
-To write a constant regular expression it is sufficient to use the syntax `/*expression*/`. 
+To write a constant regular expression it is sufficient to use the syntax `/expression/`. 
 
 Regular expressions variables can be created using the **RegExp** constructor. 
 
@@ -2917,7 +3042,7 @@ for (let v of s) console.log(s);
 
 
 
-Map represents an association between keys and values.  **Keys and values can be of any type (even objects)**. Once you have created a Map (`new Map()`) you can: 
+Map represents an association between keys and values.  *Keys and values can be of any type (even objects)*. Once you have created a Map (`new Map()`) you can: 
 
 - **Create** new associations or update existing ones with the    `set()` method 
 
