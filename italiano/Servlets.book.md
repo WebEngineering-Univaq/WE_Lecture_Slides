@@ -265,9 +265,11 @@ Un semplice esempio di descrittore è mostrato di seguito.
 
 
 ```xml
-<?xml version="1.0" encoding="ISO-8859-1"?>     
-<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">           
-<web-app>  
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
  <display-name>Progetto IW</display-name>     
  <description>Progetto X</description>     
  <servlet>   
@@ -352,7 +354,7 @@ La classe **HttpServlet** specializza questo sistema per la comunicazione HTTP, 
 
 
 
-Per scrivere una semplice servlet è necessario creare una classe che estende   **javax.servlet.http.HttpServlet**.
+Per scrivere una semplice servlet è necessario creare una classe che estende **jakarta.servlet.http.HttpServlet** (o *javax.servlet.http.HttpServlet* se si usa la JavaEE).
 
 La logica di funzionamento della servlet va codificata nei metodi corrispondenti al verbo HTTP cui devono rispondere.  
 
@@ -372,7 +374,7 @@ La classe HttpServlet fornisce un'implementazione di default di tutti i metodi a
 
 La classe Servlet contiene altri metodi utili, come  `getServletContext`, tramite il quale si possono leggere molte informazioni sul contesto di esecuzione della servlet stessa.  
 
-Per compilare una servlet, è necessario che nel    **CLASSPATH** sia inclusa la libreria che definisce il package   **javax.servlet (o jakarta.servlet se si usa la Jakarta EE)**   . Una copia di questa libreria, chiamata  *servlet-api.jar*, è presente nella directory common/lib di Tomcat. 
+Per compilare una servlet, è necessario che nel **CLASSPATH** sia inclusa la libreria che definisce il package **jakarta.servlet (o javax.servlet se si usa la JavaEE)**   . Una copia di questa libreria, chiamata  *servlet-api.jar*, è presente nella directory common/lib di Tomcat. 
 
 <!------------------- END SLIDE 010 it -------------------------->
 
@@ -391,8 +393,8 @@ Per compilare una servlet, è necessario che nel    **CLASSPATH** sia inclusa la
 ```java
 package org.iw.project;  
 
-import javax.servlet.*;  
-import javax.servlet.http.*;  
+import jakarta.servlet.*;  
+import jakarta.servlet.http.*;  
 
 public class class1 extends HttpServlet {      
  public void doGet(HttpServletRequest in, HttpServletResponse out) {    
@@ -408,7 +410,7 @@ public class class1 extends HttpServlet {
 
 
 
-Una servlet di base estende la classe javax.servlet.http.HttpServlet   
+Una servlet di base estende la classe jakarta.servlet.http.HttpServlet   
 
 Per gestire le richieste HTTP, si sovrascrivono opportunamente i metodi corrispondenti: in questo esempio, il metodo `doGet` verrà chiamato per gestire le richieste HTTP GET.  
 
@@ -431,8 +433,8 @@ Per gestire le richieste HTTP, si sovrascrivono opportunamente i metodi corrispo
 ```java
 package org.iw.project;  
 
-import javax.servlet.*;  
-import javax.servlet.http.*;  
+import jakarta.servlet.*;  
+import jakarta.servlet.http.*;  
 
 @WebServlet(name = "Servlet1", urlPatterns = {"/funzione1"})        
 public class class1 extends HttpServlet {      
@@ -492,8 +494,8 @@ Il metodo non prende alcun argomento e deve restituire una stringa.
 ```java
 package org.iw.project;  
 
-import javax.servlet.*;  
-import javax.servlet.http.*;  
+import jakarta.servlet.*;  
+import jakarta.servlet.http.*;  
 
 public class class1 extends HttpServlet {      
 
@@ -561,8 +563,8 @@ La finalizzazione di una servlet si effettua nel suo metodo `destroy`.
 ```java
 package org.iw.project;  
 
-import javax.servlet.*;  
-import javax.servlet.http.*;  
+import jakarta.servlet.*;  
+import jakarta.servlet.http.*;  
 I
 public class class1 extends HttpServlet {      
  private int parameter1;  
@@ -621,14 +623,14 @@ Altri metodi (che non tratteremo in questa sede) permettono di gestire, ad esemp
 
 <!------------------- END SLIDE 017 it -------------------------->
 
-<!----------------- BEGIN SLIDE 018 it -------------------------->
+<!----------------- BEGIN SLIDE 018a it -------------------------->
 
-####  Esempio
+####  Esempio - html
 
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 018
+> 018a
 
 
 
@@ -636,20 +638,17 @@ Altri metodi (che non tratteremo in questa sede) permettono di gestire, ad esemp
 ```java
 package org.iw.project;  
 
-import javax.servlet.*;  
-import javax.servlet.http.*;  
+import jakarta.servlet.*;  
+import jakarta.servlet.http.*;  
 import java.io.*;  
 I
-public class class1 extends HttpServlet {      
+public class class1 extends HttpServlet { 
  //…
- public void doGet(HttpServletRequest in, HttpServletResponse out) {        
-   out.setContentType("text/xml"); 
-   try {  
-     Writer w = out.getWriter();  
-     w.write("pippo");    
-   } catch(Exception e) {  
-     e.printStackTrace();  
-   }
+ public void doGet(HttpServletRequest in, HttpServletResponse out) throws IOException {        
+  out.setContentType("text/xml"); 
+  try (PrintWriter w = response.getWriter()) {
+    w.write("pippo");    
+  } 
  }
 }
 ```
@@ -665,9 +664,71 @@ Nel caso comune in cui si debba restituire dell'HTML al client, è sufficiente p
 
 Qualunque altro parametro della risposta (in questo caso, il tipo) deve essere impostato *prima* di richiedere il canale di output.
 
-> Si vedano le applicazioni di esempio: Java\_Example\_Servlet, Java\_Example\_Servlet\_Fwk, Java\_Example\_Downloader, Java\_Example\_Imager 
+> Si vedano le applicazioni di esempio: Java\_Example\_Servlet, Java\_Example\_Servlet\_Fwk 
 
-<!------------------- END SLIDE 018 it -------------------------->
+<!------------------- END SLIDE 018a it -------------------------->
+
+<!----------------- BEGIN SLIDE 018b it -------------------------->
+
+####  Esempio - binario
+
+
+<!----------------- COLUMN 1 -------------------------->
+
+> 018b
+
+
+
+
+```java
+package org.iw.project;  
+
+import jakarta.servlet.*;  
+import jakarta.servlet.http.*;  
+import java.io.*;  
+I
+public class class1 extends HttpServlet {      
+ //…
+ public void doGet(HttpServletRequest in, HttpServletResponse out) throws IOException {        
+  out.setContentType("image/jpeg");
+  out.setContentLength(16000);
+  out.setHeader("Content-Disposition", "attachment; filename=\"immagine.jpg\"");
+  try (OutputStream s = out.getOutputStream()) {
+   byte[] buffer = new byte[1024];
+   int read;
+   while ((read = resource.read(buffer)) > 0) {
+    s.write(buffer, 0, read);
+   }
+  }
+ }
+}
+```
+
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
+
+Nel caso in cui si debba restituire un file binario al client, ad esempio per effettuare un download, è invece necessario
+prelevare l'**OutputStream** della response tramite il metodo   `getOutputStream()`  e scrivervi sopra i dati da inviare al browser. Nell'esempio,
+copiamo sullo stream i dati prelevati da una generica risorsa *resource*.
+
+*Prima* di avviare tale operazione, però, è sempre opportuno impostare una serie di *header* necessari alla corretta gestione 
+del download da parte del browser:
+
+- il **Content-Type** indica al browser il tipo della risorsa binaria, rendendo quindi possibile attuare azione specifiche, 
+ad esempio aprire il visualizzatore interno se si sta scaricando un *application/pdf*.   
+  Usiamo il tipo generico *application/octet-stream* per indicare binari *generici* che il browser permetterà solo di salvare;
+  
+- la **Content-Length** indica al browser la lunghezza (in bytes) effettiva del binario, permettendo così di effettuare stime sul tempo necessario allo scaricamento;
+
+- la **Content-Disposition** indica al browser se la risorsa scaricata è inserita (*inline*) o esterna (*attachment*) rispetto a quella da cui è stato avviato il download (tipicamente una pagina HTML). Nel secondo caso, è sempre opportuno specificare anche il **nome del file**, che verrà proposto all'utente come nome di default in caso di salvataggio della risorsa.
+
+> Si vedano le applicazioni di esempio: Java\_Example\_Downloader, Java\_Example\_Imager 
+
+<!------------------- END SLIDE 018b it -------------------------->
 
 <!----------------- BEGIN SLIDE 019 it -------------------------->
 
@@ -716,8 +777,8 @@ I metodi ereditati dalla classe **ServletRequest**, infine, permettono di legger
 ```java
 package org.iw.project;  
 
-import javax.servlet.*;  
-import javax.servlet.http.*;  
+import jakarta.servlet.*;  
+import jakarta.servlet.http.*;  
 import java.io.*;  
 
 public class class1 extends HttpServlet {      
@@ -980,8 +1041,8 @@ I metodi di HttpSession permettono poi di utilizzare la sessione:
 ```java
 package org.iw.project;  
 
-import javax.servlet.*;  
-import javax.servlet.http.*;  
+import jakarta.servlet.*;  
+import jakarta.servlet.http.*;  
 import java.io.*;  
 I
 public class class1 extends HttpServlet {      
@@ -1031,8 +1092,8 @@ Il numero di pagine visitato durante la sessione viene quindi incrementato e sta
 ```java
 package org.iw.project;  
 
-import javax.servlet.*;  
-import javax.servlet.http.*;  
+import jakarta.servlet.*;  
+import jakarta.servlet.http.*;  
 import java.io.*;  
 
 public class class1 extends HttpServlet {      
@@ -1094,8 +1155,8 @@ Il metodo encodeURL determina se è necessario inserire il session identifier ne
 ```java
 package org.iw.project;  
 
-import javax.servlet.*;  
-import javax.servlet.http.*;  
+import jakarta.servlet.*;  
+import jakarta.servlet.http.*;  
 import java.io.*;  
 I
 public class class1 extends HttpServlet {      
