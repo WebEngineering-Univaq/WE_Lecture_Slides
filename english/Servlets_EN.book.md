@@ -403,8 +403,8 @@ To compile a servlet, the package **jakarta.servlet (or javax.servlet with Java 
 ```java
 package org.iw.project;  
 
-import jakarta.servlet.**;  
-import jakarta.servlet.http.**;  
+import jakarta.servlet.*;  
+import jakarta.servlet.http.*;  
 
 public class class1 extends HttpServlet {      
  public void doGet(HttpServletRequest in, HttpServletResponse out) {   
@@ -443,8 +443,8 @@ For HTTP requests, the programmer should overwrite the appropriate methods: in t
 ```java
 package org.iw.project;  
 
-import jakarta.servlet.**;  
-import jakarta.servlet.http.**;  
+import jakarta.servlet.*;  
+import jakarta.servlet.http.*;  
 
 @WebServlet(name = "Servlet1", urlPatterns = {"/operation1"})      
 public class class1 extends HttpServlet {      
@@ -506,8 +506,8 @@ The method takes no arguments and returns a string.
 ```java
 package org.iw.project;  
 
-import jakarta.servlet.**;  
-import jakarta.servlet.http.**;  
+import jakarta.servlet.*;  
+import jakarta.servlet.http.*;  
 
 public class class1 extends HttpServlet {      
 
@@ -577,8 +577,8 @@ You must override this method only if there are things that you should do before
 ```java
 package org.iw.project;  
 
-import jakarta.servlet.**;  
-import jakarta.servlet.http.**;  
+import jakarta.servlet.*;  
+import jakarta.servlet.http.*;  
 I
 public class class1 extends HttpServlet {      
  private int parameter1;  
@@ -796,9 +796,9 @@ Methods inherited from class **ServletRequest**, finally, allow one to read info
 ```java
 package org.iw.project;  
 
-import jakarta.servlet.**;  
-import jakarta.servlet.http.**;  
-import java.io.**;  
+import jakarta.servlet.*;  
+import jakarta.servlet.http.*;  
+import java.io.*;  
 
 public class class1 extends HttpServlet {      
  //…
@@ -1068,9 +1068,9 @@ The HttpSession methods allow to manage the session:
 ```java
 package org.iw.project;  
 
-import jakarta.servlet.**;  
-import jakarta.servlet.http.**;  
-import java.io.**;  
+import jakarta.servlet.*;  
+import jakarta.servlet.http.*;  
+import java.io.*;  
 I
 public class class1 extends HttpServlet {      
  //…
@@ -1121,9 +1121,9 @@ The number of pages visited during the session is then incremented and printed.
 ```java
 package org.iw.project;  
 
-import jakarta.servlet.**;  
-import jakarta.servlet.http.**;  
-import java.io.**;  
+import jakarta.servlet.*;  
+import jakarta.servlet.http.*;  
+import java.io.*;  
 
 public class class1 extends HttpServlet {      
  //…
@@ -1186,9 +1186,9 @@ The method encodeURL determines whether you must put the session identifier in t
 ```java
 package org.iw.project;  
 
-import jakarta.servlet.**;  
-import jakarta.servlet.http.**;  
-import java.io.**;  
+import jakarta.servlet.*;  
+import jakarta.servlet.http.*;  
+import java.io.*;  
 I
 public class class1 extends HttpServlet {      
  //…
@@ -1280,7 +1280,7 @@ All JDBC instructions, in case of error, raise exceptions derived from **SQLExce
 
 
 ```java
-import java.sql.**;  
+import java.sql.*;  
 
 Class.forName ("com.mysql.cj.jdbc.Driver");   
 
@@ -1358,7 +1358,7 @@ To move the cursor to the next record in the **RecordSet**, we use the `next` me
 
 
 ```java
-import java.sql.**;  
+import java.sql.*;  
 
 Class.forName ("com.mysql.cj.jdbc.Driver");   
 
