@@ -14,12 +14,6 @@ author: Giuseppe Della Penna
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 001
-
-
-
-
-
 Giuseppe Della Penna
 
 Università degli Studi di L'Aquila   
@@ -159,10 +153,6 @@ http://people.disim.univaq.it/dellapenna
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 002
-
-
-
 Javascript is a   **programming language** commonly used to provide dynamics to web pages. 
 
 Technically, it is an interpreted, prototype-based language that supports various programming styles:  *object-oriented, imperative, and declarative*.
@@ -181,11 +171,6 @@ Javascript has all the features and constructs common to the most popular   **im
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 003
-
-
-
 
 Javascript is a very popular language among programmers, due to its versatility and simplicity, and because of this, it has extended far beyond client-side web programming. In fact, Javascript is now used to program a multitude of widely used applications.     
 
@@ -210,11 +195,6 @@ Javascript is a very popular language among programmers, due to its versatility 
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 004
-
-
-
-
 Javascript is designed to run inside a   **host object**, or *environment*, which can extend it by providing additional functionality specific to that environment. 
 
 For example, on a web page, the environment, which is the browser, provides JavaScript with functions to     **read and modify the HTML structure of the page** and its style sheets (**DOM**), as well as to **interact with certain parts of the browser** itself, **intercept all actions performed by the user** on the page, and make calls to other servers (**AJAX**)
@@ -233,11 +213,6 @@ Some examples of Web APIs, whose name is rather self-explanatory: Battery API, B
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 005
-
-
-
 
 Javascript is a   **single-threaded** language, i.e. it does not allow any kind of parallel execution.     
 
@@ -270,13 +245,6 @@ A message is, essentially, a function to be called (**callback**) accompanied by
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 006
-
-
-
-
-
-
 - Strict mode
 
 - Getters and setters for properties (declared in constructors)  
@@ -299,11 +267,6 @@ A message is, essentially, a function to be called (**callback**) accompanied by
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 007
-
-
-
 
 - Variables and functions with block scope       
 
@@ -340,11 +303,6 @@ A message is, essentially, a function to be called (**callback**) accompanied by
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 008
-
-
-
-
 Here is a summary of some of the most important changes to the standard in recent years.    
 
 **ECMAScript 2016 (7)**:  
@@ -367,6 +325,12 @@ Here is a summary of some of the most important changes to the standard in recen
 
 **ECMAScript 2020 (11)**  
 
+- Optional chaining (?.)
+
+- Nullish coalescing operator (??)
+
+- Nullish coalescing assignment (??=)
+
 **ECMAScript 2021 (12)**  
 
 - Various enhancements not related to the topics covered in these slides. For up-to-date information, see, for example:  
@@ -386,11 +350,6 @@ Here is a summary of some of the most important changes to the standard in recen
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 009
-
-
-
-
 All the features introduced with ECMAScript 5, 6 and beyond, as well as all the new features related to the HTML DOM that are gradually adopted by the most modern browsers  **are obviously not compatible with older ones**.
 
 When creating a script, it is always necessary to ask yourself  **which browsers are the target** (and therefore also the audience of users) and check if the (advanced) features you intend to use are compatible with them. 
@@ -406,11 +365,6 @@ Alternatively, you can use a transpiler like Babel (*https://babeljs.io*) to tra
 
 ## 2. Types, Variables and Operators
 
-
-<!----------------- COLUMN 1 -------------------------->
-
-> 010 
-
 <!------------------- END SLIDE 010 it -------------------------->
 
 <!----------------- BEGIN SLIDE 011 it -------------------------->
@@ -419,11 +373,6 @@ Alternatively, you can use a transpiler like Babel (*https://babeljs.io*) to tra
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 011
-
-
-
 
 JavaScript supports four different data types: 
 
@@ -464,11 +413,6 @@ JavaScript supports four different data types:
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 012
-
-
-
-
 JavaScript variables are identified by alphanumeric sequences whose first character must be alphabetic. 
 
 Variables do not have a type, which is automatically deduced from the value assigned to them, and can change from time to time. 
@@ -489,11 +433,6 @@ Trying to read the value of a variable never declared or assigned, returns the *
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 013
-
-
-
 
 ```javascript
 var o = new Object(); //o is an (empty) Object variable 
@@ -519,11 +458,6 @@ var b = (3>2) //b is a Boolean variable with true value
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 014
-
-
-
 
 Strict mode is activated using the syntax `"use strict";`
 
@@ -551,11 +485,6 @@ In addition:
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 015
-
-
-
 
 Before ES6, variables declared with the  `var` keyword were not global, but *function-scoped*, i.e. accessible throughout the function to which they belong.   
 
@@ -592,11 +521,6 @@ for (var i = 0; i <= 2; i++) {
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 016
-
-
-
-
 Constants can be declared using the `const` keyword.    
 
 ```javascript
@@ -615,11 +539,6 @@ Note: a *constant object* cannot be reassigned, but its contents can vary since 
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 017
-
-
-
 
 `+` **(sum)**       
 Can be applied to numbers, and to strings, where it represents the concatenation operator. If, in a sum, at least one operand is a string, the others are converted to strings, too. 
@@ -641,9 +560,6 @@ Perform bitwise operations.
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 018
-
-
 `&&` **(and)**, `||` **(or)**, `!` **(not)**      
 Used to combine boolean expressions.   
 
@@ -652,6 +568,21 @@ Can be applied to objects or arrays (right operand) to check if they contain the
 
 `>` **(greater than)**, `<` **(less than)**, `>=` **(greater than or equal)**, `<=` **(less than or equal)**, `==` **(equal)**, `!=` **(not equal)**           
 These operators also work with strings, using the lexicographic ordering. 
+
+`...?...:...` **(ternary conditional operator)**
+
+`??=` **(nullish coalescing assignment)**  
+This assignment operator evaluates its right-hand side and assigns it to the left-hand operand (variable) only if that operand evaluates to *null* or *undefined*. In other words, it computes the value and uses it to update the left-hand side only when that side does not contain any value.
+
+`??` **(nullish coalescing operator)**  
+It returns its right-hand operand if the left-hand operand is *null* or *undefined*; otherwise, it returns the left-hand operand. 
+
+<!------------------- END SLIDE 018 it -------------------------->
+
+<!----------------- BEGIN SLIDE 018b it -------------------------->
+
+
+<!----------------- COLUMN 1 -------------------------->
 
 `typeof(...)` **(type name)**      
 Returns a string containing the name of the type of its argument 
@@ -662,7 +593,7 @@ Runs the code passed as an argument, but does not return its return value
 `eval(...)` **(script evaluation)**      
 Runs the script passed as a string and returns its value 
 
-<!------------------- END SLIDE 018 it -------------------------->
+<!------------------- END SLIDE 018b it -------------------------->
 
 <!----------------- BEGIN SLIDE 019 it -------------------------->
 
@@ -670,11 +601,6 @@ Runs the script passed as a string and returns its value
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 019
-
-
-
 
 ```javascript
 var s = "tre " + 2; //s is the string "tre 2"     
@@ -703,11 +629,6 @@ eval("var s = 1"); //globally declares a variable s and assigns the value 1 to i
 
 ## 3. Flow Constructs
 
-
-<!----------------- COLUMN 1 -------------------------->
-
-> 020 
-
 <!------------------- END SLIDE 020 it -------------------------->
 
 <!----------------- BEGIN SLIDE 021 it -------------------------->
@@ -716,11 +637,6 @@ eval("var s = 1"); //globally declares a variable s and assigns the value 1 to i
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 021
-
-
-
 
 JavaScript has an `if` statement with the same syntax as Java: 
 
@@ -753,11 +669,6 @@ To execute some instructions only if a specified variable or property is defined
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 022
-
-
-
-
 JavaScript has a `switch` construct with the same syntax as Java: 
 
 ```javascript
@@ -780,11 +691,6 @@ To stop the execution after a set of statements, it is possible to insert a `bre
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 023
-
-
-
 
 ```javascript
 var s = "value";   
@@ -810,11 +716,6 @@ switch (s) {
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 024
-
-
-
 
 JavaScript has the common loop constructs `for`, `while` and `do ... while`, with the same syntax as Java: 
 
@@ -847,11 +748,6 @@ In the body of the loop you can use the keywords `break` and `continue` respecti
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 025
-
-
-
-
 A special form of a `for` loop can be used to loop through all the properties of an object : 
 
 ```javascript
@@ -880,11 +776,6 @@ In each iteration, the *value* will contain the value of the next array element
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 026
-
-
-
-
 ```javascript
 var o = new Object(); 
 
@@ -911,11 +802,6 @@ do { i=i+1; } while(i>0);
 
 ## 4. Functions
 
-
-<!----------------- COLUMN 1 -------------------------->
-
-> 027 
-
 <!------------------- END SLIDE 027 it -------------------------->
 
 <!----------------- BEGIN SLIDE 028 it -------------------------->
@@ -924,11 +810,6 @@ do { i=i+1; } while(i>0);
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 028
-
-
-
 
 In Javascript, it is possible to create new functions with one of the following syntaxes:   
 
@@ -961,11 +842,6 @@ In the body, parameter values can be manipulated through the variables with the 
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 029
-
-
-
 
 ES6, like Java 8, allows you to define anonymous functions (lambdas) with a simplified syntax `(parameters) => expression`:
 
@@ -1014,11 +890,6 @@ this.nums.forEach(
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 030
-
-
-
-
 ```javascript
 //function without parameters, explicit declaration         
 function f() { 
@@ -1041,14 +912,10 @@ var h2 = new Function("a","return a+1;");
 
 <!----------------- BEGIN SLIDE 031 it -------------------------->
 
-####  block scope
+####  Block scope
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 031
-
-
 
 Functions are only visible within the block that defines them (no special syntax is needed):      
     
@@ -1075,11 +942,6 @@ Functions are only visible within the block that defines them (no special syntax
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 032
-
-
-
-
 JavaScript functions are actually variables with a value of type **Function**. 
 
 To refer to a function, simply use its name, or an equivalent expression that has a value with type **Function**. 
@@ -1105,11 +967,6 @@ Once the reference to a function is obtained, you can:
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 033
-
-
-
-
 To call a function, append the parameter list, between brackets, to an expression that refers to the function itself: 
 
 ```javascript
@@ -1126,6 +983,8 @@ It is possible to omit one or more parameters at the end of the list. In this ca
 
 If the function has no parameters, you must still write the two parentheses after its name to call it. 
 
+Every **Function** object includes, among its properties, the `call(thisArg, arg1,arg2,…)` method, which allows you to invoke the corresponding function while explicitly specifying the value to assign to the `this` variable inside its body, as well as providing the list of arguments. It also includes the `apply(thisArg,[arg1,arg2,…])` method, in which the arguments are supplied inside an array. *These methods are invoked behind the scenes when calling a function using the standard syntaxes described above, but they can also be used directly by the developer.* 
+
 <!------------------- END SLIDE 033 it -------------------------->
 
 <!----------------- BEGIN SLIDE 034 it -------------------------->
@@ -1134,11 +993,6 @@ If the function has no parameters, you must still write the two parentheses afte
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 034
-
-
-
 
 ```javascript
 function f() { var i; }   
@@ -1161,11 +1015,6 @@ var r2 = h2(4); //r=5
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 035
-
-
-
-
 Parameters passing in JavaScript functions takes place in a different manner depending on the type of the parameter itself: 
 
 - The types boolean, string, number and null are passed   *by value*. The function receives a copy of the value used as argument. Local changes to this value in the function do not affect the value of the argument used in the function call. 
@@ -1180,11 +1029,6 @@ Parameters passing in JavaScript functions takes place in a different manner dep
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 036
-
-
-
 
 In ES6 you can specify **default values** for parameters (such as in PHP or C):
 
@@ -1211,11 +1055,6 @@ function f (x,...a) {return x*a.reduce((t,v,i,r) => a+v, 0);}
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 037
-
-
-
-
 Functions return the control to their caller at the end of their instructions block. 
 
 It is possible to *return a value* to the caller using the syntax 
@@ -1237,11 +1076,6 @@ If the function does not execute any return statement, JavaScript implicitly iss
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 038
-
-
-
-
 A **closure** is technically an expression (typically a function) *associated with a context that assigns its free variables*. 
 
 All the Javascript code is executed in a context, including the global one. 
@@ -1258,11 +1092,6 @@ A *closure* is created by a function, when it returns a new function, created dy
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 039
-
-
-
 
 A *closure*, i.e., a function created within another function and then returned, *maintains the execution context of the function that created it*. 
 
@@ -1281,11 +1110,6 @@ Since each function call has its own distinct environment, the values ​​"see
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 040
-
-
-
-
 A common use for the closure is to provide parameters to a function that will be executed later, for example for the functions passed as an argument to `setTimeout` (which will be described later). 
 
 If we pass a function as an argument, or assign it to a variable, we can not provide it with parameters, but instead we can use a *wrapper closure* that calls it with the desired parameters. 
@@ -1298,9 +1122,6 @@ See the following examples ...
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 041
-
 
 ```javascript
 function f(x) { 
@@ -1332,9 +1153,6 @@ o.p() //CORRECT: f(3) will be called!
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 042
-
-
 ```javascript
 //we want to assign an handler for the onclick event to an HTML DOM element  
 htmlelement.onclick = f; 
@@ -1362,19 +1180,12 @@ element2.onclick = clickHandler(linkedelement2);
 
 ## 5. Objects
 
-
-<!----------------- COLUMN 1 -------------------------->
-
-> 043 
-
 <!------------------- END SLIDE 043 it -------------------------->
 
 <!----------------- BEGIN SLIDE 044 it -------------------------->
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 044
 
 Javascript **is not object oriented language similar to more well-known ones (as Java)**, and his concept of object is much more similar to an associative array. 
 
@@ -1397,24 +1208,23 @@ An alternative method to create an object is to use the construct `{"property": 
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 045
-
-
-
-
 Javascript object properties can be assigned to values of any type. 
 
 To reference a property, two different syntaxes can be used:
 
 - "object oriented" syntax: `object.property`
 
-- "array" syntax: `object["property"]`
+- "array" syntax: `object[string-expression-for-property-ame]`
 
 The special construct `for...in` can be used to iterate between the object properties.
 
 It is possible to check if an object contains a property using the boolean expression  `property in object`.
 
 If you try to read the value of an undefined object property, *undefined* will be returned, as for any unassigned variable.
+
+If, on the other hand, you try to read a property from an undefined object, JavaScript throws an exception. To prevent this, you can use the **optional chaining** operator instead of the dot (`object?.property`, `object?.[expression]`), which simply returns *undefined* if the object on the left-hand side is *null* or *undefined*.
+
+
 It is possible to **dynamically add properties** to any object by simply assigning them a value.  
 However, it is not possible to add properties to variables that are not of type object (predefined objects or created with `new`) 
 
@@ -1426,11 +1236,6 @@ However, it is not possible to add properties to variables that are not of type 
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 046
-
-
-
 
 ```javascript
 var o = new Object(); 
@@ -1470,17 +1275,14 @@ v=o2[nome];
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 047
-
-
-
-
 Methods are simply a Javascript object properties of type **Function**. 
 *Function* is a predefined JavaScript object, and can be used directly, for example to create anonymous functions. 
 
 To **access** a method you can use the same syntax used for the properties. 
 
 To **call** a method simply append the parameter list, in brackets, to the expression which accesses the method. 
+
+If you try to call a method that is not defined on an object, JavaScript throws an exception. To prevent this, you can use the **optional chaining** operator with the specific syntax for method calls (`method-expression?.(arguments)`), which simply returns *undefined* if the method on the left-hand side is *null* or *undefined*.
 
 To add a method to an object, simply create a property with the name of the method and assign to it: 
 
@@ -1501,11 +1303,6 @@ If you omit `this`, JavaScript will search for a variable with that name within 
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 048
-
-
-
 
 ```javascript
 var o = new Object(); 
@@ -1540,11 +1337,6 @@ o3.metodo3 = o.metodo1
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 049
-
-
-
-
 It is possible to use a compact syntax for  **defining properties from variables**: the object's property can automatically take on the same name as the variable used to assign it a value: 
 
 ```javascript
@@ -1574,11 +1366,6 @@ let o={p:"ciao", ["p_"+f()]: 42 };
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 050
-
-
-
-
 A constructor function is a special kind of function where:
 
 - You use the `this` keyword to *define* the properties of a new object. 
@@ -1597,9 +1384,6 @@ The constructor functions should never be called directly.
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 051
-
-
 When calling the constructor with `new`, JavaScript creates an empty object derived from **Object** and applies it to the function. 
 
 In the constructor, `this` points to the new object. 
@@ -1614,11 +1398,6 @@ Note again that the methods of an object, to refer to the properties of the same
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 052
-
-
-
 
 ```javascript
 function myObject(a) {   
@@ -1652,10 +1431,6 @@ o.getV = function() {return v;}
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 053
-
-
-
 When a Javascript object is created using `new`, it is implicitly assigned to a *prototype*.
 
 Prototypes contain **methods and properties common to all the objects created with the same constructor**, and thus are roughly equivalent to the concept of   *class* in other languages. 
@@ -1681,11 +1456,6 @@ The `instanceof` operator allows one to check whether a constructor function is 
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 054
-
-
-
 
 ```javascript
 function myObject(a) {   
@@ -1713,9 +1483,6 @@ o2.z(); //ERROR, z is only in o1!
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 055
-
-
 ```javascript
 //all the following expressions point to the 
 //prototype of the objects created by the myObject constructor                
@@ -1742,11 +1509,6 @@ o1 instanceof Array // returns false
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 056
-
-
-
 
 In Javascript,  **getters** and **setters** allow you to create pseudo variables in an object. A pseudo variable is not directly associated with a real object variable, but it works as if it were.
 
@@ -1781,11 +1543,6 @@ To add them to constructors, you need to use the new `defineProperty` method on 
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 057
-
-
-
 
 `Object.defineProperty(object, propertyName, descriptor)`    inserts or overwrites a property in an object.  
 
@@ -1834,11 +1591,6 @@ Object.defineProperty(obj.prototype, "pippo", {
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 058
-
-
-
-
 In Javascript there is no explicit notion of public and private member, common to many object oriented languages.
 
 However, you can **simulate this behavior** by using the techniques just exposed.
@@ -1853,11 +1605,6 @@ We will see how to define properties (and methods) so that they are visible outs
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 059
-
-
-
 
 Public properties and methods can be created as we have seen so far, i.e., assigning them to the `this` object within the constructor.
 
@@ -1878,11 +1625,6 @@ The final effect is the same but, as we will see, it has some impact on private 
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 060
-
-
-
-
 ```javascript
 function myObject(a) {   
  this.v = a+1; //public property   
@@ -1900,11 +1642,6 @@ var o = new myObject(1);
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 061
-
-
-
 
 Private properties and methods can be created by exploiting the constructor's  *closure* effect 
 
@@ -1924,11 +1661,6 @@ Therefore private properties and methods can only be manipulated by other privat
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 062
-
-
-
 
 ```javascript
 function myObject(a) {   
@@ -1959,11 +1691,6 @@ o.m2(); //ERROR, since p e pm cannot be accessed by public methods
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 063
-
-
-
-
 Being unable to access private members from public methods makes private members useful only for internal functions, such as initialization. 
 
 However, **it is possible to create special public methods that also have access to the object private members**   and which, for this reason, are often called *privileged*.
@@ -1980,10 +1707,6 @@ Creating privileged methods is very simple: just use the "base" technique for cr
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 064
-
-
 
 ```javascript
 function myObject(a) {   
@@ -2016,11 +1739,6 @@ o.m3(); //returns 6
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 065
-
-
-
 
 ES6 introduces a new class concept, similar to that of object-oriented languages such as Java or C++.
 
@@ -2080,10 +1798,6 @@ let Shape =  class { constructor(id) { this._id = id;} }
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 066
-
-
-
 You can use the `static` keyword to declare methods and properties that can be invoked directly on the class, and not on its instances:     
 
 ```javascript
@@ -2117,10 +1831,6 @@ s = Shape.defaultShape();
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 066b
-
-
 
 It is possible to declare *getters* and *setters* in classes with the ES5 syntax: 
 
@@ -2158,10 +1868,6 @@ class Shape {
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 066c
-
-
 
 Finally, classes allow to declare **private** members without the need of complex workarounds as previously described. 
 To make a field or function private, its name must begin with the hash character (`#`). Note that the hash is part of the name, 
@@ -2213,10 +1919,6 @@ class Shape {
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 067
-
-
-
 You can generate **class hierarchies** using the `extends` keyword. In derived classes, the `super` keyword provides access to the methods and constructor of the base class.
 
 ```javascript
@@ -2240,11 +1942,6 @@ class Rectangle extends Shape {
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 068
-
-
-
 
 ```javascript
 // Classes are not a substitute for the prototype-based system of previous  
@@ -2294,11 +1991,6 @@ Shape.defaultShape = function(){return new Shape("default", 100, 100);};
 
 ## 6. Spread and Destructuring Assignment
 
-
-<!----------------- COLUMN 1 -------------------------->
-
-> 069 
-
 <!------------------- END SLIDE 069 it -------------------------->
 
 <!----------------- BEGIN SLIDE 070 it -------------------------->
@@ -2307,11 +1999,6 @@ Shape.defaultShape = function(){return new Shape("default", 100, 100);};
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 070
-
-
-
 
 It is possible to use the *spread* operator (denoted by `...`, not to be confused with the syntax of *rest parameters*) to **explode an array (or** ***any iterable object***  **) in the sequence of its values** 
 
@@ -2340,11 +2027,6 @@ var str="ciao"; var chars = [...str]; //chars=["c","i","a","o"]
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 071
-
-
-
 
 Destructuring assignment allows you to **extract array values or object properties and assign them to separate variables**. 
 
@@ -2375,9 +2057,6 @@ var  [ a, ...b ]  = list; //a=1, b=[2,3]
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 072
-
 
 **With objects**, the syntax is to use an expression in curly brackets on the left side of an assignment:
 
@@ -2418,9 +2097,6 @@ var {p3:a, p3:{s2:b}}=o2; //a={s1:2, s2:3}, b=3
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 073
-
-
 It is possible to provide **defaults in the destructuring** , so that missing elements are assigned to the default and not  *undefined*:
 
 ```javascript
@@ -2447,11 +2123,6 @@ g({p1:"Ciao",p2:10}); //returns "Ciao10"
 
 ## 7. Iterators and Generator Functions
 
-
-<!----------------- COLUMN 1 -------------------------->
-
-> 074 
-
 <!------------------- END SLIDE 074 it -------------------------->
 
 <!----------------- BEGIN SLIDE 075 it -------------------------->
@@ -2462,13 +2133,6 @@ g({p1:"Ciao",p2:10}); //returns "Ciao10"
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 075
-
-
-
-
-
 
 ES6 objects can customize how they are "enumerated" using the for construct, which has a new syntax specifically for this purpose. 
 
@@ -2515,11 +2179,6 @@ function numbers(a,b) {
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 076
-
-
-
-
 An iterable object can be enumerated using its iterator, for example with a for loop:  
 
 ```javascript
@@ -2551,10 +2210,6 @@ Many Javascript objects are iterable, such as arrays and strings, but also Map a
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 077
-
-
 
 Since defining an iterator is quite complex, ES6 provides another useful construct for creating iterable objects with calculated and, theoretically, unlimited values: generator functions.    
 
@@ -2594,19 +2249,12 @@ var o = {n:0, g_numbers1_10:function *() {for(let i=1; i<11; ++i) yield i}}
 
 ## 8. Exceptions
 
-
-<!----------------- COLUMN 1 -------------------------->
-
-> 078 
-
 <!------------------- END SLIDE 078 it -------------------------->
 
 <!----------------- BEGIN SLIDE 079 it -------------------------->
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 079
 
 Newer versions of JavaScript also introduced a **Java-style exception handling system**. 
 
@@ -2629,11 +2277,6 @@ and other options used to define its cause and location.
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 080
-
-
-
-
 Once raised, an exception goes back on the JavaScript *call stack* until it is handled. 
 This means that an exception thrown in a function, if not handled within it, will be propagated to its caller functions, until it gets to the JavaScript *runtime*. 
 
@@ -2650,11 +2293,6 @@ If you want to ensure that a piece code is *always* executed after the `try ... 
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 081
-
-
-
 
 ```javascript
 try {
@@ -2685,11 +2323,6 @@ try {
 
 ## 9. Predefined Objects
 
-
-<!----------------- COLUMN 1 -------------------------->
-
-> 082 
-
 <!------------------- END SLIDE 082 it -------------------------->
 
 <!----------------- BEGIN SLIDE 083 it -------------------------->
@@ -2698,11 +2331,6 @@ try {
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 083
-
-
-
 
 **String** objects in JavaScript are used to contain strings of characters. They can be created implicitly, using a string constant, or explicitly through the constructor: 
 
@@ -2746,11 +2374,6 @@ returns the string converted to uppercase
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 084
-
-
-
-
 ES6 allows you to construct strings by interpolating them, i.e. inserting variable values into them without having to use concatenation (as happens, for example, in PHP). 
 
 To make interpolation possible, the string must be delimited by the special character  **\`**  **(which is not the apostrophe ')** 
@@ -2776,11 +2399,6 @@ var prodotto = { quantita: 7, nome: "gelato", prezzounitario: 3 };
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 085
-
-
-
 
 JavaScript uses regular expressions written in Perl syntax. 
 
@@ -2814,11 +2432,6 @@ To make the expression and *case insensitive*, use the `/i` modifier
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 086
-
-
-
 
 Arrays are predefined JavaScript objects and can contain values ​​of any type. 
 
@@ -2861,11 +2474,6 @@ sorts the array. The optional *sortfun* can be used to specify a non-standard so
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 087
-
-
-
-
 ```javascript
 var a1 = new Array(10,20,30); 
 //declaration using the new construct 
@@ -2895,11 +2503,6 @@ Note: to create an associative array, you can simply dynamically create new prop
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 088
-
-
-
 
 - `forEach(function (value, index, array) {...} )`          
 executes a code on each array element. The given function receives the *value* of the current array element, its *index* and the *array* itself
@@ -2937,11 +2540,6 @@ returns the index of the first element for which the function is true
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 089
-
-
-
-
 The **Date** object allows one to manipulate values ​​of type date and time. It has several constructors: 
 
 - `Date()` initializes the object to the current date/time. 
@@ -2964,11 +2562,6 @@ For example, `getYear`, `getMonth`, `setYear`, `setMonth`, `getDay`  (returns th
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 090
-
-
-
 
 ```javascript
 //builds a greeting based on the current hour of the day and assigns it to the saluto variable               
@@ -2997,11 +2590,6 @@ futuro.setDate(futuro.getDate()+70);
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 091
-
-
-
 
 ES6 provides two new **container classes** (alongside Array) present in the libraries of all object-oriented languages: **Map** and **Set**.
 
@@ -3037,11 +2625,6 @@ for (let v of s) console.log(s);
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 092
-
-
-
-
 Map represents an association between keys and values.  *Keys and values can be of any type (even objects)*. Once you have created a Map (`new Map()`) you can: 
 
 - **Create** new associations or update existing ones with the    `set()` method 
@@ -3059,7 +2642,7 @@ Map represents an association between keys and values.  *Keys and values can be 
 - **Enumerate** keys using the iterable returned by the  `keys()` method, values using the iterable returned by the  *values()* method, and key-value pairs using the map itself as an iterable  
 
 ```javascript
-var m = new Map()       
+var m = new Map();
 m.set("a",1).set(4,"four").set(o,34); //o is an object
 m.has("a")===true;      
 m.delete("a");    
@@ -3077,10 +2660,6 @@ for(v of m.values()) console.log(v);
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 094
-
-
 
 ES6 promises **replace callback functions** as a way to return values (or errors) asynchronously. A promise is the result of a computation that will end in the future. 
 
@@ -3110,11 +2689,6 @@ p = new Promise((resolve,reject) =\> {
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 095
-
-
-
 
 While it's possible to create Promises as we have just seen, it's more common to use Promises returned by some asynchronous Javascript APIs.   
 
@@ -3152,11 +2726,6 @@ p.finally(
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 096
-
-
-
-
 ```javascript
 function doMyWorkAsync(x) {   
  return new Promise((resolve, reject) => {        
@@ -3192,11 +2761,6 @@ v_proxy.then((v) => {
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 097
-
-
-
-
 It is often useful to *concatenate* asynchronous operations, i.e. to start an asynchronous operation when the previous one ends, passing the result of the latter as an argument. 
 
 With promises, this is possible because the `then` and `catch` methods return a new promise, which represents the completion of the execution of the respective handlers. 
@@ -3213,11 +2777,6 @@ In this way, you can call a series of concatenated  `then`, specifying in each o
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 098
-
-
-
 
 ```javascript
 function doMyWorkAsync(x) {   
@@ -3261,11 +2820,6 @@ doMyWorkAsync(1)
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 099
-
-
-
-
 Asynchronous functions, declared through the `async function`  construct, are a method of *handling the creation of Promises and/or the code dependent on the fulfillment of one or more Promises in a more linear and simple way*  .
 
 An async function, when called, returns a   **Promise for its result**   (regardless of its actual return value). 
@@ -3303,10 +2857,6 @@ pf2(1).then((v)=>{console.log(v)},(e)=>{console.log("Error: "+e)});
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 100
-
-
-
 Within an *async function*  it is also possible to **synchronize** in a simplified way with other Promises, without using the `then` and `catch` constructs, but working synchronously with the `await` construct.
 
 With the syntax `v = await p`, where  *p* is a Promise, 
@@ -3327,11 +2877,6 @@ For this reason, **await can only be used as an async function**: while the asyn
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 101
-
-
-
 
 ```javascript
 function pf1(y) {   
@@ -3377,11 +2922,6 @@ The Promise returned by pf2(x,y)
 
 ## 10. Javascript in Browsers
 
-
-<!----------------- COLUMN 1 -------------------------->
-
-> 102 
-
 <!------------------- END SLIDE 102 it -------------------------->
 
 <!----------------- BEGIN SLIDE 103 it -------------------------->
@@ -3392,12 +2932,6 @@ The Promise returned by pf2(x,y)
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 103
-
-
-
-
 
 To embed a script in an HTML page, use the \<script\> tag with type attribute set to the value "text/javascript".   
 For compatibility with older browsers, the code inside the script tag is sometimes placed between HTML comment tags: \<!-- and --\>. 
@@ -3425,11 +2959,6 @@ There are also some attributes allow to embed code in the HTML page:
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 104
-
-
-
-
 The \<script\> tag can appear both in the \<head\>, where it is normally placed, or at any point of the \<body\>. 
 
 All functions and variables declared in the script become available (i.e., can be referred in the code) as soon as the parser analyzes the page fragment that declares them. 
@@ -3447,11 +2976,6 @@ Scripts can freely use functions and variables declared in other scripts include
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 105
-
-
-
 
 ```html
 <script type="text/javascript">    
@@ -3473,11 +2997,6 @@ Scripts can freely use functions and variables declared in other scripts include
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 106
-
-
-
 
 When JavaScript is used in a browser, there are other useful objects that can be accessed, including the browser itself and the displayed page. 
 
@@ -3506,11 +3025,6 @@ The interface of window contains some very useful features, including
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 107
-
-
-
-
 ```javascript
 //executes an action only if the user clicks OK
 if (window.confirm("Are you sure you want to leave the page?")) {…}   
@@ -3528,11 +3042,6 @@ if (!citta) window.alert("You have not specified the place of birth!");
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 108
-
-
-
 
 Javascript, through the  **window** object, allows to execute **timed actions**. For this purpose it is possible to use the following methods. 
 
@@ -3554,11 +3063,6 @@ Both functions can be called multiple times, and return a *timer id* (numeric), 
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 109
-
-
-
 
 ```javascript
 function saluta(nome) { 
@@ -3582,11 +3086,6 @@ setInterval("d=new Date(); alert(‘Now it's '+d.getHours()+':'+d.getMinutes())"
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 110
-
-
-
 
 The **document** object can be retrieved as a property of the **window** object and represents the document displayed by the browser. 
 
@@ -3613,11 +3112,6 @@ The document object often provides also a browser-specific system to access the 
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 111
-
-
-
-
 ```javascript
 //creates a document containing a simple table         
 var i,j;   
@@ -3643,11 +3137,6 @@ document.close();
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 112
-
-
-
-
 The **XMLHttpRequest** object, originally introduced by Internet Explorer, is now supported by all popular browsers. 
 
 Its purpose is to *allow Javascript code to send HTTP requests to the server*   (just as a browser would do) and use the resulting data. 
@@ -3664,11 +3153,6 @@ For safety reasons, the XMLHttpRequest object can   *only* make connections *wit
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 113
-
-
-
 
 *The XMLHttpRequest interface*   is standard, but there are browser-dependent systems to access this object. 
 
@@ -3687,11 +3171,6 @@ As an example, in Internet Explorer, we had to use the ActiveXObject object (`ty
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 114
-
-
-
-
 The *usage pattern of XMLHttpRequest*  is two-fold, depending on whether you choose to make the call synchronous or asynchronous: 
 
 - **Synchronous mode**: the request is blocking, i.e., the script (and the associated page) are unavailable until the response is received.   
@@ -3706,11 +3185,6 @@ The *usage pattern of XMLHttpRequest*  is two-fold, depending on whether you cho
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 115
-
-
-
 
 Prepare the request using the `open` method, passing the url and the HTTP verb to call. The third parameter must be   *false* to start a synchronous request:    
 
@@ -3741,11 +3215,6 @@ Access the data returned by the server (if necessary) using the `responseText` p
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 116
-
-
-
-
 ```javascript
 var req = createRequest();         
 
@@ -3768,11 +3237,6 @@ if (req.status==200) {
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 117
-
-
-
 
 Prepare the request using the `open` method, passing the url and the HTTP verb to call. The third parameter must be   *true* to start a synchronous request: 
 
@@ -3819,11 +3283,6 @@ At any time, you can invoke the `abort` method to stop the current HTTP request.
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 118
-
-
-
-
 ```javascript
 var req = createRequest();         
 
@@ -3864,11 +3323,6 @@ req.send(null);
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 119
-
-
-
-
 ```javascript
 let p = new Promise((success, failure) => {   
  let req = createRequest();          
@@ -3901,11 +3355,6 @@ p.then(
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 120
-
-
-
-
 When exchanging data with a script via XMLHttpRequest, it often happens to have the server send   *complex data structures* to JavaScript, not simply HTML or plain text. 
 
 In these cases, it is useful to use the **JSON** notation: in practice, the data structures are encoded using the "short" JavaScript notation for the definition of objects and arrays. 
@@ -3937,11 +3386,6 @@ data = JSON.parse(xhr.responseText)
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 121
-
-
-
-
 Fetch APIs are a generic interface for retrieving resources, even over the network, and in this way they also replace and enhance the  *XMLHttpRequest* object, making it unnecessary to use libraries such as JQuery to make complex AJAX calls. 
 
 The `fetch` method is implemented by the *window* object and requires the path to the resource you want to retrieve as a required argument 
@@ -3962,11 +3406,6 @@ There are methods to handle the content of the fetch-generated  *Response*, such
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 122
-
-
-
 
 ```javascript
 fetch(requrl, {  
@@ -3994,11 +3433,6 @@ fetch(requrl, {
 
 ## 11. Modules
 
-
-<!----------------- COLUMN 1 -------------------------->
-
-> 123 
-
 <!------------------- END SLIDE 123 it -------------------------->
 
 <!----------------- BEGIN SLIDE 124 it -------------------------->
@@ -4007,11 +3441,6 @@ fetch(requrl, {
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 124
-
-
-
 
 Each javascript file can   **represent a module**.
 
@@ -4061,11 +3490,6 @@ export {inc as add1} from  "path/modulo1.js";
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 125
-
-
-
-
 **All values exported** from one module can be imported into another one by using the expression `import *` and assigning them a *namespace* (or rather an object that will contain them):    
 
 ```javascript
@@ -4112,11 +3536,6 @@ import v, { inc as add1 } from "path/modulo1.js";
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 126
-
-
-
-
 Although modules are useful for building complex Javascript programs outside the browser (for example, for node.js), web pages can also benefit from organizing code into modules. However, you have to keep in mind that the modules don't work like classic scripts:   
 
 By default, the modules are in  **strict** mode.
@@ -4153,11 +3572,6 @@ When specifying the path of a module within imports, you need to provide an abso
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 127
-
-
-
-
 **ECMAScript 2023 Language Specification**      
 https://tc39.es/ecma262   
 
@@ -4172,10 +3586,6 @@ https://developer.mozilla.org
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 128
-
-
 
 The main samples explained or developed during the classes are outlined below. These examples are all available in the GitHub, at the address 
 <https://github.com/orgs/WebEngineering-Univaq>, and are a *key component* of the classes itself, since they illustrate the practical use of the concepts presented during lectures and reported in this documentation (where, when possible, references to these examples can also be found).

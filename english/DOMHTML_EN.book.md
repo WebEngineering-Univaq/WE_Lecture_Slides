@@ -14,11 +14,6 @@ author: Giuseppe Della Penna
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 001
-
-
-
-
 ***XML, HTML, CSS and Events***
 
 
@@ -113,10 +108,6 @@ http://people.disim.univaq.it/dellapenna
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 002
-
-
-
 An **object model** defines: 
 
 - The **objects** used to represent and manipulate a particular type of information. 
@@ -138,11 +129,6 @@ In our case, the object model is applied to the structure of XML documents.
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 003
-
-
-
-
 *The base DOM* 
 
 <!------------------- END SLIDE 003 it -------------------------->
@@ -151,9 +137,6 @@ In our case, the object model is applied to the structure of XML documents.
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 004
-
 
 The XML Document Object Model (DOM) is a generic object model applicable to all the documents written in an XML-based language. 
 
@@ -172,9 +155,6 @@ The XML DOM:
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 005
-
-
 There are various versions of the DOM, structured into *levels*: 
 
 - **Level 1**: Basic DOM, defines the main interfaces that contain methods and attributes of common use. 
@@ -192,11 +172,6 @@ There are various versions of the DOM, structured into *levels*:
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 006
-
-
-
-
 **The DOM represents the document as a tree structure**. 
 
 Actually, the structure is a "forest" since it can also contain multiple distinct trees. 
@@ -213,10 +188,6 @@ However, users accessing the document via the DOM interface, will actually "see"
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 007
-
-
 
 The following XML document
 
@@ -255,11 +226,6 @@ corresponds to this document tree
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 008
-
-
-
-
 The tree is composed of generic **nodes**, each of which has a more specific classification, depending on its function within the document.
 
  
@@ -279,10 +245,6 @@ The tree is composed of generic **nodes**, each of which has a more specific cla
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 009
-
-
 
 ![Document tree elements](img/domhtml3.png)
 
@@ -316,10 +278,6 @@ Node **relationships**:
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 010
-
-
-
 ![DOM classes](img/domhtml4.png) 
 
 <!------------------- END SLIDE 010 it -------------------------->
@@ -330,11 +288,6 @@ Node **relationships**:
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 011
-
-
-
 
 DOM nodes are represented by objects of class **Node**. 
 
@@ -356,11 +309,6 @@ Each node also implements some derived interfaces, which include more specific o
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 012
-
-
-
 
 ```java
 interface Node {   
@@ -429,11 +377,6 @@ The attribute `nodeType` allows to identify the specific type of node through a 
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 013
-
-
-
-
 |**Node type**  |**nodeName** |**nodeValue**
 |---|---|---|
 |**Element**|Tag name  |null|
@@ -457,11 +400,6 @@ The attribute `nodeType` allows to identify the specific type of node through a 
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 014
-
-
-
 
 The Node interface provides several attributes to traverse the DOM tree : 
 
@@ -488,11 +426,6 @@ The objects returned by `childNodes` and `attributes` usually have also an array
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 015
-
-
-
-
 The *Node* interface has also some methods which allow to manipulate its children: 
 
 - `appendChild(n)`:  append a node *n* to the list of children of the current node 
@@ -516,11 +449,6 @@ The applicability of these methods depends on the actual type of the node. If th
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 016
-
-
-
-
 The **Document** object is a special **Node** that represents the entire XML document. 
 
 Generally, when an XML document is loaded in memory, the corresponding Document object is created and returned. 
@@ -539,11 +467,6 @@ All the nodes to be included in the document should be created by its `CreateX()
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 017
-
-
-
 
 ```java
 interface Document : Node {     
@@ -585,11 +508,6 @@ The `getElementsByTagName` method will be illustrated in the Element object.
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 018
-
-
-
 
 ```javascript
 var e,r;    
@@ -645,8 +563,6 @@ The DOM interfaces are in the **org.w3c.dom** package
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 019
 
 The following code fragment
 
@@ -707,10 +623,6 @@ Creates the XML structure below:
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 020
-
-
-
 ```java
 interface Element : Node {     
  readonly attribute DOMString tagName;        
@@ -763,11 +675,6 @@ The `normalize` method is used to merge adjacent *Text* nodes in the subtree con
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 021
-
-
-
-
 ```java
 interface NodeSelector {   
   Element querySelector(DOMString selectors);    
@@ -796,11 +703,6 @@ The two methods accept CSS selectors (also composite) and return, in the case of
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 022
-
-
-
 
 ```javascript
 var e,r;    
@@ -858,8 +760,6 @@ The DOM interfaces are in the **org.w3c.dom** package
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 023
-
 The following code fragment
 
 ```javascript
@@ -915,11 +815,6 @@ Creates the XML structure below:
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 024
-
-
-
-
 ```java
 interface NodeList {   
  Node item(in unsigned long index);      
@@ -971,10 +866,6 @@ The **NamedNodeMap** object contains nodes which can be accessed through an inde
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 025
-
-
-
 *The web page DOM* 
 
 <!------------------- END SLIDE 025 it -------------------------->
@@ -983,8 +874,6 @@ The **NamedNodeMap** object contains nodes which can be accessed through an inde
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 026
 
 The DOM seen so far provides methods for accessing and manipulating generic documents based on the XML meta language. 
 
@@ -1007,8 +896,6 @@ However, the DOM is constantly evolving: see the "living standard" at https://do
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 027
-
 The DOM Level 2 has also introduced several new features specific to the XHTML DOM: 
 
 - Some new classes model the cascading style sheets and their application to XHTML elements. 
@@ -1023,11 +910,6 @@ The DOM Level 2 has also introduced several new features specific to the XHTML D
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 028
-
-
-
 
 ```java
 interface HTMLDocument : Document {     
@@ -1103,11 +985,6 @@ There are also (in latest browsers) **methods for selecting items based on advan
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 029
-
-
-
-
 ```java
 interface HTMLElement : Element {     
  attribute DOMString id;    
@@ -1170,11 +1047,6 @@ The size and position of an element are always relative to its container, indica
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 030
-
-
-
-
 ```java
 interface HTMLFormElement : HTMLElement {     
  readonly attribute HTMLCollection elements;        
@@ -1210,10 +1082,6 @@ The `submit` and `reset` methods have the same function as the corresponding but
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 031
-
-
 
 ```java
 interface HTMLInputElement : HTMLElement {     
@@ -1265,11 +1133,6 @@ The `click` method simulates a mouse click on the input field (of type button)
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 032
-
-
-
 
 ```java
 interface HTMLSelectElement : HTMLElement {     
@@ -1331,11 +1194,6 @@ The HTMLOptionElement object we may note the the     `index` attribute, which in
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 033
-
-
-
-
 ```java
 interface HTMLAnchorElement : HTMLElement {     
  attribute DOMString accessKey;      
@@ -1392,11 +1250,6 @@ Objects corresponding to "interactive" elements, such as links, always have the 
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 034
-
-
-
-
 *The DOM interface to style sheets* 
 
 <!------------------- END SLIDE 034 it -------------------------->
@@ -1405,8 +1258,6 @@ Objects corresponding to "interactive" elements, such as links, always have the 
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 035
 
 For manipulating CSS styles applied to documents (HTML), the Level 2 DOM defines a series of new classes:   
 
@@ -1426,10 +1277,6 @@ You can access the calculated style for an element or the style declared in the 
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 036
-
-
 
 ```java
 interface CSSStyleSheet : stylesheets::StyleSheet {       
@@ -1463,10 +1310,6 @@ It is usually used only to create **dynamic stylesheets**. For the dynamic HTML 
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 037
-
-
 
 ```java
 interface CSSRule {   
@@ -1515,10 +1358,6 @@ A *CSSStyleRule* consists of a string, that contains the rule selector, and a li
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 038
-
-
-
 ```java
 interface CSSStyleDeclaration {   
  attribute DOMString cssText;      
@@ -1559,11 +1398,6 @@ It is also possible to set or reset the value and the priority of a particular a
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 039
-
-
-
-
 ```java
 interface ViewCSS : views::AbstractView {       
  CSSStyleDeclaration getComputedStyle(    
@@ -1594,10 +1428,6 @@ The *ElementCSSInlineStyle* interface allows to **read and edit** style rules in
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 040
-
-
 
 ```java
 interface CSS2Properties { 
@@ -1648,10 +1478,6 @@ interface CSS2Properties {
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 041
-
-
-
 *The DOM interface to the outside world* 
 
 <!------------------- END SLIDE 041 it -------------------------->
@@ -1662,11 +1488,6 @@ interface CSS2Properties {
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 042
-
-
-
 
 The DOM event model, available from the level 2, provides the interfaces and semantics of a generic event handling system for HTML documents.
 
@@ -1680,10 +1501,6 @@ The DOM event model is built from a common subset of the custom event management
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 043
-
-
 
 Each event has a **target** element, which is the one on which it was generated. The target is determined by inspecting the DOM tree, which can sometimes differ from what the user "sees"! 
 
@@ -1700,9 +1517,6 @@ As we will see, you can stop bubbling after capturing an event.
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 044
-
 
 A click on the text of the paragraph starts a bubbling process which "shows" the event to all the registered handlers for that type of event on the ancestors of the activated \<p\> element. 
 
@@ -1735,11 +1549,6 @@ A click on the text of the paragraph starts a bubbling process which "shows" the
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 045
-
-
-
-
 In *event capturing* events traverse the DOM hierarchy in the opposite direction to the event bubbling.
 
 The event is shown to all the ancestor elements of the target, according to the DOM hierarchy, starting from the document object and ending on the target itself.
@@ -1752,9 +1561,6 @@ Browsers always perform first a *capturing* *phase* and then a *bubbling phase* 
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 046
-
 
 A click on the text of the paragraph activates a capturing process that *first* "shows" the event to all the handlers for that type of event registered *in capture mode* that are among the ancestors of the activated \<p\> element. 
 
@@ -1787,11 +1593,6 @@ A click on the text of the paragraph activates a capturing process that *first* 
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 047
-
-
-
-
 Each event is propagated first in capturing phase and then in bubbling phase. 
 
 
@@ -1822,11 +1623,6 @@ Each event is propagated first in capturing phase and then in bubbling phase.
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 048
-
-
-
 
 ```java
 interface EventTarget {   
@@ -1862,11 +1658,6 @@ Is is also possible to delete an existing listener with  `removeEventListener`.
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 049
-
-
-
-
 **To maintain compatibility with the event model previously used by some browsers**, *EventTarget* objects also have a set of attributes called "onX", where X is a valid type of event.  
 
 Assigning an *EventListener* (typically a function) to one of these attributes is equivalent to adding it, in bubbling mode, to the event type corresponding to the attribute you set. 
@@ -1881,10 +1672,6 @@ Setting one of these attributes to  *null* only removes the listener that may ha
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 050
-
-
 
 ```java
 interface Event {   
@@ -1933,10 +1720,6 @@ The `preventDefault` method prevents the browser to execute the default action, 
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 051
-
-
-
 ```java
 interface MouseEvent : UIEvent {     
  readonly attribute long screenX;      
@@ -1969,7 +1752,11 @@ The recognized mouse events are the following:
 
 - **mouseover** (the mouse entered the area of an element: *relatedTarget* indicates the element from which it just exited, if any)
 
+- **mouseenter** (the mouse entered the area of an element or one of its descendants)
+
 - **mouseout** (the mouse exited the area of an element: *relatedTarget* indicates the element in which it is entered, if any)
+
+- **mouseleave** (the mouse exited the area of an element and all of its descendants)
 
 - **mousemove** (the mouse moves in over an element).
 
@@ -1991,11 +1778,6 @@ A mouse event is accompanied by detailed information about the status of the poi
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 052
-
-
-
 
 ```java
 interface KeyboardEvent : UIEvent {     
@@ -2048,11 +1830,6 @@ A keyboard event is accompanied by detailed information about the keyboard state
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 053
-
-
-
-
 Some HTML objects can be notified of their specific events:
 
 - **load** (the document, its frames, or an object is fully loaded).
@@ -2083,14 +1860,74 @@ Some HTML objects can be notified of their specific events:
 
 <!------------------- END SLIDE 053 it -------------------------->
 
-<!----------------- BEGIN SLIDE 054 it -------------------------->
+<!----------------- BEGIN SLIDE 053b it -------------------------->
 
-## 6. Further reading
+####  The New Pointer Events
 
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 054 
+Mouse events were originally designed for mouse input only. In modern interfaces, however, many different input types exist, such as *mouse*, *touch*, and *pen*. Modern browsers generate fallback mouse events for touch and pen interactions, so that interfaces can still work by "seeing" these input systems as a simple mouse, although some advanced features (such as multi-touch) are inevitably lost.
+
+Pointer events unify all mouse, touch, and pen input events into a single API.
+
+```java
+interface PointerEvent : MouseEvent {
+ readonly attribute long pointerId;
+ readonly attribute double width;
+ readonly attribute double height;
+ readonly attribute float pressure;
+ readonly attribute float tangentialPressure;
+ readonly attribute long tiltX;
+ readonly attribute long tiltY;
+ readonly attribute long twist;
+ readonly attribute double altitudeAngle;
+ readonly attribute double azimuthAngle;
+ readonly attribute DOMString pointerType;
+ readonly attribute boolean isPrimary;
+};
+```
+
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
+
+Pointer event types include:
+
+- **pointerdown** (a pointer button is pressed on an element)
+
+- **pointerup** (a pointer button is released on an element)
+
+- **pointerover** (the pointer entered the area of an element)
+
+- **pointerenter** (the pointer entered the area of an element or one of its descendants)
+
+- **pointerout** (the pointer exited the area of an element)
+
+- **pointerleave** (the pointer exited the area of an element and all of its descendants)
+
+- **pointermove** (the pointer changes properties without triggering *pointerup* or *pointerdown*, e.g., it moves within the element’s area, changes pressure, etc.)
+
+A pointer event comes with more detailed information about the pointer’s state at the moment the event occurs. In addition to the information already provided by *MouseEvent* (from which *PointerEvent* inherits), the following properties are added:
+
+- `pointerId` contains the ID of the pointer that triggered the event. Useful for handling multi-touch.
+
+- `width` and `height` report the dimensions of the contact area (useful for touch interfaces).
+
+- `pressure` reports a measure of the applied pressure (useful for pen interfaces).
+
+- `tiltX` and `tiltY` report the pointer's tilt relative to the interface (useful for pen interfaces).
+
+- `pointerType` indicates the type of pointer: `mouse`, `pen`, and `touch` are the predefined values. 
+
+<!------------------- END SLIDE 053b it -------------------------->
+
+<!----------------- BEGIN SLIDE 054 it -------------------------->
+
+## 6. Further reading
 
 <!------------------- END SLIDE 054 it -------------------------->
 
@@ -2100,11 +1937,6 @@ Some HTML objects can be notified of their specific events:
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 055
-
-
-
 
 All the features introduced with ECMAScript 5, 6 and beyond, as well as all the new features related to the HTML DOM that are gradually adopted by the most modern browsers **are obviously not compatible with older ones**.
 
@@ -2124,11 +1956,6 @@ Try using the libraries generated by *https://polyfill.io*, which allows you to 
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 056
-
-
-
 
 **DOM Living Standard**   
 https://www.w3.org/TR/dom/ 

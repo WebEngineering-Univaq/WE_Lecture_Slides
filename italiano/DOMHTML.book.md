@@ -2,7 +2,6 @@
 title: Document Object Model (DOM)   
 course: Web Engineering
 organization: University of L'Aquila
-
 author: Giuseppe Della Penna
 ---
 
@@ -13,11 +12,6 @@ author: Giuseppe Della Penna
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 001
-
-
-
 
 **XML, HTML, CSS ed Eventi**
 
@@ -115,11 +109,6 @@ http://people.disim.univaq.it/dellapenna
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 002
-
-
-
-
 Un **modello ad oggetti** definisce:
 
 - Gli **oggetti** usati per rappresentare e manipolare un particolare tipo di informazione.
@@ -141,11 +130,6 @@ Nel nostro caso, il modello a oggetti è applicato alla struttura dei documenti 
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 003
-
-
-
-
 *Il DOM di base* 
 
 <!------------------- END SLIDE 003 it -------------------------->
@@ -154,9 +138,6 @@ Nel nostro caso, il modello a oggetti è applicato alla struttura dei documenti 
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 004
-
 
 Il Document Object Model (DOM) XML è un modello a oggetti generico applicabile a tutti i documenti XML.
 
@@ -175,9 +156,6 @@ Il DOM XML:
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 005
-
-
 Esistono varie versioni del DOM, strutturate in *livelli*:
 
 - **Livello 1**: definisce gli elementi DOM di base con interfacce contenenti i metodi e gli attributi di uso più comune.
@@ -195,11 +173,6 @@ Esistono varie versioni del DOM, strutturate in *livelli*:
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 006
-
-
-
-
 **Il DOM rappresenta i documenti come una struttura ad albero**.
 
 In realtà, la struttura è una "foresta" perché può anche contenere più alberi distinti.
@@ -216,10 +189,6 @@ Tuttavia, l'utente che accede al documento tramite l'interfaccia DOM, lo "vedrà
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 007
-
-
 
 Il documento XML che segue
 
@@ -258,11 +227,6 @@ corrisponde a questo albero
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 008
-
-
-
-
 L'albero è composto da generici **nodi**, ognuno dei quali ha una classificazione più specifica a seconda della sua funzione all'interno del documento.
 
  
@@ -282,11 +246,6 @@ L'albero è composto da generici **nodi**, ognuno dei quali ha una classificazio
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 009
-
-
-
 
 ![Document tree elements](img/domhtml3.png)
 
@@ -320,11 +279,6 @@ L'albero è composto da generici **nodi**, ognuno dei quali ha una classificazio
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 010
-
-
-
-
 ![DOM classes](img/domhtml4.png) 
 
 <!------------------- END SLIDE 010 it -------------------------->
@@ -335,11 +289,6 @@ L'albero è composto da generici **nodi**, ognuno dei quali ha una classificazio
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 011
-
-
-
 
 I nodi dell'albero DOM sono rappresentati da oggetti di classe **Node**
 
@@ -360,11 +309,6 @@ I vari componenti del documento implementano anche delle interfacce derivate, ch
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 012
-
-
-
 
 ```java
 interface Node {   
@@ -433,11 +377,6 @@ L'attributo `nodeType` permette di identificare il tipo specifico di nodo tramit
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 013
-
-
-
-
 |**Node type**  |**nodeName** |**nodeValue**
 |---|---|---|
 |**Element**|Nome tag  |null|
@@ -461,11 +400,6 @@ L'attributo `nodeType` permette di identificare il tipo specifico di nodo tramit
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 014
-
-
-
 
 L'interfaccia di Node mette a disposizione diversi attributi per muoversi nell'albero DOM:  
 
@@ -492,11 +426,6 @@ Gli oggetti restituiti da `childNodes` e `attributes` hanno anche un'interfaccia
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 015
-
-
-
-
 I metodi di *Node* per la manipolazione dei nodi figli sono:
 
 - `appendChild(n)`: accoda un nodo *n* alla lista dei figli del nodo corrente
@@ -520,11 +449,6 @@ La legalità di ciascuno di questi metodi dipende dal tipo effettivo del nodo. N
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 016
-
-
-
-
 L'oggetto **Document** è uno speciale **Node** rappresenta il documento XML. 
 
 Generalmente, quando si carica in memoria un documento XML, viene generato in memoria l'oggetto Document corripondente.
@@ -543,11 +467,6 @@ Tutti i nodi da inserire nel documento devono essere creati tramite i suoi metod
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 017
-
-
-
 
 ```java
 interface Document : Node {     
@@ -589,11 +508,6 @@ Il metodo `getElementsByTagName` verrà  illustrato con l'oggetto Element.
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 018
-
-
-
 
 ```java
 var e,r;    
@@ -649,8 +563,6 @@ Le interfacce per la manipolazione degli oggetti DOM si trovano nel package **or
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 019
 
 Il codice che segue
 
@@ -711,11 +623,6 @@ Crea la struttura XML seguente:
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 020
-
-
-
-
 ```java
 interface Element : Node {     
  readonly attribute DOMString tagName;        
@@ -768,11 +675,6 @@ Il metodo `normalize` serve a fondere nodi *Text* adiacenti nel sottoalbero cont
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 021
-
-
-
-
 ```java
 interface NodeSelector {   
   Element querySelector(DOMString selectors);    
@@ -801,11 +703,6 @@ I due metodi accettano dei selettori CSS (anche composti) e restituiscono, nel c
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 022
-
-
-
 
 ```javascript
 var e,r;    
@@ -863,8 +760,6 @@ Le interfacce per la manipolazione degli oggetti DOM si trovano nel package **or
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 023
-
 Il frammento di codice che segue
 
 ```javascript
@@ -920,11 +815,6 @@ Crea la struttura XML seguente:
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 024
-
-
-
-
 ```java
 interface NodeList {   
  Node item(in unsigned long index);      
@@ -976,10 +866,6 @@ L'oggetto **NamedNodeMap** contiene nodi accessibili, oltre che per indice (come
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 025
-
-
-
 *Il DOM delle pagine web* 
 
 <!------------------- END SLIDE 025 it -------------------------->
@@ -988,9 +874,6 @@ L'oggetto **NamedNodeMap** contiene nodi accessibili, oltre che per indice (come
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 026
-
 
 Il DOM visto fin qui fornisce un sistema di accesso e manipolazione generica per documenti basati sul metalinguaggio XML.
 
@@ -1012,8 +895,6 @@ Il DOM è comunque in continua evoluzione: si veda il "living standard" all'indi
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 027
-
 Il DOM di livello 2 ha inoltre introdotto una serie di nuove caratteristiche specifiche per il DOM HTML:
 
 - Alcune nuove classi modellano i fogli di stile CSS e la loro applicazione agli elementi HTML.
@@ -1028,11 +909,6 @@ Il DOM di livello 2 ha inoltre introdotto una serie di nuove caratteristiche spe
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 028
-
-
-
 
 ```java
 interface HTMLDocument : Document {     
@@ -1108,11 +984,6 @@ Sono disponibili, nei browser più aggiornati, anche **metodi per selezionare el
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 029
-
-
-
-
 ```java
 interface HTMLElement : Element {     
  attribute DOMString id;    
@@ -1175,11 +1046,6 @@ Le misure e la posizione di un elemento sono sempre relative al suo contenitore,
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 030
-
-
-
-
 ```java
 interface HTMLFormElement : HTMLElement {     
  readonly attribute HTMLCollection elements;        
@@ -1216,11 +1082,6 @@ I metodi `submit` e `reset` hanno la stessa funzione dei corrispondenti bottoni 
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 031
-
-
-
 
 ```java
 interface HTMLInputElement : HTMLElement {     
@@ -1272,11 +1133,6 @@ Il metodo `click` simula il click del mouse sugli input di tipo bottone.
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 032
-
-
-
 
 ```java
 interface HTMLSelectElement : HTMLElement {     
@@ -1338,11 +1194,6 @@ Nell'oggetto HTMLOptionElement va notato l'attributo   `index`, che indica la po
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 033
-
-
-
-
 ```java
 interface HTMLAnchorElement : HTMLElement {     
  attribute DOMString accessKey;      
@@ -1399,11 +1250,6 @@ Gli oggetti corrispondenti a elementi "interattivi", come i link, possiedono sem
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 034
-
-
-
-
 *L'interfaccia del DOM verso i fogli di stile* 
 
 <!------------------- END SLIDE 034 it -------------------------->
@@ -1414,11 +1260,6 @@ Gli oggetti corrispondenti a elementi "interattivi", come i link, possiedono sem
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 035
-
-
-
 
 Per la manipolazione degli stili CSS applicati ai documenti (HTML, ma non solo), il DOM di livello 2 definisce una serie di nuove classi:
 
@@ -1438,11 +1279,6 @@ Per la manipolazione degli stili CSS applicati ai documenti (HTML, ma non solo),
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 036
-
-
-
 
 ```java
 interface CSSStyleSheet : stylesheets::StyleSheet {       
@@ -1476,11 +1312,6 @@ Si usa solitamente solo per la creazione di **fogli di stile dinamici**. Per l'H
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 037
-
-
-
 
 ```java
 interface CSSRule {   
@@ -1529,11 +1360,6 @@ Una *CSSStyleRule* è composta da una stringa contenente il selettore della rego
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 038
-
-
-
-
 ```java
 interface CSSStyleDeclaration {   
  attribute DOMString cssText;      
@@ -1574,11 +1400,6 @@ Il metodo `item` permette di leggere il testo corrispondente a ciascuna impostaz
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 039
-
-
-
-
 ```java
 interface ViewCSS : views::AbstractView {       
  CSSStyleDeclaration getComputedStyle(    
@@ -1609,11 +1430,6 @@ L'interfaccia *ElementCSSInlineStyle* permette di **leggere e modificare** le re
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 040
-
-
-
 
 ```java
 interface CSS2Properties { 
@@ -1664,10 +1480,6 @@ interface CSS2Properties {
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 041
-
-
-
 *L'interfaccia del DOM verso il mondo esterno* 
 
 <!------------------- END SLIDE 041 it -------------------------->
@@ -1678,11 +1490,6 @@ interface CSS2Properties {
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 042
-
-
-
 
 Il modello ad eventi del DOM, presente a partire dal livello 2, fornisce le interfacce e la semantica di un generico sistema di gestione degli eventi per i documenti HTML.
 
@@ -1696,11 +1503,6 @@ Il modello DOM è costruito a partire da un sottoinsieme comune delle funzionali
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 043
-
-
-
 
 Ogni evento ha un elemento **target**, che è quello sul quale è stato generato. Il target viene determinato esaminando la struttura DOM, che a volte può differire da quanto l'utente "vede"! 
 
@@ -1716,9 +1518,6 @@ Come vedremo, è possibile arrestare il bubbling dopo aver catturato un evento.
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 044
-
 
 Un click sul testo del paragrafo attiva un processo di bubbling che "mostra" l'evento a tutti gli handlers registrati per tale tipo di evento che si trovano tra gli antenati dell'elemento \<p\> attivato.    
 
@@ -1750,11 +1549,6 @@ Un click sul testo del paragrafo attiva un processo di bubbling che "mostra" l'e
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 045
-
-
-
-
 Nell'*event capturing*, gli eventi percorrono la gerarchia nel senso opposto al bubbling.
 
 L'evento viene proposto a tutti gli elementi antenati del target secondo la gerarchia DOM, nell'ordine, a partire da document fino ad arrivare all'oggetto che ha generato l'evento.
@@ -1767,9 +1561,6 @@ I browser effettuano sempre prima una *fase di capturing* e poi una *fase di bub
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 046
-
 
 Un click sul testo del paragrafo attiva un processo di capturing che "mostra" *prima* l'evento a tutti gli handlers registrati per tale tipo di evento *in modalità capture*  che si trovano tra gli antenati dell'elemento \<p\> attivato.
 
@@ -1801,10 +1592,6 @@ Un click sul testo del paragrafo attiva un processo di capturing che "mostra" *p
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 047
-
-
-
 Ogni evento viene prima propagato in fase di capturing e successivamente in fase di bubbling.    
 
 
@@ -1835,11 +1622,6 @@ Ogni evento viene prima propagato in fase di capturing e successivamente in fase
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 048
-
-
-
 
 ```java
 interface EventTarget {   
@@ -1875,11 +1657,6 @@ Il metodo `addEventListener` permette di aggiungere su un elemento un *listener*
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 049
-
-
-
-
 Per **compatibilità verso il modello ad eventi precedentemente utilizzato dai browser**, gli *EventTarget* dispongono anche di una serie di attributi denominati "onX", dove X è un tipo di evento valido.
 
 Assegnare un *EventListener* (tipicamente una funzione) a uno di questi attributi corrisponde ad aggiungerlo, in modalità bubbling, al tipo di evento corrispondente all'attributo impostato.      
@@ -1894,11 +1671,6 @@ Impostare a  *null* uno di questi attributi rimuove solo il listener eventualmen
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 050
-
-
-
 
 ```java
 interface Event {   
@@ -1947,11 +1719,6 @@ Il metodo `preventDefault` impedisce al browser di attuare l'azione di default, 
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 051
-
-
-
-
 ```java
 interface MouseEvent : UIEvent {     
  readonly attribute long screenX;      
@@ -1984,7 +1751,11 @@ I tipi di eventi mouse sono i seguenti:
 
 - **mouseover**  (il mouse è entrato nell'area di un elemento: *relatedTarget* indica l'elemento da cui è uscito) 
 
+- **mouseenter**  (il mouse è entrato nell'area di un elemento o di uno dei suoi discendenti) 
+
 - **mouseout**  (il mouse è uscito dall'area di un elemento: *relatedTarget* indica l'elemento in cui è entrato) 
+
+- **mouseleave**  (il mouse è uscito dall'area di un elemento e di tutti i suoi discendenti) 
 
 - **mousemove**  (il mouse si muove nell'area dell'elemento). 
 
@@ -2006,11 +1777,6 @@ Un evento del mouse è accompagnato da informazioni più dettagliate circa lo st
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 052
-
-
-
 
 ```java
 interface KeyboardEvent : UIEvent {      
@@ -2063,11 +1829,6 @@ Un evento tastiera è accompagnato da informazioni più dettagliate circa lo sta
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 053
-
-
-
-
 Alcuni oggetti HTML possono ricevere notifiche di eventi complessi ad essi specifici:
 
 - **load**  (il documento, i suoi frames o un oggetto del documento sono completamente caricati).   
@@ -2098,14 +1859,74 @@ Alcuni oggetti HTML possono ricevere notifiche di eventi complessi ad essi speci
 
 <!------------------- END SLIDE 053 it -------------------------->
 
-<!----------------- BEGIN SLIDE 054 it -------------------------->
+<!----------------- BEGIN SLIDE 053b it -------------------------->
 
-## 6. Approfondimenti
+####  I Nuovi Eventi Pointer
 
 
 <!----------------- COLUMN 1 -------------------------->
 
-> 054 
+Gli eventi mouse nascono per il solo mouse. Nelle interfacce moderne, esistono molti tipi di input, come *mouse*, *touch* e *penna*. I browser moderni generano eventi mouse di *fallback* anche per quelli generati da touch e penna, in modo che le interfacce funzionino "vedendo" questi sistemi di input come semplici mouse, ma ovviamente si perdono alcune caratteristiche avanzate (come il multi-touch)
+
+I pointer events unificano tutti gli eventi di input mouse, touch e penna in un'unica API.
+
+```java
+interface PointerEvent : MouseEvent {
+ readonly attribute long pointerId;
+ readonly attribute double width;
+ readonly attribute double height;
+ readonly attribute float pressure;
+ readonly attribute float tangentialPressure;
+ readonly attribute long tiltX;
+ readonly attribute long tiltY;
+ readonly attribute long twist;
+ readonly attribute double altitudeAngle;
+ readonly attribute double azimuthAngle;
+ readonly attribute DOMString pointerType;
+ readonly attribute boolean isPrimary;
+};
+```
+
+ 
+
+
+<!----------------- COLUMN 2 -------------------------->
+
+
+
+I tipi di eventi mouse sono i seguenti:
+
+- **pointerdown**  (pressione di un bottone del puntatore su un elemento)
+
+- **pointerup**  (rilascio di un bottone del puntatore su un elemento)
+
+- **pointerover**  (il puntatore è entrato nell'area di un elemento) 
+
+- **pointerenter** (il puntatore è entrato nell'area di un elemento o di uno dei suoi discendenti) 
+
+- **pointerout**  (il puntatore è uscito dall'area di un elemento) 
+
+- **pointerleave** (il puntatore è uscito dall'area di un elemento e di tutti i suoi discendenti) 
+
+- **pointeremove**  (il puntatore cambia delle proprietà che non determinano un *pointerup* o *pointerdown*, ad esempio si muove nell'area dell'elemento, varia la sua pressione, ecc.). 
+
+Un evento del pointer è accompagnato da informazioni più dettagliate circa lo stato del puntatore al momento dell'evento stesso. Oltre alle informazioni già specificate per i *MouseEvent* (da cui *PointerEvent* discende), si aggiungono:
+
+- `pointerId` contiene l'ID del puntatore che ha attivato l'evento. Utile per gestire il multi-touch.
+
+- `width` e `height` riportano le dimensioni dell'area di tocco (utile ad esempio con le interfacce touch).
+
+- `pressure` riportano una misura della pressione applicata (utile ad esempio con le interfacce penna).
+
+- `tiltX` e `tiltY` riportano l'inclinazione del puntatore rispetto all'interfaccia  (utile ad esempio con le interfacce penna).
+
+- `pointerType` indicano il tipo di puntatore: `mouse`,`pen`,`touch` sono i valori predefiniti. 
+
+<!------------------- END SLIDE 053b it -------------------------->
+
+<!----------------- BEGIN SLIDE 054 it -------------------------->
+
+## 6. Approfondimenti
 
 <!------------------- END SLIDE 054 it -------------------------->
 
@@ -2115,11 +1936,6 @@ Alcuni oggetti HTML possono ricevere notifiche di eventi complessi ad essi speci
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 055
-
-
-
 
 Tutte le funzionalità introdotte con ECMAScript 5, 6 e oltre, nonché tutte le novità relative al DOM di HTML che vengono via via adottate dai browser più moderni **non sono ovviamente compatibili con quelli più datati**.
 
@@ -2139,11 +1955,6 @@ Provate ad utilizzare le librerie generate da  *https://polyfill.io* , che perme
 
 
 <!----------------- COLUMN 1 -------------------------->
-
-> 056
-
-
-
 
 **DOM Living Standard**   
 https://www.w3.org/TR/dom/ 
